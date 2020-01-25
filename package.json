@@ -20,13 +20,14 @@
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
     "generate": "stencil generate",
-    "start": "npm-run-all --parallel start storybook",
+    "start": "npm-run-all --parallel dev storybook",
     "storybook": "start-storybook -p 9001 -c .storybook -s www"
   },
   "devDependencies": {
     "@babel/core": "^7.8.3",
     "@stencil/core": "^1.8.4",
     "@stencil/sass": "^1.1.1",
+    "@storybook/addon-knobs": "^5.3.9",
     "@storybook/addon-notes": "^5.3.8",
     "@storybook/addon-storysource": "^5.3.8",
     "@storybook/addon-viewport": "^5.3.8",
