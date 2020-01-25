@@ -2,10 +2,10 @@ import notes from "./readme.md";
 
 export default { title: "Button" };
 
-export const withText = () =>
+export const Button = () =>
   `<my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>`;
 
-withText.story = {
+Button.story = {
   parameters: {
     notes
   }
