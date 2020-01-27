@@ -15,7 +15,7 @@
     "loader/"
   ],
   "scripts": {
-    "build": "stencil build --docs",
+    "build": "cross-env NODE_ENV=production stencil build --docs",
     "dev": "stencil build --dev --watch --docs",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
@@ -25,17 +25,25 @@
   },
   "devDependencies": {
     "@babel/core": "^7.8.3",
+    "@fullhuman/postcss-purgecss": "^2.0.5",
     "@stencil/core": "^1.8.4",
+    "@stencil/postcss": "^1.0.1",
     "@stencil/sass": "^1.1.1",
     "@storybook/addon-knobs": "^5.3.9",
     "@storybook/addon-notes": "^5.3.8",
     "@storybook/addon-storysource": "^5.3.8",
     "@storybook/addon-viewport": "^5.3.8",
     "@storybook/html": "^5.3.8",
+    "autoprefixer": "^9.7.4",
     "babel-loader": "^8.0.6",
     "copy-webpack-plugin": "^5.1.1",
+    "cross-env": "^7.0.0",
+    "cssnano": "^4.1.10",
     "npm-run-all": "^4.1.5",
     "write-file-webpack-plugin": "^4.5.1"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "tailwindcss": "^1.1.4"
+  }
 }
