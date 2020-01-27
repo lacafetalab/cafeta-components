@@ -16,7 +16,7 @@ const MyComponent = class {
     render() {
         return h("div", { class: "button" }, "Hello, World! I' aaa jj", this.getText());
     }
-    static get style() { return ".button{color:#2c5282}"; }
+    static get style() { return ".button{color:var(--color-primary)}"; }
 };
 
 export { MyComponent as my_component };

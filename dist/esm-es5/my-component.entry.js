@@ -15,7 +15,7 @@ var MyComponent = /** @class */ (function () {
         return h("div", { class: "button" }, "Hello, World! I' aaa jj", this.getText());
     };
     Object.defineProperty(MyComponent, "style", {
-        get: function () { return ".button{color:#2c5282}"; },
+        get: function () { return ".button{color:var(--color-primary)}"; },
         enumerable: true,
         configurable: true
     });

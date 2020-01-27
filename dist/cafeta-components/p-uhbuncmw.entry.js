@@ -1,0 +1,1 @@
+import{r as t,h as r}from"./p-0ccb2253.js";const s=class{constructor(r){t(this,r)}getText(){return(this.first||"")+((t=this.middle)?` ${t}`:"")+((r=this.last)?` ${r}`:"");var t,r}render(){return r("div",{class:"button"},"Hello, World! I' aaa jj",this.getText())}static get style(){return".button{color:var(--color-primary)}"}};export{s as my_component};

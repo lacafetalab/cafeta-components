@@ -1,1 +1,1 @@
-import{p as m,b as p}from"./p-0ccb2253.js";m().then(m=>p([["p-lrzjfjta",[[1,"my-component",{first:[1],middle:[1],last:[1]}]]]],m));
+import{p as m,b as p}from"./p-0ccb2253.js";m().then(m=>p([["p-uhbuncmw",[[1,"my-component",{first:[1],middle:[1],last:[1]}]]]],m));

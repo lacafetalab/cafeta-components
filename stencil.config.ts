@@ -1,4 +1,5 @@
 import { Config } from "@stencil/core";
+import { reactOutputTarget } from "@stencil/react-output-target";
 import { sass } from "@stencil/sass";
 import { postcss } from "@stencil/postcss";
 import autoprefixer from "autoprefixer";
@@ -12,6 +13,10 @@ export const config: Config = {
   namespace: "cafeta-components",
   globalStyle: "src/global/app.scss",
   outputTargets: [
+    reactOutputTarget({
+      componentCorePackage: "cafeta-components",
+      proxiesFile: "react/src/components.ts"
+    }),
     {
       type: "dist",
       esmLoaderPath: "../loader"
