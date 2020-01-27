@@ -1,14 +1,11 @@
 /* eslint-disable */
 /* tslint:disable */
 /* auto-generated react proxies */
-import { createReactComponent } from "./react-component-lib";
+import { createReactComponent } from './react-component-lib';
 
-import { JSX } from "cafeta-components";
+import { JSX } from 'cafeta-components';
 
-import { defineCustomElements, applyPolyfills } from "cafeta-components/loader";
+import { defineCustomElements, applyPolyfills } from 'cafeta-components/loader';
 
-applyPolyfills().then(() => defineCustomElements(window));
-export const MyComponent = /*@__PURE__*/ createReactComponent<
-  JSX.MyComponent,
-  HTMLMyComponentElement
->("my-component");
+applyPolyfills().then(() => defineCustomElements());
+export const MyComponent = /*@__PURE__*/createReactComponent<JSX.MyComponent, HTMLMyComponentElement>('my-component');
