@@ -1,1 +1,0 @@
-import{r as t,h as r}from"./p-8b8249d3.js";const s=class{constructor(r){t(this,r)}getText(){return(this.first||"")+((t=this.middle)?` ${t}`:"")+((r=this.last)?` ${r}`:"");var t,r}render(){return r("div",{class:"button"},"Hello, World! I'",this.getText())}static get style(){return".button{background-color:var(--color-primary)}"}};export{s as my_component};
