@@ -6,7 +6,7 @@ export class MyComponent {
     }
     render() {
         return h("div", { class: "button" },
-            "Hello, World! I' aaa jj",
+            "Hello, World! I'",
             this.getText());
     }
     static get is() { return "my-component"; }
