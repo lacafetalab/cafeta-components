@@ -1,3 +1,11 @@
+:root {
+  --color-primary: pink;
+}
+
+body {
+  color: red;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
