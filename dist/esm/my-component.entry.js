@@ -1,4 +1,4 @@
-import { r as registerInstance, h } from './core-5e60bc60.js';
+import { r as registerInstance, h } from './core-1129956f.js';
 
 function format(first, middle, last) {
     return ((first || '') +
@@ -16,7 +16,7 @@ const MyComponent = class {
     render() {
         return h("div", { class: "button" }, "Hello, World! I' aaa jj", this.getText());
     }
-    static get style() { return ".button {\n  color: #2c5282;\n}"; }
+    static get style() { return ".button{color:#2c5282}"; }
 };
 
 export { MyComponent as my_component };

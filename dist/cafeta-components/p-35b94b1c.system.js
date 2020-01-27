@@ -1,0 +1,1 @@
+System.register(["./p-b8b1805b.system.js"],(function(){"use strict";var t,e;return{setters:[function(n){t=n.p;e=n.b}],execute:function(){t().then((function(t){return e([["p-xfj2outk.system",[[1,"my-component",{first:[1],middle:[1],last:[1]}]]]],t)}))}}}));
