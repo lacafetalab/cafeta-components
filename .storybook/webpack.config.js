@@ -5,6 +5,9 @@ const WriteFilePlugin = require("write-file-webpack-plugin");
 
 module.exports = async ({ config }) => {
   config.entry.push(path.join(__dirname, "../dist/cafeta-components.js"));
+  config.entry.push(
+    path.join(__dirname, "../dist/cafeta-components/cafeta-components.css")
+  );
   fs.readdirSync(path.join(__dirname, "../dist/collection/components")).map(
     file => {
       jsFilePath = path.join(
@@ -44,8 +47,6 @@ module.exports = async ({ config }) => {
   );
 
   config.plugins.push(new WriteFilePlugin());
-
-  console.log(config);
 
   return config;
 };

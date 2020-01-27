@@ -11,7 +11,7 @@ const purgecss = require("@fullhuman/postcss-purgecss")({
 
 export const config: Config = {
   namespace: "cafeta-components",
-  globalStyle: "src/global/app.scss",
+  globalStyle: "./src/global/app.scss",
   outputTargets: [
     reactOutputTarget({
       componentCorePackage: "cafeta-components",
