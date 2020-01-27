@@ -7,9 +7,7 @@ import { JSX } from "cafeta-components";
 
 import { defineCustomElements, applyPolyfills } from "cafeta-components/loader";
 
-applyPolyfills().then(() => {
-  defineCustomElements(window);
-});
+applyPolyfills().then(() => defineCustomElements(window));
 export const MyComponent = /*@__PURE__*/ createReactComponent<
   JSX.MyComponent,
   HTMLMyComponentElement
