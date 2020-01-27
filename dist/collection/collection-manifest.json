@@ -1,6 +1,6 @@
 {
   "entries": [
-    "components\\my-component\\my-component.js"
+    "components/my-component/my-component.js"
   ],
   "compiler": {
     "name": "@stencil/core",
