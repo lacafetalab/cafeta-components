@@ -1,3 +1,5 @@
+const defaultTheme = require("tailwindcss/defaultTheme");
+
 module.exports = {
   theme: {
     screens: {
@@ -8,39 +10,40 @@ module.exports = {
     },
     colors: {
       background: {
-        "01": "#ebf1f5",
-        "02": "#f9fbff",
-        "03": "#f7f7fe",
-        "04": "#f2f9ff",
-        "05": "#ffffff"
+        "01": "var(--ui-background-01)",
+        "02": "var(--ui-background-02)",
+        "03": "var(--ui-background-03)",
+        "04": "var(--ui-background-04)",
+        "05": "var(--ui-background-05)",
+        "06": "var(--ui-background-06)"
       },
       interactive: {
-        "01": "#6363f6",
-        "02": "#0091ff"
+        "01": "var(--interactive-01)",
+        "02": "var(--interactive-02)"
       },
       support: {
-        success: "#22aa00",
-        error: "#ff385b",
-        alert: "#ffc541"
+        success: "var(--support-success)",
+        error: "var(--support-error)",
+        alert: "var(--support-alert)"
       },
-      text: {
-        "01": "#748e98",
-        "02": "#4a4a4a",
-        "03": "#ffffff"
+      "color-text": {
+        "01": "var(--text-01)",
+        "02": "var(--text-02)",
+        "03": "var(--text-03)"
       },
       link: {
-        "01": "#6363f6"
+        "01": "var(--link-01)"
       },
-      field: "#ccd6dc",
+      field: "var(--field)",
       disabled: {
-        background: "#e6edf2",
-        text: "#828594"
+        background: "var(--disabled-background)",
+        text: "var(--disabled-text)"
       },
-      focus: "#ebf1f5",
+      focus: "var(--focus)",
       hover: {
-        primary: "#5050e7",
-        primaryLink: "#5050e7",
-        secondary: "#1288e1"
+        "interactive-01": "var(--hover-interactive-01)",
+        "link-01": "var(--hover-primary-link)",
+        "interactive-02": "var(--hover-secondary)"
       }
     },
     spacing: {
@@ -57,38 +60,23 @@ module.exports = {
       lg: "2.4rem"
     },
     fontFamily: {
-      lato: ["'Lato'", "sans-serif"]
+      sans: ["Lato", ...defaultTheme.fontFamily.sans]
     },
     fontSize: {
-      xs: "0.75rem",
-      sm: "0.875rem",
-      base: "1rem",
-      lg: "1.125rem",
-      xl: "1.25rem",
-      "2xl": "1.5rem",
-      "3xl": "1.875rem",
-      "4xl": "2.25rem",
-      "5xl": "3rem",
-      "6xl": "4rem"
+      "heading-01": "2.4rem",
+      "heading-02": "2rem",
+      "subheading-01": "1.8rem",
+      "subheading-02": "1.6rem",
+      body: "1.4rem",
+      "body-02": "1.6rem",
+      "small-01": "1.1rem",
+      "small-02": "1.2rem",
+      "small-03": "1rem",
+      "display-01": "4.8rem",
+      "display-02": "4rem"
     },
     fontWeight: {
-      hairline: "100",
-      thin: "200",
-      light: "300",
-      normal: "400",
-      medium: "500",
-      semibold: "600",
-      bold: "700",
-      extrabold: "800",
-      black: "900"
-    },
-    lineHeight: {
-      none: "1",
-      tight: "1.25",
-      snug: "1.375",
-      normal: "1.5",
-      relaxed: "1.625",
-      loose: "2"
+      regular: "400"
     }
   }
 };
