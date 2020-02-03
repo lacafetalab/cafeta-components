@@ -607,12 +607,12 @@ video {
 }
 
 :root {
-  --ui-background-01: #ebf1f5;
-  --ui-background-02: #f3f4f6;
-  --ui-background-03: #f9fbff;
-  --ui-background-04: #f7f7fe;
-  --ui-background-05: #f2f9ff;
-  --ui-background-06: #ffffff;
+  --background-01: #ebf1f5;
+  --background-02: #f3f4f6;
+  --background-03: #f9fbff;
+  --background-04: #f7f7fe;
+  --background-05: #f2f9ff;
+  --background-06: #ffffff;
   --interactive-01: #6363f6;
   --interactive-02: #0091ff;
   --support-success: #22aa00;
@@ -643,10 +643,21 @@ html {
 
 body {
   color: var(--text-01);
-  background-color: var(--ui-background-01);
+  background-color: var(--background-01);
   font-weight: 400;
   font-size: 1.4rem;
   -webkit-overflow-scrolling: touch;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+b,
+strong {
+  font-weight: 900;
 }
 
 .container{
@@ -742,27 +753,27 @@ body {
 }
 
 .bg-background-01{
-  background-color: var(--ui-background-01);
+  background-color: var(--background-01);
 }
 
 .bg-background-02{
-  background-color: var(--ui-background-02);
+  background-color: var(--background-02);
 }
 
 .bg-background-03{
-  background-color: var(--ui-background-03);
+  background-color: var(--background-03);
 }
 
 .bg-background-04{
-  background-color: var(--ui-background-04);
+  background-color: var(--background-04);
 }
 
 .bg-background-05{
-  background-color: var(--ui-background-05);
+  background-color: var(--background-05);
 }
 
 .bg-background-06{
-  background-color: var(--ui-background-06);
+  background-color: var(--background-06);
 }
 
 .bg-interactive-01{
@@ -830,27 +841,27 @@ body {
 }
 
 .hover\:bg-background-01:hover{
-  background-color: var(--ui-background-01);
+  background-color: var(--background-01);
 }
 
 .hover\:bg-background-02:hover{
-  background-color: var(--ui-background-02);
+  background-color: var(--background-02);
 }
 
 .hover\:bg-background-03:hover{
-  background-color: var(--ui-background-03);
+  background-color: var(--background-03);
 }
 
 .hover\:bg-background-04:hover{
-  background-color: var(--ui-background-04);
+  background-color: var(--background-04);
 }
 
 .hover\:bg-background-05:hover{
-  background-color: var(--ui-background-05);
+  background-color: var(--background-05);
 }
 
 .hover\:bg-background-06:hover{
-  background-color: var(--ui-background-06);
+  background-color: var(--background-06);
 }
 
 .hover\:bg-interactive-01:hover{
@@ -918,27 +929,27 @@ body {
 }
 
 .focus\:bg-background-01:focus{
-  background-color: var(--ui-background-01);
+  background-color: var(--background-01);
 }
 
 .focus\:bg-background-02:focus{
-  background-color: var(--ui-background-02);
+  background-color: var(--background-02);
 }
 
 .focus\:bg-background-03:focus{
-  background-color: var(--ui-background-03);
+  background-color: var(--background-03);
 }
 
 .focus\:bg-background-04:focus{
-  background-color: var(--ui-background-04);
+  background-color: var(--background-04);
 }
 
 .focus\:bg-background-05:focus{
-  background-color: var(--ui-background-05);
+  background-color: var(--background-05);
 }
 
 .focus\:bg-background-06:focus{
-  background-color: var(--ui-background-06);
+  background-color: var(--background-06);
 }
 
 .focus\:bg-interactive-01:focus{
@@ -1086,27 +1097,27 @@ body {
 }
 
 .border-background-01{
-  border-color: var(--ui-background-01);
+  border-color: var(--background-01);
 }
 
 .border-background-02{
-  border-color: var(--ui-background-02);
+  border-color: var(--background-02);
 }
 
 .border-background-03{
-  border-color: var(--ui-background-03);
+  border-color: var(--background-03);
 }
 
 .border-background-04{
-  border-color: var(--ui-background-04);
+  border-color: var(--background-04);
 }
 
 .border-background-05{
-  border-color: var(--ui-background-05);
+  border-color: var(--background-05);
 }
 
 .border-background-06{
-  border-color: var(--ui-background-06);
+  border-color: var(--background-06);
 }
 
 .border-interactive-01{
@@ -1174,27 +1185,27 @@ body {
 }
 
 .hover\:border-background-01:hover{
-  border-color: var(--ui-background-01);
+  border-color: var(--background-01);
 }
 
 .hover\:border-background-02:hover{
-  border-color: var(--ui-background-02);
+  border-color: var(--background-02);
 }
 
 .hover\:border-background-03:hover{
-  border-color: var(--ui-background-03);
+  border-color: var(--background-03);
 }
 
 .hover\:border-background-04:hover{
-  border-color: var(--ui-background-04);
+  border-color: var(--background-04);
 }
 
 .hover\:border-background-05:hover{
-  border-color: var(--ui-background-05);
+  border-color: var(--background-05);
 }
 
 .hover\:border-background-06:hover{
-  border-color: var(--ui-background-06);
+  border-color: var(--background-06);
 }
 
 .hover\:border-interactive-01:hover{
@@ -1262,27 +1273,27 @@ body {
 }
 
 .focus\:border-background-01:focus{
-  border-color: var(--ui-background-01);
+  border-color: var(--background-01);
 }
 
 .focus\:border-background-02:focus{
-  border-color: var(--ui-background-02);
+  border-color: var(--background-02);
 }
 
 .focus\:border-background-03:focus{
-  border-color: var(--ui-background-03);
+  border-color: var(--background-03);
 }
 
 .focus\:border-background-04:focus{
-  border-color: var(--ui-background-04);
+  border-color: var(--background-04);
 }
 
 .focus\:border-background-05:focus{
-  border-color: var(--ui-background-05);
+  border-color: var(--background-05);
 }
 
 .focus\:border-background-06:focus{
-  border-color: var(--ui-background-06);
+  border-color: var(--background-06);
 }
 
 .focus\:border-interactive-01:focus{
@@ -1967,16 +1978,52 @@ body {
   font-family: Lato, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
+.font-light{
+  font-weight: 300;
+}
+
 .font-regular{
   font-weight: 400;
+}
+
+.font-bold{
+  font-weight: 700;
+}
+
+.font-black{
+  font-weight: 900;
+}
+
+.hover\:font-light:hover{
+  font-weight: 300;
 }
 
 .hover\:font-regular:hover{
   font-weight: 400;
 }
 
+.hover\:font-bold:hover{
+  font-weight: 700;
+}
+
+.hover\:font-black:hover{
+  font-weight: 900;
+}
+
+.focus\:font-light:focus{
+  font-weight: 300;
+}
+
 .focus\:font-regular:focus{
   font-weight: 400;
+}
+
+.focus\:font-bold:focus{
+  font-weight: 700;
+}
+
+.focus\:font-black:focus{
+  font-weight: 900;
 }
 
 .h-auto{
@@ -2896,123 +2943,123 @@ body {
 }
 
 .placeholder-background-01::-webkit-input-placeholder{
-  color: var(--ui-background-01);
+  color: var(--background-01);
 }
 
 .placeholder-background-01::-moz-placeholder{
-  color: var(--ui-background-01);
+  color: var(--background-01);
 }
 
 .placeholder-background-01:-ms-input-placeholder{
-  color: var(--ui-background-01);
+  color: var(--background-01);
 }
 
 .placeholder-background-01::-ms-input-placeholder{
-  color: var(--ui-background-01);
+  color: var(--background-01);
 }
 
 .placeholder-background-01::placeholder{
-  color: var(--ui-background-01);
+  color: var(--background-01);
 }
 
 .placeholder-background-02::-webkit-input-placeholder{
-  color: var(--ui-background-02);
+  color: var(--background-02);
 }
 
 .placeholder-background-02::-moz-placeholder{
-  color: var(--ui-background-02);
+  color: var(--background-02);
 }
 
 .placeholder-background-02:-ms-input-placeholder{
-  color: var(--ui-background-02);
+  color: var(--background-02);
 }
 
 .placeholder-background-02::-ms-input-placeholder{
-  color: var(--ui-background-02);
+  color: var(--background-02);
 }
 
 .placeholder-background-02::placeholder{
-  color: var(--ui-background-02);
+  color: var(--background-02);
 }
 
 .placeholder-background-03::-webkit-input-placeholder{
-  color: var(--ui-background-03);
+  color: var(--background-03);
 }
 
 .placeholder-background-03::-moz-placeholder{
-  color: var(--ui-background-03);
+  color: var(--background-03);
 }
 
 .placeholder-background-03:-ms-input-placeholder{
-  color: var(--ui-background-03);
+  color: var(--background-03);
 }
 
 .placeholder-background-03::-ms-input-placeholder{
-  color: var(--ui-background-03);
+  color: var(--background-03);
 }
 
 .placeholder-background-03::placeholder{
-  color: var(--ui-background-03);
+  color: var(--background-03);
 }
 
 .placeholder-background-04::-webkit-input-placeholder{
-  color: var(--ui-background-04);
+  color: var(--background-04);
 }
 
 .placeholder-background-04::-moz-placeholder{
-  color: var(--ui-background-04);
+  color: var(--background-04);
 }
 
 .placeholder-background-04:-ms-input-placeholder{
-  color: var(--ui-background-04);
+  color: var(--background-04);
 }
 
 .placeholder-background-04::-ms-input-placeholder{
-  color: var(--ui-background-04);
+  color: var(--background-04);
 }
 
 .placeholder-background-04::placeholder{
-  color: var(--ui-background-04);
+  color: var(--background-04);
 }
 
 .placeholder-background-05::-webkit-input-placeholder{
-  color: var(--ui-background-05);
+  color: var(--background-05);
 }
 
 .placeholder-background-05::-moz-placeholder{
-  color: var(--ui-background-05);
+  color: var(--background-05);
 }
 
 .placeholder-background-05:-ms-input-placeholder{
-  color: var(--ui-background-05);
+  color: var(--background-05);
 }
 
 .placeholder-background-05::-ms-input-placeholder{
-  color: var(--ui-background-05);
+  color: var(--background-05);
 }
 
 .placeholder-background-05::placeholder{
-  color: var(--ui-background-05);
+  color: var(--background-05);
 }
 
 .placeholder-background-06::-webkit-input-placeholder{
-  color: var(--ui-background-06);
+  color: var(--background-06);
 }
 
 .placeholder-background-06::-moz-placeholder{
-  color: var(--ui-background-06);
+  color: var(--background-06);
 }
 
 .placeholder-background-06:-ms-input-placeholder{
-  color: var(--ui-background-06);
+  color: var(--background-06);
 }
 
 .placeholder-background-06::-ms-input-placeholder{
-  color: var(--ui-background-06);
+  color: var(--background-06);
 }
 
 .placeholder-background-06::placeholder{
-  color: var(--ui-background-06);
+  color: var(--background-06);
 }
 
 .placeholder-interactive-01::-webkit-input-placeholder{
@@ -3336,123 +3383,123 @@ body {
 }
 
 .focus\:placeholder-background-01:focus::-webkit-input-placeholder{
-  color: var(--ui-background-01);
+  color: var(--background-01);
 }
 
 .focus\:placeholder-background-01:focus::-moz-placeholder{
-  color: var(--ui-background-01);
+  color: var(--background-01);
 }
 
 .focus\:placeholder-background-01:focus:-ms-input-placeholder{
-  color: var(--ui-background-01);
+  color: var(--background-01);
 }
 
 .focus\:placeholder-background-01:focus::-ms-input-placeholder{
-  color: var(--ui-background-01);
+  color: var(--background-01);
 }
 
 .focus\:placeholder-background-01:focus::placeholder{
-  color: var(--ui-background-01);
+  color: var(--background-01);
 }
 
 .focus\:placeholder-background-02:focus::-webkit-input-placeholder{
-  color: var(--ui-background-02);
+  color: var(--background-02);
 }
 
 .focus\:placeholder-background-02:focus::-moz-placeholder{
-  color: var(--ui-background-02);
+  color: var(--background-02);
 }
 
 .focus\:placeholder-background-02:focus:-ms-input-placeholder{
-  color: var(--ui-background-02);
+  color: var(--background-02);
 }
 
 .focus\:placeholder-background-02:focus::-ms-input-placeholder{
-  color: var(--ui-background-02);
+  color: var(--background-02);
 }
 
 .focus\:placeholder-background-02:focus::placeholder{
-  color: var(--ui-background-02);
+  color: var(--background-02);
 }
 
 .focus\:placeholder-background-03:focus::-webkit-input-placeholder{
-  color: var(--ui-background-03);
+  color: var(--background-03);
 }
 
 .focus\:placeholder-background-03:focus::-moz-placeholder{
-  color: var(--ui-background-03);
+  color: var(--background-03);
 }
 
 .focus\:placeholder-background-03:focus:-ms-input-placeholder{
-  color: var(--ui-background-03);
+  color: var(--background-03);
 }
 
 .focus\:placeholder-background-03:focus::-ms-input-placeholder{
-  color: var(--ui-background-03);
+  color: var(--background-03);
 }
 
 .focus\:placeholder-background-03:focus::placeholder{
-  color: var(--ui-background-03);
+  color: var(--background-03);
 }
 
 .focus\:placeholder-background-04:focus::-webkit-input-placeholder{
-  color: var(--ui-background-04);
+  color: var(--background-04);
 }
 
 .focus\:placeholder-background-04:focus::-moz-placeholder{
-  color: var(--ui-background-04);
+  color: var(--background-04);
 }
 
 .focus\:placeholder-background-04:focus:-ms-input-placeholder{
-  color: var(--ui-background-04);
+  color: var(--background-04);
 }
 
 .focus\:placeholder-background-04:focus::-ms-input-placeholder{
-  color: var(--ui-background-04);
+  color: var(--background-04);
 }
 
 .focus\:placeholder-background-04:focus::placeholder{
-  color: var(--ui-background-04);
+  color: var(--background-04);
 }
 
 .focus\:placeholder-background-05:focus::-webkit-input-placeholder{
-  color: var(--ui-background-05);
+  color: var(--background-05);
 }
 
 .focus\:placeholder-background-05:focus::-moz-placeholder{
-  color: var(--ui-background-05);
+  color: var(--background-05);
 }
 
 .focus\:placeholder-background-05:focus:-ms-input-placeholder{
-  color: var(--ui-background-05);
+  color: var(--background-05);
 }
 
 .focus\:placeholder-background-05:focus::-ms-input-placeholder{
-  color: var(--ui-background-05);
+  color: var(--background-05);
 }
 
 .focus\:placeholder-background-05:focus::placeholder{
-  color: var(--ui-background-05);
+  color: var(--background-05);
 }
 
 .focus\:placeholder-background-06:focus::-webkit-input-placeholder{
-  color: var(--ui-background-06);
+  color: var(--background-06);
 }
 
 .focus\:placeholder-background-06:focus::-moz-placeholder{
-  color: var(--ui-background-06);
+  color: var(--background-06);
 }
 
 .focus\:placeholder-background-06:focus:-ms-input-placeholder{
-  color: var(--ui-background-06);
+  color: var(--background-06);
 }
 
 .focus\:placeholder-background-06:focus::-ms-input-placeholder{
-  color: var(--ui-background-06);
+  color: var(--background-06);
 }
 
 .focus\:placeholder-background-06:focus::placeholder{
-  color: var(--ui-background-06);
+  color: var(--background-06);
 }
 
 .focus\:placeholder-interactive-01:focus::-webkit-input-placeholder{
@@ -4039,27 +4086,27 @@ body {
 }
 
 .text-background-01{
-  color: var(--ui-background-01);
+  color: var(--background-01);
 }
 
 .text-background-02{
-  color: var(--ui-background-02);
+  color: var(--background-02);
 }
 
 .text-background-03{
-  color: var(--ui-background-03);
+  color: var(--background-03);
 }
 
 .text-background-04{
-  color: var(--ui-background-04);
+  color: var(--background-04);
 }
 
 .text-background-05{
-  color: var(--ui-background-05);
+  color: var(--background-05);
 }
 
 .text-background-06{
-  color: var(--ui-background-06);
+  color: var(--background-06);
 }
 
 .text-interactive-01{
@@ -4127,27 +4174,27 @@ body {
 }
 
 .hover\:text-background-01:hover{
-  color: var(--ui-background-01);
+  color: var(--background-01);
 }
 
 .hover\:text-background-02:hover{
-  color: var(--ui-background-02);
+  color: var(--background-02);
 }
 
 .hover\:text-background-03:hover{
-  color: var(--ui-background-03);
+  color: var(--background-03);
 }
 
 .hover\:text-background-04:hover{
-  color: var(--ui-background-04);
+  color: var(--background-04);
 }
 
 .hover\:text-background-05:hover{
-  color: var(--ui-background-05);
+  color: var(--background-05);
 }
 
 .hover\:text-background-06:hover{
-  color: var(--ui-background-06);
+  color: var(--background-06);
 }
 
 .hover\:text-interactive-01:hover{
@@ -4215,27 +4262,27 @@ body {
 }
 
 .focus\:text-background-01:focus{
-  color: var(--ui-background-01);
+  color: var(--background-01);
 }
 
 .focus\:text-background-02:focus{
-  color: var(--ui-background-02);
+  color: var(--background-02);
 }
 
 .focus\:text-background-03:focus{
-  color: var(--ui-background-03);
+  color: var(--background-03);
 }
 
 .focus\:text-background-04:focus{
-  color: var(--ui-background-04);
+  color: var(--background-04);
 }
 
 .focus\:text-background-05:focus{
-  color: var(--ui-background-05);
+  color: var(--background-05);
 }
 
 .focus\:text-background-06:focus{
-  color: var(--ui-background-06);
+  color: var(--background-06);
 }
 
 .focus\:text-interactive-01:focus{
@@ -4773,27 +4820,27 @@ body {
   }
 
   .sm\:bg-background-01{
-    background-color: var(--ui-background-01);
+    background-color: var(--background-01);
   }
 
   .sm\:bg-background-02{
-    background-color: var(--ui-background-02);
+    background-color: var(--background-02);
   }
 
   .sm\:bg-background-03{
-    background-color: var(--ui-background-03);
+    background-color: var(--background-03);
   }
 
   .sm\:bg-background-04{
-    background-color: var(--ui-background-04);
+    background-color: var(--background-04);
   }
 
   .sm\:bg-background-05{
-    background-color: var(--ui-background-05);
+    background-color: var(--background-05);
   }
 
   .sm\:bg-background-06{
-    background-color: var(--ui-background-06);
+    background-color: var(--background-06);
   }
 
   .sm\:bg-interactive-01{
@@ -4861,27 +4908,27 @@ body {
   }
 
   .sm\:hover\:bg-background-01:hover{
-    background-color: var(--ui-background-01);
+    background-color: var(--background-01);
   }
 
   .sm\:hover\:bg-background-02:hover{
-    background-color: var(--ui-background-02);
+    background-color: var(--background-02);
   }
 
   .sm\:hover\:bg-background-03:hover{
-    background-color: var(--ui-background-03);
+    background-color: var(--background-03);
   }
 
   .sm\:hover\:bg-background-04:hover{
-    background-color: var(--ui-background-04);
+    background-color: var(--background-04);
   }
 
   .sm\:hover\:bg-background-05:hover{
-    background-color: var(--ui-background-05);
+    background-color: var(--background-05);
   }
 
   .sm\:hover\:bg-background-06:hover{
-    background-color: var(--ui-background-06);
+    background-color: var(--background-06);
   }
 
   .sm\:hover\:bg-interactive-01:hover{
@@ -4949,27 +4996,27 @@ body {
   }
 
   .sm\:focus\:bg-background-01:focus{
-    background-color: var(--ui-background-01);
+    background-color: var(--background-01);
   }
 
   .sm\:focus\:bg-background-02:focus{
-    background-color: var(--ui-background-02);
+    background-color: var(--background-02);
   }
 
   .sm\:focus\:bg-background-03:focus{
-    background-color: var(--ui-background-03);
+    background-color: var(--background-03);
   }
 
   .sm\:focus\:bg-background-04:focus{
-    background-color: var(--ui-background-04);
+    background-color: var(--background-04);
   }
 
   .sm\:focus\:bg-background-05:focus{
-    background-color: var(--ui-background-05);
+    background-color: var(--background-05);
   }
 
   .sm\:focus\:bg-background-06:focus{
-    background-color: var(--ui-background-06);
+    background-color: var(--background-06);
   }
 
   .sm\:focus\:bg-interactive-01:focus{
@@ -5117,27 +5164,27 @@ body {
   }
 
   .sm\:border-background-01{
-    border-color: var(--ui-background-01);
+    border-color: var(--background-01);
   }
 
   .sm\:border-background-02{
-    border-color: var(--ui-background-02);
+    border-color: var(--background-02);
   }
 
   .sm\:border-background-03{
-    border-color: var(--ui-background-03);
+    border-color: var(--background-03);
   }
 
   .sm\:border-background-04{
-    border-color: var(--ui-background-04);
+    border-color: var(--background-04);
   }
 
   .sm\:border-background-05{
-    border-color: var(--ui-background-05);
+    border-color: var(--background-05);
   }
 
   .sm\:border-background-06{
-    border-color: var(--ui-background-06);
+    border-color: var(--background-06);
   }
 
   .sm\:border-interactive-01{
@@ -5205,27 +5252,27 @@ body {
   }
 
   .sm\:hover\:border-background-01:hover{
-    border-color: var(--ui-background-01);
+    border-color: var(--background-01);
   }
 
   .sm\:hover\:border-background-02:hover{
-    border-color: var(--ui-background-02);
+    border-color: var(--background-02);
   }
 
   .sm\:hover\:border-background-03:hover{
-    border-color: var(--ui-background-03);
+    border-color: var(--background-03);
   }
 
   .sm\:hover\:border-background-04:hover{
-    border-color: var(--ui-background-04);
+    border-color: var(--background-04);
   }
 
   .sm\:hover\:border-background-05:hover{
-    border-color: var(--ui-background-05);
+    border-color: var(--background-05);
   }
 
   .sm\:hover\:border-background-06:hover{
-    border-color: var(--ui-background-06);
+    border-color: var(--background-06);
   }
 
   .sm\:hover\:border-interactive-01:hover{
@@ -5293,27 +5340,27 @@ body {
   }
 
   .sm\:focus\:border-background-01:focus{
-    border-color: var(--ui-background-01);
+    border-color: var(--background-01);
   }
 
   .sm\:focus\:border-background-02:focus{
-    border-color: var(--ui-background-02);
+    border-color: var(--background-02);
   }
 
   .sm\:focus\:border-background-03:focus{
-    border-color: var(--ui-background-03);
+    border-color: var(--background-03);
   }
 
   .sm\:focus\:border-background-04:focus{
-    border-color: var(--ui-background-04);
+    border-color: var(--background-04);
   }
 
   .sm\:focus\:border-background-05:focus{
-    border-color: var(--ui-background-05);
+    border-color: var(--background-05);
   }
 
   .sm\:focus\:border-background-06:focus{
-    border-color: var(--ui-background-06);
+    border-color: var(--background-06);
   }
 
   .sm\:focus\:border-interactive-01:focus{
@@ -5998,16 +6045,52 @@ body {
     font-family: Lato, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   }
 
+  .sm\:font-light{
+    font-weight: 300;
+  }
+
   .sm\:font-regular{
     font-weight: 400;
+  }
+
+  .sm\:font-bold{
+    font-weight: 700;
+  }
+
+  .sm\:font-black{
+    font-weight: 900;
+  }
+
+  .sm\:hover\:font-light:hover{
+    font-weight: 300;
   }
 
   .sm\:hover\:font-regular:hover{
     font-weight: 400;
   }
 
+  .sm\:hover\:font-bold:hover{
+    font-weight: 700;
+  }
+
+  .sm\:hover\:font-black:hover{
+    font-weight: 900;
+  }
+
+  .sm\:focus\:font-light:focus{
+    font-weight: 300;
+  }
+
   .sm\:focus\:font-regular:focus{
     font-weight: 400;
+  }
+
+  .sm\:focus\:font-bold:focus{
+    font-weight: 700;
+  }
+
+  .sm\:focus\:font-black:focus{
+    font-weight: 900;
   }
 
   .sm\:h-auto{
@@ -6927,123 +7010,123 @@ body {
   }
 
   .sm\:placeholder-background-01::-webkit-input-placeholder{
-    color: var(--ui-background-01);
+    color: var(--background-01);
   }
 
   .sm\:placeholder-background-01::-moz-placeholder{
-    color: var(--ui-background-01);
+    color: var(--background-01);
   }
 
   .sm\:placeholder-background-01:-ms-input-placeholder{
-    color: var(--ui-background-01);
+    color: var(--background-01);
   }
 
   .sm\:placeholder-background-01::-ms-input-placeholder{
-    color: var(--ui-background-01);
+    color: var(--background-01);
   }
 
   .sm\:placeholder-background-01::placeholder{
-    color: var(--ui-background-01);
+    color: var(--background-01);
   }
 
   .sm\:placeholder-background-02::-webkit-input-placeholder{
-    color: var(--ui-background-02);
+    color: var(--background-02);
   }
 
   .sm\:placeholder-background-02::-moz-placeholder{
-    color: var(--ui-background-02);
+    color: var(--background-02);
   }
 
   .sm\:placeholder-background-02:-ms-input-placeholder{
-    color: var(--ui-background-02);
+    color: var(--background-02);
   }
 
   .sm\:placeholder-background-02::-ms-input-placeholder{
-    color: var(--ui-background-02);
+    color: var(--background-02);
   }
 
   .sm\:placeholder-background-02::placeholder{
-    color: var(--ui-background-02);
+    color: var(--background-02);
   }
 
   .sm\:placeholder-background-03::-webkit-input-placeholder{
-    color: var(--ui-background-03);
+    color: var(--background-03);
   }
 
   .sm\:placeholder-background-03::-moz-placeholder{
-    color: var(--ui-background-03);
+    color: var(--background-03);
   }
 
   .sm\:placeholder-background-03:-ms-input-placeholder{
-    color: var(--ui-background-03);
+    color: var(--background-03);
   }
 
   .sm\:placeholder-background-03::-ms-input-placeholder{
-    color: var(--ui-background-03);
+    color: var(--background-03);
   }
 
   .sm\:placeholder-background-03::placeholder{
-    color: var(--ui-background-03);
+    color: var(--background-03);
   }
 
   .sm\:placeholder-background-04::-webkit-input-placeholder{
-    color: var(--ui-background-04);
+    color: var(--background-04);
   }
 
   .sm\:placeholder-background-04::-moz-placeholder{
-    color: var(--ui-background-04);
+    color: var(--background-04);
   }
 
   .sm\:placeholder-background-04:-ms-input-placeholder{
-    color: var(--ui-background-04);
+    color: var(--background-04);
   }
 
   .sm\:placeholder-background-04::-ms-input-placeholder{
-    color: var(--ui-background-04);
+    color: var(--background-04);
   }
 
   .sm\:placeholder-background-04::placeholder{
-    color: var(--ui-background-04);
+    color: var(--background-04);
   }
 
   .sm\:placeholder-background-05::-webkit-input-placeholder{
-    color: var(--ui-background-05);
+    color: var(--background-05);
   }
 
   .sm\:placeholder-background-05::-moz-placeholder{
-    color: var(--ui-background-05);
+    color: var(--background-05);
   }
 
   .sm\:placeholder-background-05:-ms-input-placeholder{
-    color: var(--ui-background-05);
+    color: var(--background-05);
   }
 
   .sm\:placeholder-background-05::-ms-input-placeholder{
-    color: var(--ui-background-05);
+    color: var(--background-05);
   }
 
   .sm\:placeholder-background-05::placeholder{
-    color: var(--ui-background-05);
+    color: var(--background-05);
   }
 
   .sm\:placeholder-background-06::-webkit-input-placeholder{
-    color: var(--ui-background-06);
+    color: var(--background-06);
   }
 
   .sm\:placeholder-background-06::-moz-placeholder{
-    color: var(--ui-background-06);
+    color: var(--background-06);
   }
 
   .sm\:placeholder-background-06:-ms-input-placeholder{
-    color: var(--ui-background-06);
+    color: var(--background-06);
   }
 
   .sm\:placeholder-background-06::-ms-input-placeholder{
-    color: var(--ui-background-06);
+    color: var(--background-06);
   }
 
   .sm\:placeholder-background-06::placeholder{
-    color: var(--ui-background-06);
+    color: var(--background-06);
   }
 
   .sm\:placeholder-interactive-01::-webkit-input-placeholder{
@@ -7367,123 +7450,123 @@ body {
   }
 
   .sm\:focus\:placeholder-background-01:focus::-webkit-input-placeholder{
-    color: var(--ui-background-01);
+    color: var(--background-01);
   }
 
   .sm\:focus\:placeholder-background-01:focus::-moz-placeholder{
-    color: var(--ui-background-01);
+    color: var(--background-01);
   }
 
   .sm\:focus\:placeholder-background-01:focus:-ms-input-placeholder{
-    color: var(--ui-background-01);
+    color: var(--background-01);
   }
 
   .sm\:focus\:placeholder-background-01:focus::-ms-input-placeholder{
-    color: var(--ui-background-01);
+    color: var(--background-01);
   }
 
   .sm\:focus\:placeholder-background-01:focus::placeholder{
-    color: var(--ui-background-01);
+    color: var(--background-01);
   }
 
   .sm\:focus\:placeholder-background-02:focus::-webkit-input-placeholder{
-    color: var(--ui-background-02);
+    color: var(--background-02);
   }
 
   .sm\:focus\:placeholder-background-02:focus::-moz-placeholder{
-    color: var(--ui-background-02);
+    color: var(--background-02);
   }
 
   .sm\:focus\:placeholder-background-02:focus:-ms-input-placeholder{
-    color: var(--ui-background-02);
+    color: var(--background-02);
   }
 
   .sm\:focus\:placeholder-background-02:focus::-ms-input-placeholder{
-    color: var(--ui-background-02);
+    color: var(--background-02);
   }
 
   .sm\:focus\:placeholder-background-02:focus::placeholder{
-    color: var(--ui-background-02);
+    color: var(--background-02);
   }
 
   .sm\:focus\:placeholder-background-03:focus::-webkit-input-placeholder{
-    color: var(--ui-background-03);
+    color: var(--background-03);
   }
 
   .sm\:focus\:placeholder-background-03:focus::-moz-placeholder{
-    color: var(--ui-background-03);
+    color: var(--background-03);
   }
 
   .sm\:focus\:placeholder-background-03:focus:-ms-input-placeholder{
-    color: var(--ui-background-03);
+    color: var(--background-03);
   }
 
   .sm\:focus\:placeholder-background-03:focus::-ms-input-placeholder{
-    color: var(--ui-background-03);
+    color: var(--background-03);
   }
 
   .sm\:focus\:placeholder-background-03:focus::placeholder{
-    color: var(--ui-background-03);
+    color: var(--background-03);
   }
 
   .sm\:focus\:placeholder-background-04:focus::-webkit-input-placeholder{
-    color: var(--ui-background-04);
+    color: var(--background-04);
   }
 
   .sm\:focus\:placeholder-background-04:focus::-moz-placeholder{
-    color: var(--ui-background-04);
+    color: var(--background-04);
   }
 
   .sm\:focus\:placeholder-background-04:focus:-ms-input-placeholder{
-    color: var(--ui-background-04);
+    color: var(--background-04);
   }
 
   .sm\:focus\:placeholder-background-04:focus::-ms-input-placeholder{
-    color: var(--ui-background-04);
+    color: var(--background-04);
   }
 
   .sm\:focus\:placeholder-background-04:focus::placeholder{
-    color: var(--ui-background-04);
+    color: var(--background-04);
   }
 
   .sm\:focus\:placeholder-background-05:focus::-webkit-input-placeholder{
-    color: var(--ui-background-05);
+    color: var(--background-05);
   }
 
   .sm\:focus\:placeholder-background-05:focus::-moz-placeholder{
-    color: var(--ui-background-05);
+    color: var(--background-05);
   }
 
   .sm\:focus\:placeholder-background-05:focus:-ms-input-placeholder{
-    color: var(--ui-background-05);
+    color: var(--background-05);
   }
 
   .sm\:focus\:placeholder-background-05:focus::-ms-input-placeholder{
-    color: var(--ui-background-05);
+    color: var(--background-05);
   }
 
   .sm\:focus\:placeholder-background-05:focus::placeholder{
-    color: var(--ui-background-05);
+    color: var(--background-05);
   }
 
   .sm\:focus\:placeholder-background-06:focus::-webkit-input-placeholder{
-    color: var(--ui-background-06);
+    color: var(--background-06);
   }
 
   .sm\:focus\:placeholder-background-06:focus::-moz-placeholder{
-    color: var(--ui-background-06);
+    color: var(--background-06);
   }
 
   .sm\:focus\:placeholder-background-06:focus:-ms-input-placeholder{
-    color: var(--ui-background-06);
+    color: var(--background-06);
   }
 
   .sm\:focus\:placeholder-background-06:focus::-ms-input-placeholder{
-    color: var(--ui-background-06);
+    color: var(--background-06);
   }
 
   .sm\:focus\:placeholder-background-06:focus::placeholder{
-    color: var(--ui-background-06);
+    color: var(--background-06);
   }
 
   .sm\:focus\:placeholder-interactive-01:focus::-webkit-input-placeholder{
@@ -8070,27 +8153,27 @@ body {
   }
 
   .sm\:text-background-01{
-    color: var(--ui-background-01);
+    color: var(--background-01);
   }
 
   .sm\:text-background-02{
-    color: var(--ui-background-02);
+    color: var(--background-02);
   }
 
   .sm\:text-background-03{
-    color: var(--ui-background-03);
+    color: var(--background-03);
   }
 
   .sm\:text-background-04{
-    color: var(--ui-background-04);
+    color: var(--background-04);
   }
 
   .sm\:text-background-05{
-    color: var(--ui-background-05);
+    color: var(--background-05);
   }
 
   .sm\:text-background-06{
-    color: var(--ui-background-06);
+    color: var(--background-06);
   }
 
   .sm\:text-interactive-01{
@@ -8158,27 +8241,27 @@ body {
   }
 
   .sm\:hover\:text-background-01:hover{
-    color: var(--ui-background-01);
+    color: var(--background-01);
   }
 
   .sm\:hover\:text-background-02:hover{
-    color: var(--ui-background-02);
+    color: var(--background-02);
   }
 
   .sm\:hover\:text-background-03:hover{
-    color: var(--ui-background-03);
+    color: var(--background-03);
   }
 
   .sm\:hover\:text-background-04:hover{
-    color: var(--ui-background-04);
+    color: var(--background-04);
   }
 
   .sm\:hover\:text-background-05:hover{
-    color: var(--ui-background-05);
+    color: var(--background-05);
   }
 
   .sm\:hover\:text-background-06:hover{
-    color: var(--ui-background-06);
+    color: var(--background-06);
   }
 
   .sm\:hover\:text-interactive-01:hover{
@@ -8246,27 +8329,27 @@ body {
   }
 
   .sm\:focus\:text-background-01:focus{
-    color: var(--ui-background-01);
+    color: var(--background-01);
   }
 
   .sm\:focus\:text-background-02:focus{
-    color: var(--ui-background-02);
+    color: var(--background-02);
   }
 
   .sm\:focus\:text-background-03:focus{
-    color: var(--ui-background-03);
+    color: var(--background-03);
   }
 
   .sm\:focus\:text-background-04:focus{
-    color: var(--ui-background-04);
+    color: var(--background-04);
   }
 
   .sm\:focus\:text-background-05:focus{
-    color: var(--ui-background-05);
+    color: var(--background-05);
   }
 
   .sm\:focus\:text-background-06:focus{
-    color: var(--ui-background-06);
+    color: var(--background-06);
   }
 
   .sm\:focus\:text-interactive-01:focus{
@@ -8805,27 +8888,27 @@ body {
   }
 
   .md\:bg-background-01{
-    background-color: var(--ui-background-01);
+    background-color: var(--background-01);
   }
 
   .md\:bg-background-02{
-    background-color: var(--ui-background-02);
+    background-color: var(--background-02);
   }
 
   .md\:bg-background-03{
-    background-color: var(--ui-background-03);
+    background-color: var(--background-03);
   }
 
   .md\:bg-background-04{
-    background-color: var(--ui-background-04);
+    background-color: var(--background-04);
   }
 
   .md\:bg-background-05{
-    background-color: var(--ui-background-05);
+    background-color: var(--background-05);
   }
 
   .md\:bg-background-06{
-    background-color: var(--ui-background-06);
+    background-color: var(--background-06);
   }
 
   .md\:bg-interactive-01{
@@ -8893,27 +8976,27 @@ body {
   }
 
   .md\:hover\:bg-background-01:hover{
-    background-color: var(--ui-background-01);
+    background-color: var(--background-01);
   }
 
   .md\:hover\:bg-background-02:hover{
-    background-color: var(--ui-background-02);
+    background-color: var(--background-02);
   }
 
   .md\:hover\:bg-background-03:hover{
-    background-color: var(--ui-background-03);
+    background-color: var(--background-03);
   }
 
   .md\:hover\:bg-background-04:hover{
-    background-color: var(--ui-background-04);
+    background-color: var(--background-04);
   }
 
   .md\:hover\:bg-background-05:hover{
-    background-color: var(--ui-background-05);
+    background-color: var(--background-05);
   }
 
   .md\:hover\:bg-background-06:hover{
-    background-color: var(--ui-background-06);
+    background-color: var(--background-06);
   }
 
   .md\:hover\:bg-interactive-01:hover{
@@ -8981,27 +9064,27 @@ body {
   }
 
   .md\:focus\:bg-background-01:focus{
-    background-color: var(--ui-background-01);
+    background-color: var(--background-01);
   }
 
   .md\:focus\:bg-background-02:focus{
-    background-color: var(--ui-background-02);
+    background-color: var(--background-02);
   }
 
   .md\:focus\:bg-background-03:focus{
-    background-color: var(--ui-background-03);
+    background-color: var(--background-03);
   }
 
   .md\:focus\:bg-background-04:focus{
-    background-color: var(--ui-background-04);
+    background-color: var(--background-04);
   }
 
   .md\:focus\:bg-background-05:focus{
-    background-color: var(--ui-background-05);
+    background-color: var(--background-05);
   }
 
   .md\:focus\:bg-background-06:focus{
-    background-color: var(--ui-background-06);
+    background-color: var(--background-06);
   }
 
   .md\:focus\:bg-interactive-01:focus{
@@ -9149,27 +9232,27 @@ body {
   }
 
   .md\:border-background-01{
-    border-color: var(--ui-background-01);
+    border-color: var(--background-01);
   }
 
   .md\:border-background-02{
-    border-color: var(--ui-background-02);
+    border-color: var(--background-02);
   }
 
   .md\:border-background-03{
-    border-color: var(--ui-background-03);
+    border-color: var(--background-03);
   }
 
   .md\:border-background-04{
-    border-color: var(--ui-background-04);
+    border-color: var(--background-04);
   }
 
   .md\:border-background-05{
-    border-color: var(--ui-background-05);
+    border-color: var(--background-05);
   }
 
   .md\:border-background-06{
-    border-color: var(--ui-background-06);
+    border-color: var(--background-06);
   }
 
   .md\:border-interactive-01{
@@ -9237,27 +9320,27 @@ body {
   }
 
   .md\:hover\:border-background-01:hover{
-    border-color: var(--ui-background-01);
+    border-color: var(--background-01);
   }
 
   .md\:hover\:border-background-02:hover{
-    border-color: var(--ui-background-02);
+    border-color: var(--background-02);
   }
 
   .md\:hover\:border-background-03:hover{
-    border-color: var(--ui-background-03);
+    border-color: var(--background-03);
   }
 
   .md\:hover\:border-background-04:hover{
-    border-color: var(--ui-background-04);
+    border-color: var(--background-04);
   }
 
   .md\:hover\:border-background-05:hover{
-    border-color: var(--ui-background-05);
+    border-color: var(--background-05);
   }
 
   .md\:hover\:border-background-06:hover{
-    border-color: var(--ui-background-06);
+    border-color: var(--background-06);
   }
 
   .md\:hover\:border-interactive-01:hover{
@@ -9325,27 +9408,27 @@ body {
   }
 
   .md\:focus\:border-background-01:focus{
-    border-color: var(--ui-background-01);
+    border-color: var(--background-01);
   }
 
   .md\:focus\:border-background-02:focus{
-    border-color: var(--ui-background-02);
+    border-color: var(--background-02);
   }
 
   .md\:focus\:border-background-03:focus{
-    border-color: var(--ui-background-03);
+    border-color: var(--background-03);
   }
 
   .md\:focus\:border-background-04:focus{
-    border-color: var(--ui-background-04);
+    border-color: var(--background-04);
   }
 
   .md\:focus\:border-background-05:focus{
-    border-color: var(--ui-background-05);
+    border-color: var(--background-05);
   }
 
   .md\:focus\:border-background-06:focus{
-    border-color: var(--ui-background-06);
+    border-color: var(--background-06);
   }
 
   .md\:focus\:border-interactive-01:focus{
@@ -10030,16 +10113,52 @@ body {
     font-family: Lato, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   }
 
+  .md\:font-light{
+    font-weight: 300;
+  }
+
   .md\:font-regular{
     font-weight: 400;
+  }
+
+  .md\:font-bold{
+    font-weight: 700;
+  }
+
+  .md\:font-black{
+    font-weight: 900;
+  }
+
+  .md\:hover\:font-light:hover{
+    font-weight: 300;
   }
 
   .md\:hover\:font-regular:hover{
     font-weight: 400;
   }
 
+  .md\:hover\:font-bold:hover{
+    font-weight: 700;
+  }
+
+  .md\:hover\:font-black:hover{
+    font-weight: 900;
+  }
+
+  .md\:focus\:font-light:focus{
+    font-weight: 300;
+  }
+
   .md\:focus\:font-regular:focus{
     font-weight: 400;
+  }
+
+  .md\:focus\:font-bold:focus{
+    font-weight: 700;
+  }
+
+  .md\:focus\:font-black:focus{
+    font-weight: 900;
   }
 
   .md\:h-auto{
@@ -10959,123 +11078,123 @@ body {
   }
 
   .md\:placeholder-background-01::-webkit-input-placeholder{
-    color: var(--ui-background-01);
+    color: var(--background-01);
   }
 
   .md\:placeholder-background-01::-moz-placeholder{
-    color: var(--ui-background-01);
+    color: var(--background-01);
   }
 
   .md\:placeholder-background-01:-ms-input-placeholder{
-    color: var(--ui-background-01);
+    color: var(--background-01);
   }
 
   .md\:placeholder-background-01::-ms-input-placeholder{
-    color: var(--ui-background-01);
+    color: var(--background-01);
   }
 
   .md\:placeholder-background-01::placeholder{
-    color: var(--ui-background-01);
+    color: var(--background-01);
   }
 
   .md\:placeholder-background-02::-webkit-input-placeholder{
-    color: var(--ui-background-02);
+    color: var(--background-02);
   }
 
   .md\:placeholder-background-02::-moz-placeholder{
-    color: var(--ui-background-02);
+    color: var(--background-02);
   }
 
   .md\:placeholder-background-02:-ms-input-placeholder{
-    color: var(--ui-background-02);
+    color: var(--background-02);
   }
 
   .md\:placeholder-background-02::-ms-input-placeholder{
-    color: var(--ui-background-02);
+    color: var(--background-02);
   }
 
   .md\:placeholder-background-02::placeholder{
-    color: var(--ui-background-02);
+    color: var(--background-02);
   }
 
   .md\:placeholder-background-03::-webkit-input-placeholder{
-    color: var(--ui-background-03);
+    color: var(--background-03);
   }
 
   .md\:placeholder-background-03::-moz-placeholder{
-    color: var(--ui-background-03);
+    color: var(--background-03);
   }
 
   .md\:placeholder-background-03:-ms-input-placeholder{
-    color: var(--ui-background-03);
+    color: var(--background-03);
   }
 
   .md\:placeholder-background-03::-ms-input-placeholder{
-    color: var(--ui-background-03);
+    color: var(--background-03);
   }
 
   .md\:placeholder-background-03::placeholder{
-    color: var(--ui-background-03);
+    color: var(--background-03);
   }
 
   .md\:placeholder-background-04::-webkit-input-placeholder{
-    color: var(--ui-background-04);
+    color: var(--background-04);
   }
 
   .md\:placeholder-background-04::-moz-placeholder{
-    color: var(--ui-background-04);
+    color: var(--background-04);
   }
 
   .md\:placeholder-background-04:-ms-input-placeholder{
-    color: var(--ui-background-04);
+    color: var(--background-04);
   }
 
   .md\:placeholder-background-04::-ms-input-placeholder{
-    color: var(--ui-background-04);
+    color: var(--background-04);
   }
 
   .md\:placeholder-background-04::placeholder{
-    color: var(--ui-background-04);
+    color: var(--background-04);
   }
 
   .md\:placeholder-background-05::-webkit-input-placeholder{
-    color: var(--ui-background-05);
+    color: var(--background-05);
   }
 
   .md\:placeholder-background-05::-moz-placeholder{
-    color: var(--ui-background-05);
+    color: var(--background-05);
   }
 
   .md\:placeholder-background-05:-ms-input-placeholder{
-    color: var(--ui-background-05);
+    color: var(--background-05);
   }
 
   .md\:placeholder-background-05::-ms-input-placeholder{
-    color: var(--ui-background-05);
+    color: var(--background-05);
   }
 
   .md\:placeholder-background-05::placeholder{
-    color: var(--ui-background-05);
+    color: var(--background-05);
   }
 
   .md\:placeholder-background-06::-webkit-input-placeholder{
-    color: var(--ui-background-06);
+    color: var(--background-06);
   }
 
   .md\:placeholder-background-06::-moz-placeholder{
-    color: var(--ui-background-06);
+    color: var(--background-06);
   }
 
   .md\:placeholder-background-06:-ms-input-placeholder{
-    color: var(--ui-background-06);
+    color: var(--background-06);
   }
 
   .md\:placeholder-background-06::-ms-input-placeholder{
-    color: var(--ui-background-06);
+    color: var(--background-06);
   }
 
   .md\:placeholder-background-06::placeholder{
-    color: var(--ui-background-06);
+    color: var(--background-06);
   }
 
   .md\:placeholder-interactive-01::-webkit-input-placeholder{
@@ -11399,123 +11518,123 @@ body {
   }
 
   .md\:focus\:placeholder-background-01:focus::-webkit-input-placeholder{
-    color: var(--ui-background-01);
+    color: var(--background-01);
   }
 
   .md\:focus\:placeholder-background-01:focus::-moz-placeholder{
-    color: var(--ui-background-01);
+    color: var(--background-01);
   }
 
   .md\:focus\:placeholder-background-01:focus:-ms-input-placeholder{
-    color: var(--ui-background-01);
+    color: var(--background-01);
   }
 
   .md\:focus\:placeholder-background-01:focus::-ms-input-placeholder{
-    color: var(--ui-background-01);
+    color: var(--background-01);
   }
 
   .md\:focus\:placeholder-background-01:focus::placeholder{
-    color: var(--ui-background-01);
+    color: var(--background-01);
   }
 
   .md\:focus\:placeholder-background-02:focus::-webkit-input-placeholder{
-    color: var(--ui-background-02);
+    color: var(--background-02);
   }
 
   .md\:focus\:placeholder-background-02:focus::-moz-placeholder{
-    color: var(--ui-background-02);
+    color: var(--background-02);
   }
 
   .md\:focus\:placeholder-background-02:focus:-ms-input-placeholder{
-    color: var(--ui-background-02);
+    color: var(--background-02);
   }
 
   .md\:focus\:placeholder-background-02:focus::-ms-input-placeholder{
-    color: var(--ui-background-02);
+    color: var(--background-02);
   }
 
   .md\:focus\:placeholder-background-02:focus::placeholder{
-    color: var(--ui-background-02);
+    color: var(--background-02);
   }
 
   .md\:focus\:placeholder-background-03:focus::-webkit-input-placeholder{
-    color: var(--ui-background-03);
+    color: var(--background-03);
   }
 
   .md\:focus\:placeholder-background-03:focus::-moz-placeholder{
-    color: var(--ui-background-03);
+    color: var(--background-03);
   }
 
   .md\:focus\:placeholder-background-03:focus:-ms-input-placeholder{
-    color: var(--ui-background-03);
+    color: var(--background-03);
   }
 
   .md\:focus\:placeholder-background-03:focus::-ms-input-placeholder{
-    color: var(--ui-background-03);
+    color: var(--background-03);
   }
 
   .md\:focus\:placeholder-background-03:focus::placeholder{
-    color: var(--ui-background-03);
+    color: var(--background-03);
   }
 
   .md\:focus\:placeholder-background-04:focus::-webkit-input-placeholder{
-    color: var(--ui-background-04);
+    color: var(--background-04);
   }
 
   .md\:focus\:placeholder-background-04:focus::-moz-placeholder{
-    color: var(--ui-background-04);
+    color: var(--background-04);
   }
 
   .md\:focus\:placeholder-background-04:focus:-ms-input-placeholder{
-    color: var(--ui-background-04);
+    color: var(--background-04);
   }
 
   .md\:focus\:placeholder-background-04:focus::-ms-input-placeholder{
-    color: var(--ui-background-04);
+    color: var(--background-04);
   }
 
   .md\:focus\:placeholder-background-04:focus::placeholder{
-    color: var(--ui-background-04);
+    color: var(--background-04);
   }
 
   .md\:focus\:placeholder-background-05:focus::-webkit-input-placeholder{
-    color: var(--ui-background-05);
+    color: var(--background-05);
   }
 
   .md\:focus\:placeholder-background-05:focus::-moz-placeholder{
-    color: var(--ui-background-05);
+    color: var(--background-05);
   }
 
   .md\:focus\:placeholder-background-05:focus:-ms-input-placeholder{
-    color: var(--ui-background-05);
+    color: var(--background-05);
   }
 
   .md\:focus\:placeholder-background-05:focus::-ms-input-placeholder{
-    color: var(--ui-background-05);
+    color: var(--background-05);
   }
 
   .md\:focus\:placeholder-background-05:focus::placeholder{
-    color: var(--ui-background-05);
+    color: var(--background-05);
   }
 
   .md\:focus\:placeholder-background-06:focus::-webkit-input-placeholder{
-    color: var(--ui-background-06);
+    color: var(--background-06);
   }
 
   .md\:focus\:placeholder-background-06:focus::-moz-placeholder{
-    color: var(--ui-background-06);
+    color: var(--background-06);
   }
 
   .md\:focus\:placeholder-background-06:focus:-ms-input-placeholder{
-    color: var(--ui-background-06);
+    color: var(--background-06);
   }
 
   .md\:focus\:placeholder-background-06:focus::-ms-input-placeholder{
-    color: var(--ui-background-06);
+    color: var(--background-06);
   }
 
   .md\:focus\:placeholder-background-06:focus::placeholder{
-    color: var(--ui-background-06);
+    color: var(--background-06);
   }
 
   .md\:focus\:placeholder-interactive-01:focus::-webkit-input-placeholder{
@@ -12102,27 +12221,27 @@ body {
   }
 
   .md\:text-background-01{
-    color: var(--ui-background-01);
+    color: var(--background-01);
   }
 
   .md\:text-background-02{
-    color: var(--ui-background-02);
+    color: var(--background-02);
   }
 
   .md\:text-background-03{
-    color: var(--ui-background-03);
+    color: var(--background-03);
   }
 
   .md\:text-background-04{
-    color: var(--ui-background-04);
+    color: var(--background-04);
   }
 
   .md\:text-background-05{
-    color: var(--ui-background-05);
+    color: var(--background-05);
   }
 
   .md\:text-background-06{
-    color: var(--ui-background-06);
+    color: var(--background-06);
   }
 
   .md\:text-interactive-01{
@@ -12190,27 +12309,27 @@ body {
   }
 
   .md\:hover\:text-background-01:hover{
-    color: var(--ui-background-01);
+    color: var(--background-01);
   }
 
   .md\:hover\:text-background-02:hover{
-    color: var(--ui-background-02);
+    color: var(--background-02);
   }
 
   .md\:hover\:text-background-03:hover{
-    color: var(--ui-background-03);
+    color: var(--background-03);
   }
 
   .md\:hover\:text-background-04:hover{
-    color: var(--ui-background-04);
+    color: var(--background-04);
   }
 
   .md\:hover\:text-background-05:hover{
-    color: var(--ui-background-05);
+    color: var(--background-05);
   }
 
   .md\:hover\:text-background-06:hover{
-    color: var(--ui-background-06);
+    color: var(--background-06);
   }
 
   .md\:hover\:text-interactive-01:hover{
@@ -12278,27 +12397,27 @@ body {
   }
 
   .md\:focus\:text-background-01:focus{
-    color: var(--ui-background-01);
+    color: var(--background-01);
   }
 
   .md\:focus\:text-background-02:focus{
-    color: var(--ui-background-02);
+    color: var(--background-02);
   }
 
   .md\:focus\:text-background-03:focus{
-    color: var(--ui-background-03);
+    color: var(--background-03);
   }
 
   .md\:focus\:text-background-04:focus{
-    color: var(--ui-background-04);
+    color: var(--background-04);
   }
 
   .md\:focus\:text-background-05:focus{
-    color: var(--ui-background-05);
+    color: var(--background-05);
   }
 
   .md\:focus\:text-background-06:focus{
-    color: var(--ui-background-06);
+    color: var(--background-06);
   }
 
   .md\:focus\:text-interactive-01:focus{
@@ -12837,27 +12956,27 @@ body {
   }
 
   .lg\:bg-background-01{
-    background-color: var(--ui-background-01);
+    background-color: var(--background-01);
   }
 
   .lg\:bg-background-02{
-    background-color: var(--ui-background-02);
+    background-color: var(--background-02);
   }
 
   .lg\:bg-background-03{
-    background-color: var(--ui-background-03);
+    background-color: var(--background-03);
   }
 
   .lg\:bg-background-04{
-    background-color: var(--ui-background-04);
+    background-color: var(--background-04);
   }
 
   .lg\:bg-background-05{
-    background-color: var(--ui-background-05);
+    background-color: var(--background-05);
   }
 
   .lg\:bg-background-06{
-    background-color: var(--ui-background-06);
+    background-color: var(--background-06);
   }
 
   .lg\:bg-interactive-01{
@@ -12925,27 +13044,27 @@ body {
   }
 
   .lg\:hover\:bg-background-01:hover{
-    background-color: var(--ui-background-01);
+    background-color: var(--background-01);
   }
 
   .lg\:hover\:bg-background-02:hover{
-    background-color: var(--ui-background-02);
+    background-color: var(--background-02);
   }
 
   .lg\:hover\:bg-background-03:hover{
-    background-color: var(--ui-background-03);
+    background-color: var(--background-03);
   }
 
   .lg\:hover\:bg-background-04:hover{
-    background-color: var(--ui-background-04);
+    background-color: var(--background-04);
   }
 
   .lg\:hover\:bg-background-05:hover{
-    background-color: var(--ui-background-05);
+    background-color: var(--background-05);
   }
 
   .lg\:hover\:bg-background-06:hover{
-    background-color: var(--ui-background-06);
+    background-color: var(--background-06);
   }
 
   .lg\:hover\:bg-interactive-01:hover{
@@ -13013,27 +13132,27 @@ body {
   }
 
   .lg\:focus\:bg-background-01:focus{
-    background-color: var(--ui-background-01);
+    background-color: var(--background-01);
   }
 
   .lg\:focus\:bg-background-02:focus{
-    background-color: var(--ui-background-02);
+    background-color: var(--background-02);
   }
 
   .lg\:focus\:bg-background-03:focus{
-    background-color: var(--ui-background-03);
+    background-color: var(--background-03);
   }
 
   .lg\:focus\:bg-background-04:focus{
-    background-color: var(--ui-background-04);
+    background-color: var(--background-04);
   }
 
   .lg\:focus\:bg-background-05:focus{
-    background-color: var(--ui-background-05);
+    background-color: var(--background-05);
   }
 
   .lg\:focus\:bg-background-06:focus{
-    background-color: var(--ui-background-06);
+    background-color: var(--background-06);
   }
 
   .lg\:focus\:bg-interactive-01:focus{
@@ -13181,27 +13300,27 @@ body {
   }
 
   .lg\:border-background-01{
-    border-color: var(--ui-background-01);
+    border-color: var(--background-01);
   }
 
   .lg\:border-background-02{
-    border-color: var(--ui-background-02);
+    border-color: var(--background-02);
   }
 
   .lg\:border-background-03{
-    border-color: var(--ui-background-03);
+    border-color: var(--background-03);
   }
 
   .lg\:border-background-04{
-    border-color: var(--ui-background-04);
+    border-color: var(--background-04);
   }
 
   .lg\:border-background-05{
-    border-color: var(--ui-background-05);
+    border-color: var(--background-05);
   }
 
   .lg\:border-background-06{
-    border-color: var(--ui-background-06);
+    border-color: var(--background-06);
   }
 
   .lg\:border-interactive-01{
@@ -13269,27 +13388,27 @@ body {
   }
 
   .lg\:hover\:border-background-01:hover{
-    border-color: var(--ui-background-01);
+    border-color: var(--background-01);
   }
 
   .lg\:hover\:border-background-02:hover{
-    border-color: var(--ui-background-02);
+    border-color: var(--background-02);
   }
 
   .lg\:hover\:border-background-03:hover{
-    border-color: var(--ui-background-03);
+    border-color: var(--background-03);
   }
 
   .lg\:hover\:border-background-04:hover{
-    border-color: var(--ui-background-04);
+    border-color: var(--background-04);
   }
 
   .lg\:hover\:border-background-05:hover{
-    border-color: var(--ui-background-05);
+    border-color: var(--background-05);
   }
 
   .lg\:hover\:border-background-06:hover{
-    border-color: var(--ui-background-06);
+    border-color: var(--background-06);
   }
 
   .lg\:hover\:border-interactive-01:hover{
@@ -13357,27 +13476,27 @@ body {
   }
 
   .lg\:focus\:border-background-01:focus{
-    border-color: var(--ui-background-01);
+    border-color: var(--background-01);
   }
 
   .lg\:focus\:border-background-02:focus{
-    border-color: var(--ui-background-02);
+    border-color: var(--background-02);
   }
 
   .lg\:focus\:border-background-03:focus{
-    border-color: var(--ui-background-03);
+    border-color: var(--background-03);
   }
 
   .lg\:focus\:border-background-04:focus{
-    border-color: var(--ui-background-04);
+    border-color: var(--background-04);
   }
 
   .lg\:focus\:border-background-05:focus{
-    border-color: var(--ui-background-05);
+    border-color: var(--background-05);
   }
 
   .lg\:focus\:border-background-06:focus{
-    border-color: var(--ui-background-06);
+    border-color: var(--background-06);
   }
 
   .lg\:focus\:border-interactive-01:focus{
@@ -14062,16 +14181,52 @@ body {
     font-family: Lato, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   }
 
+  .lg\:font-light{
+    font-weight: 300;
+  }
+
   .lg\:font-regular{
     font-weight: 400;
+  }
+
+  .lg\:font-bold{
+    font-weight: 700;
+  }
+
+  .lg\:font-black{
+    font-weight: 900;
+  }
+
+  .lg\:hover\:font-light:hover{
+    font-weight: 300;
   }
 
   .lg\:hover\:font-regular:hover{
     font-weight: 400;
   }
 
+  .lg\:hover\:font-bold:hover{
+    font-weight: 700;
+  }
+
+  .lg\:hover\:font-black:hover{
+    font-weight: 900;
+  }
+
+  .lg\:focus\:font-light:focus{
+    font-weight: 300;
+  }
+
   .lg\:focus\:font-regular:focus{
     font-weight: 400;
+  }
+
+  .lg\:focus\:font-bold:focus{
+    font-weight: 700;
+  }
+
+  .lg\:focus\:font-black:focus{
+    font-weight: 900;
   }
 
   .lg\:h-auto{
@@ -14991,123 +15146,123 @@ body {
   }
 
   .lg\:placeholder-background-01::-webkit-input-placeholder{
-    color: var(--ui-background-01);
+    color: var(--background-01);
   }
 
   .lg\:placeholder-background-01::-moz-placeholder{
-    color: var(--ui-background-01);
+    color: var(--background-01);
   }
 
   .lg\:placeholder-background-01:-ms-input-placeholder{
-    color: var(--ui-background-01);
+    color: var(--background-01);
   }
 
   .lg\:placeholder-background-01::-ms-input-placeholder{
-    color: var(--ui-background-01);
+    color: var(--background-01);
   }
 
   .lg\:placeholder-background-01::placeholder{
-    color: var(--ui-background-01);
+    color: var(--background-01);
   }
 
   .lg\:placeholder-background-02::-webkit-input-placeholder{
-    color: var(--ui-background-02);
+    color: var(--background-02);
   }
 
   .lg\:placeholder-background-02::-moz-placeholder{
-    color: var(--ui-background-02);
+    color: var(--background-02);
   }
 
   .lg\:placeholder-background-02:-ms-input-placeholder{
-    color: var(--ui-background-02);
+    color: var(--background-02);
   }
 
   .lg\:placeholder-background-02::-ms-input-placeholder{
-    color: var(--ui-background-02);
+    color: var(--background-02);
   }
 
   .lg\:placeholder-background-02::placeholder{
-    color: var(--ui-background-02);
+    color: var(--background-02);
   }
 
   .lg\:placeholder-background-03::-webkit-input-placeholder{
-    color: var(--ui-background-03);
+    color: var(--background-03);
   }
 
   .lg\:placeholder-background-03::-moz-placeholder{
-    color: var(--ui-background-03);
+    color: var(--background-03);
   }
 
   .lg\:placeholder-background-03:-ms-input-placeholder{
-    color: var(--ui-background-03);
+    color: var(--background-03);
   }
 
   .lg\:placeholder-background-03::-ms-input-placeholder{
-    color: var(--ui-background-03);
+    color: var(--background-03);
   }
 
   .lg\:placeholder-background-03::placeholder{
-    color: var(--ui-background-03);
+    color: var(--background-03);
   }
 
   .lg\:placeholder-background-04::-webkit-input-placeholder{
-    color: var(--ui-background-04);
+    color: var(--background-04);
   }
 
   .lg\:placeholder-background-04::-moz-placeholder{
-    color: var(--ui-background-04);
+    color: var(--background-04);
   }
 
   .lg\:placeholder-background-04:-ms-input-placeholder{
-    color: var(--ui-background-04);
+    color: var(--background-04);
   }
 
   .lg\:placeholder-background-04::-ms-input-placeholder{
-    color: var(--ui-background-04);
+    color: var(--background-04);
   }
 
   .lg\:placeholder-background-04::placeholder{
-    color: var(--ui-background-04);
+    color: var(--background-04);
   }
 
   .lg\:placeholder-background-05::-webkit-input-placeholder{
-    color: var(--ui-background-05);
+    color: var(--background-05);
   }
 
   .lg\:placeholder-background-05::-moz-placeholder{
-    color: var(--ui-background-05);
+    color: var(--background-05);
   }
 
   .lg\:placeholder-background-05:-ms-input-placeholder{
-    color: var(--ui-background-05);
+    color: var(--background-05);
   }
 
   .lg\:placeholder-background-05::-ms-input-placeholder{
-    color: var(--ui-background-05);
+    color: var(--background-05);
   }
 
   .lg\:placeholder-background-05::placeholder{
-    color: var(--ui-background-05);
+    color: var(--background-05);
   }
 
   .lg\:placeholder-background-06::-webkit-input-placeholder{
-    color: var(--ui-background-06);
+    color: var(--background-06);
   }
 
   .lg\:placeholder-background-06::-moz-placeholder{
-    color: var(--ui-background-06);
+    color: var(--background-06);
   }
 
   .lg\:placeholder-background-06:-ms-input-placeholder{
-    color: var(--ui-background-06);
+    color: var(--background-06);
   }
 
   .lg\:placeholder-background-06::-ms-input-placeholder{
-    color: var(--ui-background-06);
+    color: var(--background-06);
   }
 
   .lg\:placeholder-background-06::placeholder{
-    color: var(--ui-background-06);
+    color: var(--background-06);
   }
 
   .lg\:placeholder-interactive-01::-webkit-input-placeholder{
@@ -15431,123 +15586,123 @@ body {
   }
 
   .lg\:focus\:placeholder-background-01:focus::-webkit-input-placeholder{
-    color: var(--ui-background-01);
+    color: var(--background-01);
   }
 
   .lg\:focus\:placeholder-background-01:focus::-moz-placeholder{
-    color: var(--ui-background-01);
+    color: var(--background-01);
   }
 
   .lg\:focus\:placeholder-background-01:focus:-ms-input-placeholder{
-    color: var(--ui-background-01);
+    color: var(--background-01);
   }
 
   .lg\:focus\:placeholder-background-01:focus::-ms-input-placeholder{
-    color: var(--ui-background-01);
+    color: var(--background-01);
   }
 
   .lg\:focus\:placeholder-background-01:focus::placeholder{
-    color: var(--ui-background-01);
+    color: var(--background-01);
   }
 
   .lg\:focus\:placeholder-background-02:focus::-webkit-input-placeholder{
-    color: var(--ui-background-02);
+    color: var(--background-02);
   }
 
   .lg\:focus\:placeholder-background-02:focus::-moz-placeholder{
-    color: var(--ui-background-02);
+    color: var(--background-02);
   }
 
   .lg\:focus\:placeholder-background-02:focus:-ms-input-placeholder{
-    color: var(--ui-background-02);
+    color: var(--background-02);
   }
 
   .lg\:focus\:placeholder-background-02:focus::-ms-input-placeholder{
-    color: var(--ui-background-02);
+    color: var(--background-02);
   }
 
   .lg\:focus\:placeholder-background-02:focus::placeholder{
-    color: var(--ui-background-02);
+    color: var(--background-02);
   }
 
   .lg\:focus\:placeholder-background-03:focus::-webkit-input-placeholder{
-    color: var(--ui-background-03);
+    color: var(--background-03);
   }
 
   .lg\:focus\:placeholder-background-03:focus::-moz-placeholder{
-    color: var(--ui-background-03);
+    color: var(--background-03);
   }
 
   .lg\:focus\:placeholder-background-03:focus:-ms-input-placeholder{
-    color: var(--ui-background-03);
+    color: var(--background-03);
   }
 
   .lg\:focus\:placeholder-background-03:focus::-ms-input-placeholder{
-    color: var(--ui-background-03);
+    color: var(--background-03);
   }
 
   .lg\:focus\:placeholder-background-03:focus::placeholder{
-    color: var(--ui-background-03);
+    color: var(--background-03);
   }
 
   .lg\:focus\:placeholder-background-04:focus::-webkit-input-placeholder{
-    color: var(--ui-background-04);
+    color: var(--background-04);
   }
 
   .lg\:focus\:placeholder-background-04:focus::-moz-placeholder{
-    color: var(--ui-background-04);
+    color: var(--background-04);
   }
 
   .lg\:focus\:placeholder-background-04:focus:-ms-input-placeholder{
-    color: var(--ui-background-04);
+    color: var(--background-04);
   }
 
   .lg\:focus\:placeholder-background-04:focus::-ms-input-placeholder{
-    color: var(--ui-background-04);
+    color: var(--background-04);
   }
 
   .lg\:focus\:placeholder-background-04:focus::placeholder{
-    color: var(--ui-background-04);
+    color: var(--background-04);
   }
 
   .lg\:focus\:placeholder-background-05:focus::-webkit-input-placeholder{
-    color: var(--ui-background-05);
+    color: var(--background-05);
   }
 
   .lg\:focus\:placeholder-background-05:focus::-moz-placeholder{
-    color: var(--ui-background-05);
+    color: var(--background-05);
   }
 
   .lg\:focus\:placeholder-background-05:focus:-ms-input-placeholder{
-    color: var(--ui-background-05);
+    color: var(--background-05);
   }
 
   .lg\:focus\:placeholder-background-05:focus::-ms-input-placeholder{
-    color: var(--ui-background-05);
+    color: var(--background-05);
   }
 
   .lg\:focus\:placeholder-background-05:focus::placeholder{
-    color: var(--ui-background-05);
+    color: var(--background-05);
   }
 
   .lg\:focus\:placeholder-background-06:focus::-webkit-input-placeholder{
-    color: var(--ui-background-06);
+    color: var(--background-06);
   }
 
   .lg\:focus\:placeholder-background-06:focus::-moz-placeholder{
-    color: var(--ui-background-06);
+    color: var(--background-06);
   }
 
   .lg\:focus\:placeholder-background-06:focus:-ms-input-placeholder{
-    color: var(--ui-background-06);
+    color: var(--background-06);
   }
 
   .lg\:focus\:placeholder-background-06:focus::-ms-input-placeholder{
-    color: var(--ui-background-06);
+    color: var(--background-06);
   }
 
   .lg\:focus\:placeholder-background-06:focus::placeholder{
-    color: var(--ui-background-06);
+    color: var(--background-06);
   }
 
   .lg\:focus\:placeholder-interactive-01:focus::-webkit-input-placeholder{
@@ -16134,27 +16289,27 @@ body {
   }
 
   .lg\:text-background-01{
-    color: var(--ui-background-01);
+    color: var(--background-01);
   }
 
   .lg\:text-background-02{
-    color: var(--ui-background-02);
+    color: var(--background-02);
   }
 
   .lg\:text-background-03{
-    color: var(--ui-background-03);
+    color: var(--background-03);
   }
 
   .lg\:text-background-04{
-    color: var(--ui-background-04);
+    color: var(--background-04);
   }
 
   .lg\:text-background-05{
-    color: var(--ui-background-05);
+    color: var(--background-05);
   }
 
   .lg\:text-background-06{
-    color: var(--ui-background-06);
+    color: var(--background-06);
   }
 
   .lg\:text-interactive-01{
@@ -16222,27 +16377,27 @@ body {
   }
 
   .lg\:hover\:text-background-01:hover{
-    color: var(--ui-background-01);
+    color: var(--background-01);
   }
 
   .lg\:hover\:text-background-02:hover{
-    color: var(--ui-background-02);
+    color: var(--background-02);
   }
 
   .lg\:hover\:text-background-03:hover{
-    color: var(--ui-background-03);
+    color: var(--background-03);
   }
 
   .lg\:hover\:text-background-04:hover{
-    color: var(--ui-background-04);
+    color: var(--background-04);
   }
 
   .lg\:hover\:text-background-05:hover{
-    color: var(--ui-background-05);
+    color: var(--background-05);
   }
 
   .lg\:hover\:text-background-06:hover{
-    color: var(--ui-background-06);
+    color: var(--background-06);
   }
 
   .lg\:hover\:text-interactive-01:hover{
@@ -16310,27 +16465,27 @@ body {
   }
 
   .lg\:focus\:text-background-01:focus{
-    color: var(--ui-background-01);
+    color: var(--background-01);
   }
 
   .lg\:focus\:text-background-02:focus{
-    color: var(--ui-background-02);
+    color: var(--background-02);
   }
 
   .lg\:focus\:text-background-03:focus{
-    color: var(--ui-background-03);
+    color: var(--background-03);
   }
 
   .lg\:focus\:text-background-04:focus{
-    color: var(--ui-background-04);
+    color: var(--background-04);
   }
 
   .lg\:focus\:text-background-05:focus{
-    color: var(--ui-background-05);
+    color: var(--background-05);
   }
 
   .lg\:focus\:text-background-06:focus{
-    color: var(--ui-background-06);
+    color: var(--background-06);
   }
 
   .lg\:focus\:text-interactive-01:focus{
@@ -16869,27 +17024,27 @@ body {
   }
 
   .xl\:bg-background-01{
-    background-color: var(--ui-background-01);
+    background-color: var(--background-01);
   }
 
   .xl\:bg-background-02{
-    background-color: var(--ui-background-02);
+    background-color: var(--background-02);
   }
 
   .xl\:bg-background-03{
-    background-color: var(--ui-background-03);
+    background-color: var(--background-03);
   }
 
   .xl\:bg-background-04{
-    background-color: var(--ui-background-04);
+    background-color: var(--background-04);
   }
 
   .xl\:bg-background-05{
-    background-color: var(--ui-background-05);
+    background-color: var(--background-05);
   }
 
   .xl\:bg-background-06{
-    background-color: var(--ui-background-06);
+    background-color: var(--background-06);
   }
 
   .xl\:bg-interactive-01{
@@ -16957,27 +17112,27 @@ body {
   }
 
   .xl\:hover\:bg-background-01:hover{
-    background-color: var(--ui-background-01);
+    background-color: var(--background-01);
   }
 
   .xl\:hover\:bg-background-02:hover{
-    background-color: var(--ui-background-02);
+    background-color: var(--background-02);
   }
 
   .xl\:hover\:bg-background-03:hover{
-    background-color: var(--ui-background-03);
+    background-color: var(--background-03);
   }
 
   .xl\:hover\:bg-background-04:hover{
-    background-color: var(--ui-background-04);
+    background-color: var(--background-04);
   }
 
   .xl\:hover\:bg-background-05:hover{
-    background-color: var(--ui-background-05);
+    background-color: var(--background-05);
   }
 
   .xl\:hover\:bg-background-06:hover{
-    background-color: var(--ui-background-06);
+    background-color: var(--background-06);
   }
 
   .xl\:hover\:bg-interactive-01:hover{
@@ -17045,27 +17200,27 @@ body {
   }
 
   .xl\:focus\:bg-background-01:focus{
-    background-color: var(--ui-background-01);
+    background-color: var(--background-01);
   }
 
   .xl\:focus\:bg-background-02:focus{
-    background-color: var(--ui-background-02);
+    background-color: var(--background-02);
   }
 
   .xl\:focus\:bg-background-03:focus{
-    background-color: var(--ui-background-03);
+    background-color: var(--background-03);
   }
 
   .xl\:focus\:bg-background-04:focus{
-    background-color: var(--ui-background-04);
+    background-color: var(--background-04);
   }
 
   .xl\:focus\:bg-background-05:focus{
-    background-color: var(--ui-background-05);
+    background-color: var(--background-05);
   }
 
   .xl\:focus\:bg-background-06:focus{
-    background-color: var(--ui-background-06);
+    background-color: var(--background-06);
   }
 
   .xl\:focus\:bg-interactive-01:focus{
@@ -17213,27 +17368,27 @@ body {
   }
 
   .xl\:border-background-01{
-    border-color: var(--ui-background-01);
+    border-color: var(--background-01);
   }
 
   .xl\:border-background-02{
-    border-color: var(--ui-background-02);
+    border-color: var(--background-02);
   }
 
   .xl\:border-background-03{
-    border-color: var(--ui-background-03);
+    border-color: var(--background-03);
   }
 
   .xl\:border-background-04{
-    border-color: var(--ui-background-04);
+    border-color: var(--background-04);
   }
 
   .xl\:border-background-05{
-    border-color: var(--ui-background-05);
+    border-color: var(--background-05);
   }
 
   .xl\:border-background-06{
-    border-color: var(--ui-background-06);
+    border-color: var(--background-06);
   }
 
   .xl\:border-interactive-01{
@@ -17301,27 +17456,27 @@ body {
   }
 
   .xl\:hover\:border-background-01:hover{
-    border-color: var(--ui-background-01);
+    border-color: var(--background-01);
   }
 
   .xl\:hover\:border-background-02:hover{
-    border-color: var(--ui-background-02);
+    border-color: var(--background-02);
   }
 
   .xl\:hover\:border-background-03:hover{
-    border-color: var(--ui-background-03);
+    border-color: var(--background-03);
   }
 
   .xl\:hover\:border-background-04:hover{
-    border-color: var(--ui-background-04);
+    border-color: var(--background-04);
   }
 
   .xl\:hover\:border-background-05:hover{
-    border-color: var(--ui-background-05);
+    border-color: var(--background-05);
   }
 
   .xl\:hover\:border-background-06:hover{
-    border-color: var(--ui-background-06);
+    border-color: var(--background-06);
   }
 
   .xl\:hover\:border-interactive-01:hover{
@@ -17389,27 +17544,27 @@ body {
   }
 
   .xl\:focus\:border-background-01:focus{
-    border-color: var(--ui-background-01);
+    border-color: var(--background-01);
   }
 
   .xl\:focus\:border-background-02:focus{
-    border-color: var(--ui-background-02);
+    border-color: var(--background-02);
   }
 
   .xl\:focus\:border-background-03:focus{
-    border-color: var(--ui-background-03);
+    border-color: var(--background-03);
   }
 
   .xl\:focus\:border-background-04:focus{
-    border-color: var(--ui-background-04);
+    border-color: var(--background-04);
   }
 
   .xl\:focus\:border-background-05:focus{
-    border-color: var(--ui-background-05);
+    border-color: var(--background-05);
   }
 
   .xl\:focus\:border-background-06:focus{
-    border-color: var(--ui-background-06);
+    border-color: var(--background-06);
   }
 
   .xl\:focus\:border-interactive-01:focus{
@@ -18094,16 +18249,52 @@ body {
     font-family: Lato, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   }
 
+  .xl\:font-light{
+    font-weight: 300;
+  }
+
   .xl\:font-regular{
     font-weight: 400;
+  }
+
+  .xl\:font-bold{
+    font-weight: 700;
+  }
+
+  .xl\:font-black{
+    font-weight: 900;
+  }
+
+  .xl\:hover\:font-light:hover{
+    font-weight: 300;
   }
 
   .xl\:hover\:font-regular:hover{
     font-weight: 400;
   }
 
+  .xl\:hover\:font-bold:hover{
+    font-weight: 700;
+  }
+
+  .xl\:hover\:font-black:hover{
+    font-weight: 900;
+  }
+
+  .xl\:focus\:font-light:focus{
+    font-weight: 300;
+  }
+
   .xl\:focus\:font-regular:focus{
     font-weight: 400;
+  }
+
+  .xl\:focus\:font-bold:focus{
+    font-weight: 700;
+  }
+
+  .xl\:focus\:font-black:focus{
+    font-weight: 900;
   }
 
   .xl\:h-auto{
@@ -19023,123 +19214,123 @@ body {
   }
 
   .xl\:placeholder-background-01::-webkit-input-placeholder{
-    color: var(--ui-background-01);
+    color: var(--background-01);
   }
 
   .xl\:placeholder-background-01::-moz-placeholder{
-    color: var(--ui-background-01);
+    color: var(--background-01);
   }
 
   .xl\:placeholder-background-01:-ms-input-placeholder{
-    color: var(--ui-background-01);
+    color: var(--background-01);
   }
 
   .xl\:placeholder-background-01::-ms-input-placeholder{
-    color: var(--ui-background-01);
+    color: var(--background-01);
   }
 
   .xl\:placeholder-background-01::placeholder{
-    color: var(--ui-background-01);
+    color: var(--background-01);
   }
 
   .xl\:placeholder-background-02::-webkit-input-placeholder{
-    color: var(--ui-background-02);
+    color: var(--background-02);
   }
 
   .xl\:placeholder-background-02::-moz-placeholder{
-    color: var(--ui-background-02);
+    color: var(--background-02);
   }
 
   .xl\:placeholder-background-02:-ms-input-placeholder{
-    color: var(--ui-background-02);
+    color: var(--background-02);
   }
 
   .xl\:placeholder-background-02::-ms-input-placeholder{
-    color: var(--ui-background-02);
+    color: var(--background-02);
   }
 
   .xl\:placeholder-background-02::placeholder{
-    color: var(--ui-background-02);
+    color: var(--background-02);
   }
 
   .xl\:placeholder-background-03::-webkit-input-placeholder{
-    color: var(--ui-background-03);
+    color: var(--background-03);
   }
 
   .xl\:placeholder-background-03::-moz-placeholder{
-    color: var(--ui-background-03);
+    color: var(--background-03);
   }
 
   .xl\:placeholder-background-03:-ms-input-placeholder{
-    color: var(--ui-background-03);
+    color: var(--background-03);
   }
 
   .xl\:placeholder-background-03::-ms-input-placeholder{
-    color: var(--ui-background-03);
+    color: var(--background-03);
   }
 
   .xl\:placeholder-background-03::placeholder{
-    color: var(--ui-background-03);
+    color: var(--background-03);
   }
 
   .xl\:placeholder-background-04::-webkit-input-placeholder{
-    color: var(--ui-background-04);
+    color: var(--background-04);
   }
 
   .xl\:placeholder-background-04::-moz-placeholder{
-    color: var(--ui-background-04);
+    color: var(--background-04);
   }
 
   .xl\:placeholder-background-04:-ms-input-placeholder{
-    color: var(--ui-background-04);
+    color: var(--background-04);
   }
 
   .xl\:placeholder-background-04::-ms-input-placeholder{
-    color: var(--ui-background-04);
+    color: var(--background-04);
   }
 
   .xl\:placeholder-background-04::placeholder{
-    color: var(--ui-background-04);
+    color: var(--background-04);
   }
 
   .xl\:placeholder-background-05::-webkit-input-placeholder{
-    color: var(--ui-background-05);
+    color: var(--background-05);
   }
 
   .xl\:placeholder-background-05::-moz-placeholder{
-    color: var(--ui-background-05);
+    color: var(--background-05);
   }
 
   .xl\:placeholder-background-05:-ms-input-placeholder{
-    color: var(--ui-background-05);
+    color: var(--background-05);
   }
 
   .xl\:placeholder-background-05::-ms-input-placeholder{
-    color: var(--ui-background-05);
+    color: var(--background-05);
   }
 
   .xl\:placeholder-background-05::placeholder{
-    color: var(--ui-background-05);
+    color: var(--background-05);
   }
 
   .xl\:placeholder-background-06::-webkit-input-placeholder{
-    color: var(--ui-background-06);
+    color: var(--background-06);
   }
 
   .xl\:placeholder-background-06::-moz-placeholder{
-    color: var(--ui-background-06);
+    color: var(--background-06);
   }
 
   .xl\:placeholder-background-06:-ms-input-placeholder{
-    color: var(--ui-background-06);
+    color: var(--background-06);
   }
 
   .xl\:placeholder-background-06::-ms-input-placeholder{
-    color: var(--ui-background-06);
+    color: var(--background-06);
   }
 
   .xl\:placeholder-background-06::placeholder{
-    color: var(--ui-background-06);
+    color: var(--background-06);
   }
 
   .xl\:placeholder-interactive-01::-webkit-input-placeholder{
@@ -19463,123 +19654,123 @@ body {
   }
 
   .xl\:focus\:placeholder-background-01:focus::-webkit-input-placeholder{
-    color: var(--ui-background-01);
+    color: var(--background-01);
   }
 
   .xl\:focus\:placeholder-background-01:focus::-moz-placeholder{
-    color: var(--ui-background-01);
+    color: var(--background-01);
   }
 
   .xl\:focus\:placeholder-background-01:focus:-ms-input-placeholder{
-    color: var(--ui-background-01);
+    color: var(--background-01);
   }
 
   .xl\:focus\:placeholder-background-01:focus::-ms-input-placeholder{
-    color: var(--ui-background-01);
+    color: var(--background-01);
   }
 
   .xl\:focus\:placeholder-background-01:focus::placeholder{
-    color: var(--ui-background-01);
+    color: var(--background-01);
   }
 
   .xl\:focus\:placeholder-background-02:focus::-webkit-input-placeholder{
-    color: var(--ui-background-02);
+    color: var(--background-02);
   }
 
   .xl\:focus\:placeholder-background-02:focus::-moz-placeholder{
-    color: var(--ui-background-02);
+    color: var(--background-02);
   }
 
   .xl\:focus\:placeholder-background-02:focus:-ms-input-placeholder{
-    color: var(--ui-background-02);
+    color: var(--background-02);
   }
 
   .xl\:focus\:placeholder-background-02:focus::-ms-input-placeholder{
-    color: var(--ui-background-02);
+    color: var(--background-02);
   }
 
   .xl\:focus\:placeholder-background-02:focus::placeholder{
-    color: var(--ui-background-02);
+    color: var(--background-02);
   }
 
   .xl\:focus\:placeholder-background-03:focus::-webkit-input-placeholder{
-    color: var(--ui-background-03);
+    color: var(--background-03);
   }
 
   .xl\:focus\:placeholder-background-03:focus::-moz-placeholder{
-    color: var(--ui-background-03);
+    color: var(--background-03);
   }
 
   .xl\:focus\:placeholder-background-03:focus:-ms-input-placeholder{
-    color: var(--ui-background-03);
+    color: var(--background-03);
   }
 
   .xl\:focus\:placeholder-background-03:focus::-ms-input-placeholder{
-    color: var(--ui-background-03);
+    color: var(--background-03);
   }
 
   .xl\:focus\:placeholder-background-03:focus::placeholder{
-    color: var(--ui-background-03);
+    color: var(--background-03);
   }
 
   .xl\:focus\:placeholder-background-04:focus::-webkit-input-placeholder{
-    color: var(--ui-background-04);
+    color: var(--background-04);
   }
 
   .xl\:focus\:placeholder-background-04:focus::-moz-placeholder{
-    color: var(--ui-background-04);
+    color: var(--background-04);
   }
 
   .xl\:focus\:placeholder-background-04:focus:-ms-input-placeholder{
-    color: var(--ui-background-04);
+    color: var(--background-04);
   }
 
   .xl\:focus\:placeholder-background-04:focus::-ms-input-placeholder{
-    color: var(--ui-background-04);
+    color: var(--background-04);
   }
 
   .xl\:focus\:placeholder-background-04:focus::placeholder{
-    color: var(--ui-background-04);
+    color: var(--background-04);
   }
 
   .xl\:focus\:placeholder-background-05:focus::-webkit-input-placeholder{
-    color: var(--ui-background-05);
+    color: var(--background-05);
   }
 
   .xl\:focus\:placeholder-background-05:focus::-moz-placeholder{
-    color: var(--ui-background-05);
+    color: var(--background-05);
   }
 
   .xl\:focus\:placeholder-background-05:focus:-ms-input-placeholder{
-    color: var(--ui-background-05);
+    color: var(--background-05);
   }
 
   .xl\:focus\:placeholder-background-05:focus::-ms-input-placeholder{
-    color: var(--ui-background-05);
+    color: var(--background-05);
   }
 
   .xl\:focus\:placeholder-background-05:focus::placeholder{
-    color: var(--ui-background-05);
+    color: var(--background-05);
   }
 
   .xl\:focus\:placeholder-background-06:focus::-webkit-input-placeholder{
-    color: var(--ui-background-06);
+    color: var(--background-06);
   }
 
   .xl\:focus\:placeholder-background-06:focus::-moz-placeholder{
-    color: var(--ui-background-06);
+    color: var(--background-06);
   }
 
   .xl\:focus\:placeholder-background-06:focus:-ms-input-placeholder{
-    color: var(--ui-background-06);
+    color: var(--background-06);
   }
 
   .xl\:focus\:placeholder-background-06:focus::-ms-input-placeholder{
-    color: var(--ui-background-06);
+    color: var(--background-06);
   }
 
   .xl\:focus\:placeholder-background-06:focus::placeholder{
-    color: var(--ui-background-06);
+    color: var(--background-06);
   }
 
   .xl\:focus\:placeholder-interactive-01:focus::-webkit-input-placeholder{
@@ -20166,27 +20357,27 @@ body {
   }
 
   .xl\:text-background-01{
-    color: var(--ui-background-01);
+    color: var(--background-01);
   }
 
   .xl\:text-background-02{
-    color: var(--ui-background-02);
+    color: var(--background-02);
   }
 
   .xl\:text-background-03{
-    color: var(--ui-background-03);
+    color: var(--background-03);
   }
 
   .xl\:text-background-04{
-    color: var(--ui-background-04);
+    color: var(--background-04);
   }
 
   .xl\:text-background-05{
-    color: var(--ui-background-05);
+    color: var(--background-05);
   }
 
   .xl\:text-background-06{
-    color: var(--ui-background-06);
+    color: var(--background-06);
   }
 
   .xl\:text-interactive-01{
@@ -20254,27 +20445,27 @@ body {
   }
 
   .xl\:hover\:text-background-01:hover{
-    color: var(--ui-background-01);
+    color: var(--background-01);
   }
 
   .xl\:hover\:text-background-02:hover{
-    color: var(--ui-background-02);
+    color: var(--background-02);
   }
 
   .xl\:hover\:text-background-03:hover{
-    color: var(--ui-background-03);
+    color: var(--background-03);
   }
 
   .xl\:hover\:text-background-04:hover{
-    color: var(--ui-background-04);
+    color: var(--background-04);
   }
 
   .xl\:hover\:text-background-05:hover{
-    color: var(--ui-background-05);
+    color: var(--background-05);
   }
 
   .xl\:hover\:text-background-06:hover{
-    color: var(--ui-background-06);
+    color: var(--background-06);
   }
 
   .xl\:hover\:text-interactive-01:hover{
@@ -20342,27 +20533,27 @@ body {
   }
 
   .xl\:focus\:text-background-01:focus{
-    color: var(--ui-background-01);
+    color: var(--background-01);
   }
 
   .xl\:focus\:text-background-02:focus{
-    color: var(--ui-background-02);
+    color: var(--background-02);
   }
 
   .xl\:focus\:text-background-03:focus{
-    color: var(--ui-background-03);
+    color: var(--background-03);
   }
 
   .xl\:focus\:text-background-04:focus{
-    color: var(--ui-background-04);
+    color: var(--background-04);
   }
 
   .xl\:focus\:text-background-05:focus{
-    color: var(--ui-background-05);
+    color: var(--background-05);
   }
 
   .xl\:focus\:text-background-06:focus{
-    color: var(--ui-background-06);
+    color: var(--background-06);
   }
 
   .xl\:focus\:text-interactive-01:focus{

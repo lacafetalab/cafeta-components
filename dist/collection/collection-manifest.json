@@ -1,6 +1,8 @@
 {
   "entries": [
-    "components/my-component/my-component.js"
+    "components\\cc-icon\\cc-icon.js",
+    "components\\cc-text\\cc-text.js",
+    "components\\cc-button\\cc-button.js"
   ],
   "compiler": {
     "name": "@stencil/core",

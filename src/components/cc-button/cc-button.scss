@@ -1,0 +1,96 @@
+:host {
+  @apply inline-block;
+  --cc-button-color-base: theme("colors.interactive.01");
+  --cc-button-color-contrast: theme("colors.color-text.03");
+}
+
+:host(.button--block) {
+  @apply block;
+}
+
+:host(.button--secondary) {
+  --cc-button-color-base: theme("colors.interactive.02");
+  --cc-button-color-contrast: theme("colors.color-text.03");
+}
+
+.button {
+  @apply border-0 p-md flex items-center justify-center text-body font-bold rounded-sm outline-none w-full;
+  line-height: 2.4rem;
+  border: 1px solid transparent;
+  box-sizing: border-box;
+  font-family: inherit;
+  height: 4.8rem;
+  background-color: var(--cc-button-color-base);
+  color: var(--cc-button-color-contrast);
+  cursor: pointer;
+  text-decoration: none;
+
+  &__text {
+    @apply inline-flex;
+  }
+
+  &__icon {
+    @apply mr-sm;
+
+    .button--reverse & {
+      margin-right: 0;
+      @apply ml-sm;
+    }
+
+    .button--iconOnly & {
+      margin: 0;
+    }
+  }
+
+  &--iconOnly {
+    width: 4.8rem;
+  }
+
+  &--md {
+    @apply p-sm;
+    height: 4rem;
+
+    &.button--iconOnly {
+      width: 4rem;
+    }
+  }
+
+  &--sm {
+    @apply text-small-02;
+    padding: 0.6rem;
+    line-height: 2rem;
+    height: 3.2rem;
+
+    &.button--iconOnly {
+      width: 3.2rem;
+    }
+  }
+
+  &--reverse {
+    @apply flex-row-reverse;
+  }
+
+  &--outline {
+    border-color: var(--cc-button-color-base);
+    color: var(--cc-button-color-base);
+    background: var(--cc-button-color-contrast);
+  }
+
+  &--clear {
+    background: transparent;
+    color: var(--cc-button-color-base);
+  }
+
+  &:disabled,
+  &--disabled {
+    @apply bg-disabled-background text-disabled-text cursor-not-allowed;
+
+    &.button--clear {
+      background: transparent;
+    }
+
+    &.button--outline {
+      @apply bg-background-06 border-disabled-background;
+    }
+  }
+}
