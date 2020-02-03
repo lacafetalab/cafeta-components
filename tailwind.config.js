@@ -10,12 +10,12 @@ module.exports = {
     },
     colors: {
       background: {
-        "01": "var(--ui-background-01)",
-        "02": "var(--ui-background-02)",
-        "03": "var(--ui-background-03)",
-        "04": "var(--ui-background-04)",
-        "05": "var(--ui-background-05)",
-        "06": "var(--ui-background-06)"
+        "01": "var(--background-01)",
+        "02": "var(--background-02)",
+        "03": "var(--background-03)",
+        "04": "var(--background-04)",
+        "05": "var(--background-05)",
+        "06": "var(--background-06)"
       },
       interactive: {
         "01": "var(--interactive-01)",
@@ -76,7 +76,10 @@ module.exports = {
       "display-02": "4rem"
     },
     fontWeight: {
-      regular: "400"
+      light: "300",
+      regular: "400",
+      bold: "700",
+      black: "900"
     }
   }
 };

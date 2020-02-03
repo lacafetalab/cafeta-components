@@ -1,0 +1,58 @@
+.text {
+  &--reset {
+    margin: 0;
+    padding: 0;
+  }
+
+  &--normal {
+    @apply font-regular;
+  }
+
+  &--strong {
+    @apply font-black;
+  }
+}
+
+.heading-01 {
+  @apply text-heading-01;
+}
+
+.heading-02 {
+  @apply text-heading-02;
+}
+
+.subheading-01 {
+  @apply text-subheading-01;
+}
+
+.subheading-02 {
+  @apply text-subheading-02;
+}
+
+.body {
+  @apply text-body;
+}
+
+.body-02 {
+  @apply text-body-02;
+}
+
+.small-01 {
+  @apply text-small-01;
+}
+
+.small-02 {
+  @apply text-small-02;
+}
+
+.small-03 {
+  @apply text-small-03;
+}
+
+.display-01 {
+  @apply text-display-01;
+}
+
+.display-02 {
+  @apply text-display-02;
+}
