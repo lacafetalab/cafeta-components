@@ -1,12 +1,1 @@
-:host {
-  display: -webkit-inline-box;
-  display: inline-flex;
-}
-
-.cc-icon {
-  stroke: currentColor;
-  stroke-width: 2;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  fill: none;
-}
+.cc-icon{stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;fill:none}
