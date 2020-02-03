@@ -12,7 +12,8 @@
   "unpkg": "dist/cafeta-components/cafeta-components.js",
   "files": [
     "dist/",
-    "loader/"
+    "loader/",
+    "react/dist"
   ],
   "scripts": {
     "build": "cross-env NODE_ENV=production stencil build --docs",
