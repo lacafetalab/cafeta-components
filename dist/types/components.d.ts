@@ -10,6 +10,13 @@ import { HTMLStencilElement, JSXBase } from './stencil.core';
 
 
 export namespace Components {
+  interface CcBadge {
+    'color': | "interactive-01"
+    | "interactive-02"
+    | "support-success"
+    | "support-error"
+    | "support-alert";
+  }
   interface CcButton {
     'color': "primary" | "secondary";
     'disabled': boolean;
@@ -36,6 +43,12 @@ export namespace Components {
 declare global {
 
 
+  interface HTMLCcBadgeElement extends Components.CcBadge, HTMLStencilElement {}
+  var HTMLCcBadgeElement: {
+    prototype: HTMLCcBadgeElement;
+    new (): HTMLCcBadgeElement;
+  };
+
   interface HTMLCcButtonElement extends Components.CcButton, HTMLStencilElement {}
   var HTMLCcButtonElement: {
     prototype: HTMLCcButtonElement;
@@ -54,6 +67,7 @@ declare global {
     new (): HTMLCcTextElement;
   };
   interface HTMLElementTagNameMap {
+    'cc-badge': HTMLCcBadgeElement;
     'cc-button': HTMLCcButtonElement;
     'cc-icon': HTMLCcIconElement;
     'cc-text': HTMLCcTextElement;
@@ -61,6 +75,13 @@ declare global {
 }
 
 declare namespace LocalJSX {
+  interface CcBadge {
+    'color'?: | "interactive-01"
+    | "interactive-02"
+    | "support-success"
+    | "support-error"
+    | "support-alert";
+  }
   interface CcButton {
     'color'?: "primary" | "secondary";
     'disabled'?: boolean;
@@ -84,6 +105,7 @@ declare namespace LocalJSX {
   }
 
   interface IntrinsicElements {
+    'cc-badge': CcBadge;
     'cc-button': CcButton;
     'cc-icon': CcIcon;
     'cc-text': CcText;
@@ -96,6 +118,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
   export namespace JSX {
     interface IntrinsicElements {
+      'cc-badge': LocalJSX.CcBadge & JSXBase.HTMLAttributes<HTMLCcBadgeElement>;
       'cc-button': LocalJSX.CcButton & JSXBase.HTMLAttributes<HTMLCcButtonElement>;
       'cc-icon': LocalJSX.CcIcon & JSXBase.HTMLAttributes<HTMLCcIconElement>;
       'cc-text': LocalJSX.CcText & JSXBase.HTMLAttributes<HTMLCcTextElement>;

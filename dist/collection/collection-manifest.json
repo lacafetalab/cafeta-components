@@ -1,7 +1,8 @@
 {
   "entries": [
-    "components\\cc-icon\\cc-icon.js",
+    "components\\cc-badge\\cc-badge.js",
     "components\\cc-text\\cc-text.js",
+    "components\\cc-icon\\cc-icon.js",
     "components\\cc-button\\cc-button.js"
   ],
   "compiler": {

@@ -57,7 +57,8 @@ module.exports = {
     borderRadius: {
       sm: "0.4rem",
       default: "0.8rem",
-      lg: "2.4rem"
+      lg: "2.4rem",
+      full: "9999px"
     },
     fontFamily: {
       sans: ["Lato", ...defaultTheme.fontFamily.sans]
