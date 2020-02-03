@@ -2,52 +2,8 @@
 
 @tailwind base;
 
-:root {
-  --ui-background-01: #ebf1f5;
-  --ui-background-02: #f3f4f6;
-  --ui-background-03: #f9fbff;
-  --ui-background-04: #f7f7fe;
-  --ui-background-05: #f2f9ff;
-  --ui-background-06: #ffffff;
-
-  --interactive-01: #6363f6;
-  --interactive-02: #0091ff;
-
-  --support-success: #22aa00;
-  --support-error: #ff385b;
-  --support-alert: #ffc541;
-
-  --text-01: #748e98;
-  --text-02: #4a4a4a;
-  --text-03: #ffffff;
-
-  --link-01: #6363f6;
-
-  --field: #ccd6dc;
-
-  --disabled-background: #e6edf2;
-  --disabled-text: #828594;
-
-  --focus: #ebf1f5;
-
-  --hover-interactive-01: #5050e7;
-  --hover-primary-link: #5050e7;
-  --hover-secondary: #1288e1;
-}
-
-html,
-body {
-  @apply font-sans h-full;
-}
-
-html {
-  font-size: 62.5%;
-}
-
-body {
-  @apply text-color-text-01 bg-background-01 font-regular text-body;
-  -webkit-overflow-scrolling: touch;
-}
+@import "settings";
+@import "elements";
 
 @tailwind components;
 @tailwind utilities;
