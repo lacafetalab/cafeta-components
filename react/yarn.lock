@@ -39,6 +39,11 @@
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-0.14.0.tgz#9fb3a3cf3132328151f353de4632e01e52102bea"
   integrity sha512-9NET910DNaIPngYnLLPeg+Ogzqsi9uM4mSboU5y6p8S5DzMTVEsJZrawi+BoDNUVBa2DhJqQYUFvMDfgU062LQ==
 
+"@stencil/react-output-target@^0.0.3":
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/@stencil/react-output-target/-/react-output-target-0.0.3.tgz#096eee65a56f74784f7c3b0d5c3bef5f8d0bfefb"
+  integrity sha512-OjvDi7gd2OUgj8aF4iSVCt68e+38zxtpCoG/8R4b984IlaiL6QUFMc+pBbGYsyMC0Wd13oXRHZze0KYiL+l0GA==
+
 "@szmarczak/http-timer@^1.1.2":
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/@szmarczak/http-timer/-/http-timer-1.1.2.tgz#b1665e2c461a2cd92f4c1bbf50d5454de0d4b421"
@@ -623,7 +628,9 @@ cacheable-request@^6.0.0:
 
 cafeta-components@lacafetalab/cafeta-components:
   version "0.0.1"
-  resolved "https://codeload.github.com/lacafetalab/cafeta-components/tar.gz/ace3508f675ac95cecafbc82b2f7cfe43f5c5c52"
+  resolved "https://codeload.github.com/lacafetalab/cafeta-components/tar.gz/728020b4bcaa204d015ae24c6b5be170cd4c3e01"
+  dependencies:
+    "@stencil/react-output-target" "^0.0.3"
 
 callsites@^2.0.0:
   version "2.0.0"
