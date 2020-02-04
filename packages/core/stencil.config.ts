@@ -15,7 +15,7 @@ export const config: Config = {
   outputTargets: [
     reactOutputTarget({
       componentCorePackage: "cafeta-components",
-      proxiesFile: "react/src/components.ts"
+      proxiesFile: "../react/src/components.ts"
     }),
     {
       type: "dist",
