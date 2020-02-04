@@ -1,5 +1,5 @@
 {
-  "name": "cafeta-components-react",
+  "name": "@cafeta-components/react",
   "sideEffects": false,
   "version": "0.0.1",
   "private": true,
