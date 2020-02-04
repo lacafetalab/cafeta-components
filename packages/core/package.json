@@ -1,6 +1,7 @@
 {
   "name": "@cafeta-components/core",
   "version": "1.0.1",
+  "private": false,
   "description": "Base cafeta components",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -47,5 +48,5 @@
   "dependencies": {
     "@stencil/react-output-target": "^0.0.3"
   },
-  "gitHead": "0e6539e59d2e0f7ec351949684beae73183daea1"
+  "gitHead": "eb5149286a438b7e462ef952222c636514b59ad1"
 }

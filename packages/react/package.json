@@ -1,6 +1,7 @@
 {
   "name": "@cafeta-components/react",
   "sideEffects": false,
+  "private": false,
   "version": "1.0.1",
   "description": "React specific wrapper for cafeta-components",
   "repository": {
@@ -46,5 +47,6 @@
       "node_modules",
       "dist"
     ]
-  }
+  },
+  "gitHead": "eb5149286a438b7e462ef952222c636514b59ad1"
 }
