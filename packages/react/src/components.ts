@@ -3,9 +3,9 @@
 /* auto-generated react proxies */
 import { createReactComponent } from './react-component-lib';
 
-import { JSX } from 'cafeta-components';
+import { JSX } from '@cafeta/components';
 
-import { defineCustomElements, applyPolyfills } from 'cafeta-components/loader';
+import { defineCustomElements, applyPolyfills } from '@cafeta/components/loader';
 
 applyPolyfills().then(() => defineCustomElements());
 export const CcBadge = /*@__PURE__*/createReactComponent<JSX.CcBadge, HTMLCcBadgeElement>('cc-badge');

@@ -14,7 +14,7 @@ export const config: Config = {
   globalStyle: "src/global/app.scss",
   outputTargets: [
     reactOutputTarget({
-      componentCorePackage: "cafeta-components",
+      componentCorePackage: "@cafeta/components",
       proxiesFile: "../react/src/components.ts"
     }),
     {
