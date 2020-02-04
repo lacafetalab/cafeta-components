@@ -1,6 +1,6 @@
 {
   "name": "@cafeta-components/core",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "private": false,
   "description": "Base cafeta components",
   "main": "dist/index.js",
