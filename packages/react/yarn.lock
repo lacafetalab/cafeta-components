@@ -18,6 +18,13 @@
     esutils "^2.0.2"
     js-tokens "^4.0.0"
 
+"@cafeta/components@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@cafeta/components/-/components-1.1.0.tgz#e4d7eb56e29f62cd2e423e806b83f04183b82d7f"
+  integrity sha512-6zKMehzcddmzsjA3FNMoIxe6Rm4w2Wuid4S4Sk1kjo6rBmifaQTYCpIxyPXDVD7yAUqOwzxIR9ZR7uA3cNOjHg==
+  dependencies:
+    "@stencil/react-output-target" "^0.0.3"
+
 "@jest/types@^24.9.0":
   version "24.9.0"
   resolved "https://registry.yarnpkg.com/@jest/types/-/types-24.9.0.tgz#63cb26cb7500d069e5a389441a7c6ab5e909fc59"
@@ -625,12 +632,6 @@ cacheable-request@^6.0.0:
     lowercase-keys "^2.0.0"
     normalize-url "^4.1.0"
     responselike "^1.0.2"
-
-cafeta-components@lacafetalab/cafeta-components:
-  version "0.0.1"
-  resolved "https://codeload.github.com/lacafetalab/cafeta-components/tar.gz/728020b4bcaa204d015ae24c6b5be170cd4c3e01"
-  dependencies:
-    "@stencil/react-output-target" "^0.0.3"
 
 callsites@^2.0.0:
   version "2.0.0"
