@@ -15,7 +15,8 @@
   "unpkg": "dist/cafeta-components/cafeta-components.js",
   "files": [
     "dist/",
-    "loader/"
+    "loader/",
+    "tailwind.config.js"
   ],
   "scripts": {
     "build": "cross-env NODE_ENV=production stencil build --docs",
@@ -44,11 +45,10 @@
     "cssnano": "^4.1.10",
     "npm-run-all": "^4.1.5",
     "tailwindcss": "^1.1.4",
-    "write-file-webpack-plugin": "^4.5.1"
-  },
-  "license": "MIT",
-  "dependencies": {
+    "write-file-webpack-plugin": "^4.5.1",
     "@stencil/react-output-target": "^0.0.3"
   },
+  "license": "MIT",
+  "dependencies": {},
   "gitHead": "3bf1aa844aff06c6296ca746c9ddf3a3e0009cc0"
 }
