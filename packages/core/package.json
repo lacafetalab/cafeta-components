@@ -1,7 +1,9 @@
 {
-  "name": "cafeta-components",
+  "name": "@cafeta/components",
   "version": "1.0.2-alpha.0",
-  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
   "description": "Base cafeta components",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
