@@ -36,7 +36,7 @@
     "typescript": "~3.7.2"
   },
   "dependencies": {
-    "cafeta-components": "lacafetalab/cafeta-components"
+    "@cafeta/components": "^1.1.0"
   },
   "peerDependencies": {
     "react": "^16.7.0",
@@ -50,5 +50,6 @@
       "dist"
     ]
   },
+  "license": "MIT",
   "gitHead": "3bf1aa844aff06c6296ca746c9ddf3a3e0009cc0"
 }
