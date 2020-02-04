@@ -1,7 +1,9 @@
 {
-  "name": "cafeta-components-react",
+  "name": "@cafeta/components-react",
   "sideEffects": false,
-  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
   "version": "1.0.2-alpha.0",
   "description": "React specific wrapper for cafeta-components",
   "repository": {
