@@ -1,5 +1,5 @@
 {
-  "name": "@cafeta/components-react",
+  "name": "cafeta-components-react",
   "sideEffects": false,
   "private": false,
   "version": "1.0.1-alpha.0",
@@ -48,5 +48,5 @@
       "dist"
     ]
   },
-  "gitHead": "1e35bb03fbde883cb237a5e8ef5e36c9130d3a9e"
+  "gitHead": "3bf1aa844aff06c6296ca746c9ddf3a3e0009cc0"
 }
