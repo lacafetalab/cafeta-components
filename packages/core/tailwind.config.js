@@ -17,34 +17,42 @@ module.exports = {
         "05": "var(--background-05)",
         "06": "var(--background-06)"
       },
-      interactive: {
-        "01": "var(--interactive-01)",
-        "02": "var(--interactive-02)"
+      primary: {
+        default: "var(--primary)",
+        dark: "var(--primary-dark)",
+        90: "var(--primary-90)",
+        80: "var(--primary-80)",
+        70: "var(--primary-70)",
+        60: "var(--primary-60)",
+        50: "var(--primary-50)",
+        40: "var(--primary-40)",
+        30: "var(--primary-30)",
+        20: "var(--primary-20)",
+        10: "var(--primary-10)"
       },
-      support: {
-        success: "var(--support-success)",
-        error: "var(--support-error)",
-        alert: "var(--support-alert)"
+      secondary: {
+        default: "var(--secondary)",
+        dark: "var(--secondary-dark)",
+        90: "var(--secondary-90)",
+        80: "var(--secondary-80)",
+        70: "var(--secondary-70)",
+        60: "var(--secondary-60)",
+        50: "var(--secondary-50)",
+        40: "var(--secondary-40)",
+        30: "var(--secondary-30)",
+        20: "var(--secondary-20)",
+        10: "var(--secondary-10)"
       },
+      success: "var(--success)",
+      error: "var(--error)",
+      alert: "var(--alert)",
       "color-text": {
-        "01": "var(--text-01)",
-        "02": "var(--text-02)",
-        "03": "var(--text-03)"
-      },
-      link: {
-        "01": "var(--link-01)"
+        "01": "var(--color-text-01)",
+        "02": "var(--color-text-02)",
+        "03": "var(--color-text-03)"
       },
       field: "var(--field)",
-      disabled: {
-        background: "var(--disabled-background)",
-        text: "var(--disabled-text)"
-      },
-      focus: "var(--focus)",
-      hover: {
-        "interactive-01": "var(--hover-interactive-01)",
-        "link-01": "var(--hover-primary-link)",
-        "interactive-02": "var(--hover-secondary)"
-      }
+      focus: "var(--focus)"
     },
     spacing: {
       xsm: "0.4rem",
