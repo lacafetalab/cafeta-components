@@ -22,3 +22,13 @@ b,
 strong {
   @apply font-black;
 }
+
+a {
+  @apply text-primary;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
