@@ -18,12 +18,10 @@
     esutils "^2.0.2"
     js-tokens "^4.0.0"
 
-"@cafeta/components@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@cafeta/components/-/components-1.1.0.tgz#e4d7eb56e29f62cd2e423e806b83f04183b82d7f"
-  integrity sha512-6zKMehzcddmzsjA3FNMoIxe6Rm4w2Wuid4S4Sk1kjo6rBmifaQTYCpIxyPXDVD7yAUqOwzxIR9ZR7uA3cNOjHg==
-  dependencies:
-    "@stencil/react-output-target" "^0.0.3"
+"@cafeta/components@^1.2.1":
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/@cafeta/components/-/components-1.2.1.tgz#fe2c74df045d43280cb05b8a6c7c9b211d2fa288"
+  integrity sha512-pVz2VAXnUYURakuzNED+JQWnKQnRN49qgf7iOn/eXB6wwZ/4/agYGtXAvMIaiF3kW0nOSMt+UzwArywUT6Xqmw==
 
 "@jest/types@^24.9.0":
   version "24.9.0"
@@ -45,11 +43,6 @@
   version "0.14.0"
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-0.14.0.tgz#9fb3a3cf3132328151f353de4632e01e52102bea"
   integrity sha512-9NET910DNaIPngYnLLPeg+Ogzqsi9uM4mSboU5y6p8S5DzMTVEsJZrawi+BoDNUVBa2DhJqQYUFvMDfgU062LQ==
-
-"@stencil/react-output-target@^0.0.3":
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/@stencil/react-output-target/-/react-output-target-0.0.3.tgz#096eee65a56f74784f7c3b0d5c3bef5f8d0bfefb"
-  integrity sha512-OjvDi7gd2OUgj8aF4iSVCt68e+38zxtpCoG/8R4b984IlaiL6QUFMc+pBbGYsyMC0Wd13oXRHZze0KYiL+l0GA==
 
 "@szmarczak/http-timer@^1.1.2":
   version "1.1.2"
