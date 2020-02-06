@@ -52,6 +52,10 @@ module.exports = {
         "03": "var(--color-text-03)"
       },
       field: "var(--field)",
+      disabled: {
+        background: "var(--disabled-background)",
+        text: "var(--disabled-text)"
+      },
       focus: "var(--focus)"
     },
     spacing: {
