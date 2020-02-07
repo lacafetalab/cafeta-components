@@ -115,7 +115,7 @@ const CcIcon = class {
                 "cc-icon--color-text-03": this.color === "color-text-03"
             } }, core.h("svg", { class: "cc-icon", width: this.size, height: this.size, viewBox: "0 0 1024 1024" }, core.h("path", { d: this.getPath(this.name) }))));
     }
-    static get style() { return ".cc-icon{fill:var(--cc-icon-color)}"; }
+    static get style() { return ".cc-icon{fill:currentColor}"; }
 };
 
 exports.cc_icon = CcIcon;

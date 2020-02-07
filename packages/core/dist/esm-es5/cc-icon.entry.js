@@ -106,7 +106,7 @@ var CcIcon = /** @class */ (function () {
             } }, h("svg", { class: "cc-icon", width: this.size, height: this.size, viewBox: "0 0 1024 1024" }, h("path", { d: this.getPath(this.name) }))));
     };
     Object.defineProperty(CcIcon, "style", {
-        get: function () { return ".cc-icon{fill:var(--cc-icon-color)}"; },
+        get: function () { return ".cc-icon{fill:currentColor}"; },
         enumerable: true,
         configurable: true
     });
