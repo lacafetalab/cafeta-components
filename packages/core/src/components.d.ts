@@ -10,13 +10,6 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 
 export namespace Components {
-  interface CcBadge {
-    'color': | "interactive-01"
-    | "interactive-02"
-    | "support-success"
-    | "support-error"
-    | "support-alert";
-  }
   interface CcButton {
     'color': "primary" | "secondary";
     'disabled': boolean;
@@ -30,6 +23,7 @@ export namespace Components {
     'target'?: string;
   }
   interface CcIcon {
+    'color': "color-text-01" | "color-text-02" | "color-text-03";
     'name': string;
     'size': number;
   }
@@ -42,12 +36,6 @@ export namespace Components {
 
 declare global {
 
-
-  interface HTMLCcBadgeElement extends Components.CcBadge, HTMLStencilElement {}
-  var HTMLCcBadgeElement: {
-    prototype: HTMLCcBadgeElement;
-    new (): HTMLCcBadgeElement;
-  };
 
   interface HTMLCcButtonElement extends Components.CcButton, HTMLStencilElement {}
   var HTMLCcButtonElement: {
@@ -67,7 +55,6 @@ declare global {
     new (): HTMLCcTextElement;
   };
   interface HTMLElementTagNameMap {
-    'cc-badge': HTMLCcBadgeElement;
     'cc-button': HTMLCcButtonElement;
     'cc-icon': HTMLCcIconElement;
     'cc-text': HTMLCcTextElement;
@@ -75,13 +62,6 @@ declare global {
 }
 
 declare namespace LocalJSX {
-  interface CcBadge {
-    'color'?: | "interactive-01"
-    | "interactive-02"
-    | "support-success"
-    | "support-error"
-    | "support-alert";
-  }
   interface CcButton {
     'color'?: "primary" | "secondary";
     'disabled'?: boolean;
@@ -95,6 +75,7 @@ declare namespace LocalJSX {
     'target'?: string;
   }
   interface CcIcon {
+    'color'?: "color-text-01" | "color-text-02" | "color-text-03";
     'name'?: string;
     'size'?: number;
   }
@@ -105,7 +86,6 @@ declare namespace LocalJSX {
   }
 
   interface IntrinsicElements {
-    'cc-badge': CcBadge;
     'cc-button': CcButton;
     'cc-icon': CcIcon;
     'cc-text': CcText;
@@ -118,7 +98,6 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
   export namespace JSX {
     interface IntrinsicElements {
-      'cc-badge': LocalJSX.CcBadge & JSXBase.HTMLAttributes<HTMLCcBadgeElement>;
       'cc-button': LocalJSX.CcButton & JSXBase.HTMLAttributes<HTMLCcButtonElement>;
       'cc-icon': LocalJSX.CcIcon & JSXBase.HTMLAttributes<HTMLCcIconElement>;
       'cc-text': LocalJSX.CcText & JSXBase.HTMLAttributes<HTMLCcTextElement>;

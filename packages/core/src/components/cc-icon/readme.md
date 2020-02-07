@@ -7,10 +7,11 @@
 
 ## Properties
 
-| Property | Attribute | Description | Type     | Default     |
-| -------- | --------- | ----------- | -------- | ----------- |
-| `name`   | `name`    |             | `string` | `undefined` |
-| `size`   | `size`    |             | `number` | `24`        |
+| Property | Attribute | Description | Type                                                    | Default           |
+| -------- | --------- | ----------- | ------------------------------------------------------- | ----------------- |
+| `color`  | `color`   |             | `"color-text-01" \| "color-text-02" \| "color-text-03"` | `"color-text-01"` |
+| `name`   | `name`    |             | `string`                                                | `undefined`       |
+| `size`   | `size`    |             | `number`                                                | `24`              |
 
 
 ## Dependencies
