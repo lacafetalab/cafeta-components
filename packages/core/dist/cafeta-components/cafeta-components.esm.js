@@ -1,6 +1,1 @@
-import { p as patchBrowser, g as globals, b as bootstrapLazy } from './core-15d86d4a.js';
-
-patchBrowser().then(options => {
-  globals();
-  return bootstrapLazy([["cc-button",[[1,"cc-button",{"iconName":[1,"icon-name"],"iconReverse":[4,"icon-reverse"],"iconOnly":[4,"icon-only"],"disabled":[4],"fill":[1],"expand":[4],"color":[1],"href":[1],"target":[1],"size":[1]}]]],["cc-text",[[1,"cc-text",{"type":[1],"strong":[4],"tag":[1]}]]],["cc-icon",[[1,"cc-icon",{"name":[1],"size":[2],"color":[1]}]]]], options);
-});
+import{p as c,b as o}from"./p-c6084a5c.js";c().then(c=>o([["p-mtta9pfr",[[1,"cc-button",{iconName:[1,"icon-name"],iconReverse:[4,"icon-reverse"],iconOnly:[4,"icon-only"],disabled:[4],fill:[1],expand:[4],color:[1],href:[1],target:[1],size:[1]}]]],["p-ldzmowsk",[[1,"cc-text",{type:[1],strong:[4],tag:[1]}]]],["p-b6kcr2ox",[[1,"cc-icon",{name:[1],size:[2],color:[1]}]]]],c));

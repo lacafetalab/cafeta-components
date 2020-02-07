@@ -1,17 +1,1 @@
-:host {
-  display: -webkit-inline-box;
-  display: inline-flex;
-  --cc-icon-color: var(--color-text-01);
-}
-
-:host(.cc-icon--color-text-02) {
-  --cc-icon-color: var(--color-text-02);
-}
-
-:host(.cc-icon--color-text-03) {
-  --cc-icon-color: var(--color-text-03);
-}
-
-.cc-icon {
-  fill: var(--cc-icon-color);
-}
+.cc-icon{fill:var(--cc-icon-color)}

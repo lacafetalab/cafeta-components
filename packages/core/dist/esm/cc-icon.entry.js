@@ -1,4 +1,4 @@
-import { r as registerInstance, h, H as Host } from './core-15d86d4a.js';
+import { r as registerInstance, h, H as Host } from './core-5f86e29c.js';
 
 var IcoMoonType = "selection";
 var icons = [
@@ -111,7 +111,7 @@ const CcIcon = class {
                 "cc-icon--color-text-03": this.color === "color-text-03"
             } }, h("svg", { class: "cc-icon", width: this.size, height: this.size, viewBox: "0 0 1024 1024" }, h("path", { d: this.getPath(this.name) }))));
     }
-    static get style() { return ":host {\n  display: -webkit-inline-box;\n  display: -ms-inline-flexbox;\n  display: inline-flex;\n  --cc-icon-color: var(--color-text-01);\n}\n\n:host(.cc-icon--color-text-02) {\n  --cc-icon-color: var(--color-text-02);\n}\n\n:host(.cc-icon--color-text-03) {\n  --cc-icon-color: var(--color-text-03);\n}\n\n.cc-icon {\n  fill: var(--cc-icon-color);\n}"; }
+    static get style() { return ".cc-icon{fill:var(--cc-icon-color)}"; }
 };
 
 export { CcIcon as cc_icon };
