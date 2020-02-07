@@ -1,4 +1,4 @@
-import { r as registerInstance, h } from './core-d1147b68.js';
+import { r as registerInstance, h } from './core-15d86d4a.js';
 
 const CcText = class {
     constructor(hostRef) {
@@ -56,7 +56,7 @@ const CcText = class {
         const CustomTag = types[this.type].tag;
         return (h(CustomTag, { class: `text--reset ${types[this.type].cssClass} ${this.strong ? "text--strong" : "text--normal"}` }, h("slot", null)));
     }
-    static get style() { return ".text--reset{margin:0;padding:0}.text--normal{font-weight:400}.text--strong{font-weight:900}.heading-01{font-size:2.4rem}.heading-02{font-size:2rem}.subheading-01{font-size:1.8rem}.subheading-02{font-size:1.6rem}.body{font-size:1.4rem}.body-02{font-size:1.6rem}.small-01{font-size:1.1rem}.small-02{font-size:1.2rem}.small-03{font-size:1rem}.display-01{font-size:4.8rem}.display-02{font-size:4rem}"; }
+    static get style() { return ".text--reset {\n  margin: 0;\n  padding: 0;\n}\n\n.text--normal {\n  font-weight: 400;\n}\n\n.text--strong {\n  font-weight: 900;\n}\n\n.heading-01 {\n  font-size: 2.4rem;\n}\n\n.heading-02 {\n  font-size: 2rem;\n}\n\n.subheading-01 {\n  font-size: 1.8rem;\n}\n\n.subheading-02 {\n  font-size: 1.6rem;\n}\n\n.body {\n  font-size: 1.4rem;\n}\n\n.body-02 {\n  font-size: 1.6rem;\n}\n\n.small-01 {\n  font-size: 1.1rem;\n}\n\n.small-02 {\n  font-size: 1.2rem;\n}\n\n.small-03 {\n  font-size: 1rem;\n}\n\n.display-01 {\n  font-size: 4.8rem;\n}\n\n.display-02 {\n  font-size: 4rem;\n}"; }
 };
 
 export { CcText as cc_text };

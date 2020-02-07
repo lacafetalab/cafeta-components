@@ -1,6 +1,6 @@
 :host {
   @apply inline-block;
-  --cc-button-color-base: theme("colors.interactive.01");
+  --cc-button-color-base: theme("colors.primary.default");
   --cc-button-color-contrast: theme("colors.color-text.03");
 }
 
@@ -9,7 +9,7 @@
 }
 
 :host(.button--secondary) {
-  --cc-button-color-base: theme("colors.interactive.02");
+  --cc-button-color-base: theme("colors.secondary.default");
   --cc-button-color-contrast: theme("colors.color-text.03");
 }
 

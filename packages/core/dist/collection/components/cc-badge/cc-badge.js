@@ -21,7 +21,7 @@ export class CcBadge {
             "type": "string",
             "mutable": false,
             "complexType": {
-                "original": "| \"interactive-01\"\n    | \"interactive-02\"\n    | \"support-success\"\n    | \"support-error\"\n    | \"support-alert\"",
+                "original": "| \"interactive-01\"\r\n    | \"interactive-02\"\r\n    | \"support-success\"\r\n    | \"support-error\"\r\n    | \"support-alert\"",
                 "resolved": "\"interactive-01\" | \"interactive-02\" | \"support-alert\" | \"support-error\" | \"support-success\"",
                 "references": {}
             },

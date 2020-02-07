@@ -1,1 +1,40 @@
-.badge{font-size:1.2rem;padding:.8rem;border-radius:9999px;font-weight:400;display:inline-block;line-height:1;background-color:var(--cc-badge-color-base);color:var(--cc-badge-color-contrast)}
+::slotted(strong) {
+  font-weight: 700;
+}
+
+:host {
+  display: inline-block;
+  --cc-badge-color-contrast: var(--color-text-03);
+  --cc-badge-color-base: ;
+}
+
+:host(.badge--interactive-01) {
+  --cc-badge-color-base: ;
+}
+
+:host(.badge--interactive-02) {
+  --cc-badge-color-base: ;
+}
+
+:host(.badge--support-success) {
+  --cc-badge-color-base: ;
+}
+
+:host(.badge--support-error) {
+  --cc-badge-color-base: ;
+}
+
+:host(.badge--support-alert) {
+  --cc-badge-color-base: ;
+}
+
+.badge {
+  font-size: 1.2rem;
+  padding: 0.8rem;
+  border-radius: 9999px;
+  font-weight: 400;
+  display: inline-block;
+  line-height: 1;
+  background-color: var(--cc-badge-color-base);
+  color: var(--cc-badge-color-contrast);
+}
