@@ -1,6 +1,29 @@
 declare const _default: {
     IcoMoonType: string;
-    icons: {
+    icons: ({
+        icon: {
+            paths: string[];
+            attrs: any[];
+            isMulticolor: boolean;
+            isMulticolor2: boolean;
+            grid: number;
+            tags: string[];
+            colorPermutations: {
+                "11511511511"?: undefined;
+            };
+        };
+        attrs: any[];
+        properties: {
+            order: number;
+            id: number;
+            name: string;
+            prevSize: number;
+            code: number;
+        };
+        setIdx: number;
+        setId: number;
+        iconIdx: number;
+    } | {
         icon: {
             paths: string[];
             attrs: {}[];
@@ -8,6 +31,9 @@ declare const _default: {
             isMulticolor2: boolean;
             grid: number;
             tags: string[];
+            colorPermutations: {
+                "11511511511": {}[];
+            };
         };
         attrs: {}[];
         properties: {
@@ -20,7 +46,7 @@ declare const _default: {
         setIdx: number;
         setId: number;
         iconIdx: number;
-    }[];
+    })[];
     height: number;
     metadata: {
         name: string;
