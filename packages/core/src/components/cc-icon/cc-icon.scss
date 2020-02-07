@@ -1,11 +1,16 @@
 :host {
   @apply inline-flex;
+  --cc-icon-color: theme("colors.color-text.01");
+}
+
+:host(.cc-icon--color-text-02) {
+  --cc-icon-color: theme("colors.color-text.02");
+}
+
+:host(.cc-icon--color-text-03) {
+  --cc-icon-color: theme("colors.color-text.03");
 }
 
 .cc-icon {
-  stroke: currentColor;
-  stroke-width: 2;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  fill: none;
+  fill: var(--cc-icon-color);
 }
