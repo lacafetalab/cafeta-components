@@ -4,11 +4,6 @@ import { sass } from "@stencil/sass";
 import { postcss } from "@stencil/postcss";
 import autoprefixer from "autoprefixer";
 
-const purgecss = require("@fullhuman/postcss-purgecss")({
-  content: ["./src/**/*.tsx", "./src/index.html"],
-  defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || []
-});
-
 export const config: Config = {
   namespace: "cafeta-components",
   globalStyle: "src/global/app.scss",
@@ -35,9 +30,7 @@ export const config: Config = {
       plugins: [
         require("tailwindcss")("./tailwind.config.js"),
         autoprefixer(),
-        ...(process.env.NODE_ENV === "production"
-          ? [purgecss, require("cssnano")]
-          : [])
+        ...(process.env.NODE_ENV === "production" ? [require("cssnano")] : [])
       ]
     })
   ]
