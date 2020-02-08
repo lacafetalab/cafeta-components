@@ -1,6 +1,6 @@
 {
   "name": "@cafeta/components",
-  "version": "1.2.9-alpha.0",
+  "version": "1.2.10-alpha.0",
   "publishConfig": {
     "access": "public"
   },
@@ -49,6 +49,5 @@
     "write-file-webpack-plugin": "^4.5.1"
   },
   "license": "MIT",
-  "gitHead": "3bf1aa844aff06c6296ca746c9ddf3a3e0009cc0",
-  "dependencies": {}
+  "gitHead": "3bf1aa844aff06c6296ca746c9ddf3a3e0009cc0"
 }
