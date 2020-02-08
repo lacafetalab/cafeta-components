@@ -23,7 +23,9 @@
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "files": [
-    "dist/"
+    "dist/",
+    "tailwind.config.js",
+    "global.css"
   ],
   "devDependencies": {
     "@types/jest": "23.3.9",
