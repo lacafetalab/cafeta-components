@@ -28,7 +28,7 @@ export class CcIcon {
     static get is() { return "cc-icon"; }
     static get encapsulation() { return "shadow"; }
     static get originalStyleUrls() { return {
-        "$": ["cc-icon.scss"]
+        "$": ["cc-icon.css"]
     }; }
     static get styleUrls() { return {
         "$": ["cc-icon.css"]
