@@ -19,7 +19,7 @@
     "tailwind.config.js"
   ],
   "scripts": {
-    "build": "stencil build --docs",
+    "build": "cross-env NODE_ENV=production stencil build --docs",
     "dev": "stencil build --dev --watch --docs",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
@@ -49,5 +49,6 @@
     "write-file-webpack-plugin": "^4.5.1"
   },
   "license": "MIT",
-  "gitHead": "3bf1aa844aff06c6296ca746c9ddf3a3e0009cc0"
+  "gitHead": "3bf1aa844aff06c6296ca746c9ddf3a3e0009cc0",
+  "dependencies": {}
 }
