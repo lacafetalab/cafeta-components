@@ -1,8 +1,1 @@
-:host {
-  display: -webkit-inline-box;
-  display: inline-flex;
-}
-
-.cc-icon {
-  fill: currentColor;
-}
+.cc-icon{fill:currentColor}
