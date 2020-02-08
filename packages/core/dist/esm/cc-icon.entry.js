@@ -242,7 +242,7 @@ const CcIcon = class {
                 "cc-icon--color-text-03": this.color === "color-text-03"
             } }, h("svg", { class: "cc-icon", width: this.size, height: this.size, viewBox: "0 0 1024 1024" }, h("path", { d: this.getPath(this.name) }))));
     }
-    static get style() { return ".cc-icon{fill:currentColor}"; }
+    static get style() { return ":host{display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex}.cc-icon{fill:currentColor}"; }
 };
 
 export { CcIcon as cc_icon };
