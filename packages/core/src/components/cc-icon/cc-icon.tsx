@@ -3,7 +3,7 @@ import iconPaths from "./selection";
 
 @Component({
   tag: "cc-icon",
-  styleUrl: "cc-icon.css",
+  styleUrl: "cc-icon.scss",
   shadow: true
 })
 export class CcIcon {
