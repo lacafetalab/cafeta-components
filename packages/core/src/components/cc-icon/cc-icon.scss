@@ -1,7 +1,5 @@
 :host {
-  display: inline-flex;
-  color: red;
-  background: peru;
+  @apply inline-flex;
 }
 
 .cc-icon {
