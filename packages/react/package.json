@@ -11,6 +11,8 @@
     "url": "https://github.com/lacafetalab/cafeta-components.git"
   },
   "scripts": {
+    "prepublishOnly": "node ./scripts/copyFiles.js",
+    "postpublish": "node ./scripts/removeFiles.js",
     "build": "npm run clean && npm run compile",
     "clean": "rm -rf dist",
     "compile": "npm run tsc",
