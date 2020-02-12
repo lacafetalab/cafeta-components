@@ -3,16 +3,16 @@ declare const _default: {
     icons: ({
         icon: {
             paths: string[];
-            attrs: any[];
+            attrs: {}[];
             isMulticolor: boolean;
             isMulticolor2: boolean;
             grid: number;
             tags: string[];
             colorPermutations: {
-                "11511511511"?: undefined;
+                "11511511511": {}[];
             };
         };
-        attrs: any[];
+        attrs: {}[];
         properties: {
             order: number;
             id: number;
@@ -26,16 +26,16 @@ declare const _default: {
     } | {
         icon: {
             paths: string[];
-            attrs: {}[];
+            attrs: any[];
             isMulticolor: boolean;
             isMulticolor2: boolean;
             grid: number;
             tags: string[];
             colorPermutations: {
-                "11511511511": {}[];
+                "11511511511"?: undefined;
             };
         };
-        attrs: {}[];
+        attrs: any[];
         properties: {
             order: number;
             id: number;
@@ -79,6 +79,10 @@ declare const _default: {
             name: string;
             classSelector: string;
             autoHost: boolean;
+            height: number;
+            columns: number;
+            margin: number;
+            polymer: boolean;
         };
         historySize: number;
         gridSize: number;
