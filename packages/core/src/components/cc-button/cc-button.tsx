@@ -16,6 +16,7 @@ export class CcButton {
   @Prop() href?: string;
   @Prop() target?: string;
   @Prop() size?: "lg" | "md" | "sm" = "lg";
+  @Prop() glow: boolean = false;
 
   render() {
     const BtnElem = this.href ? "a" : "button";
@@ -41,7 +42,8 @@ export class CcButton {
             "button--clear": this.fill === "clear",
             "button--md": this.size === "md",
             "button--sm": this.size === "sm",
-            "button--iconOnly": this.iconOnly
+            "button--iconOnly": this.iconOnly,
+            "button--glow": this.glow
           }}
           {...attrs}
         >
