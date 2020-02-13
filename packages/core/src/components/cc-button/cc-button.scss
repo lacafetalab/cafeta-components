@@ -1,6 +1,8 @@
 :host {
   @apply inline-block;
   --cc-button-color-base: theme("colors.primary.default");
+  --cc-button-color-dark: theme("colors.primary.dark");
+  --cc-button-color-lightest: theme("colors.primary.10");
   --cc-button-color-contrast: theme("colors.color-text.03");
 }
 
@@ -10,6 +12,8 @@
 
 :host(.button--secondary) {
   --cc-button-color-base: theme("colors.secondary.default");
+  --cc-button-color-dark: theme("colors.secondary.dark");
+  --cc-button-color-lightest: theme("colors.secondary.10");
   --cc-button-color-contrast: theme("colors.color-text.03");
 }
 
@@ -24,6 +28,15 @@
   color: var(--cc-button-color-contrast);
   cursor: pointer;
   text-decoration: none;
+
+  &--glow {
+    background-image: linear-gradient(
+      var(--cc-button-color-base) 0%,
+      var(--cc-button-color-base) 50%,
+      var(--cc-button-color-dark) 50%,
+      var(--cc-button-color-dark) 100%
+    );
+  }
 
   &__text {
     @apply inline-flex;
@@ -74,6 +87,15 @@
     border-color: var(--cc-button-color-base);
     color: var(--cc-button-color-base);
     background: var(--cc-button-color-contrast);
+
+    &.button--glow {
+      background-image: linear-gradient(
+        var(--cc-button-color-contrast) 0%,
+        var(--cc-button-color-contrast) 50%,
+        var(--cc-button-color-lightest) 50%,
+        var(--cc-button-color-lightest) 100%
+      );
+    }
   }
 
   &--clear {
@@ -83,6 +105,7 @@
 
   &:disabled,
   &--disabled {
+    background: none;
     @apply bg-disabled-background text-disabled-text cursor-not-allowed;
 
     &.button--clear {
