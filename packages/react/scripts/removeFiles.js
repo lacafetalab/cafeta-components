@@ -1,7 +1,7 @@
 const fs = require("fs");
 
-fs.unlinkSync(__dirname + "./../tailwind.config.js");
+fs.unlinkSync("./tailwind.config.js");
 console.log("tailwind.config.js was deleted!");
 
-fs.unlinkSync(__dirname + "./../global.css");
+fs.unlinkSync("./global.css");
 console.log("global.css was deleted!");
