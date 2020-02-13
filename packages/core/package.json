@@ -19,6 +19,7 @@
     "tailwind.config.js"
   ],
   "scripts": {
+    "update:icons": "node ./scripts/update-icons.js",
     "build": "stencil build --docs",
     "dev": "stencil build --dev --watch --docs",
     "test": "stencil test --spec --e2e",
