@@ -16,6 +16,7 @@ log.txt
 .versions/
 node_modules/
 $RECYCLE.BIN/
+storybook-static
 
 .DS_Store
 Thumbs.db
