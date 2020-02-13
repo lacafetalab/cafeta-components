@@ -1,6 +1,8 @@
 :host {
   display: inline-block;
   --cc-button-color-base: var(--primary);
+  --cc-button-color-dark: var(--primary-dark);
+  --cc-button-color-lightest: var(--primary-10);
   --cc-button-color-contrast: var(--color-text-03);
 }
 
@@ -10,6 +12,8 @@
 
 :host(.button--secondary) {
   --cc-button-color-base: var(--secondary);
+  --cc-button-color-dark: var(--secondary-dark);
+  --cc-button-color-lightest: var(--secondary-10);
   --cc-button-color-contrast: var(--color-text-03);
 }
 
@@ -36,6 +40,11 @@
   color: var(--cc-button-color-contrast);
   cursor: pointer;
   text-decoration: none;
+}
+
+.button--glow {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(var(--cc-button-color-base)), color-stop(50%, var(--cc-button-color-base)), color-stop(50%, var(--cc-button-color-dark)), to(var(--cc-button-color-dark)));
+  background-image: linear-gradient(var(--cc-button-color-base) 0%, var(--cc-button-color-base) 50%, var(--cc-button-color-dark) 50%, var(--cc-button-color-dark) 100%);
 }
 
 .button__text {
@@ -92,12 +101,18 @@
   background: var(--cc-button-color-contrast);
 }
 
+.button--outline.button--glow {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(var(--cc-button-color-contrast)), color-stop(50%, var(--cc-button-color-contrast)), color-stop(50%, var(--cc-button-color-lightest)), to(var(--cc-button-color-lightest)));
+  background-image: linear-gradient(var(--cc-button-color-contrast) 0%, var(--cc-button-color-contrast) 50%, var(--cc-button-color-lightest) 50%, var(--cc-button-color-lightest) 100%);
+}
+
 .button--clear {
   background: transparent;
   color: var(--cc-button-color-base);
 }
 
 .button:disabled, .button--disabled {
+  background: none;
   background-color: var(--disabled-background);
   color: var(--disabled-text);
   cursor: not-allowed;

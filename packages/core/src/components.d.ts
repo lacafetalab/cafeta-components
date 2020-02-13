@@ -15,6 +15,7 @@ export namespace Components {
     'disabled': boolean;
     'expand': boolean;
     'fill': "outline" | "clear" | "solid";
+    'glow': boolean;
     'href'?: string;
     'iconName': string;
     'iconOnly': boolean;
@@ -67,6 +68,7 @@ declare namespace LocalJSX {
     'disabled'?: boolean;
     'expand'?: boolean;
     'fill'?: "outline" | "clear" | "solid";
+    'glow'?: boolean;
     'href'?: string;
     'iconName'?: string;
     'iconOnly'?: boolean;

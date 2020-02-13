@@ -69,6 +69,11 @@ export const Button = () => {
   const groupId9 = "GROUP-ID1";
   const value9 = select(label9, options9, defaultValue9, groupId9);
 
+  const label10 = "Glow";
+  const defaultValue10 = false;
+  const groupId10 = "GROUP-ID1";
+  const value10 = boolean(label10, defaultValue10, groupId10);
+
   const props = [
     value ? "icon-reverse" : "",
     value2 ? "disabled" : "",
@@ -77,7 +82,8 @@ export const Button = () => {
     `fill="${value5}"`,
     value6 ? `icon-name="${value6}"` : "",
     value8 ? "icon-only" : "",
-    value9 ? `size="${value9}"` : ""
+    value9 ? `size="${value9}"` : "",
+    value10 ? "glow" : ""
   ].join(" ");
 
   return `

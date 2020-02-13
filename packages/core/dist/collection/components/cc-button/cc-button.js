@@ -9,6 +9,7 @@ export class CcButton {
         this.expand = false;
         this.color = "primary";
         this.size = "lg";
+        this.glow = false;
     }
     render() {
         const BtnElem = this.href ? "a" : "button";
@@ -29,7 +30,8 @@ export class CcButton {
                     "button--clear": this.fill === "clear",
                     "button--md": this.size === "md",
                     "button--sm": this.size === "sm",
-                    "button--iconOnly": this.iconOnly
+                    "button--iconOnly": this.iconOnly,
+                    "button--glow": this.glow
                 } }, attrs),
                 this.iconName && (h("cc-icon", { class: {
                         button__icon: true
@@ -223,6 +225,24 @@ export class CcButton {
             "attribute": "size",
             "reflect": false,
             "defaultValue": "\"lg\""
+        },
+        "glow": {
+            "type": "boolean",
+            "mutable": false,
+            "complexType": {
+                "original": "boolean",
+                "resolved": "boolean",
+                "references": {}
+            },
+            "required": false,
+            "optional": false,
+            "docs": {
+                "tags": [],
+                "text": ""
+            },
+            "attribute": "glow",
+            "reflect": false,
+            "defaultValue": "false"
         }
     }; }
 }

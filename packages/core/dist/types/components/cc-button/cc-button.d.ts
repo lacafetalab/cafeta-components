@@ -9,5 +9,6 @@ export declare class CcButton {
     href?: string;
     target?: string;
     size?: "lg" | "md" | "sm";
+    glow: boolean;
     render(): any;
 }

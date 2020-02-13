@@ -13,6 +13,7 @@
 | `disabled`    | `disabled`     |             | `boolean`                         | `false`     |
 | `expand`      | `expand`       |             | `boolean`                         | `false`     |
 | `fill`        | `fill`         |             | `"clear" \| "outline" \| "solid"` | `"solid"`   |
+| `glow`        | `glow`         |             | `boolean`                         | `false`     |
 | `href`        | `href`         |             | `string`                          | `undefined` |
 | `iconName`    | `icon-name`    |             | `string`                          | `""`        |
 | `iconOnly`    | `icon-only`    |             | `boolean`                         | `false`     |
