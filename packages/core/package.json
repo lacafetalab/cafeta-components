@@ -27,7 +27,7 @@
     "generate": "stencil generate",
     "start": "npm-run-all --parallel dev storybook",
     "storybook": "start-storybook -p 9001 -c .storybook -s www",
-    "build-storybook": "build-storybook -s www"
+    "build-storybook": "build-storybook -c .storybook -s www"
   },
   "devDependencies": {
     "@babel/core": "^7.8.3",
