@@ -1,9 +1,6 @@
-# my-component
-
-
+# cc-button
 
 <!-- Auto Generated Below -->
-
 
 ## Properties
 
@@ -21,7 +18,6 @@
 | `size`        | `size`         |             | `"lg" \| "md" \| "sm"`            | `"lg"`      |
 | `target`      | `target`       |             | `string`                          | `undefined` |
 
-
 ## Dependencies
 
 ### Depends on
@@ -29,12 +25,13 @@
 - [cc-icon](../cc-icon)
 
 ### Graph
+
 ```mermaid
 graph TD;
   cc-button --> cc-icon
   style cc-button fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
-----------------------------------------------
+---
 
-*Built with [StencilJS](https://stenciljs.com/)*
+_Built with [StencilJS](https://stenciljs.com/)_
