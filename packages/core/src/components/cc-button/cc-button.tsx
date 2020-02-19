@@ -32,6 +32,7 @@ export class CcButton {
           "button--block": this.expand,
           "button--secondary": this.color === "secondary"
         }}
+        data-testid="CcButton"
       >
         <BtnElem
           class={{

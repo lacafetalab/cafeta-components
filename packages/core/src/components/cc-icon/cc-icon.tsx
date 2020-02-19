@@ -35,6 +35,7 @@ export class CcIcon {
           "cc-icon--color-text-02": this.color === "color-text-02",
           "cc-icon--color-text-03": this.color === "color-text-03"
         }}
+        data-testid="CcIcon"
       >
         <svg
           class="cc-icon"
