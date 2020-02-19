@@ -2,6 +2,7 @@
 
 <!-- Auto Generated Below -->
 
+
 ## Properties
 
 | Property      | Attribute      | Description | Type                              | Default     |
@@ -18,6 +19,7 @@
 | `size`        | `size`         |             | `"lg" \| "md" \| "sm"`            | `"lg"`      |
 | `target`      | `target`       |             | `string`                          | `undefined` |
 
+
 ## Dependencies
 
 ### Depends on
@@ -25,13 +27,12 @@
 - [cc-icon](../cc-icon)
 
 ### Graph
-
 ```mermaid
 graph TD;
   cc-button --> cc-icon
   style cc-button fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
----
+----------------------------------------------
 
-_Built with [StencilJS](https://stenciljs.com/)_
+*Built with [StencilJS](https://stenciljs.com/)*

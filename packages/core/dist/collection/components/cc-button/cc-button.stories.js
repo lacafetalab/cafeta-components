@@ -1,4 +1,5 @@
 import notes from "./readme.md";
+import iconPaths from "./../cc-icon/selection";
 import { withKnobs, select, boolean, text } from "@storybook/addon-knobs/html";
 
 export default { title: "Button", decorators: [withKnobs] };
@@ -39,12 +40,13 @@ export const Button = () => {
   const value5 = select(label5, options5, defaultValue5, groupId5);
 
   const label6 = "Icon";
-  const options6 = {
-    Default: null,
-    check: "check",
-    plus: "plus",
-    x: "x"
-  };
+  const options6 = iconPaths.icons.reduce(
+    (options, icon) => ({
+      ...options,
+      [icon.properties.name]: icon.properties.name
+    }),
+    {}
+  );
   const defaultValue6 = null;
   const groupId6 = "GROUP-ID1";
   const value6 = select(label6, options6, defaultValue6, groupId6);
