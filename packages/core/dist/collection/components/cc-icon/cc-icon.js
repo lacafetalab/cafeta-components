@@ -21,7 +21,7 @@ export class CcIcon {
         return (h(Host, { class: {
                 "cc-icon--color-text-02": this.color === "color-text-02",
                 "cc-icon--color-text-03": this.color === "color-text-03"
-            } },
+            }, "data-testid": "CcIcon" },
             h("svg", { class: "cc-icon", width: this.size, height: this.size, viewBox: "0 0 1024 1024" },
                 h("path", { d: this.getPath(this.name) }))));
     }

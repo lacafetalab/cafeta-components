@@ -27,7 +27,7 @@ const CcButton = class {
         return (core.h(core.Host, { class: {
                 "button--block": this.expand,
                 "button--secondary": this.color === "secondary"
-            } }, core.h(BtnElem, Object.assign({ class: {
+            }, "data-testid": "CcButton" }, core.h(BtnElem, Object.assign({ class: {
                 button: true,
                 "button--reverse": this.iconReverse,
                 "button--disabled": this.href ? false : this.disabled,

@@ -540,7 +540,7 @@ var CcIcon = /** @class */ (function () {
         return (h(Host, { class: {
                 "cc-icon--color-text-02": this.color === "color-text-02",
                 "cc-icon--color-text-03": this.color === "color-text-03"
-            } }, h("svg", { class: "cc-icon", width: this.size, height: this.size, viewBox: "0 0 1024 1024" }, h("path", { d: this.getPath(this.name) }))));
+            }, "data-testid": "CcIcon" }, h("svg", { class: "cc-icon", width: this.size, height: this.size, viewBox: "0 0 1024 1024" }, h("path", { d: this.getPath(this.name) }))));
     };
     Object.defineProperty(CcIcon, "style", {
         get: function () { return ":host{display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex}.cc-icon{fill:currentColor}"; },
