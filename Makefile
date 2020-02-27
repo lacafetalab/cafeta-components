@@ -1,17 +1,10 @@
- # Add the following 'help' target to your Makefile
- # And add help text after each target name starting with '\#\#'
- # A category can be added with @category
+.DEFAULT_GOAL:=help
+SHELL:=/bin/bash
 
-HELP_FUN = \
-    	%help; \
-        while(<>) { push @{$$help{$$2 // 'options'}}, [$$1, $$3] if /^(\w+)\s*:.*\#\#(?:@(\w+))?\s(.*)$$/ }; \
-        print "usage: make [target]\n\n"; \
-    	for (keys %help) { \
-        print "$$_:\n"; $$sep = " " x (20 - length $$_->[0]); \
-        print "  $$_->[0]$$sep$$_->[1]\n" for @{$$help{$$_}}; \
-        print "\n"; }     
+.PHONY: all
 
-help:   ##@miscellaneous Show this help.
-	@perl -e '$(HELP_FUN)' $(MAKEFILE_LIST)
+help:  ## Display this help
+	@awk 'BEGIN {FS = ":.*##"; printf "\nUsage:\n  make \033[36m<target>\033[0m\n\nTargets:\n"} /^[a-zA-Z_-]+:.*?##/ { printf "  \033[36m%-10s\033[0m %s\n", $$1, $$2 }' $(MAKEFILE_LIST)
 
 include deploy/Makefile
+
