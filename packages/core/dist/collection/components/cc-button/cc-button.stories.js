@@ -89,7 +89,7 @@ export const Button = () => {
   ].join(" ");
 
   return `
-    <section style="padding: 15px">
+    <section style="padding: 15px" class="mt-lg color-primary">
       <h1>Button with anchor</h1>
       <br />
       <cc-button ${props} href="http://google.com" target="_blank">${value7}</cc-button>
