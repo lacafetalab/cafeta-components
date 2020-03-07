@@ -24,7 +24,6 @@ export namespace Components {
     'target'?: string;
   }
   interface CcIcon {
-    'color': "color-text-01" | "color-text-02" | "color-text-03";
     'name': string;
     'size': number;
   }
@@ -77,7 +76,6 @@ declare namespace LocalJSX {
     'target'?: string;
   }
   interface CcIcon {
-    'color'?: "color-text-01" | "color-text-02" | "color-text-03";
     'name'?: string;
     'size'?: number;
   }

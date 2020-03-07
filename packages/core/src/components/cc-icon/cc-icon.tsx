@@ -9,8 +9,6 @@ import iconPaths from "./selection";
 export class CcIcon {
   @Prop() name: string;
   @Prop() size: number = 24;
-  @Prop() color: "color-text-01" | "color-text-02" | "color-text-03" =
-    "color-text-01";
 
   private getPath = (iconName: string) => {
     const icon = iconPaths.icons.find(
@@ -30,13 +28,7 @@ export class CcIcon {
     }
 
     return (
-      <Host
-        class={{
-          "cc-icon--color-text-02": this.color === "color-text-02",
-          "cc-icon--color-text-03": this.color === "color-text-03"
-        }}
-        data-testid="CcIcon"
-      >
+      <Host data-testid="CcIcon">
         <svg
           class="cc-icon"
           width={this.size}
