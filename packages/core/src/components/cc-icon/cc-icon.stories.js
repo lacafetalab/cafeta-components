@@ -20,18 +20,7 @@ export const Icon = () => {
 
   const value = select(label, options, defaultValue, groupId);
 
-  const label2 = "Colors";
-  const options2 = {
-    "color-text-01": "color-text-01",
-    "color-text-02": "color-text-02",
-    "color-text-03": "color-text-03"
-  };
-  const defaultValue2 = "color-text-01";
-  const groupId2 = "GROUP-ID1";
-
-  const value2 = select(label2, options2, defaultValue2, groupId2);
-
-  return `<cc-icon name="${value}" color="${value2}"></cc-icon>`;
+  return `<cc-icon name="${value}"></cc-icon>`;
 };
 
 Icon.story = {

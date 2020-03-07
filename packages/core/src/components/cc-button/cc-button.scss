@@ -3,7 +3,7 @@
   --cc-button-color-base: theme("colors.primary.default");
   --cc-button-color-dark: theme("colors.primary.dark");
   --cc-button-color-lightest: theme("colors.primary.10");
-  --cc-button-color-contrast: theme("colors.color-text.03");
+  --cc-button-color-contrast: theme("colors.neutral.04");
 }
 
 :host(.button--block) {
@@ -14,7 +14,7 @@
   --cc-button-color-base: theme("colors.secondary.default");
   --cc-button-color-dark: theme("colors.secondary.dark");
   --cc-button-color-lightest: theme("colors.secondary.10");
-  --cc-button-color-contrast: theme("colors.color-text.03");
+  --cc-button-color-contrast: theme("colors.neutral.04");
 }
 
 .button {
@@ -106,14 +106,14 @@
   &:disabled,
   &--disabled {
     background: none;
-    @apply bg-disabled-background text-disabled-text cursor-not-allowed;
+    @apply bg-disabled text-disabled cursor-not-allowed;
 
     &.button--clear {
       background: transparent;
     }
 
     &.button--outline {
-      @apply bg-background-06 border-disabled-background;
+      @apply bg-neutral-04 border-disabled;
     }
   }
 }

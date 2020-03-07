@@ -36,24 +36,15 @@ module.exports = {
         10: "var(--secondary-10)"
       },
       neutral: {
-        "01": "",
-        "02": "",
-        "03": "",
-        "04": ""
+        "01": "var(--neutral-01)",
+        "02": "var(--neutral-02)",
+        "03": "var(--neutral-03)",
+        "04": "var(--neutral-04)"
       },
       success: "var(--success)",
       error: "var(--error)",
       alert: "var(--alert)",
-      "color-text": {
-        "01": "var(--color-text-01)",
-        "02": "var(--color-text-02)",
-        "03": "var(--color-text-03)"
-      },
       field: "var(--field)",
-      disabled: {
-        background: "var(--disabled-background)",
-        text: "var(--disabled-text)"
-      },
       focus: "var(--focus)"
     },
     backgroundColor: theme => ({
@@ -62,7 +53,16 @@ module.exports = {
       "02": "var(--background-02)",
       "03": "var(--background-03)",
       "04": "var(--background-04)",
-      "05": "var(--background-05)"
+      "05": "var(--background-05)",
+      disabled: "var(--disabled-background)"
+    }),
+    textColor: theme => ({
+      ...theme("colors"),
+      disabled: "var(--disabled-text)"
+    }),
+    borderColor: theme => ({
+      ...theme("colors"),
+      disabled: "var(--disabled-background)"
     }),
     spacing: {
       xsm: "0.4rem",
