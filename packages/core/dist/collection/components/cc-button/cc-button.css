@@ -3,7 +3,7 @@
   --cc-button-color-base: var(--primary);
   --cc-button-color-dark: var(--primary-dark);
   --cc-button-color-lightest: var(--primary-10);
-  --cc-button-color-contrast: var(--color-text-03);
+  --cc-button-color-contrast: var(--neutral-04);
 }
 
 :host(.button--block) {
@@ -14,7 +14,7 @@
   --cc-button-color-base: var(--secondary);
   --cc-button-color-dark: var(--secondary-dark);
   --cc-button-color-lightest: var(--secondary-10);
-  --cc-button-color-contrast: var(--color-text-03);
+  --cc-button-color-contrast: var(--neutral-04);
 }
 
 .button {
@@ -123,6 +123,6 @@
 }
 
 .button:disabled.button--outline, .button--disabled.button--outline {
-  background-color: var(--background-06);
+  background-color: var(--neutral-04);
   border-color: var(--disabled-background);
 }
