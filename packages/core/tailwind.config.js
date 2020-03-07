@@ -43,9 +43,7 @@ module.exports = {
       },
       success: "var(--success)",
       error: "var(--error)",
-      alert: "var(--alert)",
-      field: "var(--field)",
-      focus: "var(--focus)"
+      alert: "var(--alert)"
     },
     backgroundColor: theme => ({
       ...theme("colors"),
