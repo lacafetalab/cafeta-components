@@ -9,14 +9,6 @@ module.exports = {
       xl: "1280px"
     },
     colors: {
-      background: {
-        "01": "var(--background-01)",
-        "02": "var(--background-02)",
-        "03": "var(--background-03)",
-        "04": "var(--background-04)",
-        "05": "var(--background-05)",
-        "06": "var(--background-06)"
-      },
       primary: {
         default: "var(--primary)",
         dark: "var(--primary-dark)",
@@ -43,6 +35,12 @@ module.exports = {
         20: "var(--secondary-20)",
         10: "var(--secondary-10)"
       },
+      neutral: {
+        "01": "",
+        "02": "",
+        "03": "",
+        "04": ""
+      },
       success: "var(--success)",
       error: "var(--error)",
       alert: "var(--alert)",
@@ -58,6 +56,14 @@ module.exports = {
       },
       focus: "var(--focus)"
     },
+    backgroundColor: theme => ({
+      ...theme("colors"),
+      "01": "var(--background-01)",
+      "02": "var(--background-02)",
+      "03": "var(--background-03)",
+      "04": "var(--background-04)",
+      "05": "var(--background-05)"
+    }),
     spacing: {
       xsm: "0.4rem",
       sm: "0.8rem",
