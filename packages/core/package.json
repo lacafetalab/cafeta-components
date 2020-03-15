@@ -40,6 +40,7 @@
     "@storybook/addon-storysource": "^5.3.9",
     "@storybook/addon-viewport": "^5.3.9",
     "@storybook/html": "^5.3.9",
+    "audit-ci": "^2.5.1",
     "autoprefixer": "^9.7.4",
     "babel-loader": "^8.0.6",
     "copy-webpack-plugin": "^5.1.1",
@@ -49,7 +50,8 @@
     "write-file-webpack-plugin": "^4.5.1"
   },
   "resolutions": {
-    "acorn": "^6.4.1"
+    "acorn": "^6.4.1",
+    "minimist":"^1.2.2"
   },
   "license": "MIT",
   "gitHead": "d72170f89d19a0d33102d1f0e5d8468527e34abe"
