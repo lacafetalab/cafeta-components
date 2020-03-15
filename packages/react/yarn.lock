@@ -18,10 +18,10 @@
     esutils "^2.0.2"
     js-tokens "^4.0.0"
 
-"@cafeta/components@^1.2.1":
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/@cafeta/components/-/components-1.2.1.tgz#fe2c74df045d43280cb05b8a6c7c9b211d2fa288"
-  integrity sha512-pVz2VAXnUYURakuzNED+JQWnKQnRN49qgf7iOn/eXB6wwZ/4/agYGtXAvMIaiF3kW0nOSMt+UzwArywUT6Xqmw==
+"@cafeta/components@^1.2.17":
+  version "1.2.17"
+  resolved "https://registry.yarnpkg.com/@cafeta/components/-/components-1.2.17.tgz#01e13d17a5596adab854c8832164d568248a2192"
+  integrity sha512-XbjEBbvZDEJ020N6H4xuY8YzcNj1TanuLWg9r+sq5Aoe0Kcn1wWdyn+Bjj57YKXSL5aS9Sz7ExjBpmHWFtI9cA==
 
 "@jest/types@^24.9.0":
   version "24.9.0"
@@ -131,15 +131,10 @@ acorn-walk@^6.0.1:
   resolved "https://registry.yarnpkg.com/acorn-walk/-/acorn-walk-6.2.0.tgz#123cb8f3b84c2171f1f7fb252615b1c78a6b1a8c"
   integrity sha512-7evsyfH1cLOCdAzZAd43Cic04yKydNx0cF+7tiA19p1XnLLPU4dpCQOqpjqwokFe//vS0QqfqqjCS2JkiIs0cA==
 
-acorn@^5.5.3:
-  version "5.7.3"
-  resolved "https://registry.yarnpkg.com/acorn/-/acorn-5.7.3.tgz#67aa231bf8812974b85235a96771eb6bd07ea279"
-  integrity sha512-T/zvzYRfbVojPWahDsE5evJdHb3oJoQfFbsrKM7w5Zcs++Tr257tia3BmMP8XYVjp1S9RZXQMh7gao96BlqZOw==
-
-acorn@^6.0.1:
-  version "6.4.0"
-  resolved "https://registry.yarnpkg.com/acorn/-/acorn-6.4.0.tgz#b659d2ffbafa24baf5db1cdbb2c94a983ecd2784"
-  integrity sha512-gac8OEcQ2Li1dxIEWGZzsp2BitJxwkwcOm0zHAJLcPJaVvm58FRnk6RkuLRpU1EujipU2ZFODv2P9DLMfnV8mw==
+acorn@^5.5.3, acorn@^6.0.1, acorn@^6.4.1:
+  version "6.4.1"
+  resolved "https://registry.yarnpkg.com/acorn/-/acorn-6.4.1.tgz#531e58ba3f51b9dacb9a6646ca4debf5b14ca474"
+  integrity sha512-ZVA9k326Nwrj3Cj9jlh3wGFutC2ZornPNARZwsNYqQYgN0EsV2d53w5RN/co65Ohn4sUAUtb1rSUAOD6XN9idA==
 
 ajv@^6.5.5:
   version "6.11.0"
