@@ -32,6 +32,7 @@
     "@types/node": "^12.0.0",
     "@types/react": "^16.9.0",
     "@types/react-dom": "^16.9.0",
+    "audit-ci": "^2.5.1",
     "jest": "^23.0.0",
     "jest-dom": "^3.0.2",
     "np": "^3.1.0",
@@ -55,7 +56,8 @@
     ]
   },
   "resolutions": {
-    "acorn": "^6.4.1"
+    "acorn": "^6.4.1",
+    "minimist":"^1.2.2"
   },
   "license": "MIT",
   "gitHead": "d72170f89d19a0d33102d1f0e5d8468527e34abe"
