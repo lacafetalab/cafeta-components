@@ -54,6 +54,9 @@
       "dist"
     ]
   },
+  "resolutions": {
+    "acorn": "^6.4.1"
+  },
   "license": "MIT",
   "gitHead": "d72170f89d19a0d33102d1f0e5d8468527e34abe"
 }

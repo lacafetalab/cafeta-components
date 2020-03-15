@@ -48,6 +48,9 @@
     "tailwindcss": "^1.1.4",
     "write-file-webpack-plugin": "^4.5.1"
   },
+  "resolutions": {
+    "acorn": "^6.4.1"
+  },
   "license": "MIT",
   "gitHead": "d72170f89d19a0d33102d1f0e5d8468527e34abe"
 }
