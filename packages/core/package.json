@@ -19,7 +19,7 @@
     "tailwind.config.js"
   ],
   "scripts": {
-    "update:icons": "node ./scripts/update-icons.js",
+    "icons:update": "node ./scripts/update-icons.js",
     "build": "stencil build --docs",
     "dev": "stencil build --dev --watch --docs",
     "test": "stencil test --spec --e2e",
@@ -46,12 +46,12 @@
     "copy-webpack-plugin": "^5.1.1",
     "cssnano": "^4.1.10",
     "npm-run-all": "^4.1.5",
-    "tailwindcss": "^1.1.4",
+    "tailwindcss": "^1.2.0",
     "write-file-webpack-plugin": "^4.5.1"
   },
   "resolutions": {
     "acorn": "^6.4.1",
-    "minimist":"^1.2.2"
+    "minimist": "^1.2.2"
   },
   "license": "MIT",
   "gitHead": "d72170f89d19a0d33102d1f0e5d8468527e34abe"
