@@ -45,7 +45,7 @@ export const Button = () => {
       ...options,
       [icon.properties.name]: icon.properties.name
     }),
-    {}
+    { None: null }
   );
   const defaultValue6 = null;
   const groupId6 = "GROUP-ID1";

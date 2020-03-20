@@ -54,7 +54,7 @@ export class CcButton {
                 button__icon: true
               }}
               name={this.iconName}
-              size={this.size === "sm" ? 20 : 24}
+              size={this.size === "sm" ? 16 : 24}
             ></cc-icon>
           )}
 
