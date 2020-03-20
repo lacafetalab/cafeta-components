@@ -18,11 +18,6 @@
     esutils "^2.0.2"
     js-tokens "^4.0.0"
 
-"@cafeta/components@^1.2.17":
-  version "1.2.17"
-  resolved "https://registry.yarnpkg.com/@cafeta/components/-/components-1.2.17.tgz#01e13d17a5596adab854c8832164d568248a2192"
-  integrity sha512-XbjEBbvZDEJ020N6H4xuY8YzcNj1TanuLWg9r+sq5Aoe0Kcn1wWdyn+Bjj57YKXSL5aS9Sz7ExjBpmHWFtI9cA==
-
 "@jest/types@^24.9.0":
   version "24.9.0"
   resolved "https://registry.yarnpkg.com/@jest/types/-/types-24.9.0.tgz#63cb26cb7500d069e5a389441a7c6ab5e909fc59"
