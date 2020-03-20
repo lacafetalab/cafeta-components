@@ -18,7 +18,7 @@
 }
 
 .button {
-  @apply border-0 p-md flex items-center justify-center text-body font-bold rounded-sm outline-none w-full;
+  @apply border-0 px-lg py-xsm flex items-center justify-center text-body font-bold rounded-sm outline-none w-full;
   border: 1px solid transparent;
   line-height: 2.4rem;
   box-sizing: border-box;
@@ -43,11 +43,11 @@
   }
 
   &__icon {
-    @apply mr-sm;
+    @apply mr-xsm;
 
     .button--reverse & {
       margin-right: 0;
-      @apply ml-sm;
+      @apply ml-xsm;
     }
 
     .button--iconOnly & {
@@ -60,7 +60,6 @@
   }
 
   &--md {
-    @apply p-sm;
     height: 4rem;
 
     &.button--iconOnly {
@@ -69,9 +68,8 @@
   }
 
   &--sm {
-    @apply text-small-02;
-    padding: 0.6rem;
-    line-height: 2rem;
+    @apply text-small-02 font-black;
+    line-height: 1.6rem;
     height: 3.2rem;
 
     &.button--iconOnly {

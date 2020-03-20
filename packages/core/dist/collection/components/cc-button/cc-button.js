@@ -35,7 +35,7 @@ export class CcButton {
                 } }, attrs),
                 this.iconName && (h("cc-icon", { class: {
                         button__icon: true
-                    }, name: this.iconName, size: this.size === "sm" ? 20 : 24 })),
+                    }, name: this.iconName, size: this.size === "sm" ? 16 : 24 })),
                 !this.iconOnly && (h("span", { class: "button__text" },
                     h("slot", null))))));
     }

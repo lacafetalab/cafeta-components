@@ -19,7 +19,10 @@
 
 .button {
   border-width: 0;
-  padding: 1.2rem;
+  padding-left: 1.6rem;
+  padding-right: 1.6rem;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
   display: -webkit-box;
   display: flex;
   -webkit-box-align: center;
@@ -53,12 +56,12 @@
 }
 
 .button__icon {
-  margin-right: 0.8rem;
+  margin-right: 0.4rem;
 }
 
 .button--reverse .button__icon {
   margin-right: 0;
-  margin-left: 0.8rem;
+  margin-left: 0.4rem;
 }
 
 .button--iconOnly .button__icon {
@@ -70,7 +73,6 @@
 }
 
 .button--md {
-  padding: 0.8rem;
   height: 4rem;
 }
 
@@ -80,8 +82,8 @@
 
 .button--sm {
   font-size: 1.2rem;
-  padding: 0.6rem;
-  line-height: 2rem;
+  font-weight: 900;
+  line-height: 1.6rem;
   height: 3.2rem;
 }
 
