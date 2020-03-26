@@ -15,10 +15,10 @@ export class CcIcon {
     }
     render() {
         if (this.name === "") {
-            return null;
+            return h(Host, null);
         }
-        return (h(Host, { "data-testid": "CcIcon" },
-            h("svg", { class: "cc-icon", width: this.size, height: this.size, viewBox: "0 0 1024 1024" },
+        return (h(Host, { "data-testid": "cc-icon" },
+            h("svg", { "data-testid": "cc-icon__svg", class: "cc-icon", width: this.size, height: this.size, viewBox: "0 0 1024 1024" },
                 h("path", { d: this.getPath(this.name) }))));
     }
     static get is() { return "cc-icon"; }
