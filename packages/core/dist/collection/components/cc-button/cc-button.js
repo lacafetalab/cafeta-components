@@ -21,8 +21,8 @@ export class CcButton {
         return (h(Host, { class: {
                 "button--block": this.expand,
                 "button--secondary": this.color === "secondary"
-            }, "data-testid": "CcButton" },
-            h(BtnElem, Object.assign({ class: {
+            }, "data-testid": "cc-button" },
+            h(BtnElem, Object.assign({ "data-testid": "cc-button__element", class: {
                     button: true,
                     "button--reverse": this.iconReverse,
                     "button--disabled": this.href ? false : this.disabled,
@@ -36,7 +36,7 @@ export class CcButton {
                 this.iconName && (h("cc-icon", { class: {
                         button__icon: true
                     }, name: this.iconName, size: this.size === "sm" ? 16 : 24 })),
-                !this.iconOnly && (h("span", { class: "button__text" },
+                !this.iconOnly && (h("span", { "data-testid": "cc-button__text", class: "button__text" },
                     h("slot", null))))));
     }
     static get is() { return "cc-button"; }

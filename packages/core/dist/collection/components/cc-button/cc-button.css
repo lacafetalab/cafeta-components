@@ -23,12 +23,9 @@
   padding-right: 1.6rem;
   padding-top: 0.4rem;
   padding-bottom: 0.4rem;
-  display: -webkit-box;
   display: flex;
-  -webkit-box-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
   font-size: 1.4rem;
   font-weight: 700;
   border-radius: 0.4rem;
@@ -46,12 +43,10 @@
 }
 
 .button--glow {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(var(--cc-button-color-base)), color-stop(50%, var(--cc-button-color-base)), color-stop(50%, var(--cc-button-color-dark)), to(var(--cc-button-color-dark)));
   background-image: linear-gradient(var(--cc-button-color-base) 0%, var(--cc-button-color-base) 50%, var(--cc-button-color-dark) 50%, var(--cc-button-color-dark) 100%);
 }
 
 .button__text {
-  display: -webkit-inline-box;
   display: inline-flex;
 }
 
@@ -92,9 +87,7 @@
 }
 
 .button--reverse {
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: reverse;
-          flex-direction: row-reverse;
+  flex-direction: row-reverse;
 }
 
 .button--outline {
@@ -104,7 +97,6 @@
 }
 
 .button--outline.button--glow {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(var(--cc-button-color-contrast)), color-stop(50%, var(--cc-button-color-contrast)), color-stop(50%, var(--cc-button-color-lightest)), to(var(--cc-button-color-lightest)));
   background-image: linear-gradient(var(--cc-button-color-contrast) 0%, var(--cc-button-color-contrast) 50%, var(--cc-button-color-lightest) 50%, var(--cc-button-color-lightest) 100%);
 }
 
