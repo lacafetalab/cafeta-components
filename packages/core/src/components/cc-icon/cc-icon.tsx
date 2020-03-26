@@ -24,12 +24,13 @@ export class CcIcon {
 
   render() {
     if (this.name === "") {
-      return null;
+      return <Host />;
     }
 
     return (
-      <Host data-testid="CcIcon">
+      <Host data-testid="cc-icon">
         <svg
+          data-testid="cc-icon__svg"
           class="cc-icon"
           width={this.size}
           height={this.size}
