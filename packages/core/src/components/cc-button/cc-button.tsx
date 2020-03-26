@@ -32,9 +32,10 @@ export class CcButton {
           "button--block": this.expand,
           "button--secondary": this.color === "secondary"
         }}
-        data-testid="CcButton"
+        data-testid="cc-button"
       >
         <BtnElem
+          data-testid="cc-button__element"
           class={{
             button: true,
             "button--reverse": this.iconReverse,
@@ -59,7 +60,7 @@ export class CcButton {
           )}
 
           {!this.iconOnly && (
-            <span class="button__text">
+            <span data-testid="cc-button__text" class="button__text">
               <slot />
             </span>
           )}
