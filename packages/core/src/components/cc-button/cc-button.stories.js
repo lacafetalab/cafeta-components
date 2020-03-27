@@ -20,22 +20,13 @@ export const Button = () => {
   const groupId3 = "GROUP-ID1";
   const value3 = boolean(label3, defaultValue3, groupId3);
 
-  const label4 = "Color";
-  const options4 = {
-    primary: "primary",
-    secondary: "secondary"
-  };
-  const defaultValue4 = "primary";
-  const groupId4 = "GROUP-ID1";
-  const value4 = select(label4, options4, defaultValue4, groupId4);
-
   const label5 = "Fill";
   const options5 = {
     Default: "",
     outline: "outline",
     clear: "clear"
   };
-  const defaultValue5 = "primary";
+  const defaultValue5 = "";
   const groupId5 = "GROUP-ID1";
   const value5 = select(label5, options5, defaultValue5, groupId5);
 
@@ -61,16 +52,6 @@ export const Button = () => {
   const groupId8 = "GROUP-ID1";
   const value8 = boolean(label8, defaultValue8, groupId8);
 
-  const label9 = "Size";
-  const options9 = {
-    Default: null,
-    md: "md",
-    sm: "sm"
-  };
-  const defaultValue9 = null;
-  const groupId9 = "GROUP-ID1";
-  const value9 = select(label9, options9, defaultValue9, groupId9);
-
   const label10 = "Glow";
   const defaultValue10 = false;
   const groupId10 = "GROUP-ID1";
@@ -80,26 +61,98 @@ export const Button = () => {
     value ? "icon-reverse" : "",
     value2 ? "disabled" : "",
     value3 ? "expand" : "",
-    `color="${value4}"`,
     `fill="${value5}"`,
     value6 ? `icon-name="${value6}"` : "",
     value8 ? "icon-only" : "",
-    value9 ? `size="${value9}"` : "",
     value10 ? "glow" : ""
   ].join(" ");
 
   return `
-    <section style="padding: 15px" class="mt-lg color-primary">
-      <h1>Button with anchor</h1>
-      <br />
-      <cc-button ${props} href="http://google.com" target="_blank">${value7}</cc-button>
-    </section>
+    <div class="p-lg">
+      <h1 class="heading-01">Button primary</h1>
+      <section class="py-xlg color-primary font-black">
+        <h2 class="text-subheading-02 mb-lg font-regular">Button with tag "a" - target blank link</h1>
+        <div ${value3 ? "" : 'class="flex align-middle"'}>
+          <div class="mr-lg mt-lg flex flex-col align-middle">
+            <h2 class="text-center font-regular">size: <strong class="font-bold">default</strong></h1>
+            <cc-button ${props} href="http://google.com" target="_blank" >${value7}</cc-button>
+          </div>
 
-    <section style="padding: 15px">
-      <h1>Button with click event</h1>
-      <br />
-      <cc-button ${props} onclick="alert('Fire click')">${value7}</cc-button>
-    </section>`;
+          <div class="mr-lg mt-lg flex flex-col align-middle">
+            <h2 class="text-center font-regular">size: <strong class="font-bold">md</strong></h1>
+            <cc-button ${props} href="http://google.com" target="_blank" size="md">${value7}</cc-button>
+          </div>
+
+          <div class="mr-lg mt-lg flex flex-col align-middle">
+            <h2 class="text-center font-regular">size: <strong class="font-bold">sm</strong></h1>
+            <cc-button ${props} href="http://google.com" target="_blank" size="sm">${value7}</cc-button>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-xlg">
+        <h2 class="text-subheading-02 mb-lg font-regular">Button with tag "button" - click event</h1>
+        <div class="flex align-middle">
+          <div class="mr-lg mt-lg flex flex-col align-middle">
+            <h2 class="text-center font-regular">size: <strong class="font-bold">default</strong></h1>
+            <cc-button ${props} onclick="alert('Fire click')">${value7}</cc-button>
+          </div>
+
+          <div class="mr-lg mt-lg flex flex-col align-middle">
+            <h2 class="text-center font-regular">size: <strong class="font-bold">md</strong></h1>
+            <cc-button ${props} onclick="alert('Fire click')" size="md">${value7}</cc-button>
+          </div>
+
+          <div class="mr-lg mt-lg flex flex-col align-middle">
+            <h2 class="text-center font-regular">size: <strong class="font-bold">sm</strong></h1>
+            <cc-button ${props} onclick="alert('Fire click')" size="sm">${value7}</cc-button>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="p-lg">
+      <h1 class="heading-01">Button secondary</h1>
+      <section class="py-xlg color-primary font-black">
+        <h2 class="text-subheading-02 mb-lg font-regular">Button with tag "a" - target blank link</h1>
+        <div class="flex align-middle">
+          <div class="mr-lg mt-lg flex flex-col align-middle">
+            <h2 class="text-center font-regular">size: <strong class="font-bold">default</strong></h1>
+            <cc-button ${props} href="http://google.com" target="_blank" color="secondary">${value7}</cc-button>
+          </div>
+
+          <div class="mr-lg mt-lg flex flex-col align-middle">
+            <h2 class="text-center font-regular">size: <strong class="font-bold">md</strong></h1>
+            <cc-button ${props} href="http://google.com" target="_blank" size="md" color="secondary">${value7}</cc-button>
+          </div>
+
+          <div class="mr-lg mt-lg flex flex-col align-middle">
+            <h2 class="text-center font-regular">size: <strong class="font-bold">sm</strong></h1>
+            <cc-button ${props} href="http://google.com" target="_blank" size="sm" color="secondary">${value7}</cc-button>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-xlg">
+        <h2 class="text-subheading-02 mb-lg font-regular">Button with tag "button" - click event</h1>
+        <div class="flex align-middle">
+          <div class="mr-lg mt-lg flex flex-col align-middle">
+            <h2 class="text-center font-regular">size: <strong class="font-bold">default</strong></h1>
+            <cc-button ${props} onclick="alert('Fire click')" color="secondary">${value7}</cc-button>
+          </div>
+
+          <div class="mr-lg mt-lg flex flex-col align-middle">
+            <h2 class="text-center font-regular">size: <strong class="font-bold">md</strong></h1>
+            <cc-button ${props} onclick="alert('Fire click')" size="md" color="secondary">${value7}</cc-button>
+          </div>
+
+          <div class="mr-lg mt-lg flex flex-col align-middle">
+            <h2 class="text-center font-regular">size: <strong class="font-bold">sm</strong></h1>
+            <cc-button ${props} onclick="alert('Fire click')" size="sm" color="secondary">${value7}</cc-button>
+          </div>
+        </div>
+      </section>
+    </div>`;
 };
 
 Button.story = {
