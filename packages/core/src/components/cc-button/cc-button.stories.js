@@ -92,7 +92,7 @@ export const Button = () => {
 
       <section class="py-xlg">
         <h2 class="text-subheading-02 mb-lg font-regular">Button with tag "button" - click event</h1>
-        <div class="flex align-middle">
+        <div ${value3 ? "" : 'class="flex align-middle"'}>
           <div class="mr-lg mt-lg flex flex-col align-middle">
             <h2 class="text-center font-regular">size: <strong class="font-bold">default</strong></h1>
             <cc-button ${props} onclick="alert('Fire click')">${value7}</cc-button>
@@ -115,7 +115,7 @@ export const Button = () => {
       <h1 class="heading-01">Button secondary</h1>
       <section class="py-xlg color-primary font-black">
         <h2 class="text-subheading-02 mb-lg font-regular">Button with tag "a" - target blank link</h1>
-        <div class="flex align-middle">
+        <div ${value3 ? "" : 'class="flex align-middle"'}>
           <div class="mr-lg mt-lg flex flex-col align-middle">
             <h2 class="text-center font-regular">size: <strong class="font-bold">default</strong></h1>
             <cc-button ${props} href="http://google.com" target="_blank" color="secondary">${value7}</cc-button>
@@ -135,7 +135,7 @@ export const Button = () => {
 
       <section class="py-xlg">
         <h2 class="text-subheading-02 mb-lg font-regular">Button with tag "button" - click event</h1>
-        <div class="flex align-middle">
+        <div ${value3 ? "" : 'class="flex align-middle"'}>
           <div class="mr-lg mt-lg flex flex-col align-middle">
             <h2 class="text-center font-regular">size: <strong class="font-bold">default</strong></h1>
             <cc-button ${props} onclick="alert('Fire click')" color="secondary">${value7}</cc-button>
