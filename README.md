@@ -924,6 +924,6 @@ yarn add @cafeta/components
 	/* purgecss start ignore */
 	@tailwind components;
 	/* purgecss end ignore */
-	  
+
 	@tailwind utilities;
 	```
