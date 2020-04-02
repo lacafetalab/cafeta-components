@@ -23,6 +23,15 @@ export namespace Components {
     'size'?: "lg" | "md" | "sm";
     'target'?: string;
   }
+  interface CcDropdown {
+    'color': "primary" | "secondary";
+    'error'?: string;
+    'expand': boolean;
+    'fill': "outline" | "clear";
+    'iconName': string;
+    'label': string;
+    'size'?: "lg" | "md" | "sm";
+  }
   interface CcIcon {
     'name': string;
     'size': number;
@@ -43,6 +52,12 @@ declare global {
     new (): HTMLCcButtonElement;
   };
 
+  interface HTMLCcDropdownElement extends Components.CcDropdown, HTMLStencilElement {}
+  var HTMLCcDropdownElement: {
+    prototype: HTMLCcDropdownElement;
+    new (): HTMLCcDropdownElement;
+  };
+
   interface HTMLCcIconElement extends Components.CcIcon, HTMLStencilElement {}
   var HTMLCcIconElement: {
     prototype: HTMLCcIconElement;
@@ -56,6 +71,7 @@ declare global {
   };
   interface HTMLElementTagNameMap {
     'cc-button': HTMLCcButtonElement;
+    'cc-dropdown': HTMLCcDropdownElement;
     'cc-icon': HTMLCcIconElement;
     'cc-text': HTMLCcTextElement;
   }
@@ -75,6 +91,15 @@ declare namespace LocalJSX {
     'size'?: "lg" | "md" | "sm";
     'target'?: string;
   }
+  interface CcDropdown {
+    'color'?: "primary" | "secondary";
+    'error'?: string;
+    'expand'?: boolean;
+    'fill'?: "outline" | "clear";
+    'iconName'?: string;
+    'label'?: string;
+    'size'?: "lg" | "md" | "sm";
+  }
   interface CcIcon {
     'name'?: string;
     'size'?: number;
@@ -87,6 +112,7 @@ declare namespace LocalJSX {
 
   interface IntrinsicElements {
     'cc-button': CcButton;
+    'cc-dropdown': CcDropdown;
     'cc-icon': CcIcon;
     'cc-text': CcText;
   }
@@ -99,6 +125,7 @@ declare module "@stencil/core" {
   export namespace JSX {
     interface IntrinsicElements {
       'cc-button': LocalJSX.CcButton & JSXBase.HTMLAttributes<HTMLCcButtonElement>;
+      'cc-dropdown': LocalJSX.CcDropdown & JSXBase.HTMLAttributes<HTMLCcDropdownElement>;
       'cc-icon': LocalJSX.CcIcon & JSXBase.HTMLAttributes<HTMLCcIconElement>;
       'cc-text': LocalJSX.CcText & JSXBase.HTMLAttributes<HTMLCcTextElement>;
     }

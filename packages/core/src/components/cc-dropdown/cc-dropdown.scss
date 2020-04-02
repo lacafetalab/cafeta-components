@@ -1,0 +1,51 @@
+@import url("~choices.js/public/assets/styles/choices.min.css");
+
+:host {
+  @apply inline-block;
+  --cc-dropdown-color-base: theme("colors.primary.neutral.02");
+  --cc-dropdown-color-active: theme("colors.primary.default");
+  --cc-dropdown-color-dark: theme("colors.primary.dark");
+  --cc-dropdown-color-lightest: theme("colors.primary.10");
+  --cc-dropdown-color-contrast: theme("colors.neutral.04");
+  display: flex;
+  flex-direction: column;
+}
+
+:host(.dropdown--block) {
+  @apply block;
+}
+
+:host(.dropdown--secondary) {
+  --cc-dropdown-color-base: theme("colors.secondary.default");
+  --cc-dropdown-color-focus: theme("colors.secondary.default");
+  --cc-dropdown-color-dark: theme("colors.secondary.dark");
+  --cc-dropdown-color-lightest: theme("colors.secondary.10");
+  --cc-dropdown-color-contrast-contrast: theme("colors.neutral.04");
+}
+
+.dropdown {
+  @apply flex flex-col;
+
+  &__field {
+    @apply px-lg py-sm flex items-center rounded-sm;
+    border: 1px solid var(--cc-dropdown-color-base);
+    &:focus-within {
+      border: 1px solid var(--cc-dropdown-color-active);
+    }
+  }
+
+  &__text {
+    @apply border-0 outline-none;
+    background: transparent;
+    &:hover {
+      outline: none;
+    }
+  }
+
+  &__icon {
+    @apply border-0;
+    color: var(--cc-dropdown-color-active);
+  }
+}
+
+

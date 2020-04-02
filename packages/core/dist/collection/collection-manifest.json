@@ -1,14 +1,22 @@
 {
   "entries": [
-    "components\\cc-button\\cc-button.js",
-    "components\\cc-text\\cc-text.js",
-    "components\\cc-icon\\cc-icon.js"
+    "components/cc-icon/cc-icon.js",
+    "components/cc-text/cc-text.js",
+    "components/cc-dropdown/cc-dropdown.js",
+    "components/cc-button/cc-button.js"
   ],
   "compiler": {
     "name": "@stencil/core",
     "version": "1.8.6",
     "typescriptVersion": "3.7.5"
   },
-  "collections": [],
+  "collections": [
+    {
+      "name": "choicesjs-stencil",
+      "tags": [
+        "choicesjs-stencil"
+      ]
+    }
+  ],
   "bundles": []
 }
