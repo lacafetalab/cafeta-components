@@ -9,9 +9,9 @@ import "choicesjs-stencil";
 })
 export class CcDropdown {
   @Prop() label: string = "";
-  @Prop() fill: "outline" | "clear" = "outline";
-  @Prop() iconName: string = "chevron-down";
-  @Prop() expand: boolean = false;
+  @Prop() fill?: "outline" | "clear" = "outline";
+  @Prop() iconName?: string = "chevron-down";
+  @Prop() expand?: boolean = false;
   @Prop() color: "primary" | "secondary" = "primary";
   @Prop() size?: "lg" | "md" | "sm" = "lg";
   @Prop() error?: string = "";
