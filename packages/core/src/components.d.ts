@@ -26,9 +26,9 @@ export namespace Components {
   interface CcDropdown {
     'color': "primary" | "secondary";
     'error'?: string;
-    'expand': boolean;
-    'fill': "outline" | "clear";
-    'iconName': string;
+    'expand'?: boolean;
+    'fill'?: "outline" | "clear";
+    'iconName'?: string;
     'label': string;
     'size'?: "lg" | "md" | "sm";
   }
