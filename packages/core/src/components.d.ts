@@ -24,6 +24,7 @@ export namespace Components {
     'target'?: string;
   }
   interface CcDropdown {
+    'choices': any[];
     'color': "primary" | "secondary";
     'error'?: string;
     'expand'?: boolean;
@@ -92,6 +93,7 @@ declare namespace LocalJSX {
     'target'?: string;
   }
   interface CcDropdown {
+    'choices'?: any[];
     'color'?: "primary" | "secondary";
     'error'?: string;
     'expand'?: boolean;

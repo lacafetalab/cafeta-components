@@ -9,6 +9,7 @@
 
 | Property   | Attribute   | Description | Type                       | Default          |
 | ---------- | ----------- | ----------- | -------------------------- | ---------------- |
+| `choices`  | --          |             | `any[]`                    | `[]`             |
 | `color`    | `color`     |             | `"primary" \| "secondary"` | `"primary"`      |
 | `error`    | `error`     |             | `string`                   | `""`             |
 | `expand`   | `expand`    |             | `boolean`                  | `false`          |
