@@ -21,6 +21,8 @@ export const Dropdown = () => {
     value3 ? "expand" : ""
   ].join(" ");
 
+  
+
   return `
     <div class="p-lg">
       <h1 class="heading-01">Dropdown primary</h1>
@@ -42,15 +44,16 @@ export const Dropdown = () => {
           </div>
         </div>
       </section>
+      <script type="text/javascript">
+        (() => {
+          alert('hola mundo')
+          document.querySelectorAll('cc-dropdown').forEach((item) => {
+            console.log('asdsadjsksajdhask=====>', item, ${itemsWrapper.choices});
+            item.choices = ${itemsWrapper.choices};
+          })
+        })()
+      </script>
     </div>
-    <script>
-      (() => {
-        document.querySelectorAll('cc-dropdown').forEach((item) => {
-          console.log('asdsadjsksajdhask=====>', item, ${itemsWrapper.choices});
-          item.choices = ${itemsWrapper.choices};
-        })
-      })()
-    </script>
   `
 };
 
