@@ -21,7 +21,7 @@ export const Dropdown = () => {
         <div ${value3 ? "" : 'class="flex align-middle"'}>
           <div class="mr-lg mt-lg flex flex-col align-middle">
             <h2 class="text-center font-regular">size: <strong class="font-bold">default</strong></h1>
-            <cc-dropdown ${props} />
+            <cc-dropdown ${props} choices=['AAS', 'ASDASDA'] />
           </div>
         </div>
       </section>

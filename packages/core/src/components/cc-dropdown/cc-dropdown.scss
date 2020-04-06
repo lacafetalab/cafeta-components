@@ -1,39 +1,85 @@
 @import url("~choices.js/public/assets/styles/choices.min.css");
 
-:host {
-  @apply inline-block;
-  --cc-dropdown-color-base: theme("colors.primary.neutral.02");
-  --cc-dropdown-color-active: theme("colors.primary.default");
-  --cc-dropdown-color-dark: theme("colors.primary.dark");
-  --cc-dropdown-color-lightest: theme("colors.primary.10");
-  --cc-dropdown-color-contrast: theme("colors.neutral.04");
-  display: flex;
-  flex-direction: column;
-}
-
-:host(.dropdown--block) {
-  @apply block;
-}
-
-:host(.dropdown--secondary) {
-  --cc-dropdown-color-base: theme("colors.secondary.default");
-  --cc-dropdown-color-focus: theme("colors.secondary.default");
-  --cc-dropdown-color-dark: theme("colors.secondary.dark");
-  --cc-dropdown-color-lightest: theme("colors.secondary.10");
-  --cc-dropdown-color-contrast-contrast: theme("colors.neutral.04");
-}
 
 .dropdown {
-  @apply flex flex-col;
-
-  &__field {
-    @apply px-lg py-sm flex items-center rounded-sm;
-    border: 1px solid var(--cc-dropdown-color-base);
-    &:focus-within {
-      border: 1px solid var(--cc-dropdown-color-active);
+  @apply flex flex-col relative;
+  min-width: 150px;
+  choicesjs-stencil {
+    @apply flex flex-grow;
+  }
+  
+  .choices {
+    @apply flex items-center;
+    position: initial;
+    width: 100%;
+    &__inner {
+      margin: 0;
+      padding: 0;
+      padding-bottom: 0;
+      min-height: auto;
+    }
+    &__input {
+      margin: 0;
+      padding: 0;
+      min-height: auto;
+    }
+    &__list {
+      @apply mt-sm rounded-sm border-0;
+      box-shadow: 0 4px 16px -8px rgba(0, 0, 0, 0.5);
+      &--single {
+        margin: 0;
+        padding: 0;
+      }
+      
+      &--dropdown {
+        left: 0;
+        .choices {
+          &__item {
+            &--selectable {
+              @apply px-sm text-body font-light;
+              margin: 0;
+              color: theme("colors.neutral.03");
+              &:hover {
+                @apply font-bold;
+                background: theme("colors.background.02");
+              }
+              &::after {
+                display: none;
+              }
+            }
+          }
+        }
+      }
     }
   }
-
+  .choices[data-type*=select-one] {
+    .choices__inner {
+      padding: 0;
+    }
+    &::after {
+      display: none;
+    }
+  }
+  &--input {
+    @apply px-lg py-sm flex items-center rounded-sm;
+    border: 1px solid theme("colors.primary.neutral.02");
+    &:focus-within {
+      border: 1px solid theme("colors.primary.default");
+    }
+    .choices {
+      &__inner {
+        background: transparent;
+        border: 0;
+      }
+      &__input {
+        background: transparent;
+        border: 0;
+      }
+    }
+  }
+  &--inline {
+    
+  }
   &__text {
     @apply border-0 outline-none;
     background: transparent;
@@ -44,7 +90,7 @@
 
   &__icon {
     @apply border-0;
-    color: var(--cc-dropdown-color-active);
+    color: theme("colors.primary.default");
   }
 }
 

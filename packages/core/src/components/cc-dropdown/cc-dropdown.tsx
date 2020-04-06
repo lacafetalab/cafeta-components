@@ -15,20 +15,30 @@ export class CcDropdown {
   @Prop() color: "primary" | "secondary" = "primary";
   @Prop() size?: "lg" | "md" | "sm" = "lg";
   @Prop() error?: string = "";
+  @Prop() choices: any[] = [];
 
   @Element() el: HTMLElement;
 
   componentDidLoad() {
-    /*
-    const element: HTMLSelectElement = this.el.querySelector('.js-choice') as HTMLSelectElement;
-    console.log(element, this.el)
-    console.log(typeof element)
-    console.log(element instanceof HTMLSelectElement)
-    console.log(a)
-    */
+    var element = document.querySelector('choicesjs-stencil');
+    element.type = 'single';
+    console.log(this.choices)
+    element.choices = [
+      {
+        value: 'foo',
+        label: 'Foo'
+      }, {
+        value: 'bar',
+        label: 'Bar'
+      }, {
+        value: 'qux',
+        label: 'Qux'
+      }
+    ];
   }
 
   render() {
+    console.log(this.choices)
     return (
       <Host
         class={{
@@ -38,10 +48,10 @@ export class CcDropdown {
         }}
         data-testid="cc-dropdown"
       >
-        {this.label && <span>{this.label}</span>}
-        <choicesjs-stencil></choicesjs-stencil>
         <div class="dropdown">
-          <div class="dropdown__field">
+          {this.label && <span>{this.label}</span>}
+          <div class="dropdown--input">
+            <choicesjs-stencil></choicesjs-stencil>
             <cc-icon
               class={{
                 dropdown__icon: true,

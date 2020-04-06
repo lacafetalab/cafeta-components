@@ -18,7 +18,7 @@
 }
 
 .button {
-  @apply border-0 px-lg py-xsm flex items-center justify-center text-body font-bold rounded-sm outline-none w-full;
+  @apply border-0 px-lg py-xsm flex items-center justify-center text-body font-bold rounded-sm outline-none w-full leading-8;
   border: 1px solid transparent;
   line-height: 2.4rem;
   box-sizing: border-box;
