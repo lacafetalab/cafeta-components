@@ -1,9 +1,17 @@
 import notes from "./readme.md";
 import { withKnobs, boolean } from "@storybook/addon-knobs/html";
+import { object } from "@storybook/addon-knobs";
 
 export default { title: "Dropdown", decorators: [withKnobs] };
 
 export const Dropdown = () => {
+  const itemsWrapper ={
+    choices: [
+      {value: 'aaa', label: 'bbbb'}, 
+      {value: 'cccccc', label: 'ddddddd'}
+    ]
+  };
+
   const label3 = "Expand";
   const defaultValue3 = false;
   const groupId3 = "GROUP-ID1";
@@ -21,7 +29,7 @@ export const Dropdown = () => {
         <div ${value3 ? "" : 'class="flex align-middle"'}>
           <div class="mr-lg mt-lg flex flex-col align-middle">
             <h2 class="text-center font-regular">size: <strong class="font-bold">default</strong></h1>
-            <cc-dropdown ${props} choices=['AAS', 'ASDASDA'] />
+            <cc-dropdown ${props} />
           </div>
         </div>
       </section>
@@ -30,11 +38,19 @@ export const Dropdown = () => {
         <div ${value3 ? "" : 'class="flex align-middle"'}>
           <div class="mr-lg mt-lg flex flex-col align-middle">
             <h2 class="text-center font-regular">size: <strong class="font-bold">default</strong></h1>
-            <cc-dropdown ${props} label="Label"/>
+            <cc-dropdown ${props} label="Label" />
           </div>
         </div>
       </section>
     </div>
+    <script>
+      (() => {
+        document.querySelectorAll('cc-dropdown').forEach((item) => {
+          console.log('asdsadjsksajdhask=====>', item, ${itemsWrapper.choices});
+          item.choices = ${itemsWrapper.choices};
+        })
+      })()
+    </script>
   `
 };
 
