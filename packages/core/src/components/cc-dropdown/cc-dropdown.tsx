@@ -9,32 +9,21 @@ import "choicesjs-stencil";
 })
 export class CcDropdown {
   @Prop() label: string = "";
+  @Prop() choices: Array<any> = [];
   @Prop() fill?: "outline" | "clear" = "outline";
   @Prop() iconName?: string = "chevron-down";
   @Prop() expand?: boolean = false;
   @Prop() color: "primary" | "secondary" = "primary";
   @Prop() size?: "lg" | "md" | "sm" = "lg";
   @Prop() error?: string = "";
-  @Prop() choices: any[] = [];
 
   @Element() el: HTMLElement;
 
   componentDidLoad() {
     var element = document.querySelector('choicesjs-stencil');
-    element.type = 'single';
+    element.choices = this.choices;
     console.log(this.choices)
-    element.choices = [
-      {
-        value: 'foo',
-        label: 'Foo'
-      }, {
-        value: 'bar',
-        label: 'Bar'
-      }, {
-        value: 'qux',
-        label: 'Qux'
-      }
-    ];
+    console.log(this.label)
   }
 
   render() {
@@ -51,7 +40,7 @@ export class CcDropdown {
         <div class="dropdown">
           {this.label && <span>{this.label}</span>}
           <div class="dropdown--input">
-            <choicesjs-stencil></choicesjs-stencil>
+            <choicesjs-stencil placeholder='Selecciona una opción' choices={this.choices} type={'single'}></choicesjs-stencil>
             <cc-icon
               class={{
                 dropdown__icon: true,
