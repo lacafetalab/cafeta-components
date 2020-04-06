@@ -20,10 +20,12 @@ export class CcDropdown {
   @Element() el: HTMLElement;
 
   componentDidLoad() {
+    /*
     var element = document.querySelector('choicesjs-stencil');
     element.choices = this.choices;
     console.log(this.choices)
     console.log(this.label)
+    */
   }
 
   render() {
