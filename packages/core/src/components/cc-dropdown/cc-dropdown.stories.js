@@ -40,6 +40,17 @@ export const Dropdown = () => {
           </div>
         </div>
       </section>
+      <script type="text/javascript">
+        (() => {
+          alert('hola mundo')
+          document.querySelectorAll('cc-dropdown').forEach((item) => {
+            console.log('asdsadjsksajdhask=====>', item, ${
+              itemsWrapper.choices
+            });
+            item.choices = ${itemsWrapper.choices};
+          })
+        })()
+      </script>
     </div>
   `;
 };
