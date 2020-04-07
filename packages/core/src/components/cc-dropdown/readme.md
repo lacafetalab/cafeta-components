@@ -11,7 +11,8 @@
 | ---------- | ----------- | ----------- | -------------------------- | ---------------- |
 | `choices`  | --          |             | `any[]`                    | `[]`             |
 | `color`    | `color`     |             | `"primary" \| "secondary"` | `"primary"`      |
-| `error`    | `error`     |             | `string`                   | `""`             |
+| `disabled` | `disabled`  |             | `boolean`                  | `false`          |
+| `error`    | `error`     |             | `boolean`                  | `false`          |
 | `expand`   | `expand`    |             | `boolean`                  | `false`          |
 | `fill`     | `fill`      |             | `"clear" \| "outline"`     | `"outline"`      |
 | `iconName` | `icon-name` |             | `string`                   | `"chevron-down"` |

@@ -1,6 +1,5 @@
 @import url("~choices.js/public/assets/styles/choices.min.css");
 
-
 .dropdown {
   @apply flex flex-col relative;
   min-width: 150px;
@@ -81,9 +80,6 @@
       }
     }
   }
-  &--inline {
-    
-  }
   &__text {
     @apply border-0 outline-none;
     background: transparent;
@@ -95,6 +91,41 @@
   &__icon {
     @apply border-0;
     color: theme("colors.primary.default");
+  }
+  &.dropdown {
+    &--error {
+      .dropdown {
+        &--input {
+          border-color: theme("colors.error");
+          &:focus-within {
+            border-color: theme("colors.error");
+          }
+        }
+        &__icon {
+          color: theme("colors.error");
+        }
+      }
+    }
+    &--disabled {
+      .dropdown {
+        &--input {
+          border-color: theme("backgroundColor.disabled");
+          &:focus-within {
+            border-color: theme("backgroundColor.disabled");
+          }
+        }
+        &__icon {
+          @apply text-disabled;
+        }
+      }
+      .choices {
+        &__item {
+          &--selectable {
+            @apply text-disabled;
+          }
+        }
+      }
+    }
   }
 }
 

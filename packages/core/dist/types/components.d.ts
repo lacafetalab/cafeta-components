@@ -26,7 +26,8 @@ export namespace Components {
   interface CcDropdown {
     'choices': Array<any>;
     'color': "primary" | "secondary";
-    'error'?: string;
+    'disabled'?: boolean;
+    'error'?: boolean;
     'expand'?: boolean;
     'fill'?: "outline" | "clear";
     'iconName'?: string;
@@ -95,7 +96,8 @@ declare namespace LocalJSX {
   interface CcDropdown {
     'choices'?: Array<any>;
     'color'?: "primary" | "secondary";
-    'error'?: string;
+    'disabled'?: boolean;
+    'error'?: boolean;
     'expand'?: boolean;
     'fill'?: "outline" | "clear";
     'iconName'?: string;
