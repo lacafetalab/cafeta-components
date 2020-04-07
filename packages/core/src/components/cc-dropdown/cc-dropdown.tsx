@@ -10,12 +10,13 @@ import "choicesjs-stencil";
 export class CcDropdown {
   @Prop() label: string = "";
   @Prop() choices: Array<any> = [];
+  @Prop() error?: boolean = false;
+  @Prop() disabled?: boolean = false;
   @Prop() fill?: "outline" | "clear" = "outline";
   @Prop() iconName?: string = "chevron-down";
   @Prop() expand?: boolean = false;
   @Prop() color: "primary" | "secondary" = "primary";
   @Prop() size?: "lg" | "md" | "sm" = "lg";
-  @Prop() error?: string = "";
 
   @Element() el: HTMLElement;
 
@@ -29,20 +30,24 @@ export class CcDropdown {
   }
 
   render() {
-    console.log(this.choices)
     return (
       <Host
-        class={{
-          "dropdown--block": this.expand,
-          "dropdown--secondary": this.color === "secondary",
-          "dropdown--error": this.error !== "",
-        }}
         data-testid="cc-dropdown"
       >
-        <div class="dropdown">
+        <div class={{
+          "dropdown": true,
+          "dropdown--disabled": this.disabled,
+          "dropdown--secondary": this.color === "secondary",
+          "dropdown--error": this.error,
+        }}>
           {this.label && <span>{this.label}</span>}
           <div class="dropdown--input">
-            <choicesjs-stencil placeholder='Selecciona una opción' choices={this.choices} type={'single'}></choicesjs-stencil>
+            <choicesjs-stencil 
+              searchEnabled={false}
+              placeholder='Selecciona una opción' 
+              choices={this.choices} 
+              type={'single'}>
+            </choicesjs-stencil>
             <cc-icon
               class={{
                 dropdown__icon: true,
