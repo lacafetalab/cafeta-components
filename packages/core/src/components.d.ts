@@ -26,12 +26,16 @@ export namespace Components {
   interface CcDropdown {
     'choices': Array<any>;
     'color': "primary" | "secondary";
+    'currentValue'?: string;
     'disabled'?: boolean;
     'error'?: boolean;
-    'expand'?: boolean;
-    'fill'?: "outline" | "clear";
     'iconName'?: string;
     'label': string;
+    'name'?: string;
+    'onChange'?: (e: any) => void;
+    'onClick'?: (e: any) => void;
+    'onInput'?: (e: any) => void;
+    'placeholder'?: string;
     'size'?: "lg" | "md" | "sm";
   }
   interface CcIcon {
@@ -96,12 +100,16 @@ declare namespace LocalJSX {
   interface CcDropdown {
     'choices'?: Array<any>;
     'color'?: "primary" | "secondary";
+    'currentValue'?: string;
     'disabled'?: boolean;
     'error'?: boolean;
-    'expand'?: boolean;
-    'fill'?: "outline" | "clear";
     'iconName'?: string;
     'label'?: string;
+    'name'?: string;
+    'onChange'?: (e: any) => void;
+    'onClick'?: (e: any) => void;
+    'onInput'?: (e: any) => void;
+    'placeholder'?: string;
     'size'?: "lg" | "md" | "sm";
   }
   interface CcIcon {

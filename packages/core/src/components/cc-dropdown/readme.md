@@ -7,17 +7,21 @@
 
 ## Properties
 
-| Property   | Attribute   | Description | Type                       | Default          |
-| ---------- | ----------- | ----------- | -------------------------- | ---------------- |
-| `choices`  | --          |             | `any[]`                    | `[]`             |
-| `color`    | `color`     |             | `"primary" \| "secondary"` | `"primary"`      |
-| `disabled` | `disabled`  |             | `boolean`                  | `false`          |
-| `error`    | `error`     |             | `boolean`                  | `false`          |
-| `expand`   | `expand`    |             | `boolean`                  | `false`          |
-| `fill`     | `fill`      |             | `"clear" \| "outline"`     | `"outline"`      |
-| `iconName` | `icon-name` |             | `string`                   | `"chevron-down"` |
-| `label`    | `label`     |             | `string`                   | `""`             |
-| `size`     | `size`      |             | `"lg" \| "md" \| "sm"`     | `"lg"`           |
+| Property       | Attribute       | Description | Type                       | Default          |
+| -------------- | --------------- | ----------- | -------------------------- | ---------------- |
+| `choices`      | --              |             | `any[]`                    | `[]`             |
+| `color`        | `color`         |             | `"primary" \| "secondary"` | `"primary"`      |
+| `currentValue` | `current-value` |             | `string`                   | `""`             |
+| `disabled`     | `disabled`      |             | `boolean`                  | `false`          |
+| `error`        | `error`         |             | `boolean`                  | `false`          |
+| `iconName`     | `icon-name`     |             | `string`                   | `"chevron-down"` |
+| `label`        | `label`         |             | `string`                   | `""`             |
+| `name`         | `name`          |             | `string`                   | `''`             |
+| `onChange`     | --              |             | `(e: any) => void`         | `() => {}`       |
+| `onClick`      | --              |             | `(e: any) => void`         | `() => {}`       |
+| `onInput`      | --              |             | `(e: any) => void`         | `() => {}`       |
+| `placeholder`  | `placeholder`   |             | `string`                   | `''`             |
+| `size`         | `size`          |             | `"lg" \| "md" \| "sm"`     | `"lg"`           |
 
 
 ## Dependencies
