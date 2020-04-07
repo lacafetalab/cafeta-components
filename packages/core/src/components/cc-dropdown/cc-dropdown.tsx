@@ -1,4 +1,4 @@
-import { Component, h, Host, Prop, Element } from "@stencil/core";
+import { Component, h, Host, Prop, Element, State } from "@stencil/core";
 import "choices.js/public/assets/scripts/choices.min.js";
 import "choicesjs-stencil";
 
@@ -12,21 +12,70 @@ export class CcDropdown {
   @Prop() choices: Array<any> = [];
   @Prop() error?: boolean = false;
   @Prop() disabled?: boolean = false;
-  @Prop() fill?: "outline" | "clear" = "outline";
+  @Prop() placeholder?: string = '';
+  @Prop() name?: string = '';
+  @Prop() currentValue?: string = "";
   @Prop() iconName?: string = "chevron-down";
-  @Prop() expand?: boolean = false;
   @Prop() color: "primary" | "secondary" = "primary";
   @Prop() size?: "lg" | "md" | "sm" = "lg";
+  @Prop() onChange?: (e: any) => void = () => {};
+  @Prop() onClick?: (e: any) => void = () => {};
+  @Prop() onInput?: (e: any) => void = () => {};
+  @State() openDropdown: boolean = false;
 
   @Element() el: HTMLElement;
 
+  constructor() {
+    this.toggleDropdown = this.toggleDropdown.bind(this);
+  }
+
   componentDidLoad() {
-    /*
-    var element = document.querySelector('choicesjs-stencil');
-    element.choices = this.choices;
-    console.log(this.choices)
-    console.log(this.label)
-    */
+    var mutationObserver = new MutationObserver((mutations) => {
+      mutations.forEach((mutation: any) => {
+        const classes = mutation.target.getAttribute('class').split(' ');
+        if (mutation.type === 'attributes' && classes.indexOf('choices__list--dropdown') !== -1) {
+          this.openDropdown = classes.indexOf('is-active') !== -1;
+        }
+      });
+    });
+
+    let newChoices = [...this.choices];
+    if (this.placeholder !== '') {
+      newChoices.push({
+        value: '',
+        label: this.placeholder,
+        placeholder: true
+      })
+    }
+    this.choices =  newChoices.map((choice: any) => (
+      {
+        ...choice, 
+        selected: this.currentValue === choice.value
+      }
+    ))
+    const element = this.el.querySelector('choicesjs-stencil');
+    if (this.disabled) {
+      element.disable();
+    }
+    
+    mutationObserver.observe(element, {
+      attributes: true,
+      characterData: false,
+      childList: false,
+      subtree: true,
+      attributeOldValue: false,
+      characterDataOldValue: false
+    });
+  }
+  
+  toggleDropdown(e) {
+    e.stopPropagation();
+    const element = this.el.querySelector('choicesjs-stencil');
+    if (this.el.querySelector('.choices__list--dropdown.is-active')) {
+      element.hideDropdown(true);
+    } else {
+      element.showDropdown(true);
+    }
   }
 
   render() {
@@ -44,16 +93,23 @@ export class CcDropdown {
           <div class="dropdown--input">
             <choicesjs-stencil 
               searchEnabled={false}
-              placeholder='Selecciona una opción' 
-              choices={this.choices} 
+              placeholder={this.placeholder}
+              name={this.name}
+              choices={this.choices}
+              onChange={this.onChange}
+              onInput={this.onInput}
+              onClick={this.onClick}
+              editItems={false}
               type={'single'}>
+                <cc-icon
+                  onClick={this.toggleDropdown}
+                  class={{
+                    dropdown__icon: true,
+                    'dropdown__icon--inverted': this.openDropdown
+                  }}
+                  name={this.iconName}
+                ></cc-icon>
             </choicesjs-stencil>
-            <cc-icon
-              class={{
-                dropdown__icon: true,
-              }}
-              name={this.iconName}
-            ></cc-icon>
           </div>
         </div>
       </Host>

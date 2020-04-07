@@ -6,31 +6,38 @@ export default { title: "Dropdown", decorators: [withKnobs] };
 export const Dropdown = () => {
   const itemsWrapper = {
     choices: [
-      { value: "aaa", label: "bbbb" },
-      { value: "cccccc", label: "ddddddd" }
+      { value: "123", label: "Opción 1" },
+      { value: "124", label: "Opción   2" }
     ]
   };
 
-  const dropdown = document.createElement("cc-dropdown");
-
-  const label3 = "Error";
-  const defaultValue3 = false;
-  const groupId3 = "GROUP-ID1";
-  const value3 = boolean(label3, defaultValue3, groupId3);
+  const label1 = "Default Option";
+  const defaultValue1 = 'Seleccione una opción';
+  const groupId1 = "GROUP-ID1";
+  const value1 = boolean(label1, !!defaultValue1, groupId1);
 
   const label2 = "Disabled";
   const defaultValue2 = false;
   const groupId2 = "GROUP-ID1";
   const value2 = boolean(label2, defaultValue2, groupId2);
 
+  const label3 = "Error";
+  const defaultValue3 = false;
+  const groupId3 = "GROUP-ID1";
+  const value3 = boolean(label3, defaultValue3, groupId3);
+  
+  const dropdown = document.createElement("cc-dropdown");
+  
   dropdown.choices = itemsWrapper.choices;
-  if (value3) {
-    dropdown.error = value3;
+  if (value1) {
+    dropdown.placeholder = defaultValue1;
   }
   if (value2) {
     dropdown.disabled = value2;
   }
-
+  if (value3) {
+    dropdown.error = value3;
+  }
   const wrap = document.createElement("div");
   wrap.innerHTML = `
   <div class="p-lg">
