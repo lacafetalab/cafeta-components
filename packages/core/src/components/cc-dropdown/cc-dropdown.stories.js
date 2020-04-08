@@ -42,7 +42,7 @@ export const Dropdown = () => {
     console.log('onChange', e)
   }*/
 
-  dropdown.addEventListener("onChangeChoice", e => {
+  dropdown.addEventListener("changeChoice", e => {
     console.log("onChange", e.detail);
   });
 

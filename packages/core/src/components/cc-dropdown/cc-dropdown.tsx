@@ -38,10 +38,10 @@ export class CcDropdown {
 
   @Element() el: HTMLElement;
 
-  @Event() onChangeChoice: EventEmitter;
+  @Event() changeChoice: EventEmitter;
 
-  onChangeChoiceHandler(value: any) {
-    this.onChangeChoice.emit(value);
+  changeChoiceHandler(value: any) {
+    this.changeChoice.emit(value);
   }
 
   constructor() {
@@ -122,7 +122,7 @@ export class CcDropdown {
               onInput={this.onInput}
               onClick={this.onClick}
               editItems={false}
-              onChange={(e: any) => this.onChangeChoiceHandler(e.target?.value)}
+              onChange={(e: any) => this.changeChoiceHandler(e.target?.value)}
               type={"single"}
             >
               <cc-icon

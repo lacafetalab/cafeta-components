@@ -25,9 +25,9 @@
 
 ## Events
 
-| Event            | Description | Type               |
-| ---------------- | ----------- | ------------------ |
-| `onChangeChoice` |             | `CustomEvent<any>` |
+| Event          | Description | Type               |
+| -------------- | ----------- | ------------------ |
+| `changeChoice` |             | `CustomEvent<any>` |
 
 
 ## Dependencies

@@ -105,9 +105,9 @@ declare namespace LocalJSX {
     'iconName'?: string;
     'label'?: string;
     'name'?: string;
+    'onChangeChoice'?: (event: CustomEvent<any>) => void;
     'onClick'?: (e: any) => void;
     'onInput'?: (e: any) => void;
-    'onOnChangeChoice'?: (event: CustomEvent<any>) => void;
     'placeholder'?: string;
     'size'?: "lg" | "md" | "sm";
   }
