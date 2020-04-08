@@ -20,6 +20,7 @@
 | `onClick`      | --              |             | `(e: any) => void`         | `(e: any) => {     void e;   }` |
 | `onInput`      | --              |             | `(e: any) => void`         | `(e: any) => {     void e;   }` |
 | `placeholder`  | `placeholder`   |             | `string`                   | `""`                            |
+| `readonly`     | `readonly`      |             | `boolean`                  | `false`                         |
 | `size`         | `size`          |             | `"lg" \| "md" \| "sm"`     | `"lg"`                          |
 
 
