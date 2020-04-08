@@ -70,10 +70,6 @@ export class CcDropdown {
         placeholder: true
       });
     }
-    this.choices = newChoices.map((choice: any) => ({
-      ...choice,
-      selected: this.currentValue === choice.value
-    }));
     const element = this.el.querySelector("choicesjs-stencil");
     if (this.disabled) {
       element.disable();
