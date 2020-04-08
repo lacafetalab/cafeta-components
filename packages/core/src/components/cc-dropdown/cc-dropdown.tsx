@@ -21,7 +21,7 @@ export class CcDropdown {
   @Prop() choices: Array<any> = [];
   @Prop() error?: boolean = false;
   @Prop() disabled?: boolean = false;
-  @Prop() readonly?: boolean = false;
+  @Prop() fieldReadonly?: boolean = false;
   @Prop() placeholder?: string = "";
   @Prop() name?: string = "";
   @Prop() currentValue?: string = "";
@@ -103,7 +103,7 @@ export class CcDropdown {
         <div
           class={{
             dropdown: true,
-            "dropdown--readonly": this.readonly,
+            "dropdown--readonly": this.fieldReadonly,
             "dropdown--disabled": this.disabled,
             "dropdown--secondary": this.color === "secondary",
             "dropdown--error": this.error

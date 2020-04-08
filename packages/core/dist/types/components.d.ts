@@ -29,13 +29,13 @@ export namespace Components {
     'currentValue'?: string;
     'disabled'?: boolean;
     'error'?: boolean;
+    'fieldReadonly'?: boolean;
     'iconName'?: string;
     'label': string;
     'name'?: string;
     'onClick'?: (e: any) => void;
     'onInput'?: (e: any) => void;
     'placeholder'?: string;
-    'readonly'?: boolean;
     'size'?: "lg" | "md" | "sm";
   }
   interface CcIcon {
@@ -103,6 +103,7 @@ declare namespace LocalJSX {
     'currentValue'?: string;
     'disabled'?: boolean;
     'error'?: boolean;
+    'fieldReadonly'?: boolean;
     'iconName'?: string;
     'label'?: string;
     'name'?: string;
@@ -110,7 +111,6 @@ declare namespace LocalJSX {
     'onClick'?: (e: any) => void;
     'onInput'?: (e: any) => void;
     'placeholder'?: string;
-    'readonly'?: boolean;
     'size'?: "lg" | "md" | "sm";
   }
   interface CcIcon {
