@@ -91,15 +91,7 @@ export class CcDropdown {
 
   @Watch('currentValue')
   componentWillUpdate(currentValue: string) {
-    let newChoices = [...this.choices];
-    if (this.placeholder !== "") {
-      newChoices.push({
-        value: "",
-        label: this.placeholder,
-        placeholder: true
-      });
-    }
-    this.choices = newChoices.map((choice: any) => ({
+    this.choices = this.choices.map((choice: any) => ({
       ...choice,
       selected: currentValue === choice.value
     }));
