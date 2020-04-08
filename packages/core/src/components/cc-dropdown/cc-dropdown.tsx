@@ -18,15 +18,16 @@ export class CcDropdown {
   @Prop() iconName?: string = "chevron-down";
   @Prop() color: "primary" | "secondary" = "primary";
   @Prop() size?: "lg" | "md" | "sm" = "lg";
-  @Prop() onChange?: (e: any) => void = () => {};
-  @Prop() onClick?: (e: any) => void = () => {};
-  @Prop() onInput?: (e: any) => void = () => {};
+  @Prop() onChange?: (e: any) => void = (e: any) => {void(e)};
+  @Prop() onClick?: (e: any) => void = (e: any) => {void(e)};
+  @Prop() onInput?: (e: any) => void = (e: any) => {void(e)};
   @State() openDropdown: boolean = false;
 
   @Element() el: HTMLElement;
 
   constructor() {
     this.toggleDropdown = this.toggleDropdown.bind(this);
+    this.onChangeSelection = this.onChangeSelection.bind(this);
   }
 
   componentDidLoad() {
@@ -78,6 +79,10 @@ export class CcDropdown {
     }
   }
 
+  onChangeSelection(e) {
+    this.onChange(e.target.value)
+  }
+
   render() {
     return (
       <Host
@@ -96,7 +101,7 @@ export class CcDropdown {
               placeholder={this.placeholder}
               name={this.name}
               choices={this.choices}
-              onChange={this.onChange}
+              onChange={this.onChangeSelection}
               onInput={this.onInput}
               onClick={this.onClick}
               editItems={false}
