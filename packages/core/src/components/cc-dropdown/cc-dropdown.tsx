@@ -86,10 +86,10 @@ export class CcDropdown {
   }
 
   @Watch('currentValue')
-  componentWillUpdate(currentValue: string) {
+  componentDidUpdate(cv: string) {
     this.choices = this.choices.map((choice: any) => ({
       ...choice,
-      selected: currentValue === choice.value
+      selected: cv === choice.value
     }));
   }
 
