@@ -12,7 +12,7 @@ export const Dropdown = () => {
   };
 
   const label1 = "Default Option";
-  const defaultValue1 = 'Seleccione una opción';
+  const defaultValue1 = "Seleccione una opción";
   const groupId1 = "GROUP-ID1";
   const value1 = boolean(label1, !!defaultValue1, groupId1);
 
@@ -25,9 +25,9 @@ export const Dropdown = () => {
   const defaultValue3 = false;
   const groupId3 = "GROUP-ID1";
   const value3 = boolean(label3, defaultValue3, groupId3);
-  
+
   const dropdown = document.createElement("cc-dropdown");
-  
+
   dropdown.choices = itemsWrapper.choices;
   if (value1) {
     dropdown.placeholder = defaultValue1;
@@ -38,9 +38,14 @@ export const Dropdown = () => {
   if (value3) {
     dropdown.error = value3;
   }
-  dropdown.onChangeChoice = (e) => {
+  /*dropdown.onChangeChoice = (e) => {
     console.log('onChange', e)
-  }
+  }*/
+
+  dropdown.addEventListener("onChangeChoice", e => {
+    console.log("onChange", e.detail);
+  });
+
   const wrap = document.createElement("div");
   wrap.innerHTML = `
   <div class="p-lg">
