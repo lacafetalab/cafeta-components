@@ -32,7 +32,7 @@ export namespace Components {
     'iconName'?: string;
     'label': string;
     'name'?: string;
-    'onChange'?: (e: any) => void;
+    'onChangeChoice'?: (e: any) => void;
     'onClick'?: (e: any) => void;
     'onInput'?: (e: any) => void;
     'placeholder'?: string;
@@ -106,7 +106,7 @@ declare namespace LocalJSX {
     'iconName'?: string;
     'label'?: string;
     'name'?: string;
-    'onChange'?: (e: any) => void;
+    'onChangeChoice'?: (e: any) => void;
     'onClick'?: (e: any) => void;
     'onInput'?: (e: any) => void;
     'placeholder'?: string;
