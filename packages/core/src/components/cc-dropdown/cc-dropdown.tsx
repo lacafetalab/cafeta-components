@@ -6,7 +6,8 @@ import {
   Element,
   State,
   Event,
-  EventEmitter
+  EventEmitter,
+  Watch
 } from "@stencil/core";
 import "choices.js/public/assets/scripts/choices.min.js";
 import "choicesjs-stencil";
@@ -88,7 +89,8 @@ export class CcDropdown {
     });
   }
 
-  componentWillUpdate() {
+  @Watch('currentValue')
+  componentWillUpdate(currentValue: string) {
     let newChoices = [...this.choices];
     if (this.placeholder !== "") {
       newChoices.push({
@@ -99,12 +101,8 @@ export class CcDropdown {
     }
     this.choices = newChoices.map((choice: any) => ({
       ...choice,
-      selected: this.currentValue === choice.value
+      selected: currentValue === choice.value
     }));
-    const element = this.el.querySelector("choicesjs-stencil");
-    if (this.disabled) {
-      element.disable();
-    }
   }
 
   toggleDropdown(e) {
