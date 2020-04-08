@@ -75,6 +75,11 @@ export class CcDropdown {
       element.disable();
     }
 
+    this.choices = newChoices.map((choice: any) => ({
+      ...choice,
+      selected: this.currentValue === choice.value
+    }));
+
     mutationObserver.observe(element, {
       attributes: true,
       characterData: false,
@@ -86,7 +91,7 @@ export class CcDropdown {
   }
 
   @Watch('currentValue')
-  componentDidUpdate(cv: string) {
+  componentWilldUpdate(cv: string) {
     this.choices = this.choices.map((choice: any) => ({
       ...choice,
       selected: cv === choice.value
