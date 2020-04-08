@@ -18,7 +18,7 @@ export class CcDropdown {
   @Prop() iconName?: string = "chevron-down";
   @Prop() color: "primary" | "secondary" = "primary";
   @Prop() size?: "lg" | "md" | "sm" = "lg";
-  @Prop() onChange?: (e: any) => void = (e: any) => {void(e)};
+  @Prop() onChangeChoice?: (e: any) => void = (e: any) => {void(e)};
   @Prop() onClick?: (e: any) => void = (e: any) => {void(e)};
   @Prop() onInput?: (e: any) => void = (e: any) => {void(e)};
   @State() openDropdown: boolean = false;
@@ -27,7 +27,6 @@ export class CcDropdown {
 
   constructor() {
     this.toggleDropdown = this.toggleDropdown.bind(this);
-    this.onChangeSelection = this.onChangeSelection.bind(this);
   }
 
   componentDidLoad() {
@@ -58,6 +57,9 @@ export class CcDropdown {
     if (this.disabled) {
       element.disable();
     }
+    element.onchange = (e: any) => {
+      this.onChangeChoice(e.target?.value);
+    };
     
     mutationObserver.observe(element, {
       attributes: true,
@@ -79,10 +81,6 @@ export class CcDropdown {
     }
   }
 
-  onChangeSelection(e) {
-    this.onChange(e.target.value)
-  }
-
   render() {
     return (
       <Host
@@ -101,7 +99,6 @@ export class CcDropdown {
               placeholder={this.placeholder}
               name={this.name}
               choices={this.choices}
-              onChange={this.onChangeSelection}
               onInput={this.onInput}
               onClick={this.onClick}
               editItems={false}

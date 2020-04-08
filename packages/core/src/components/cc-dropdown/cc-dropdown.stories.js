@@ -38,6 +38,9 @@ export const Dropdown = () => {
   if (value3) {
     dropdown.error = value3;
   }
+  dropdown.onChangeChoice = (e) => {
+    console.log('onChange', e)
+  }
   const wrap = document.createElement("div");
   wrap.innerHTML = `
   <div class="p-lg">
