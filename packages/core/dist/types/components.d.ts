@@ -35,6 +35,7 @@ export namespace Components {
     'onClick'?: (e: any) => void;
     'onInput'?: (e: any) => void;
     'placeholder'?: string;
+    'readonly'?: boolean;
     'size'?: "lg" | "md" | "sm";
   }
   interface CcIcon {
@@ -109,6 +110,7 @@ declare namespace LocalJSX {
     'onClick'?: (e: any) => void;
     'onInput'?: (e: any) => void;
     'placeholder'?: string;
+    'readonly'?: boolean;
     'size'?: "lg" | "md" | "sm";
   }
   interface CcIcon {
