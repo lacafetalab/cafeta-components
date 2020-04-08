@@ -6,8 +6,7 @@ import {
   Element,
   State,
   Event,
-  EventEmitter,
-  Watch
+  EventEmitter
 } from "@stencil/core";
 import "choices.js/public/assets/scripts/choices.min.js";
 import "choicesjs-stencil";
@@ -41,6 +40,18 @@ export class CcDropdown {
 
   @Event() changeChoice: EventEmitter;
 
+  private mutationObserver = new MutationObserver(mutations => {
+    mutations.forEach((mutation: any) => {
+      const classes = mutation.target.getAttribute("class").split(" ");
+      if (
+        mutation.type === "attributes" &&
+        classes.indexOf("choices__list--dropdown") !== -1
+      ) {
+        this.openDropdown = classes.indexOf("is-active") !== -1;
+      }
+    });
+  });
+
   changeChoiceHandler(value: any) {
     this.changeChoice.emit(value);
   }
@@ -50,18 +61,7 @@ export class CcDropdown {
   }
   
   componentDidLoad() {
-    var mutationObserver = new MutationObserver(mutations => {
-      mutations.forEach((mutation: any) => {
-        const classes = mutation.target.getAttribute("class").split(" ");
-        if (
-          mutation.type === "attributes" &&
-          classes.indexOf("choices__list--dropdown") !== -1
-        ) {
-          this.openDropdown = classes.indexOf("is-active") !== -1;
-        }
-      });
-    });
-
+    /*
     let newChoices = [...this.choices];
     if (this.placeholder !== "") {
       newChoices.push({
@@ -70,17 +70,13 @@ export class CcDropdown {
         placeholder: true
       });
     }
+    */
     const element = this.el.querySelector("choicesjs-stencil");
     if (this.disabled) {
       element.disable();
     }
 
-    this.choices = newChoices.map((choice: any) => ({
-      ...choice,
-      selected: this.currentValue === choice.value
-    }));
-
-    mutationObserver.observe(element, {
+    this.mutationObserver.observe(element, {
       attributes: true,
       characterData: false,
       childList: false,
@@ -88,14 +84,6 @@ export class CcDropdown {
       attributeOldValue: false,
       characterDataOldValue: false
     });
-  }
-
-  @Watch('currentValue')
-  componentWilldUpdate(cv: string) {
-    this.choices = this.choices.map((choice: any) => ({
-      ...choice,
-      selected: cv === choice.value
-    }));
   }
 
   toggleDropdown(e) {
@@ -123,7 +111,6 @@ export class CcDropdown {
           <div class="dropdown--input">
             <choicesjs-stencil
               searchEnabled={false}
-              placeholder={this.placeholder}
               name={this.name}
               choices={this.choices}
               onInput={this.onInput}
