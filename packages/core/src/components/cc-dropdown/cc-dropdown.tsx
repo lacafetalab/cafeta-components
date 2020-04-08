@@ -47,7 +47,7 @@ export class CcDropdown {
   constructor() {
     this.toggleDropdown = this.toggleDropdown.bind(this);
   }
-
+  
   componentDidLoad() {
     var mutationObserver = new MutationObserver(mutations => {
       mutations.forEach((mutation: any) => {
@@ -77,9 +77,6 @@ export class CcDropdown {
     if (this.disabled) {
       element.disable();
     }
-    /* element.onchange = (e: any) => {
-      this.onChangeChoice(e.target?.value);
-    }; */
 
     mutationObserver.observe(element, {
       attributes: true,
@@ -89,6 +86,25 @@ export class CcDropdown {
       attributeOldValue: false,
       characterDataOldValue: false
     });
+  }
+
+  componentWillUpdate() {
+    let newChoices = [...this.choices];
+    if (this.placeholder !== "") {
+      newChoices.push({
+        value: "",
+        label: this.placeholder,
+        placeholder: true
+      });
+    }
+    this.choices = newChoices.map((choice: any) => ({
+      ...choice,
+      selected: this.currentValue === choice.value
+    }));
+    const element = this.el.querySelector("choicesjs-stencil");
+    if (this.disabled) {
+      element.disable();
+    }
   }
 
   toggleDropdown(e) {
@@ -121,7 +137,7 @@ export class CcDropdown {
               choices={this.choices}
               onInput={this.onInput}
               onClick={this.onClick}
-              editItems={false}
+              editItems={true}
               onChange={(e: any) => this.changeChoiceHandler(e.target?.value)}
               type={"single"}
             >
