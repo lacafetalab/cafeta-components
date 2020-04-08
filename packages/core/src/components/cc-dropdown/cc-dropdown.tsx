@@ -1,66 +1,86 @@
-import { Component, h, Host, Prop, Element, State } from "@stencil/core";
+import {
+  Component,
+  h,
+  Host,
+  Prop,
+  Element,
+  State,
+  Event,
+  EventEmitter
+} from "@stencil/core";
 import "choices.js/public/assets/scripts/choices.min.js";
 import "choicesjs-stencil";
 
 @Component({
   tag: "cc-dropdown",
   styleUrls: ["cc-dropdown.scss"],
-  shadow: false,
+  shadow: false
 })
 export class CcDropdown {
   @Prop() label: string = "";
   @Prop() choices: Array<any> = [];
   @Prop() error?: boolean = false;
   @Prop() disabled?: boolean = false;
-  @Prop() placeholder?: string = '';
-  @Prop() name?: string = '';
+  @Prop() placeholder?: string = "";
+  @Prop() name?: string = "";
   @Prop() currentValue?: string = "";
   @Prop() iconName?: string = "chevron-down";
   @Prop() color: "primary" | "secondary" = "primary";
   @Prop() size?: "lg" | "md" | "sm" = "lg";
-  @Prop() onChangeChoice?: (e: any) => void = (e: any) => {void(e)};
-  @Prop() onClick?: (e: any) => void = (e: any) => {void(e)};
-  @Prop() onInput?: (e: any) => void = (e: any) => {void(e)};
+  // @Prop() onChangeChoice?: (e: any) => void;
+  @Prop() onClick?: (e: any) => void = (e: any) => {
+    void e;
+  };
+  @Prop() onInput?: (e: any) => void = (e: any) => {
+    void e;
+  };
   @State() openDropdown: boolean = false;
 
   @Element() el: HTMLElement;
+
+  @Event() onChangeChoice: EventEmitter;
+
+  onChangeChoiceHandler(value: any) {
+    this.onChangeChoice.emit(value);
+  }
 
   constructor() {
     this.toggleDropdown = this.toggleDropdown.bind(this);
   }
 
   componentDidLoad() {
-    var mutationObserver = new MutationObserver((mutations) => {
+    var mutationObserver = new MutationObserver(mutations => {
       mutations.forEach((mutation: any) => {
-        const classes = mutation.target.getAttribute('class').split(' ');
-        if (mutation.type === 'attributes' && classes.indexOf('choices__list--dropdown') !== -1) {
-          this.openDropdown = classes.indexOf('is-active') !== -1;
+        const classes = mutation.target.getAttribute("class").split(" ");
+        if (
+          mutation.type === "attributes" &&
+          classes.indexOf("choices__list--dropdown") !== -1
+        ) {
+          this.openDropdown = classes.indexOf("is-active") !== -1;
         }
       });
     });
 
     let newChoices = [...this.choices];
-    if (this.placeholder !== '') {
+    if (this.placeholder !== "") {
       newChoices.push({
-        value: '',
+        value: "",
         label: this.placeholder,
         placeholder: true
-      })
+      });
     }
-    this.choices =  newChoices.map((choice: any) => (
-      {
-        ...choice, 
-        selected: this.currentValue === choice.value
-      }
-    ))
-    const element = this.el.querySelector('choicesjs-stencil');
+    this.choices = newChoices.map((choice: any) => ({
+      ...choice,
+      selected: this.currentValue === choice.value
+    }));
+    const element = this.el.querySelector("choicesjs-stencil");
     if (this.disabled) {
       element.disable();
     }
-    element.onchange = (e: any) => {
+    /* element.onchange = (e: any) => {
       this.onChangeChoice(e.target?.value);
-    };
-    
+    }; */
+
     mutationObserver.observe(element, {
       attributes: true,
       characterData: false,
@@ -70,11 +90,11 @@ export class CcDropdown {
       characterDataOldValue: false
     });
   }
-  
+
   toggleDropdown(e) {
     e.stopPropagation();
-    const element = this.el.querySelector('choicesjs-stencil');
-    if (this.el.querySelector('.choices__list--dropdown.is-active')) {
+    const element = this.el.querySelector("choicesjs-stencil");
+    if (this.el.querySelector(".choices__list--dropdown.is-active")) {
       element.hideDropdown(true);
     } else {
       element.showDropdown(true);
@@ -83,18 +103,18 @@ export class CcDropdown {
 
   render() {
     return (
-      <Host
-        data-testid="cc-dropdown"
-      >
-        <div class={{
-          "dropdown": true,
-          "dropdown--disabled": this.disabled,
-          "dropdown--secondary": this.color === "secondary",
-          "dropdown--error": this.error,
-        }}>
+      <Host data-testid="cc-dropdown">
+        <div
+          class={{
+            dropdown: true,
+            "dropdown--disabled": this.disabled,
+            "dropdown--secondary": this.color === "secondary",
+            "dropdown--error": this.error
+          }}
+        >
           {this.label && <span>{this.label}</span>}
           <div class="dropdown--input">
-            <choicesjs-stencil 
+            <choicesjs-stencil
               searchEnabled={false}
               placeholder={this.placeholder}
               name={this.name}
@@ -102,15 +122,17 @@ export class CcDropdown {
               onInput={this.onInput}
               onClick={this.onClick}
               editItems={false}
-              type={'single'}>
-                <cc-icon
-                  onClick={this.toggleDropdown}
-                  class={{
-                    dropdown__icon: true,
-                    'dropdown__icon--inverted': this.openDropdown
-                  }}
-                  name={this.iconName}
-                ></cc-icon>
+              onChange={(e: any) => this.onChangeChoiceHandler(e.target?.value)}
+              type={"single"}
+            >
+              <cc-icon
+                onClick={this.toggleDropdown}
+                class={{
+                  dropdown__icon: true,
+                  "dropdown__icon--inverted": this.openDropdown
+                }}
+                name={this.iconName}
+              ></cc-icon>
             </choicesjs-stencil>
           </div>
         </div>
