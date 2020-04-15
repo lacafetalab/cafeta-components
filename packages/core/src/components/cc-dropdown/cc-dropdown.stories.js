@@ -6,8 +6,9 @@ export default { title: "Dropdown", decorators: [withKnobs] };
 export const Dropdown = () => {
   const itemsWrapper = {
     choices: [
+      { value: "123", label: "Seleccione una opción", placeholder: true },
       { value: "123", label: "Opción 1" },
-      { value: "124", label: "Opción   2" }
+      { value: "124", label: "Opción 2" }
     ]
   };
 
@@ -26,23 +27,37 @@ export const Dropdown = () => {
   const groupId3 = "GROUP-ID1";
   const value3 = boolean(label3, defaultValue3, groupId3);
 
-  const dropdown = document.createElement("cc-dropdown");
+  const dropdown1 = document.createElement("cc-dropdown");
 
-  dropdown.choices = itemsWrapper.choices;
+  dropdown1.choices = itemsWrapper.choices;
   if (value1) {
-    dropdown.placeholder = defaultValue1;
+    dropdown1.placeholder = defaultValue1;
   }
   if (value2) {
-    dropdown.disabled = value2;
+    dropdown1.disabled = value2;
   }
   if (value3) {
-    dropdown.error = value3;
+    dropdown1.error = value3;
   }
-  /*dropdown.onChangeChoice = (e) => {
-    console.log('onChange', e)
-  }*/
 
-  dropdown.addEventListener("changeChoice", e => {
+  dropdown1.addEventListener("changeChoice", e => {
+    console.log("onChange", e.detail);
+  });
+
+  const dropdown2 = document.createElement("cc-dropdown");
+
+  dropdown2.choices = itemsWrapper.choices;
+  if (value1) {
+    dropdown2.placeholder = defaultValue1;
+  }
+  if (value2) {
+    dropdown2.disabled = value2;
+  }
+  if (value3) {
+    dropdown2.error = value3;
+  }
+  
+  dropdown2.addEventListener("changeChoice", e => {
     console.log("onChange", e.detail);
   });
 
@@ -61,14 +76,15 @@ export const Dropdown = () => {
     <section class="py-xlg color-primary font-black">
       <h2 class="text-subheading-02 mb-lg font-regular">Dropdown with Label</h1>
       <div >
-        <div class="mr-lg mt-lg flex flex-col align-middle">
+        <div class="mr-lg mt-lg flex flex-col align-middle" id="drop2">
           <h2 class="text-center font-regular">size: <strong class="font-bold">default</strong></h1>
         </div>
       </div>
     </section>
   </div>`;
 
-  wrap.querySelector("#drop1").appendChild(dropdown);
+  wrap.querySelector("#drop1").appendChild(dropdown1);
+  wrap.querySelector("#drop2").appendChild(dropdown2);
   return wrap;
 };
 
