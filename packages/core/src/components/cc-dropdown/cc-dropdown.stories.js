@@ -56,7 +56,7 @@ export const Dropdown = () => {
   if (value3) {
     dropdown2.error = value3;
   }
-  
+  dropdown2.color = 'secondary';
   dropdown2.addEventListener("changeChoice", e => {
     console.log("onChange", e.detail);
   });
