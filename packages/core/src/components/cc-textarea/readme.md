@@ -12,6 +12,7 @@
 | `color`       | `color`       |             | `"primary" \| "secondary"` | `"primary"` |
 | `disabled`    | `disabled`    |             | `boolean`                  | `false`     |
 | `label`       | `label`       |             | `string`                   | `undefined` |
+| `name`        | `name`        |             | `string`                   | `undefined` |
 | `placeholder` | `placeholder` |             | `string`                   | `undefined` |
 | `status`      | `status`      |             | `"error" \| "success"`     | `undefined` |
 
