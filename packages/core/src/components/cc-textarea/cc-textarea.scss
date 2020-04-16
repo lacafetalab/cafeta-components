@@ -1,0 +1,152 @@
+.textarea {
+  @apply block;
+
+  li {
+    @apply ml-lg;
+  }
+
+  ol {
+    list-style: decimal;
+  }
+
+  ul {
+    list-style: disc;
+  }
+
+  b,
+  strong {
+    @apply font-black;
+  }
+
+  &__field {
+    @apply w-full rounded-sm border border-neutral-02 px-lg py-sm bg-neutral-04 text-body block leading-relaxed;
+    resize: none;
+    min-height: 13.6rem;
+
+    &:disabled {
+      @apply border-disabled;
+    }
+
+    .textarea--success & {
+      @apply border-success;
+    }
+
+    .textarea--error & {
+      @apply border-error;
+    }
+
+    &:focus {
+      outline: 0;
+
+      .textarea--primary & {
+        @apply border-primary;
+      }
+
+      .textarea--secondary & {
+        @apply border-secondary;
+      }
+
+      .textarea--success & {
+        @apply border-success;
+      }
+
+      .textarea--error & {
+        @apply border-error;
+      }
+    }
+  }
+
+  &__label {
+    @apply block text-small-02 font-black mb-xsm;
+
+    .textarea--disabled & {
+      @apply text-disabled;
+    }
+  }
+
+  &__helperText {
+    @apply block text-small-01 mt-xsm text-error;
+  }
+
+  &__richTextSkeleton {
+    @apply w-full rounded-sm border border-neutral-02 px-lg py-sm bg-neutral-04 text-body block leading-relaxed;
+    min-height: 13.6rem;
+
+    & + .textarea__helperText {
+      display: none;
+    }
+  }
+
+  .ck.ck-toolbar {
+    @apply border-neutral-02;
+  }
+
+  &.textarea--disabled .ck.ck-toolbar {
+    @apply border-disabled;
+  }
+
+  .ck-rounded-corners .ck.ck-editor__top .ck-sticky-panel .ck-toolbar,
+  .ck.ck-editor__top .ck-sticky-panel .ck-toolbar.ck-rounded-corners {
+    @apply rounded-t-sm;
+  }
+
+  .ck-rounded-corners .ck.ck-editor__main > .ck-editor__editable,
+  .ck.ck-editor__main > .ck-editor__editable.ck-rounded-corners {
+    @apply rounded-b-sm;
+  }
+
+  .ck.ck-editor__main > .ck-editor__editable {
+    &.ck-focused {
+      box-shadow: none;
+    }
+
+    &:not(.ck-focused) {
+      @apply border-neutral-02;
+
+      &.ck-read-only {
+        @apply border-disabled;
+      }
+    }
+  }
+
+  &.textarea--primary .ck.ck-editor__main > .ck-editor__editable.ck-focused {
+    @apply border-primary;
+  }
+
+  &.textarea--secondary .ck.ck-editor__main > .ck-editor__editable.ck-focused {
+    @apply border-secondary;
+  }
+
+  .textarea--error & {
+    @apply border-error;
+  }
+
+  &.textarea--success .ck.ck-editor__main > .ck-editor__editable {
+    &:not(.ck-focused),
+    &.ck-focused {
+      @apply border-success;
+    }
+  }
+
+  &.textarea--error .ck.ck-editor__main > .ck-editor__editable {
+    &:not(.ck-focused),
+    &.ck-focused {
+      @apply border-error;
+    }
+  }
+
+  .ck.ck-editor__editable_inline {
+    & > :first-child {
+      @apply mt-sm;
+    }
+
+    & > :last-child {
+      @apply mb-sm;
+    }
+  }
+
+  .ck.ck-editor__editable_inline {
+    @apply px-lg;
+    min-height: 13.6rem;
+  }
+}

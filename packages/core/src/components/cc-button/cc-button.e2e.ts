@@ -14,10 +14,10 @@ describe("cc-button", () => {
 
     await page.setContent("<cc-button></cc-button>");
     const btnElem = await page.find(
-      "cc-button >>> [data-testid='cc-button__element']"
+      "cc-button [data-testid='cc-button__element']"
     );
     const textElem = await page.find(
-      "cc-button >>> [data-testid='cc-button__text']"
+      "cc-button [data-testid='cc-button__text']"
     );
 
     expect(btnElem.tagName).toBe("BUTTON");
@@ -32,16 +32,14 @@ describe("cc-button", () => {
 
     const component = await page.find("cc-button");
     let btnElem = await page.find(
-      "cc-button >>> [data-testid='cc-button__element']"
+      "cc-button [data-testid='cc-button__element']"
     );
 
     expect(btnElem.tagName).toBe("BUTTON");
 
     component.setProperty("href", "http://google.com");
     await page.waitForChanges();
-    btnElem = await page.find(
-      "cc-button >>> [data-testid='cc-button__element']"
-    );
+    btnElem = await page.find("cc-button [data-testid='cc-button__element']");
 
     expect(btnElem.tagName).toBe("A");
     expect(btnElem.getAttribute("href")).toBe("http://google.com");
@@ -59,7 +57,7 @@ describe("cc-button", () => {
     await page.waitForChanges();
 
     const btnElem = await page.find(
-      "cc-button >>> [data-testid='cc-button__element']"
+      "cc-button [data-testid='cc-button__element']"
     );
 
     expect(btnElem.tagName).toBe("A");
@@ -99,7 +97,7 @@ describe("cc-button", () => {
     const component = await page.find("cc-button");
 
     const btnElem = await page.find(
-      "cc-button >>> [data-testid='cc-button__element']"
+      "cc-button [data-testid='cc-button__element']"
     );
 
     expect(btnElem).not.toHaveClass("button--disabled");
@@ -117,7 +115,7 @@ describe("cc-button", () => {
     const component = await page.find("cc-button");
 
     const btnElem = await page.find(
-      "cc-button >>> [data-testid='cc-button__element']"
+      "cc-button [data-testid='cc-button__element']"
     );
 
     component.setProperty("fill", "outline");
@@ -136,7 +134,7 @@ describe("cc-button", () => {
     const component = await page.find("cc-button");
 
     const btnElem = await page.find(
-      "cc-button >>> [data-testid='cc-button__element']"
+      "cc-button [data-testid='cc-button__element']"
     );
 
     component.setProperty("size", "md");
@@ -155,7 +153,7 @@ describe("cc-button", () => {
     const component = await page.find("cc-button");
 
     const btnElem = await page.find(
-      "cc-button >>> [data-testid='cc-button__element']"
+      "cc-button [data-testid='cc-button__element']"
     );
 
     component.setProperty("glow", true);
@@ -169,12 +167,12 @@ describe("cc-button", () => {
     await page.setContent("<cc-button></cc-button>");
     const component = await page.find("cc-button");
 
-    let icon = await page.find("cc-button >>> cc-icon");
+    let icon = await page.find("cc-button cc-icon");
 
     expect(icon).toBeFalsy();
     component.setProperty("iconName", "chest");
     await page.waitForChanges();
-    icon = await page.find("cc-button >>> cc-icon");
+    icon = await page.find("cc-button cc-icon");
     expect(icon).toBeTruthy();
   });
 
@@ -184,8 +182,8 @@ describe("cc-button", () => {
     await page.setContent("<cc-button></cc-button>");
     const component = await page.find("cc-button");
 
-    let icon = await page.find("cc-button >>> cc-icon");
-    let text = await page.find("cc-button >>> [data-testid='cc-button__text']");
+    let icon = await page.find("cc-button cc-icon");
+    let text = await page.find("cc-button [data-testid='cc-button__text']");
 
     expect(icon).toBeFalsy();
     expect(text).toBeTruthy();
@@ -195,8 +193,8 @@ describe("cc-button", () => {
 
     await page.waitForChanges();
 
-    icon = await page.find("cc-button >>> cc-icon");
-    text = await page.find("cc-button >>> [data-testid='cc-button__text']");
+    icon = await page.find("cc-button cc-icon");
+    text = await page.find("cc-button [data-testid='cc-button__text']");
 
     expect(icon).toBeTruthy();
     expect(text).toBeFalsy();

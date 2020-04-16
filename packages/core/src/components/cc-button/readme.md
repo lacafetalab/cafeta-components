@@ -18,6 +18,7 @@
 | `iconReverse` | `icon-reverse` |             | `boolean`                         | `false`     |
 | `size`        | `size`         |             | `"lg" \| "md" \| "sm"`            | `"lg"`      |
 | `target`      | `target`       |             | `string`                          | `undefined` |
+| `type`        | `type`         |             | `"button" \| "submit"`            | `"button"`  |
 
 
 ## Dependencies
