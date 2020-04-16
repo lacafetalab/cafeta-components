@@ -3,8 +3,8 @@
     "components\\cc-icon\\cc-icon.js",
     "components\\cc-text\\cc-text.js",
     "components\\cc-button\\cc-button.js",
-    "components\\cc-dropdown\\cc-dropdown.js",
-    "components\\cc-textarea\\cc-textarea.js"
+    "components\\cc-textarea\\cc-textarea.js",
+    "components\\cc-dropdown\\cc-dropdown.js"
   ],
   "compiler": {
     "name": "@stencil/core",
