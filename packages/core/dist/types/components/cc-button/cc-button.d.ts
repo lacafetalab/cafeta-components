@@ -10,5 +10,6 @@ export declare class CcButton {
     target?: string;
     size?: "lg" | "md" | "sm";
     glow: boolean;
+    type: "button" | "submit";
     render(): any;
 }
