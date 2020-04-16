@@ -1,5 +1,85 @@
 @import url("~choices.js/public/assets/styles/choices.min.css");
 
+@mixin item-state-hover {
+  &:not(.choices__placeholder){
+    @apply font-bold;
+    color: theme("colors.neutral.03");
+    background: theme("backgroundColor.02");
+  }
+}
+@mixin item-state-focus {
+  &:not(.choices__placeholder){
+    @apply font-bold;
+    color: theme("colors.neutral.02");
+    background: theme("backgroundColor.01");
+  }
+}
+@mixin dropdown-state-readonly {
+  &:after {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    content: '';
+    background: transparent;
+  }
+}
+@mixin dropdown-state-error {
+  .dropdown {
+    &--input {
+      border-color: theme("colors.error");
+      &:focus-within {
+        border-color: theme("colors.error");
+      }
+    }
+    &__icon {
+      color: theme("colors.error");
+    }
+  }
+}
+@mixin dropdown-state-secondary {
+  .dropdown {
+    &--input {
+      &:focus-within, &:hover {
+        border: 1px solid theme("colors.secondary.default");
+      }
+    }
+    &__icon {
+      color: theme("colors.secondary.default");
+    }
+  }
+}
+@mixin dropdown-state-disabled {
+  .dropdown {
+    &--input {
+      border-color: theme("backgroundColor.disabled");
+      &:focus-within {
+        border-color: theme("backgroundColor.disabled");
+      }
+    }
+    &__icon {
+      @apply text-disabled;
+    }
+  }
+  .choices.is-disabled {
+    background: transparent;
+    .choices {
+      &__inner {
+        background-color: transparent;
+      }
+      &__input {
+        background-color: transparent;
+      }
+      &__item {
+        &--selectable {
+          @apply text-disabled;
+        }
+      }
+    }
+  }
+}
+
 .dropdown {
   @apply flex flex-col relative;
   min-width: 150px;
@@ -7,18 +87,7 @@
     @apply flex flex-grow;
   }
   position: relative;
-  &--readonly {
-    &:after {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      content: '';
-      background: transparent; 
-    }
-  }
-  
+
   .choices {
     @apply flex items-center;
     position: initial;
@@ -33,7 +102,6 @@
     &__inner {
       margin: 0;
       padding: 0;
-      padding-bottom: 0;
       min-height: auto;
       .choices__item {
         &.choices__item--selectable {
@@ -55,24 +123,16 @@
         padding: 0;
       }
       &--dropdown {
-        left: 0; 
+        left: 0;
         .choices {
           &__item {
             &--selectable {
               color: theme("colors.neutral.03");
               &:focus, &.is-selected {
-                &:not(.choices__placeholder){
-                  @apply font-bold;
-                  color: theme("colors.neutral.02");
-                  background: theme("backgroundColor.01");
-                }
+                @include item-state-focus;
               }
               &:hover, &.is-selected:hover {
-                &:not(.choices__placeholder){
-                  @apply font-bold;
-                  color: theme("colors.neutral.03");
-                  background: theme("backgroundColor.02");
-                }
+                @include item-state-hover;
               }
               &::after {
                 display: none;
@@ -124,59 +184,17 @@
     }
   }
   &.dropdown {
-    &--error {
-      .dropdown {
-        &--input {
-          border-color: theme("colors.error");
-          &:focus-within {
-            border-color: theme("colors.error");
-          }
-        }
-        &__icon {
-          color: theme("colors.error");
-        }
-      }
+    &--readonly {
+      @include dropdown-state-readonly;
     }
     &--secondary {
-      .dropdown {
-        &--input {
-          &:focus-within, &:hover {
-            border: 1px solid theme("colors.secondary.default");
-          }
-        }
-        &__icon {
-          color: theme("colors.secondary.default");
-        }
-      }
+      @include dropdown-state-secondary;
+    }
+    &--error {
+      @include dropdown-state-error;
     }
     &--disabled {
-      .dropdown {
-        &--input {
-          border-color: theme("backgroundColor.disabled");
-          &:focus-within {
-            border-color: theme("backgroundColor.disabled");
-          }
-        }
-        &__icon {
-          @apply text-disabled;
-        }
-      }
-      .choices.is-disabled {
-        background: transparent;
-        .choices {
-          &__inner {  
-            background-color: transparent;
-          }
-          &__input {
-            background-color: transparent;
-          }
-          &__item {
-            &--selectable {
-              @apply text-disabled;
-            }
-          }
-        }
-      }
+      @include dropdown-state-disabled;
     }
   }
 }

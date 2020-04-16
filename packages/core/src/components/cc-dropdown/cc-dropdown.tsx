@@ -53,14 +53,13 @@ export class CcDropdown {
   }
 
   clickDropdownHandler(event: any) {
-    console.log(event)
     this.clickDropdown.emit(event);
   }
 
   constructor() {
     this.toggleDropdown = this.toggleDropdown.bind(this);
   }
-  
+
   componentDidLoad() {
     /*
     let newChoices = [...this.choices];

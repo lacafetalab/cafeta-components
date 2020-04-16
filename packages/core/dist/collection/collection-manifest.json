@@ -1,10 +1,10 @@
 {
   "entries": [
-    "components/cc-dropdown/cc-dropdown.js",
-    "components/cc-text/cc-text.js",
     "components/cc-icon/cc-icon.js",
     "components/cc-button/cc-button.js",
+    "components/cc-text/cc-text.js",
     "components/cc-input/cc-input.js",
+    "components/cc-dropdown/cc-dropdown.js",
     "components/cc-textarea/cc-textarea.js"
   ],
   "compiler": {
