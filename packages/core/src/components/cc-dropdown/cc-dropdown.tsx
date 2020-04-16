@@ -108,8 +108,8 @@ export class CcDropdown {
             "dropdown--error": this.error
           }}
         >
-          {this.label && <span>{this.label}</span>}
-          <div class="dropdown--input">
+          {this.label && <span class="dropdown__label">{this.label}</span>}
+          <div class="dropdown__input">
             <choicesjs-stencil
               searchEnabled={false}
               name={this.name}

@@ -27,7 +27,7 @@
 }
 @mixin dropdown-state-error {
   .dropdown {
-    &--input {
+    &__input {
       border-color: theme("colors.error");
       &:focus-within {
         border-color: theme("colors.error");
@@ -40,7 +40,7 @@
 }
 @mixin dropdown-state-secondary {
   .dropdown {
-    &--input {
+    &__input {
       &:focus-within, &:hover {
         border: 1px solid theme("colors.secondary.default");
       }
@@ -52,7 +52,7 @@
 }
 @mixin dropdown-state-disabled {
   .dropdown {
-    &--input {
+    &__input {
       border-color: theme("backgroundColor.disabled");
       &:focus-within {
         border-color: theme("backgroundColor.disabled");
@@ -151,7 +151,7 @@
       display: none;
     }
   }
-  &--input {
+  &__input {
     @apply px-lg py-sm flex items-center rounded-sm;
     border: 1px solid theme("colors.neutral.02");
     &:focus-within, &:hover  {
@@ -183,6 +183,10 @@
       transform: rotate(180deg);
     }
   }
+  &__label {
+    @apply py-xsm text-small-01 font-black;
+    color: theme("colors.neutral.03");
+  }
   &.dropdown {
     &--readonly {
       @include dropdown-state-readonly;
@@ -195,6 +199,11 @@
     }
     &--disabled {
       @include dropdown-state-disabled;
+    }
+  }
+  @media (min-width: 640px) {
+    .choices__list--dropdown .choices__item--selectable {
+      @apply px-sm;
     }
   }
 }
