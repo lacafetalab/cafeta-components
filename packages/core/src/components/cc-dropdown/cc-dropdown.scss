@@ -60,15 +60,18 @@
           &__item {
             &--selectable {
               color: theme("colors.neutral.03");
-              &:hover {
-                @apply font-bold;
-                background: theme(".backgroundColor.02");
-              }
               &:focus, &.is-selected {
                 &:not(.choices__placeholder){
                   @apply font-bold;
                   color: theme("colors.neutral.02");
-                  background: theme("backgroundColor.01")!important;
+                  background: theme("backgroundColor.01");
+                }
+              }
+              &:hover, &.is-selected:hover {
+                &:not(.choices__placeholder){
+                  @apply font-bold;
+                  color: theme("colors.neutral.03");
+                  background: theme("backgroundColor.02");
                 }
               }
               &::after {
