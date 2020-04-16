@@ -14,6 +14,7 @@ export class CcTextarea {
   @Prop() status?: "success" | "error";
   @Prop() disabled?: boolean = false;
   @Prop() placeholder?: string;
+  @Prop() name?: string;
 
   @Watch("disabled")
   validateName(newValue: boolean) {
@@ -74,6 +75,7 @@ export class CcTextarea {
             disabled={this.disabled}
             placeholder={this.placeholder}
             class="textarea__field"
+            name={this.name}
           />
         </label>
 
