@@ -7,7 +7,6 @@
   "description": "Base cafeta components",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
-  "es2015": "dist/esm/index.mjs",
   "es2017": "dist/esm/index.mjs",
   "types": "dist/types/index.d.ts",
   "collection": "dist/collection/collection-manifest.json",
