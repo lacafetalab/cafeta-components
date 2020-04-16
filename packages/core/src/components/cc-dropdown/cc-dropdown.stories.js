@@ -3,6 +3,23 @@ import { withKnobs, boolean } from "@storybook/addon-knobs/html";
 
 export default { title: "Dropdown", decorators: [withKnobs] };
 
+const dropdownBuilder = (itemsWrapper, values) => {
+  const dropdown = document.createElement("cc-dropdown");
+  dropdown.choices = itemsWrapper.choices;
+  console.log(values);
+  Object.keys(values).forEach((key, index) => {
+    const value = values[key];
+    console.log(value);
+    if (value) {
+      dropdown[key] = value;
+    }
+    dropdown.addEventListener("changeChoice", e => {
+      console.log("onChange", e.detail);
+    });
+  });
+  return dropdown;
+};
+
 export const Dropdown = () => {
   const itemsWrapper = {
     choices: [
@@ -27,36 +44,20 @@ export const Dropdown = () => {
   const groupId3 = "GROUP-ID1";
   const value3 = boolean(label3, defaultValue3, groupId3);
 
-  const dropdown1 = document.createElement("cc-dropdown");
-
-  dropdown1.choices = itemsWrapper.choices;
-  if (value1) {
-    dropdown1.placeholder = defaultValue1;
-  }
-  if (value2) {
-    dropdown1.disabled = value2;
-  }
-  if (value3) {
-    dropdown1.error = value3;
-  }
-
-  dropdown1.addEventListener("changeChoice", e => {
-    console.log("onChange", e.detail);
+  const dropdown1 = dropdownBuilder(itemsWrapper, {
+    placeholder: defaultValue1,
+    disabled: value2,
+    error: value3
   });
 
-  const dropdown2 = document.createElement("cc-dropdown");
+  const dropdown2 = dropdownBuilder(itemsWrapper, {
+    placeholder: defaultValue1,
+    disabled: value2,
+    error: value3,
+    color: 'secondary',
+    label: 'Optional Label'
+  });
 
-  dropdown2.choices = itemsWrapper.choices;
-  if (value1) {
-    dropdown2.placeholder = defaultValue1;
-  }
-  if (value2) {
-    dropdown2.disabled = value2;
-  }
-  if (value3) {
-    dropdown2.error = value3;
-  }
-  dropdown2.color = 'secondary';
   dropdown2.addEventListener("changeChoice", e => {
     console.log("onChange", e.detail);
   });
