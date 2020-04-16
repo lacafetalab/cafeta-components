@@ -43,6 +43,7 @@ export class CcInput {
           "input--error": this.error && !this.success && !this.disabled,
           "input--disabled": this.disabled
         }}
+        data-testid="cc-input"
       >
         {this.label && (
           <label class="input__label" onClick={this.focusInput}>
