@@ -11,19 +11,19 @@ export const config: Config = {
     reactOutputTarget({
       componentCorePackage: "@cafeta/components",
       proxiesFile: "../react/src/components.ts",
-      excludeComponents: ["choicesjs-stencil"],
+      excludeComponents: ["choicesjs-stencil"]
     }),
     {
       type: "dist",
-      esmLoaderPath: "../loader",
+      esmLoaderPath: "./loader"
     },
     {
-      type: "docs-readme",
+      type: "docs-readme"
     },
     {
       type: "www",
-      serviceWorker: null, // disable service workers
-    },
+      serviceWorker: null // disable service workers
+    }
   ],
   plugins: [
     sass(),
@@ -31,8 +31,8 @@ export const config: Config = {
       plugins: [
         require("tailwindcss")("./tailwind.config.js"),
         autoprefixer(),
-        ...(process.env.NODE_ENV === "production" ? [require("cssnano")] : []),
-      ],
-    }),
-  ],
+        ...(process.env.NODE_ENV === "production" ? [require("cssnano")] : [])
+      ]
+    })
+  ]
 };
