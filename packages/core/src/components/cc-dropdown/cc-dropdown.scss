@@ -27,7 +27,7 @@
       &--selectable {
         @apply px-sm text-body font-light;
         margin: 0;
-        color: theme("colors.neutral.02");
+        color: theme("colors.neutral.03");
       }
     }
     &__inner {
@@ -62,7 +62,14 @@
               color: theme("colors.neutral.03");
               &:hover {
                 @apply font-bold;
-                background: theme("colors.background.02");
+                background: theme(".backgroundColor.02");
+              }
+              &:focus, &.is-selected {
+                &:not(.choices__placeholder){
+                  @apply font-bold;
+                  color: theme("colors.neutral.02");
+                  background: theme("backgroundColor.01")!important;
+                }
               }
               &::after {
                 display: none;
@@ -83,8 +90,8 @@
   }
   &--input {
     @apply px-lg py-sm flex items-center rounded-sm;
-    border: 1px solid theme("colors.primary.neutral.02");
-    &:focus-within {
+    border: 1px solid theme("colors.neutral.02");
+    &:focus-within, &:hover  {
       border: 1px solid theme("colors.primary.default");
     }
     .choices {
@@ -124,6 +131,18 @@
         }
         &__icon {
           color: theme("colors.error");
+        }
+      }
+    }
+    &--secondary {
+      .dropdown {
+        &--input {
+          &:focus-within, &:hover {
+            border: 1px solid theme("colors.secondary.default");
+          }
+        }
+        &__icon {
+          color: theme("colors.secondary.default");
         }
       }
     }
