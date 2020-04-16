@@ -126,6 +126,7 @@ export class CcTextarea {
           "textarea--error": this.error && !this.success && !this.disabled,
           "textarea--disabled": this.disabled
         }}
+        data-testid="cc-textarea"
       >
         {this.label && (
           <label class="textarea__label" onClick={this.focusEditor}>
