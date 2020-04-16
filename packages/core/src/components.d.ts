@@ -50,10 +50,14 @@ export namespace Components {
   interface CcTextarea {
     'color': "primary" | "secondary";
     'disabled'?: boolean;
+    'error'?: boolean;
+    'helperText'?: string;
     'label'?: string;
     'name'?: string;
     'placeholder'?: string;
-    'status'?: "success" | "error";
+    'rich'?: boolean;
+    'success'?: boolean;
+    'value'?: string;
   }
 }
 
@@ -140,10 +144,15 @@ declare namespace LocalJSX {
   interface CcTextarea {
     'color'?: "primary" | "secondary";
     'disabled'?: boolean;
+    'error'?: boolean;
+    'helperText'?: string;
     'label'?: string;
     'name'?: string;
+    'onChangeText'?: (event: CustomEvent<string>) => void;
     'placeholder'?: string;
-    'status'?: "success" | "error";
+    'rich'?: boolean;
+    'success'?: boolean;
+    'value'?: string;
   }
 
   interface IntrinsicElements {
