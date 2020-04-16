@@ -12,3 +12,4 @@ export const CcButton = /*@__PURE__*/createReactComponent<JSX.CcButton, HTMLCcBu
 export const CcDropdown = /*@__PURE__*/createReactComponent<JSX.CcDropdown, HTMLCcDropdownElement>('cc-dropdown');
 export const CcIcon = /*@__PURE__*/createReactComponent<JSX.CcIcon, HTMLCcIconElement>('cc-icon');
 export const CcText = /*@__PURE__*/createReactComponent<JSX.CcText, HTMLCcTextElement>('cc-text');
+export const CcTextarea = /*@__PURE__*/createReactComponent<JSX.CcTextarea, HTMLCcTextareaElement>('cc-textarea');
