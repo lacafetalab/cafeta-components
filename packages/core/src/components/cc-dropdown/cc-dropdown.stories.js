@@ -71,18 +71,9 @@ export const Dropdown = () => {
     <h1 class="heading-01">Dropdown primary</h1>
     <section class="py-xlg color-primary font-black">
       <h2 class="text-subheading-02 mb-lg font-regular">Dropdown Inline</h1>
-      <div>
-        <div class="mr-lg mt-lg flex flex-col align-middle" id="drop1">
-          <h2 class="text-center font-regular">size: <strong class="font-bold">default</strong></h1>
-        </div>
-      </div>
-    </section>
-    <section class="py-xlg color-primary font-black">
-      <h2 class="text-subheading-02 mb-lg font-regular">Dropdown with Label</h1>
-      <div >
-        <div class="mr-lg mt-lg flex flex-col align-middle" id="drop2">
-          <h2 class="text-center font-regular">size: <strong class="font-bold">default</strong></h1>
-        </div>
+      <div class="flex items-end">
+        <div class="mr-lg mt-lg flex flex-col align-middle min-w-200" id="drop2"></div>
+        <div class="mr-lg mt-lg flex flex-col align-middle min-w-200" id="drop1"></div>
       </div>
     </section>
   </div>`;
