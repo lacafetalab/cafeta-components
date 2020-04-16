@@ -72,8 +72,8 @@ export const Dropdown = () => {
     <section class="py-xlg color-primary font-black">
       <h2 class="text-subheading-02 mb-lg font-regular">Dropdown Inline</h1>
       <div class="flex items-end">
-        <div class="mr-lg mt-lg flex flex-col align-middle min-w-200" id="drop2"></div>
-        <div class="mr-lg mt-lg flex flex-col align-middle min-w-200" id="drop1"></div>
+        <div class="mr-lg mt-lg flex flex-col align-middle" style="min-width: 200px" id="drop2"></div>
+        <div class="mr-lg mt-lg flex flex-col align-middle" style="min-width: 200px" id="drop1"></div>
       </div>
     </section>
   </div>`;
