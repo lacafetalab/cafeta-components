@@ -1,9 +1,9 @@
 {
   "entries": [
+    "components\\cc-textarea\\cc-textarea.js",
     "components\\cc-text\\cc-text.js",
     "components\\cc-button\\cc-button.js",
     "components\\cc-icon\\cc-icon.js",
-    "components\\cc-textarea\\cc-textarea.js",
     "components\\cc-dropdown\\cc-dropdown.js"
   ],
   "compiler": {

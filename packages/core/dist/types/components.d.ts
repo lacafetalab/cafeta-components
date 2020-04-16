@@ -51,6 +51,7 @@ export namespace Components {
     'color': "primary" | "secondary";
     'disabled'?: boolean;
     'label'?: string;
+    'name'?: string;
     'placeholder'?: string;
     'status'?: "success" | "error";
   }
@@ -140,6 +141,7 @@ declare namespace LocalJSX {
     'color'?: "primary" | "secondary";
     'disabled'?: boolean;
     'label'?: string;
+    'name'?: string;
     'placeholder'?: string;
     'status'?: "success" | "error";
   }
