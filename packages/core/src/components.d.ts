@@ -47,6 +47,13 @@ export namespace Components {
     'tag': string;
     'type': string;
   }
+  interface CcTextarea {
+    'color': "primary" | "secondary";
+    'disabled'?: boolean;
+    'label'?: string;
+    'placeholder'?: string;
+    'status'?: "success" | "error";
+  }
 }
 
 declare global {
@@ -75,11 +82,18 @@ declare global {
     prototype: HTMLCcTextElement;
     new (): HTMLCcTextElement;
   };
+
+  interface HTMLCcTextareaElement extends Components.CcTextarea, HTMLStencilElement {}
+  var HTMLCcTextareaElement: {
+    prototype: HTMLCcTextareaElement;
+    new (): HTMLCcTextareaElement;
+  };
   interface HTMLElementTagNameMap {
     'cc-button': HTMLCcButtonElement;
     'cc-dropdown': HTMLCcDropdownElement;
     'cc-icon': HTMLCcIconElement;
     'cc-text': HTMLCcTextElement;
+    'cc-textarea': HTMLCcTextareaElement;
   }
 }
 
@@ -122,12 +136,20 @@ declare namespace LocalJSX {
     'tag'?: string;
     'type'?: string;
   }
+  interface CcTextarea {
+    'color'?: "primary" | "secondary";
+    'disabled'?: boolean;
+    'label'?: string;
+    'placeholder'?: string;
+    'status'?: "success" | "error";
+  }
 
   interface IntrinsicElements {
     'cc-button': CcButton;
     'cc-dropdown': CcDropdown;
     'cc-icon': CcIcon;
     'cc-text': CcText;
+    'cc-textarea': CcTextarea;
   }
 }
 
@@ -141,6 +163,7 @@ declare module "@stencil/core" {
       'cc-dropdown': LocalJSX.CcDropdown & JSXBase.HTMLAttributes<HTMLCcDropdownElement>;
       'cc-icon': LocalJSX.CcIcon & JSXBase.HTMLAttributes<HTMLCcIconElement>;
       'cc-text': LocalJSX.CcText & JSXBase.HTMLAttributes<HTMLCcTextElement>;
+      'cc-textarea': LocalJSX.CcTextarea & JSXBase.HTMLAttributes<HTMLCcTextareaElement>;
     }
   }
 }
