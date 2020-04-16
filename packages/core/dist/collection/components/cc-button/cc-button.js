@@ -10,15 +10,18 @@ export class CcButton {
         this.color = "primary";
         this.size = "lg";
         this.glow = false;
+        this.type = "button";
     }
     render() {
         const BtnElem = this.href ? "a" : "button";
         const attrs = {
             disabled: this.href ? false : this.disabled,
             href: this.href,
-            target: this.target
+            target: this.target,
+            type: this.type
         };
         return (h(Host, { class: {
+                button__host: true,
                 "button--block": this.expand,
                 "button--secondary": this.color === "secondary"
             }, "data-testid": "cc-button" },
@@ -40,7 +43,6 @@ export class CcButton {
                     h("slot", null))))));
     }
     static get is() { return "cc-button"; }
-    static get encapsulation() { return "shadow"; }
     static get originalStyleUrls() { return {
         "$": ["cc-button.scss"]
     }; }
@@ -243,6 +245,24 @@ export class CcButton {
             "attribute": "glow",
             "reflect": false,
             "defaultValue": "false"
+        },
+        "type": {
+            "type": "string",
+            "mutable": false,
+            "complexType": {
+                "original": "\"button\" | \"submit\"",
+                "resolved": "\"button\" | \"submit\"",
+                "references": {}
+            },
+            "required": false,
+            "optional": false,
+            "docs": {
+                "tags": [],
+                "text": ""
+            },
+            "attribute": "type",
+            "reflect": false,
+            "defaultValue": "\"button\""
         }
     }; }
 }

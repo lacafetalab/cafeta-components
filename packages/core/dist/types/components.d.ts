@@ -22,6 +22,7 @@ export namespace Components {
     'iconReverse': boolean;
     'size'?: "lg" | "md" | "sm";
     'target'?: string;
+    'type': "button" | "submit";
   }
   interface CcDropdown {
     'choices': Array<any>;
@@ -135,6 +136,7 @@ declare namespace LocalJSX {
     'iconReverse'?: boolean;
     'size'?: "lg" | "md" | "sm";
     'target'?: string;
+    'type'?: "button" | "submit";
   }
   interface CcDropdown {
     'choices'?: Array<any>;
