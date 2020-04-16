@@ -28,18 +28,13 @@ export class CcDropdown {
   @Prop() iconName?: string = "chevron-down";
   @Prop() color: "primary" | "secondary" = "primary";
   @Prop() size?: "lg" | "md" | "sm" = "lg";
-  // @Prop() onChangeChoice?: (e: any) => void;
-  @Prop() onClick?: (e: any) => void = (e: any) => {
-    void e;
-  };
-  @Prop() onInput?: (e: any) => void = (e: any) => {
-    void e;
-  };
+
   @State() openDropdown: boolean = false;
 
   @Element() el: HTMLElement;
 
   @Event() changeChoice: EventEmitter;
+  @Event() clickDropdown: EventEmitter;
 
   private mutationObserver = new MutationObserver(mutations => {
     mutations.forEach((mutation: any) => {
@@ -55,6 +50,11 @@ export class CcDropdown {
 
   changeChoiceHandler(value: any) {
     this.changeChoice.emit(value);
+  }
+
+  clickDropdownHandler(event: any) {
+    console.log(event)
+    this.clickDropdown.emit(event);
   }
 
   constructor() {
@@ -115,8 +115,7 @@ export class CcDropdown {
               searchEnabled={false}
               name={this.name}
               choices={this.choices}
-              onInput={this.onInput}
-              onClick={this.onClick}
+              onClick={(e: any) => this.clickDropdownHandler(e)}
               editItems={true}
               onChange={(e: any) => this.changeChoiceHandler(e.target?.value)}
               type={"single"}

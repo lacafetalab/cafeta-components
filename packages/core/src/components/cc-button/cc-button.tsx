@@ -3,7 +3,7 @@ import { Component, h, Host, Prop } from "@stencil/core";
 @Component({
   tag: "cc-button",
   styleUrl: "cc-button.scss",
-  shadow: true
+  shadow: false
 })
 export class CcButton {
   @Prop() iconName: string = "";
@@ -17,18 +17,21 @@ export class CcButton {
   @Prop() target?: string;
   @Prop() size?: "lg" | "md" | "sm" = "lg";
   @Prop() glow: boolean = false;
+  @Prop() type: "button" | "submit" = "button";
 
   render() {
     const BtnElem = this.href ? "a" : "button";
     const attrs = {
       disabled: this.href ? false : this.disabled,
       href: this.href,
-      target: this.target
+      target: this.target,
+      type: this.type
     };
 
     return (
       <Host
         class={{
+          button__host: true,
           "button--block": this.expand,
           "button--secondary": this.color === "secondary"
         }}

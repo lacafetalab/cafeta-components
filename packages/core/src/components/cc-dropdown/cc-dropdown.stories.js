@@ -60,6 +60,9 @@ export const Dropdown = () => {
   dropdown2.addEventListener("changeChoice", e => {
     console.log("onChange", e.detail);
   });
+  dropdown2.addEventListener("clickDropdown", e => {
+    console.log("onClick", e);
+  });
 
   const wrap = document.createElement("div");
   wrap.innerHTML = `

@@ -22,6 +22,7 @@ export namespace Components {
     'iconReverse': boolean;
     'size'?: "lg" | "md" | "sm";
     'target'?: string;
+    'type': "button" | "submit";
   }
   interface CcDropdown {
     'choices': Array<any>;
@@ -33,8 +34,6 @@ export namespace Components {
     'iconName'?: string;
     'label': string;
     'name'?: string;
-    'onClick'?: (e: any) => void;
-    'onInput'?: (e: any) => void;
     'placeholder'?: string;
     'size'?: "lg" | "md" | "sm";
   }
@@ -42,10 +41,35 @@ export namespace Components {
     'name': string;
     'size': number;
   }
+  interface CcInput {
+    'color': "primary" | "secondary";
+    'disabled'?: boolean;
+    'error'?: boolean;
+    'helperText'?: string;
+    'inputRef'?: (el: HTMLInputElement) => void;
+    'label'?: string;
+    'name'?: string;
+    'placeholder'?: string;
+    'success'?: boolean;
+    'type'?: "text" | "password" | "number";
+    'value'?: string;
+  }
   interface CcText {
     'strong': boolean;
     'tag': string;
     'type': string;
+  }
+  interface CcTextarea {
+    'color': "primary" | "secondary";
+    'disabled'?: boolean;
+    'error'?: boolean;
+    'helperText'?: string;
+    'label'?: string;
+    'name'?: string;
+    'placeholder'?: string;
+    'rich'?: boolean;
+    'success'?: boolean;
+    'value'?: string;
   }
 }
 
@@ -70,16 +94,30 @@ declare global {
     new (): HTMLCcIconElement;
   };
 
+  interface HTMLCcInputElement extends Components.CcInput, HTMLStencilElement {}
+  var HTMLCcInputElement: {
+    prototype: HTMLCcInputElement;
+    new (): HTMLCcInputElement;
+  };
+
   interface HTMLCcTextElement extends Components.CcText, HTMLStencilElement {}
   var HTMLCcTextElement: {
     prototype: HTMLCcTextElement;
     new (): HTMLCcTextElement;
   };
+
+  interface HTMLCcTextareaElement extends Components.CcTextarea, HTMLStencilElement {}
+  var HTMLCcTextareaElement: {
+    prototype: HTMLCcTextareaElement;
+    new (): HTMLCcTextareaElement;
+  };
   interface HTMLElementTagNameMap {
     'cc-button': HTMLCcButtonElement;
     'cc-dropdown': HTMLCcDropdownElement;
     'cc-icon': HTMLCcIconElement;
+    'cc-input': HTMLCcInputElement;
     'cc-text': HTMLCcTextElement;
+    'cc-textarea': HTMLCcTextareaElement;
   }
 }
 
@@ -96,6 +134,7 @@ declare namespace LocalJSX {
     'iconReverse'?: boolean;
     'size'?: "lg" | "md" | "sm";
     'target'?: string;
+    'type'?: "button" | "submit";
   }
   interface CcDropdown {
     'choices'?: Array<any>;
@@ -108,8 +147,7 @@ declare namespace LocalJSX {
     'label'?: string;
     'name'?: string;
     'onChangeChoice'?: (event: CustomEvent<any>) => void;
-    'onClick'?: (e: any) => void;
-    'onInput'?: (e: any) => void;
+    'onClickDropdown'?: (event: CustomEvent<any>) => void;
     'placeholder'?: string;
     'size'?: "lg" | "md" | "sm";
   }
@@ -117,17 +155,45 @@ declare namespace LocalJSX {
     'name'?: string;
     'size'?: number;
   }
+  interface CcInput {
+    'color'?: "primary" | "secondary";
+    'disabled'?: boolean;
+    'error'?: boolean;
+    'helperText'?: string;
+    'inputRef'?: (el: HTMLInputElement) => void;
+    'label'?: string;
+    'name'?: string;
+    'placeholder'?: string;
+    'success'?: boolean;
+    'type'?: "text" | "password" | "number";
+    'value'?: string;
+  }
   interface CcText {
     'strong'?: boolean;
     'tag'?: string;
     'type'?: string;
+  }
+  interface CcTextarea {
+    'color'?: "primary" | "secondary";
+    'disabled'?: boolean;
+    'error'?: boolean;
+    'helperText'?: string;
+    'label'?: string;
+    'name'?: string;
+    'onChangeText'?: (event: CustomEvent<string>) => void;
+    'placeholder'?: string;
+    'rich'?: boolean;
+    'success'?: boolean;
+    'value'?: string;
   }
 
   interface IntrinsicElements {
     'cc-button': CcButton;
     'cc-dropdown': CcDropdown;
     'cc-icon': CcIcon;
+    'cc-input': CcInput;
     'cc-text': CcText;
+    'cc-textarea': CcTextarea;
   }
 }
 
@@ -140,7 +206,9 @@ declare module "@stencil/core" {
       'cc-button': LocalJSX.CcButton & JSXBase.HTMLAttributes<HTMLCcButtonElement>;
       'cc-dropdown': LocalJSX.CcDropdown & JSXBase.HTMLAttributes<HTMLCcDropdownElement>;
       'cc-icon': LocalJSX.CcIcon & JSXBase.HTMLAttributes<HTMLCcIconElement>;
+      'cc-input': LocalJSX.CcInput & JSXBase.HTMLAttributes<HTMLCcInputElement>;
       'cc-text': LocalJSX.CcText & JSXBase.HTMLAttributes<HTMLCcTextElement>;
+      'cc-textarea': LocalJSX.CcTextarea & JSXBase.HTMLAttributes<HTMLCcTextareaElement>;
     }
   }
 }
