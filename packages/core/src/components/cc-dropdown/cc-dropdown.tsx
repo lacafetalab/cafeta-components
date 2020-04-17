@@ -74,11 +74,10 @@ export class CcDropdown {
     this.clickDropdown.emit(event);
   }
 
-  constructor() {
-    this._choices = this.choices;
-  }
+  constructor() {}
 
   componentDidLoad() {
+    this._choices = this.choices;
     /*
     let newChoices = [...this.choices];
     if (this.placeholder !== "") {
