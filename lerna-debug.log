@@ -1,107 +1,109 @@
 0 silly argv { _: [ 'publish' ],
 0 silly argv   composed: 'publish',
 0 silly argv   lernaVersion: '3.20.2',
-0 silly argv   '$0':
-0 silly argv    'C:\\Users\\BrN\\AppData\\Roaming\\npm\\node_modules\\lerna\\cli.js' }
+0 silly argv   '$0': 'lerna' }
 1 notice cli v3.20.2
-2 verbose rootPath D:\Proyectos\cafeta-components
+2 verbose rootPath /mnt/c/Users/Carlos/Documents/Projects/work/cafeta/cafeta-components
 3 info versioning independent
-4 verbose session 3bb1b8131b75b8b1
-5 verbose user-agent lerna/3.20.2/node@v10.15.3+x64 (win32)
+4 verbose session e3244b76bad72428
+5 verbose user-agent lerna/3.20.2/node@v10.15.3+x64 (linux)
 6 silly argv { _: [ 'publish' ], composed: 'publish', lernaVersion: '3.20.2' }
-7 verbose rootPath D:\Proyectos\cafeta-components
+7 verbose rootPath /mnt/c/Users/Carlos/Documents/Projects/work/cafeta/cafeta-components
 8 silly isAnythingCommitted
 9 verbose isAnythingCommitted 1
 10 silly currentBranch
 11 verbose currentBranch master
 12 silly remoteBranchExists
 13 silly isBehindUpstream
-14 silly isBehindUpstream master is behind origin/master by 0 commit(s) and ahead by 1
+14 silly isBehindUpstream master is behind origin/master by 0 commit(s) and ahead by 2
 15 silly hasTags
 16 verbose hasTags true
-17 silly git-describe.sync "@cafeta/components-react@1.3.40-alpha.0-1-g3f37bb8" => {"lastTagName":"@cafeta/components-react@1.3.40-alpha.0","lastVersion":"1.3.40-alpha.0","refCount":"1","sha":"3f37bb8","isDirty":false}
-18 info Looking for changed packages since @cafeta/components-react@1.3.40-alpha.0
+17 silly git-describe.sync "@cafeta/components-react@1.3.52-alpha.0-2-gd2037cf" => {"lastTagName":"@cafeta/components-react@1.3.52-alpha.0","lastVersion":"1.3.52-alpha.0","refCount":"2","sha":"d2037cf","isDirty":false}
+18 info Looking for changed packages since @cafeta/components-react@1.3.52-alpha.0
 19 silly checking diff packages/core
+20 silly found diff in packages/core/dist/cafeta-components/cafeta-components.esm.js
 20 silly found diff in packages/core/dist/collection/collection-manifest.json
-21 verbose filtered diff [ 'packages/core/dist/collection/collection-manifest.json' ]
+20 silly found diff in packages/core/src/components/cc-dropdown/cc-dropdown.tsx
+21 verbose filtered diff [ 'packages/core/dist/cafeta-components/cafeta-components.esm.js',
+21 verbose filtered diff   'packages/core/dist/collection/collection-manifest.json',
+21 verbose filtered diff   'packages/core/src/components/cc-dropdown/cc-dropdown.tsx' ]
 22 silly checking diff packages/react
-23 silly found diff in packages/react/tsconfig.json
-24 verbose filtered diff [ 'packages/react/tsconfig.json' ]
-25 verbose updated @cafeta/components
-26 verbose updated @cafeta/components-react
-27 verbose git-describe undefined => "@cafeta/components-react@1.3.40-alpha.0-1-g3f37bb8"
-28 silly git-describe parsed => {"lastTagName":"@cafeta/components-react@1.3.40-alpha.0","lastVersion":"1.3.40-alpha.0","refCount":"1","sha":"3f37bb8","isDirty":false}
-29 info execute Skipping releases
-30 silly lifecycle No script for "preversion" in "root", continuing
-31 silly lifecycle No script for "preversion" in "@cafeta/components", continuing
-32 silly lifecycle No script for "version" in "@cafeta/components", continuing
-33 silly lifecycle No script for "preversion" in "@cafeta/components-react", continuing
-34 silly lifecycle No script for "version" in "@cafeta/components-react", continuing
-35 silly lifecycle No script for "version" in "root", continuing
-36 silly gitAdd [ 'D:\\Proyectos\\cafeta-components\\packages\\core\\package.json',
-36 silly gitAdd   'D:\\Proyectos\\cafeta-components\\packages\\react\\package.json' ]
-37 silly gitCommit Publish
-37 silly gitCommit
-37 silly gitCommit  - @cafeta/components@1.2.40-alpha.0
-37 silly gitCommit  - @cafeta/components-react@1.3.41-alpha.0
-38 verbose git [ 'commit',
-38 verbose git   '-F',
-38 verbose git   'C:\\Users\\BrN\\AppData\\Local\\Temp\\c63c57fb-e99e-4b9d-a460-253971bcdcf3\\lerna-commit.txt' ]
-39 silly gitTag @cafeta/components@1.2.40-alpha.0
-40 verbose git [ 'tag',
-40 verbose git   '@cafeta/components@1.2.40-alpha.0',
-40 verbose git   '-m',
-40 verbose git   '@cafeta/components@1.2.40-alpha.0' ]
-41 silly gitTag @cafeta/components-react@1.3.41-alpha.0
-42 verbose git [ 'tag',
-42 verbose git   '@cafeta/components-react@1.3.41-alpha.0',
-42 verbose git   '-m',
-42 verbose git   '@cafeta/components-react@1.3.41-alpha.0' ]
-43 silly lifecycle No script for "postversion" in "@cafeta/components", continuing
-44 silly lifecycle No script for "postversion" in "@cafeta/components-react", continuing
-45 silly lifecycle No script for "postversion" in "root", continuing
-46 info git Pushing tags...
-47 silly gitPush origin master
-48 info publish Publishing packages to npm...
-49 info Verifying npm credentials
-50 verbose Retrieving npm user profile
-51 http fetch GET 200 https://registry.npmjs.org/-/npm/v1/user 876ms
-52 silly npm profile get received {"tfa":false,"name":"renzotev","email":"renzotelenta@gmail.com","email_verified":true,"created":"2019-06-05T01:36:18.452Z","updated":"2020-04-13T00:12:11.810Z","cidr_whitelist":null,"fullname":"Renzo Brian Paolo Telenta Visconte"}
-53 silly get npm username received {"username":"renzotev","tfa":false,"name":"renzotev","email":"renzotelenta@gmail.com","email_verified":true,"created":"2019-06-05T01:36:18.452Z","updated":"2020-04-13T00:12:11.810Z","cidr_whitelist":null,"fullname":"Renzo Brian Paolo Telenta Visconte"}
-54 silly verifyNpmPackageAccess
-55 http fetch GET 200 https://registry.npmjs.org/-/org/renzotev/package?format=cli 797ms
-56 info Checking two-factor auth mode
-57 verbose Retrieving npm user profile
-58 http fetch GET 200 https://registry.npmjs.org/-/npm/v1/user 670ms
-59 silly npm profile get received {"tfa":false,"name":"renzotev","email":"renzotelenta@gmail.com","email_verified":true,"created":"2019-06-05T01:36:18.452Z","updated":"2020-04-13T00:12:11.810Z","cidr_whitelist":null,"fullname":"Renzo Brian Paolo Telenta Visconte"}
-60 silly 2FA false
-61 warn ENOLICENSE Package @cafeta/components-react is missing a license.
-61 warn ENOLICENSE One way to fix this is to add a LICENSE.md file to the root of this repository.
-61 warn ENOLICENSE See https://choosealicense.com for additional guidance.
-62 silly getCurrentSHA
-63 verbose getCurrentSHA 602d341083f8d65beab65199e4c8867ebc71877c
-64 silly lifecycle No script for "prepublish" in "root", continuing
-65 silly lifecycle No script for "prepare" in "root", continuing
-66 silly lifecycle No script for "prepublishOnly" in "root", continuing
-67 silly lifecycle No script for "prepack" in "root", continuing
-68 verbose pack-directory packages\core
-69 silly lifecycle No script for "prepublish" in "@cafeta/components", continuing
-70 silly lifecycle No script for "prepare" in "@cafeta/components", continuing
-71 silly lifecycle No script for "prepublishOnly" in "@cafeta/components", continuing
-72 silly lifecycle No script for "prepack" in "@cafeta/components", continuing
-73 error ZlibError: zlib: invalid block type
-73 error     at Unzip.ZlibBase.(anonymous function).on.er (D:\Proyectos\cafeta-components\node_modules\minizlib\index.js:73:52)
-73 error     at Unzip.emit (events.js:194:15)
-73 error     at Zlib.zlibOnError [as onerror] (zlib.js:157:8)
-73 error     at processChunkSync (zlib.js:481:12)
-73 error     at Unzip._processChunk (zlib.js:456:12)
-73 error     at Unzip.write (D:\Proyectos\cafeta-components\node_modules\minizlib\index.js:140:30)
-73 error     at Object.write (D:\Proyectos\cafeta-components\node_modules\tar\lib\parse.js:305:58)
-73 error     at Yallist.pipes.forEach.p (D:\Proyectos\cafeta-components\node_modules\minipass\index.js:374:18)
-73 error     at Yallist.forEach (D:\Proyectos\cafeta-components\node_modules\yallist\yallist.js:156:8)
-73 error     at ReadStream.emit (D:\Proyectos\cafeta-components\node_modules\minipass\index.js:373:20)
-73 error     at ReadStream.emit (D:\Proyectos\cafeta-components\node_modules\fs-minipass\index.js:154:22)
-73 error     at ReadStream.write (D:\Proyectos\cafeta-components\node_modules\minipass\index.js:163:17)
-73 error     at ReadStream.[_handleChunk] (D:\Proyectos\cafeta-components\node_modules\fs-minipass\index.js:131:19)
-73 error     at ReadStream.[_onread] (D:\Proyectos\cafeta-components\node_modules\fs-minipass\index.js:109:32)
-73 error     at fs.read (D:\Proyectos\cafeta-components\node_modules\fs-minipass\index.js:101:22)
+23 silly no diff found in @cafeta/components-react
+24 verbose updated @cafeta/components
+25 verbose updated @cafeta/components-react
+26 verbose git-describe undefined => "@cafeta/components-react@1.3.52-alpha.0-2-gd2037cf"
+27 silly git-describe parsed => {"lastTagName":"@cafeta/components-react@1.3.52-alpha.0","lastVersion":"1.3.52-alpha.0","refCount":"2","sha":"d2037cf","isDirty":false}
+28 info execute Skipping releases
+29 silly lifecycle No script for "preversion" in "root", continuing
+30 silly lifecycle No script for "preversion" in "@cafeta/components", continuing
+31 silly lifecycle No script for "version" in "@cafeta/components", continuing
+32 silly lifecycle No script for "preversion" in "@cafeta/components-react", continuing
+33 silly lifecycle No script for "version" in "@cafeta/components-react", continuing
+34 silly lifecycle No script for "version" in "root", continuing
+35 silly gitAdd [ '/mnt/c/Users/Carlos/Documents/Projects/work/cafeta/cafeta-components/packages/core/package.json',
+35 silly gitAdd   '/mnt/c/Users/Carlos/Documents/Projects/work/cafeta/cafeta-components/packages/react/package.json' ]
+36 silly gitCommit Publish
+36 silly gitCommit
+36 silly gitCommit  - @cafeta/components@1.2.52-alpha.0
+36 silly gitCommit  - @cafeta/components-react@1.3.53-alpha.0
+37 verbose git [ 'commit',
+37 verbose git   '-F',
+37 verbose git   '/tmp/93e50c4d-fdfa-495d-9365-df6378417f71/lerna-commit.txt' ]
+38 silly gitTag @cafeta/components@1.2.52-alpha.0
+39 verbose git [ 'tag',
+39 verbose git   '@cafeta/components@1.2.52-alpha.0',
+39 verbose git   '-m',
+39 verbose git   '@cafeta/components@1.2.52-alpha.0' ]
+40 silly gitTag @cafeta/components-react@1.3.53-alpha.0
+41 verbose git [ 'tag',
+41 verbose git   '@cafeta/components-react@1.3.53-alpha.0',
+41 verbose git   '-m',
+41 verbose git   '@cafeta/components-react@1.3.53-alpha.0' ]
+42 silly lifecycle No script for "postversion" in "@cafeta/components", continuing
+43 silly lifecycle No script for "postversion" in "@cafeta/components-react", continuing
+44 silly lifecycle No script for "postversion" in "root", continuing
+45 info git Pushing tags...
+46 silly gitPush origin master
+47 info publish Publishing packages to npm...
+48 info Verifying npm credentials
+49 verbose Retrieving npm user profile
+50 http fetch GET 200 https://registry.npmjs.org/-/npm/v1/user 1786ms
+51 silly npm profile get received {"tfa":false,"name":"carlos.cafetalab","email":"carlos@lacafetalab.pe","email_verified":true,"created":"2020-03-17T14:33:39.062Z","updated":"2020-03-17T14:33:39.060Z","cidr_whitelist":null,"fullname":"Carlos Huamani"}
+52 silly get npm username received {"username":"carlos.cafetalab","tfa":false,"name":"carlos.cafetalab","email":"carlos@lacafetalab.pe","email_verified":true,"created":"2020-03-17T14:33:39.062Z","updated":"2020-03-17T14:33:39.060Z","cidr_whitelist":null,"fullname":"Carlos Huamani"}
+53 silly verifyNpmPackageAccess
+54 http fetch GET 200 https://registry.npmjs.org/-/org/carlos.cafetalab/package?format=cli 819ms
+55 info Checking two-factor auth mode
+56 verbose Retrieving npm user profile
+57 http fetch GET 200 https://registry.npmjs.org/-/npm/v1/user 305ms
+58 silly npm profile get received {"tfa":false,"name":"carlos.cafetalab","email":"carlos@lacafetalab.pe","email_verified":true,"created":"2020-03-17T14:33:39.062Z","updated":"2020-03-17T14:33:39.060Z","cidr_whitelist":null,"fullname":"Carlos Huamani"}
+59 silly 2FA false
+60 warn ENOLICENSE Package @cafeta/components-react is missing a license.
+60 warn ENOLICENSE One way to fix this is to add a LICENSE.md file to the root of this repository.
+60 warn ENOLICENSE See https://choosealicense.com for additional guidance.
+61 silly getCurrentSHA
+62 verbose getCurrentSHA 80aa4c86da46c145869dcda78a72d4e804cf2f15
+63 silly lifecycle No script for "prepublish" in "root", continuing
+64 silly lifecycle No script for "prepare" in "root", continuing
+65 silly lifecycle No script for "prepublishOnly" in "root", continuing
+66 silly lifecycle No script for "prepack" in "root", continuing
+67 verbose pack-directory packages/core
+68 silly lifecycle No script for "prepublish" in "@cafeta/components", continuing
+69 silly lifecycle No script for "prepare" in "@cafeta/components", continuing
+70 silly lifecycle No script for "prepublishOnly" in "@cafeta/components", continuing
+71 silly lifecycle No script for "prepack" in "@cafeta/components", continuing
+72 error ZlibError: zlib: invalid distance code
+72 error     at Unzip.ZlibBase.(anonymous function).on.er (/mnt/c/Users/Carlos/Documents/Projects/work/cafeta/cafeta-components/node_modules/minizlib/index.js:73:52)
+72 error     at Unzip.emit (events.js:194:15)
+72 error     at Zlib.zlibOnError [as onerror] (zlib.js:157:8)
+72 error     at processChunkSync (zlib.js:481:12)
+72 error     at Unzip._processChunk (zlib.js:456:12)
+72 error     at Unzip.write (/mnt/c/Users/Carlos/Documents/Projects/work/cafeta/cafeta-components/node_modules/minizlib/index.js:140:30)
+72 error     at Object.write (/mnt/c/Users/Carlos/Documents/Projects/work/cafeta/cafeta-components/node_modules/tar/lib/parse.js:305:58)
+72 error     at Yallist.pipes.forEach.p (/mnt/c/Users/Carlos/Documents/Projects/work/cafeta/cafeta-components/node_modules/minipass/index.js:374:18)
+72 error     at Yallist.forEach (/mnt/c/Users/Carlos/Documents/Projects/work/cafeta/cafeta-components/node_modules/yallist/yallist.js:156:8)
+72 error     at ReadStream.emit (/mnt/c/Users/Carlos/Documents/Projects/work/cafeta/cafeta-components/node_modules/minipass/index.js:373:20)
+72 error     at ReadStream.emit (/mnt/c/Users/Carlos/Documents/Projects/work/cafeta/cafeta-components/node_modules/fs-minipass/index.js:154:22)
+72 error     at ReadStream.write (/mnt/c/Users/Carlos/Documents/Projects/work/cafeta/cafeta-components/node_modules/minipass/index.js:163:17)
+72 error     at ReadStream.[_handleChunk] (/mnt/c/Users/Carlos/Documents/Projects/work/cafeta/cafeta-components/node_modules/fs-minipass/index.js:131:19)
+72 error     at ReadStream.[_onread] (/mnt/c/Users/Carlos/Documents/Projects/work/cafeta/cafeta-components/node_modules/fs-minipass/index.js:109:32)
+72 error     at fs.read (/mnt/c/Users/Carlos/Documents/Projects/work/cafeta/cafeta-components/node_modules/fs-minipass/index.js:101:22)
