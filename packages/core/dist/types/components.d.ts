@@ -34,8 +34,10 @@ export namespace Components {
     'iconName'?: string;
     'label': string;
     'name'?: string;
+    'noChoicesText'?: string;
+    'noResultsText'?: string;
     'placeholder'?: string;
-    'size'?: "lg" | "md" | "sm";
+    'type'?: "single" | "multiple" | "text";
   }
   interface CcIcon {
     'name': string;
@@ -146,10 +148,12 @@ declare namespace LocalJSX {
     'iconName'?: string;
     'label'?: string;
     'name'?: string;
+    'noChoicesText'?: string;
+    'noResultsText'?: string;
     'onChangeChoice'?: (event: CustomEvent<any>) => void;
     'onClickDropdown'?: (event: CustomEvent<any>) => void;
     'placeholder'?: string;
-    'size'?: "lg" | "md" | "sm";
+    'type'?: "single" | "multiple" | "text";
   }
   interface CcIcon {
     'name'?: string;

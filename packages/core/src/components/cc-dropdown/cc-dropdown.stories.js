@@ -25,7 +25,11 @@ export const Dropdown = () => {
     choices: [
       { value: "123", label: "Seleccione una opción", placeholder: true },
       { value: "123", label: "Opción 1" },
-      { value: "124", label: "Opción 2" }
+      { value: "124", label: "Opción 2" },
+      { value: "125", label: "Opción 3" },
+      { value: "126", label: "Opción 4" },
+      { value: "127", label: "Opción 5" },
+      { value: "128", label: "Opción 6" }
     ]
   };
 
@@ -47,7 +51,8 @@ export const Dropdown = () => {
   const dropdown1 = dropdownBuilder(itemsWrapper, {
     placeholder: defaultValue1,
     disabled: value2,
-    error: value3
+    error: value3,
+    type: 'multiple'
   });
 
   const dropdown2 = dropdownBuilder(itemsWrapper, {
@@ -72,8 +77,8 @@ export const Dropdown = () => {
     <section class="py-xlg color-primary font-black">
       <h2 class="text-subheading-02 mb-lg font-regular">Dropdown Inline</h1>
       <div class="flex items-end">
-        <div class="mr-lg mt-lg flex flex-col align-middle" style="min-width: 200px" id="drop2"></div>
-        <div class="mr-lg mt-lg flex flex-col align-middle" style="min-width: 200px" id="drop1"></div>
+        <div class="mr-lg mt-lg flex flex-col align-middle" style="min-width: 250px" id="drop2"></div>
+        <div class="mr-lg mt-lg flex flex-col align-middle" style="min-width: 250px" id="drop1"></div>
       </div>
     </section>
   </div>`;
