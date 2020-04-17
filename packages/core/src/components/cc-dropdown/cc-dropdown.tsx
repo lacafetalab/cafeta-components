@@ -51,6 +51,10 @@ export class CcDropdown {
   });
 
   changeChoiceHandler(value: any) {
+    if (this.type === 'single') {
+      this.choices = this.choices.map((c) => ({...c, selected: value ===c.value}));
+      this.openDropdown = false;
+    }
     this.changeChoice.emit(value);
   }
 
