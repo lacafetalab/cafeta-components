@@ -9,7 +9,7 @@
 
 | Property        | Attribute         | Description | Type                               | Default                          |
 | --------------- | ----------------- | ----------- | ---------------------------------- | -------------------------------- |
-| `choices`       | --                |             | `any[]`                            | `[]`                             |
+| `choices`       | --                |             | `any[]`                            | `undefined`                      |
 | `color`         | `color`           |             | `"primary" \| "secondary"`         | `"primary"`                      |
 | `currentValue`  | `current-value`   |             | `string`                           | `""`                             |
 | `disabled`      | `disabled`        |             | `boolean`                          | `false`                          |
@@ -18,8 +18,8 @@
 | `iconName`      | `icon-name`       |             | `string`                           | `"chevron-down"`                 |
 | `label`         | `label`           |             | `string`                           | `""`                             |
 | `name`          | `name`            |             | `string`                           | `""`                             |
-| `noChoicesText` | `no-choices-text` |             | `string`                           | `'No se encontraron opciones'`   |
-| `noResultsText` | `no-results-text` |             | `string`                           | `'No se encontraron resultados'` |
+| `noChoicesText` | `no-choices-text` |             | `string`                           | `"No se encontraron opciones"`   |
+| `noResultsText` | `no-results-text` |             | `string`                           | `"No se encontraron resultados"` |
 | `placeholder`   | `placeholder`     |             | `string`                           | `""`                             |
 | `type`          | `type`            |             | `"multiple" \| "single" \| "text"` | `"single"`                       |
 

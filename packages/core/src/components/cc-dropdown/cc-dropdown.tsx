@@ -6,7 +6,8 @@ import {
   Element,
   State,
   Event,
-  EventEmitter
+  EventEmitter,
+  Watch
 } from "@stencil/core";
 import "choices.js/public/assets/scripts/choices.min.js";
 import "choicesjs-stencil";
@@ -17,8 +18,10 @@ import "choicesjs-stencil";
   shadow: false
 })
 export class CcDropdown {
+  @State() _choices: Array<any> = [];
+
   @Prop() label: string = "";
-  @Prop() choices: Array<any> = [];
+  @Prop() choices: Array<any>;
   @Prop() error?: boolean = false;
   @Prop() disabled?: boolean = false;
   @Prop() fieldReadonly?: boolean = false;
@@ -28,8 +31,8 @@ export class CcDropdown {
   @Prop() iconName?: string = "chevron-down";
   @Prop() color: "primary" | "secondary" = "primary";
   @Prop() type?: "single" | "multiple" | "text" = "single";
-  @Prop() noResultsText?: string = 'No se encontraron resultados';
-  @Prop() noChoicesText?: string = 'No se encontraron opciones';
+  @Prop() noResultsText?: string = "No se encontraron resultados";
+  @Prop() noChoicesText?: string = "No se encontraron opciones";
 
   @State() openDropdown: boolean = false;
 
@@ -37,6 +40,16 @@ export class CcDropdown {
 
   @Event() changeChoice: EventEmitter;
   @Event() clickDropdown: EventEmitter;
+
+  @Watch("choices")
+  setChoices(newValue: any, oldValue: any) {
+    const newValueStringify = JSON.stringify(newValue);
+    const oldValueStringify = JSON.stringify(oldValue);
+
+    if (newValueStringify !== oldValueStringify) {
+      this._choices = newValue;
+    }
+  }
 
   private mutationObserver = new MutationObserver(mutations => {
     mutations.forEach((mutation: any) => {
@@ -51,8 +64,7 @@ export class CcDropdown {
   });
 
   changeChoiceHandler(value: any) {
-    if (this.type === 'single') {
-      this.choices = this.choices.map((c) => ({...c, selected: value ===c.value}));
+    if (this.type === "single") {
       this.openDropdown = false;
     }
     this.changeChoice.emit(value);
@@ -63,7 +75,7 @@ export class CcDropdown {
   }
 
   constructor() {
-    this.toggleDropdown = this.toggleDropdown.bind(this);
+    this._choices = this.choices;
   }
 
   componentDidLoad() {
@@ -92,7 +104,7 @@ export class CcDropdown {
     });
   }
 
-  toggleDropdown(e) {
+  toggleDropdown = e => {
     e.stopPropagation();
     const element = this.el.querySelector("choicesjs-stencil");
     if (this.el.querySelector(".choices__list--dropdown.is-active")) {
@@ -100,7 +112,7 @@ export class CcDropdown {
     } else {
       element.showDropdown(true);
     }
-  }
+  };
 
   render() {
     return (
@@ -119,10 +131,10 @@ export class CcDropdown {
             <choicesjs-stencil
               searchEnabled={false}
               name={this.name}
-              choices={this.choices}
+              choices={this._choices}
               onClick={(e: any) => this.clickDropdownHandler(e)}
               removeItems={true}
-              removeItemButton={this.type === 'multiple'}
+              removeItemButton={this.type === "multiple"}
               noResultsText={this.noResultsText}
               noChoicesText={this.noChoicesText}
               onChange={(e: any) => this.changeChoiceHandler(e.target?.value)}
