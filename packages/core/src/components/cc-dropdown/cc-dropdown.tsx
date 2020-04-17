@@ -27,7 +27,9 @@ export class CcDropdown {
   @Prop() currentValue?: string = "";
   @Prop() iconName?: string = "chevron-down";
   @Prop() color: "primary" | "secondary" = "primary";
-  @Prop() size?: "lg" | "md" | "sm" = "lg";
+  @Prop() type?: "single" | "multiple" | "text" = "single";
+  @Prop() noResultsText?: string = 'No se encontraron resultados';
+  @Prop() noChoicesText?: string = 'No se encontraron opciones';
 
   @State() openDropdown: boolean = false;
 
@@ -115,9 +117,12 @@ export class CcDropdown {
               name={this.name}
               choices={this.choices}
               onClick={(e: any) => this.clickDropdownHandler(e)}
-              editItems={true}
+              removeItems={true}
+              removeItemButton={this.type === 'multiple'}
+              noResultsText={this.noResultsText}
+              noChoicesText={this.noChoicesText}
               onChange={(e: any) => this.changeChoiceHandler(e.target?.value)}
-              type={"single"}
+              type={this.type}
             >
               <cc-icon
                 onClick={this.toggleDropdown}
