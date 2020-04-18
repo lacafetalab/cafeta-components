@@ -1,7 +1,7 @@
 import notes from "./readme.md";
 import { withKnobs, boolean } from "@storybook/addon-knobs/html";
 
-export default { title: "Dropdown", decorators: [withKnobs] };
+export default { title: "Form", decorators: [withKnobs] };
 
 const dropdownBuilder = (itemsWrapper, values) => {
   const dropdown = document.createElement("cc-dropdown");

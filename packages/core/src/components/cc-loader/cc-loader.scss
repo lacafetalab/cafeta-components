@@ -1,0 +1,41 @@
+svg {
+  animation: 2s linear infinite svg-animation;
+}
+
+@keyframes svg-animation {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+circle {
+  animation: 4s ease-in-out infinite both circle-animation;
+  display: block;
+  fill: transparent;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-dasharray: 321;
+  stroke-dashoffset: 320;
+  stroke-width: 10px;
+  transform-origin: 50% 50%;
+}
+
+@keyframes circle-animation {
+  0% {
+    stroke-dashoffset: 320;
+    transform: rotate(0);
+  }
+
+  50% {
+    stroke-dashoffset: 75;
+    transform: rotate(45deg);
+  }
+
+  100% {
+    stroke-dashoffset: 320;
+    transform: rotate(360deg);
+  }
+}
