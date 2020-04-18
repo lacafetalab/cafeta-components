@@ -126,6 +126,6 @@
 }
 
 .button:disabled.button--outline, .button--disabled.button--outline {
-  background-color: var(--neutral-04);
+  background: transparent;
   border-color: var(--disabled-background);
 }

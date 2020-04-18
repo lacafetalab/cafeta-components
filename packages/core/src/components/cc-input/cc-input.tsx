@@ -62,7 +62,7 @@ export class CcInput {
         />
 
         {this.helperText && this.error && !this.success && !this.disabled && (
-          <span class="textarea__helperText" onClick={this.focusInput}>
+          <span class="input__helperText" onClick={this.focusInput}>
             {this.helperText}
           </span>
         )}
