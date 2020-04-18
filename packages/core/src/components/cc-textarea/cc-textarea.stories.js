@@ -1,7 +1,7 @@
 import notes from "./readme.md";
 import { withKnobs, boolean, text } from "@storybook/addon-knobs/html";
 
-export default { title: "Textarea", decorators: [withKnobs] };
+export default { title: "Form/Textarea", decorators: [withKnobs] };
 
 export const Textarea = () => {
   const disabled = boolean("Disabled", false);

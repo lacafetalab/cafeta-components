@@ -1,7 +1,7 @@
 import notes from "./readme.md";
 import { withKnobs, boolean, text } from "@storybook/addon-knobs/html";
 
-export default { title: "Input", decorators: [withKnobs] };
+export default { title: "Form", decorators: [withKnobs] };
 
 export const Input = () => {
   const disabled = boolean("Disabled", false);

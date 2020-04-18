@@ -57,6 +57,9 @@ export namespace Components {
     'type'?: "text" | "password" | "number";
     'value'?: string;
   }
+  interface CcLoader {
+    'size': number;
+  }
   interface CcText {
     'strong': boolean;
     'tag': string;
@@ -103,6 +106,12 @@ declare global {
     new (): HTMLCcInputElement;
   };
 
+  interface HTMLCcLoaderElement extends Components.CcLoader, HTMLStencilElement {}
+  var HTMLCcLoaderElement: {
+    prototype: HTMLCcLoaderElement;
+    new (): HTMLCcLoaderElement;
+  };
+
   interface HTMLCcTextElement extends Components.CcText, HTMLStencilElement {}
   var HTMLCcTextElement: {
     prototype: HTMLCcTextElement;
@@ -119,6 +128,7 @@ declare global {
     'cc-dropdown': HTMLCcDropdownElement;
     'cc-icon': HTMLCcIconElement;
     'cc-input': HTMLCcInputElement;
+    'cc-loader': HTMLCcLoaderElement;
     'cc-text': HTMLCcTextElement;
     'cc-textarea': HTMLCcTextareaElement;
   }
@@ -174,6 +184,9 @@ declare namespace LocalJSX {
     'type'?: "text" | "password" | "number";
     'value'?: string;
   }
+  interface CcLoader {
+    'size'?: number;
+  }
   interface CcText {
     'strong'?: boolean;
     'tag'?: string;
@@ -198,6 +211,7 @@ declare namespace LocalJSX {
     'cc-dropdown': CcDropdown;
     'cc-icon': CcIcon;
     'cc-input': CcInput;
+    'cc-loader': CcLoader;
     'cc-text': CcText;
     'cc-textarea': CcTextarea;
   }
@@ -213,6 +227,7 @@ declare module "@stencil/core" {
       'cc-dropdown': LocalJSX.CcDropdown & JSXBase.HTMLAttributes<HTMLCcDropdownElement>;
       'cc-icon': LocalJSX.CcIcon & JSXBase.HTMLAttributes<HTMLCcIconElement>;
       'cc-input': LocalJSX.CcInput & JSXBase.HTMLAttributes<HTMLCcInputElement>;
+      'cc-loader': LocalJSX.CcLoader & JSXBase.HTMLAttributes<HTMLCcLoaderElement>;
       'cc-text': LocalJSX.CcText & JSXBase.HTMLAttributes<HTMLCcTextElement>;
       'cc-textarea': LocalJSX.CcTextarea & JSXBase.HTMLAttributes<HTMLCcTextareaElement>;
     }
