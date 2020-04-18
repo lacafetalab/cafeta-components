@@ -33,6 +33,7 @@ export class CcDropdown {
   @Prop() type?: "single" | "multiple" | "text" = "single";
   @Prop() noResultsText?: string = "No se encontraron resultados";
   @Prop() noChoicesText?: string = "No se encontraron opciones";
+  @Prop() helperText?: string;
 
   @State() openDropdown: boolean = false;
 
@@ -74,10 +75,11 @@ export class CcDropdown {
     this.clickDropdown.emit(event);
   }
 
-  constructor() {}
+  componentWillLoad() {
+    this._choices = this.choices;
+  }
 
   componentDidLoad() {
-    this._choices = this.choices;
     /*
     let newChoices = [...this.choices];
     if (this.placeholder !== "") {
@@ -122,10 +124,11 @@ export class CcDropdown {
             "dropdown--readonly": this.fieldReadonly,
             "dropdown--disabled": this.disabled,
             "dropdown--secondary": this.color === "secondary",
-            "dropdown--error": this.error
+            "dropdown--error": this.error && !this.disabled
           }}
         >
           {this.label && <span class="dropdown__label">{this.label}</span>}
+
           <div class="dropdown__input">
             <choicesjs-stencil
               searchEnabled={false}
@@ -149,6 +152,10 @@ export class CcDropdown {
               ></cc-icon>
             </choicesjs-stencil>
           </div>
+
+          {this.helperText && this.error && !this.disabled && (
+            <span class="dropdown__helperText">{this.helperText}</span>
+          )}
         </div>
       </Host>
     );

@@ -15,6 +15,7 @@
 | `disabled`      | `disabled`        |             | `boolean`                          | `false`                          |
 | `error`         | `error`           |             | `boolean`                          | `false`                          |
 | `fieldReadonly` | `field-readonly`  |             | `boolean`                          | `false`                          |
+| `helperText`    | `helper-text`     |             | `string`                           | `undefined`                      |
 | `iconName`      | `icon-name`       |             | `string`                           | `"chevron-down"`                 |
 | `label`         | `label`           |             | `string`                           | `""`                             |
 | `name`          | `name`            |             | `string`                           | `""`                             |
