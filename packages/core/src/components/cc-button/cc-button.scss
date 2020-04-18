@@ -111,7 +111,8 @@
     }
 
     &.button--outline {
-      @apply bg-neutral-04 border-disabled;
+      background: transparent;
+      @apply border-disabled;
     }
   }
 }
