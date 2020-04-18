@@ -9,6 +9,7 @@ module.exports = {
       xl: "1280px"
     },
     colors: {
+      transparent: "transparent",
       primary: {
         default: "var(--primary)",
         dark: "var(--primary-dark)",
@@ -69,6 +70,10 @@ module.exports = {
       lg: "1.6rem",
       xlg: "2rem",
       xxlg: "2.4rem"
+    },
+    inset: {
+      ...defaultTheme.inset,
+      "1/2": "50%"
     },
     borderRadius: {
       sm: "0.4rem",

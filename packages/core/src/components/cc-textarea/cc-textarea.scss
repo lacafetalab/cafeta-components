@@ -57,7 +57,7 @@
   }
 
   &__label {
-    @apply block text-small-02 font-black mb-xsm;
+    @apply block py-xsm text-small-01 font-black text-neutral-03;
 
     .textarea--disabled & {
       @apply text-disabled;
