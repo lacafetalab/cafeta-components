@@ -52,15 +52,17 @@ export const Dropdown = () => {
     placeholder: defaultValue1,
     disabled: value2,
     error: value3,
-    type: 'multiple'
+    type: "multiple",
+    helperText: "Incorrect entry"
   });
 
   const dropdown2 = dropdownBuilder(itemsWrapper, {
     placeholder: defaultValue1,
     disabled: value2,
     error: value3,
-    color: 'secondary',
-    label: 'Optional Label'
+    color: "secondary",
+    label: "Optional Label",
+    helperText: "Incorrect entry"
   });
 
   dropdown2.addEventListener("changeChoice", e => {
@@ -74,8 +76,8 @@ export const Dropdown = () => {
   wrap.innerHTML = `
   <div class="p-lg">
     <h1 class="heading-01">Dropdown primary</h1>
-    <section class="py-xlg color-primary font-black">
-      <h2 class="text-subheading-02 mb-lg font-regular">Dropdown Inline</h1>
+    <section class="py-xlg  ">
+      <h2 class="text-subheading-02 mb-lg font-regular font-black">Dropdown Inline</h1>
       <div class="flex items-end">
         <div class="mr-lg mt-lg flex flex-col align-middle" style="min-width: 250px" id="drop2"></div>
         <div class="mr-lg mt-lg flex flex-col align-middle" style="min-width: 250px" id="drop1"></div>

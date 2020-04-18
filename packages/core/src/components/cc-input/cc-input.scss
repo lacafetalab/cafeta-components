@@ -37,6 +37,10 @@
     }
   }
 
+  &__helperText {
+    @apply block text-small-01 mt-xsm text-error;
+  }
+
   &__label {
     @apply block py-xsm text-small-01 font-black text-neutral-03;
 
