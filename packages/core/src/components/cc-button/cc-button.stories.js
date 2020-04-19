@@ -7,18 +7,15 @@ export default { title: "Button", decorators: [withKnobs] };
 export const Button = () => {
   const label = "Icon reverse";
   const defaultValue = false;
-  const groupId = "GROUP-ID1";
-  const value = boolean(label, defaultValue, groupId);
+  const value = boolean(label, defaultValue);
 
   const label2 = "Disabled";
   const defaultValue2 = false;
-  const groupId2 = "GROUP-ID1";
-  const value2 = boolean(label2, defaultValue2, groupId2);
+  const value2 = boolean(label2, defaultValue2);
 
   const label3 = "Expand";
   const defaultValue3 = false;
-  const groupId3 = "GROUP-ID1";
-  const value3 = boolean(label3, defaultValue3, groupId3);
+  const value3 = boolean(label3, defaultValue3);
 
   const label5 = "Fill";
   const options5 = {
@@ -27,8 +24,7 @@ export const Button = () => {
     clear: "clear"
   };
   const defaultValue5 = "";
-  const groupId5 = "GROUP-ID1";
-  const value5 = select(label5, options5, defaultValue5, groupId5);
+  const value5 = select(label5, options5, defaultValue5);
 
   const label6 = "Icon";
   const options6 = iconPaths.icons.reduce(
@@ -39,23 +35,21 @@ export const Button = () => {
     { None: null }
   );
   const defaultValue6 = null;
-  const groupId6 = "GROUP-ID1";
-  const value6 = select(label6, options6, defaultValue6, groupId6);
+  const value6 = select(label6, options6, defaultValue6);
 
   const label7 = "Text";
   const defaultValue7 = "Button Text";
-  const groupId7 = "GROUP-ID1";
-  const value7 = text(label7, defaultValue7, groupId7);
+  const value7 = text(label7, defaultValue7);
 
   const label8 = "Icon Only";
   const defaultValue8 = false;
-  const groupId8 = "GROUP-ID1";
-  const value8 = boolean(label8, defaultValue8, groupId8);
+  const value8 = boolean(label8, defaultValue8);
 
   const label10 = "Glow";
   const defaultValue10 = false;
-  const groupId10 = "GROUP-ID1";
-  const value10 = boolean(label10, defaultValue10, groupId10);
+  const value10 = boolean(label10, defaultValue10);
+
+  const Loading = boolean("Loading", false);
 
   const props = [
     value ? "icon-reverse" : "",
@@ -64,7 +58,8 @@ export const Button = () => {
     `fill="${value5}"`,
     value6 ? `icon-name="${value6}"` : "",
     value8 ? "icon-only" : "",
-    value10 ? "glow" : ""
+    value10 ? "glow" : "",
+    Loading ? "loading" : ""
   ].join(" ");
 
   return `

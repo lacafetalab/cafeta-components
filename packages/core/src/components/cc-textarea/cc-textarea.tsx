@@ -11,7 +11,7 @@ import {
 @Component({
   tag: "cc-textarea",
   styleUrl: "cc-textarea.scss",
-  shadow: false
+  scoped: true
 })
 export class CcTextarea {
   private richTextEl?: HTMLElement;
