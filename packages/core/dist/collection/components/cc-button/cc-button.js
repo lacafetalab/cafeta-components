@@ -11,6 +11,7 @@ export class CcButton {
         this.size = "lg";
         this.glow = false;
         this.type = "button";
+        this.loading = false;
     }
     render() {
         const BtnElem = this.href ? "a" : "button";
@@ -36,13 +37,17 @@ export class CcButton {
                     "button--iconOnly": this.iconOnly,
                     "button--glow": this.glow
                 } }, attrs),
-                this.iconName && (h("cc-icon", { class: {
+                this.iconName && !this.loading && (h("cc-icon", { class: {
                         button__icon: true
                     }, name: this.iconName, size: this.size === "sm" ? 16 : 24 })),
-                !this.iconOnly && (h("span", { "data-testid": "cc-button__text", class: "button__text" },
-                    h("slot", null))))));
+                this.loading && (h("cc-loader", { class: {
+                        button__icon: true
+                    }, size: this.size === "sm" ? 16 : 24 })),
+                h("span", { "data-testid": "cc-button__text", class: { button__text: !this.iconOnly, hidden: this.iconOnly } },
+                    h("slot", null)))));
     }
     static get is() { return "cc-button"; }
+    static get encapsulation() { return "scoped"; }
     static get originalStyleUrls() { return {
         "$": ["cc-button.scss"]
     }; }
@@ -263,6 +268,24 @@ export class CcButton {
             "attribute": "type",
             "reflect": false,
             "defaultValue": "\"button\""
+        },
+        "loading": {
+            "type": "boolean",
+            "mutable": false,
+            "complexType": {
+                "original": "boolean",
+                "resolved": "boolean",
+                "references": {}
+            },
+            "required": false,
+            "optional": true,
+            "docs": {
+                "tags": [],
+                "text": ""
+            },
+            "attribute": "loading",
+            "reflect": false,
+            "defaultValue": "false"
         }
     }; }
 }

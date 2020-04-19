@@ -20,6 +20,7 @@ export namespace Components {
     'iconName': string;
     'iconOnly': boolean;
     'iconReverse': boolean;
+    'loading'?: boolean;
     'size'?: "lg" | "md" | "sm";
     'target'?: string;
     'type': "button" | "submit";
@@ -58,7 +59,7 @@ export namespace Components {
     'value'?: string;
   }
   interface CcLoader {
-    'size': number;
+    'size'?: number;
   }
   interface CcText {
     'strong': boolean;
@@ -145,6 +146,7 @@ declare namespace LocalJSX {
     'iconName'?: string;
     'iconOnly'?: boolean;
     'iconReverse'?: boolean;
+    'loading'?: boolean;
     'size'?: "lg" | "md" | "sm";
     'target'?: string;
     'type'?: "button" | "submit";

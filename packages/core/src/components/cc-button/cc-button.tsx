@@ -3,7 +3,7 @@ import { Component, h, Host, Prop } from "@stencil/core";
 @Component({
   tag: "cc-button",
   styleUrl: "cc-button.scss",
-  shadow: false
+  scoped: true
 })
 export class CcButton {
   @Prop() iconName: string = "";
@@ -18,6 +18,7 @@ export class CcButton {
   @Prop() size?: "lg" | "md" | "sm" = "lg";
   @Prop() glow: boolean = false;
   @Prop() type: "button" | "submit" = "button";
+  @Prop() loading?: boolean = false;
 
   render() {
     const BtnElem = this.href ? "a" : "button";
@@ -52,21 +53,31 @@ export class CcButton {
           }}
           {...attrs}
         >
-          {this.iconName && (
+          {this.iconName && !this.loading && (
             <cc-icon
               class={{
                 button__icon: true
               }}
               name={this.iconName}
               size={this.size === "sm" ? 16 : 24}
-            ></cc-icon>
+            />
           )}
 
-          {!this.iconOnly && (
-            <span data-testid="cc-button__text" class="button__text">
-              <slot />
-            </span>
+          {this.loading && (
+            <cc-loader
+              class={{
+                button__icon: true
+              }}
+              size={this.size === "sm" ? 16 : 24}
+            />
           )}
+
+          <span
+            data-testid="cc-button__text"
+            class={{ button__text: !this.iconOnly, hidden: this.iconOnly }}
+          >
+            <slot />
+          </span>
         </BtnElem>
       </Host>
     );
