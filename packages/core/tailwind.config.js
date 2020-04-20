@@ -102,6 +102,10 @@ module.exports = {
       regular: "400",
       bold: "700",
       black: "900"
+    },
+    zIndex: {
+      ...defaultTheme.zIndex,
+      "1000": 1000
     }
   }
 };

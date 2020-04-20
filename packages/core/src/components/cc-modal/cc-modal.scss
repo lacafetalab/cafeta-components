@@ -1,0 +1,30 @@
+.modal {
+  &,
+  &__overlay,
+  &__wrap {
+    @apply fixed top-0 right-0 bottom-0 left-0 h-full z-1000;
+  }
+
+  &__overlay {
+    @apply bg-neutral-03;
+    opacity: 0.8;
+  }
+
+  &__wrap {
+    @apply overflow-auto outline-none;
+    padding: 4.8rem 0;
+  }
+
+  &__content {
+    @apply bg-neutral-04 mx-auto rounded-sm;
+    padding: 4.8rem 3.2rem 3.2rem;
+
+    &--sm {
+      max-width: 32rem;
+    }
+
+    &--md {
+      max-width: 57.6rem;
+    }
+  }
+}
