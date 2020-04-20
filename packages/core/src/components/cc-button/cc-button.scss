@@ -1,4 +1,4 @@
-.button__host {
+:host(.button__host) {
   @apply inline-block;
   --cc-button-color-base: theme("colors.primary.default");
   --cc-button-color-dark: theme("colors.primary.dark");
@@ -6,11 +6,11 @@
   --cc-button-color-contrast: theme("colors.neutral.04");
 }
 
-.button--block {
+:host(.button--block) {
   @apply block;
 }
 
-.button--secondary {
+:host(.button--secondary) {
   --cc-button-color-base: theme("colors.secondary.default");
   --cc-button-color-dark: theme("colors.secondary.dark");
   --cc-button-color-lightest: theme("colors.secondary.10");
