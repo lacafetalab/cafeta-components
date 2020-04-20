@@ -61,10 +61,9 @@ export namespace Components {
   interface CcLoader {
     'size'?: number;
   }
-  interface CcText {
-    'strong': boolean;
-    'tag': string;
-    'type': string;
+  interface CcModal {
+    'size': "sm" | "md";
+    'visible': boolean;
   }
   interface CcTextarea {
     'color': "primary" | "secondary";
@@ -113,10 +112,10 @@ declare global {
     new (): HTMLCcLoaderElement;
   };
 
-  interface HTMLCcTextElement extends Components.CcText, HTMLStencilElement {}
-  var HTMLCcTextElement: {
-    prototype: HTMLCcTextElement;
-    new (): HTMLCcTextElement;
+  interface HTMLCcModalElement extends Components.CcModal, HTMLStencilElement {}
+  var HTMLCcModalElement: {
+    prototype: HTMLCcModalElement;
+    new (): HTMLCcModalElement;
   };
 
   interface HTMLCcTextareaElement extends Components.CcTextarea, HTMLStencilElement {}
@@ -130,7 +129,7 @@ declare global {
     'cc-icon': HTMLCcIconElement;
     'cc-input': HTMLCcInputElement;
     'cc-loader': HTMLCcLoaderElement;
-    'cc-text': HTMLCcTextElement;
+    'cc-modal': HTMLCcModalElement;
     'cc-textarea': HTMLCcTextareaElement;
   }
 }
@@ -189,10 +188,9 @@ declare namespace LocalJSX {
   interface CcLoader {
     'size'?: number;
   }
-  interface CcText {
-    'strong'?: boolean;
-    'tag'?: string;
-    'type'?: string;
+  interface CcModal {
+    'size'?: "sm" | "md";
+    'visible'?: boolean;
   }
   interface CcTextarea {
     'color'?: "primary" | "secondary";
@@ -214,7 +212,7 @@ declare namespace LocalJSX {
     'cc-icon': CcIcon;
     'cc-input': CcInput;
     'cc-loader': CcLoader;
-    'cc-text': CcText;
+    'cc-modal': CcModal;
     'cc-textarea': CcTextarea;
   }
 }
@@ -230,7 +228,7 @@ declare module "@stencil/core" {
       'cc-icon': LocalJSX.CcIcon & JSXBase.HTMLAttributes<HTMLCcIconElement>;
       'cc-input': LocalJSX.CcInput & JSXBase.HTMLAttributes<HTMLCcInputElement>;
       'cc-loader': LocalJSX.CcLoader & JSXBase.HTMLAttributes<HTMLCcLoaderElement>;
-      'cc-text': LocalJSX.CcText & JSXBase.HTMLAttributes<HTMLCcTextElement>;
+      'cc-modal': LocalJSX.CcModal & JSXBase.HTMLAttributes<HTMLCcModalElement>;
       'cc-textarea': LocalJSX.CcTextarea & JSXBase.HTMLAttributes<HTMLCcTextareaElement>;
     }
   }
