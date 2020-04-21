@@ -61,7 +61,9 @@ export namespace Components {
   interface CcLoader {
     'size'?: number;
   }
-  interface CcModalBase {
+  interface CcModal {
+    'color': "primary" | "secondary";
+    'hideCloseButton': boolean;
     'size': "sm" | "md";
     'visible': boolean;
   }
@@ -115,10 +117,10 @@ declare global {
     new (): HTMLCcLoaderElement;
   };
 
-  interface HTMLCcModalBaseElement extends Components.CcModalBase, HTMLStencilElement {}
-  var HTMLCcModalBaseElement: {
-    prototype: HTMLCcModalBaseElement;
-    new (): HTMLCcModalBaseElement;
+  interface HTMLCcModalElement extends Components.CcModal, HTMLStencilElement {}
+  var HTMLCcModalElement: {
+    prototype: HTMLCcModalElement;
+    new (): HTMLCcModalElement;
   };
 
   interface HTMLCcModalControllerElement extends Components.CcModalController, HTMLStencilElement {}
@@ -138,7 +140,7 @@ declare global {
     'cc-icon': HTMLCcIconElement;
     'cc-input': HTMLCcInputElement;
     'cc-loader': HTMLCcLoaderElement;
-    'cc-modal-base': HTMLCcModalBaseElement;
+    'cc-modal': HTMLCcModalElement;
     'cc-modal-controller': HTMLCcModalControllerElement;
     'cc-textarea': HTMLCcTextareaElement;
   }
@@ -198,7 +200,9 @@ declare namespace LocalJSX {
   interface CcLoader {
     'size'?: number;
   }
-  interface CcModalBase {
+  interface CcModal {
+    'color'?: "primary" | "secondary";
+    'hideCloseButton'?: boolean;
     'onCancel'?: (event: CustomEvent<any>) => void;
     'onClose'?: (event: CustomEvent<any>) => void;
     'size'?: "sm" | "md";
@@ -227,7 +231,7 @@ declare namespace LocalJSX {
     'cc-icon': CcIcon;
     'cc-input': CcInput;
     'cc-loader': CcLoader;
-    'cc-modal-base': CcModalBase;
+    'cc-modal': CcModal;
     'cc-modal-controller': CcModalController;
     'cc-textarea': CcTextarea;
   }
@@ -244,7 +248,7 @@ declare module "@stencil/core" {
       'cc-icon': LocalJSX.CcIcon & JSXBase.HTMLAttributes<HTMLCcIconElement>;
       'cc-input': LocalJSX.CcInput & JSXBase.HTMLAttributes<HTMLCcInputElement>;
       'cc-loader': LocalJSX.CcLoader & JSXBase.HTMLAttributes<HTMLCcLoaderElement>;
-      'cc-modal-base': LocalJSX.CcModalBase & JSXBase.HTMLAttributes<HTMLCcModalBaseElement>;
+      'cc-modal': LocalJSX.CcModal & JSXBase.HTMLAttributes<HTMLCcModalElement>;
       'cc-modal-controller': LocalJSX.CcModalController & JSXBase.HTMLAttributes<HTMLCcModalControllerElement>;
       'cc-textarea': LocalJSX.CcTextarea & JSXBase.HTMLAttributes<HTMLCcTextareaElement>;
     }
