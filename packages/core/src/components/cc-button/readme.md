@@ -16,6 +16,7 @@
 | `iconName`    | `icon-name`    |             | `string`                          | `""`        |
 | `iconOnly`    | `icon-only`    |             | `boolean`                         | `false`     |
 | `iconReverse` | `icon-reverse` |             | `boolean`                         | `false`     |
+| `loading`     | `loading`      |             | `boolean`                         | `false`     |
 | `size`        | `size`         |             | `"lg" \| "md" \| "sm"`            | `"lg"`      |
 | `target`      | `target`       |             | `string`                          | `undefined` |
 | `type`        | `type`         |             | `"button" \| "submit"`            | `"button"`  |
@@ -26,11 +27,13 @@
 ### Depends on
 
 - [cc-icon](../cc-icon)
+- [cc-loader](../cc-loader)
 
 ### Graph
 ```mermaid
 graph TD;
   cc-button --> cc-icon
+  cc-button --> cc-loader
   style cc-button fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

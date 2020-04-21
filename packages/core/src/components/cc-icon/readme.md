@@ -19,12 +19,14 @@
 
  - [cc-button](../cc-button)
  - [cc-dropdown](../cc-dropdown)
+ - [cc-modal](../cc-modal)
 
 ### Graph
 ```mermaid
 graph TD;
   cc-button --> cc-icon
   cc-dropdown --> cc-icon
+  cc-modal --> cc-icon
   style cc-icon fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
