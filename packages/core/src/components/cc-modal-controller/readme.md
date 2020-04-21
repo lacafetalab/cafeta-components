@@ -16,12 +16,12 @@
 
 ### Used by
 
- - [cc-modal](../cc-modal)
+ - [cc-modal-base](../cc-modal-base)
 
 ### Graph
 ```mermaid
 graph TD;
-  cc-modal --> cc-modal-controller
+  cc-modal-base --> cc-modal-controller
   style cc-modal-controller fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
