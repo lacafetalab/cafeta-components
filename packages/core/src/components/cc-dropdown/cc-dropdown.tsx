@@ -34,6 +34,8 @@ export class CcDropdown {
   @Prop() noResultsText?: string = "No se encontraron resultados";
   @Prop() noChoicesText?: string = "No se encontraron opciones";
   @Prop() helperText?: string;
+  @Prop() border: boolean = true;
+
 
   @State() openDropdown: boolean = false;
 
@@ -120,7 +122,8 @@ export class CcDropdown {
             "dropdown--readonly": this.fieldReadonly,
             "dropdown--disabled": this.disabled,
             "dropdown--secondary": this.color === "secondary",
-            "dropdown--error": this.error && !this.disabled
+            "dropdown--error": this.error && !this.disabled,
+            "dropdown--no-border": !this.border
           }}
         >
           {this.label && <span class="dropdown__label">{this.label}</span>}
