@@ -38,6 +38,16 @@
     }
   }
 }
+@mixin dropdown-no-border {
+  .dropdown {
+    &__input {
+      border-width: 0;
+      &:focus-within {
+        border-width: 0;
+      }
+    }
+  }
+}
 @mixin dropdown-state-secondary {
   .dropdown {
     &__input {
@@ -228,6 +238,9 @@
     }
     &--disabled {
       @include dropdown-state-disabled;
+    }
+    &--no-border {
+      @include dropdown-no-border;
     }
   }
   @media (min-width: 640px) {

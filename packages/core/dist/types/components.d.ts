@@ -25,6 +25,7 @@ export namespace Components {
     'type': "button" | "submit";
   }
   interface CcDropdown {
+    'border': boolean;
     'choices': Array<any>;
     'color': "primary" | "secondary";
     'currentValue'?: string;
@@ -150,6 +151,7 @@ declare namespace LocalJSX {
     'type'?: "button" | "submit";
   }
   interface CcDropdown {
+    'border'?: boolean;
     'choices'?: Array<any>;
     'color'?: "primary" | "secondary";
     'currentValue'?: string;
