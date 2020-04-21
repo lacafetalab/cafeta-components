@@ -8,9 +8,7 @@ const dropdownBuilder = (itemsWrapper, values) => {
   dropdown.choices = itemsWrapper.choices;
   Object.keys(values).forEach((key, index) => {
     const value = values[key];
-    if (value) {
-      dropdown[key] = value;
-    }
+    dropdown[key] = value;
   });
   return dropdown;
 };
@@ -43,28 +41,71 @@ export const Dropdown = () => {
   const groupId3 = "GROUP-ID1";
   const value3 = boolean(label3, defaultValue3, groupId3);
 
-  const dropdown1 = dropdownBuilder(itemsWrapper, {
+  const label4 = "Label";
+  const defaultValue4 = false;
+  const groupId4 = "GROUP-ID1";
+  const value4 = boolean(label4, defaultValue4, groupId4) ? 'LABEL' : '';
+
+  const dropdown11 = dropdownBuilder(itemsWrapper, {
     placeholder: defaultValue1,
     disabled: value2,
     error: value3,
+    label: value4,
+    helperText: "Incorrect entry"
+  });
+
+  const dropdown12 = dropdownBuilder(itemsWrapper, {
+    placeholder: defaultValue1,
+    disabled: value2,
+    error: value3,
+    label: value4,
     type: "multiple",
     helperText: "Incorrect entry"
   });
 
-  const dropdown2 = dropdownBuilder(itemsWrapper, {
+  dropdown12.addEventListener("changeChoice", e => {
+    console.log("onChange ->", e);
+  });
+  dropdown12.addEventListener("clickDropdown", e => {
+    console.log("onClick ->", e);
+  });
+
+  const dropdown21 = dropdownBuilder(itemsWrapper, {
     placeholder: defaultValue1,
     disabled: value2,
     error: value3,
+    label: value4,
     color: "secondary",
-    label: "Optional Label",
     helperText: "Incorrect entry"
   });
 
-  dropdown1.addEventListener("changeChoice", e => {
-    console.log("onChange ->", e);
+  const dropdown22 = dropdownBuilder(itemsWrapper, {
+    placeholder: defaultValue1,
+    disabled: value2,
+    error: value3,
+    label: value4,
+    color: "secondary",
+    type: "multiple",
+    helperText: "Incorrect entry"
   });
-  dropdown1.addEventListener("clickDropdown", e => {
-    console.log("onClick ->", e);
+
+  const dropdown31 = dropdownBuilder(itemsWrapper, {
+    placeholder: defaultValue1,
+    disabled: value2,
+    error: value3,
+    label: value4,
+    border: false,
+    helperText: "Incorrect entry"
+  });
+
+  const dropdown32 = dropdownBuilder(itemsWrapper, {
+    placeholder: defaultValue1,
+    disabled: value2,
+    error: value3,
+    border: false,
+    label: value4,
+    type: "multiple",
+    helperText: "Incorrect entry"
   });
 
   const wrap = document.createElement("div");
@@ -72,16 +113,30 @@ export const Dropdown = () => {
   <div class="p-lg">
     <h1 class="heading-01">Dropdown primary</h1>
     <section class="py-xlg  ">
-      <h2 class="text-subheading-02 mb-lg font-regular font-black">Dropdown Inline</h1>
-      <div class="flex items-end">
-        <div class="mr-lg mt-lg flex flex-col align-middle" style="min-width: 250px" id="drop2"></div>
-        <div class="mr-lg mt-lg flex flex-col align-middle" style="min-width: 250px" id="drop1"></div>
+      <h2 class="text-subheading-02 mb-lg font-regular font-black">Dropdown Primary</h1>
+      <div class="flex items-end mb-lg">
+        <div class="mr-lg mt-lg flex flex-col align-middle" style="min-width: 250px" id="drop11"></div>
+        <div class="mr-lg mt-lg flex flex-col align-middle" style="min-width: 250px" id="drop12"></div>
       </div>
+      <h2 class="text-subheading-02 mb-lg font-regular font-black mt-xlg inline-block">Dropdown Secondary</h1>
+      <div class="flex items-end mb-lg">
+        <div class="mr-lg mt-lg flex flex-col align-middle" style="min-width: 250px" id="drop21"></div>
+        <div class="mr-lg mt-lg flex flex-col align-middle" style="min-width: 250px" id="drop22"></div>
+      </div>    
+      <h2 class="text-subheading-02 mb-lg font-regular font-black mt-xlg inline-block">Dropdown No Border</h1>
+      <div class="flex items-end mb-lg">
+        <div class="mr-lg mt-lg flex flex-col align-middle" style="min-width: 250px" id="drop31"></div>
+        <div class="mr-lg mt-lg flex flex-col align-middle" style="min-width: 250px" id="drop32"></div>
+      </div>    
     </section>
   </div>`;
 
-  wrap.querySelector("#drop1").appendChild(dropdown1);
-  wrap.querySelector("#drop2").appendChild(dropdown2);
+  wrap.querySelector("#drop11").appendChild(dropdown11);
+  wrap.querySelector("#drop12").appendChild(dropdown12);
+  wrap.querySelector("#drop21").appendChild(dropdown21);
+  wrap.querySelector("#drop22").appendChild(dropdown22);
+  wrap.querySelector("#drop31").appendChild(dropdown31);
+  wrap.querySelector("#drop32").appendChild(dropdown32);
   return wrap;
 };
 
