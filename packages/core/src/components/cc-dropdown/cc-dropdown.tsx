@@ -64,9 +64,15 @@ export class CcDropdown {
     });
   });
 
-  changeChoiceHandler(value: any) {
+  changeChoiceHandler(event: any) {
+    let value = event;
     if (this.type === "single") {
       this.openDropdown = false;
+      value = event.detail;
+    } else if (this.type === "multiple") {
+      const selectorMultiple = '.choices__list.choices__list--multiple .choices__item.choices__item--selectable';
+      const selectedChoices: NodeListOf<Element> = this.el.querySelectorAll(selectorMultiple);
+      value = Array.from(selectedChoices).map((option: any) => option.dataset.value);
     }
     this.changeChoice.emit(value);
   }
@@ -80,16 +86,6 @@ export class CcDropdown {
   }
 
   componentDidLoad() {
-    /*
-    let newChoices = [...this.choices];
-    if (this.placeholder !== "") {
-      newChoices.push({
-        value: "",
-        label: this.placeholder,
-        placeholder: true
-      });
-    }
-    */
     const element = this.el.querySelector("choicesjs-stencil");
     if (this.disabled) {
       element.disable();
