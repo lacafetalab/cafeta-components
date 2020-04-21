@@ -13,5 +13,6 @@ export const CcDropdown = /*@__PURE__*/createReactComponent<JSX.CcDropdown, HTML
 export const CcIcon = /*@__PURE__*/createReactComponent<JSX.CcIcon, HTMLCcIconElement>('cc-icon');
 export const CcInput = /*@__PURE__*/createReactComponent<JSX.CcInput, HTMLCcInputElement>('cc-input');
 export const CcLoader = /*@__PURE__*/createReactComponent<JSX.CcLoader, HTMLCcLoaderElement>('cc-loader');
-export const CcText = /*@__PURE__*/createReactComponent<JSX.CcText, HTMLCcTextElement>('cc-text');
+export const CcModal = /*@__PURE__*/createReactComponent<JSX.CcModal, HTMLCcModalElement>('cc-modal');
+export const CcModalController = /*@__PURE__*/createReactComponent<JSX.CcModalController, HTMLCcModalControllerElement>('cc-modal-controller');
 export const CcTextarea = /*@__PURE__*/createReactComponent<JSX.CcTextarea, HTMLCcTextareaElement>('cc-textarea');
