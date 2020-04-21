@@ -1,8 +1,6 @@
-:host(.textarea) {
-  @apply block;
-}
-
 .textarea {
+  @apply block;
+
   li {
     @apply ml-lg;
   }
