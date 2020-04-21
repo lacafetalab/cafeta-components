@@ -1,0 +1,99 @@
+:host(.modalBase) {
+  @apply block;
+}
+
+.modalBase {
+  &__overlay,
+  &__wrap {
+    @apply fixed top-0 right-0 bottom-0 left-0 h-full z-1000;
+  }
+
+  &__overlay {
+    @apply bg-neutral-03;
+
+    &--fadeIn {
+      animation: fadeInModal 0.4s linear forwards;
+    }
+
+    &--fadeOut {
+      animation: fadeOutModal 0.4s linear forwards;
+    }
+
+    &--visible {
+      display: block;
+      opacity: 0.8;
+    }
+
+    &--hidden {
+      display: none;
+      opacity: 0;
+    }
+  }
+
+  &__wrap {
+    @apply overflow-auto outline-none;
+    padding: 4.8rem 0;
+  }
+
+  &__content {
+    @apply bg-neutral-04 mx-auto rounded-sm;
+    // padding: 4.8rem 3.2rem 3.2rem;
+    transform-origin: top center;
+
+    &--sm {
+      max-width: 32rem;
+    }
+
+    &--md {
+      max-width: 57.6rem;
+    }
+
+    &--zoomIn {
+      animation: zoomInModal 0.3s ease forwards;
+    }
+
+    &--zoomOut {
+      animation: zoomOutModal 0.3s ease forwards;
+    }
+  }
+}
+
+@keyframes fadeInModal {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.8;
+  }
+}
+
+@keyframes fadeOutModal {
+  from {
+    opacity: 0.8;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes zoomInModal {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes zoomOutModal {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+}
