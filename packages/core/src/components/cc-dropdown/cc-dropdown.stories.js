@@ -6,16 +6,11 @@ export default { title: "Form", decorators: [withKnobs] };
 const dropdownBuilder = (itemsWrapper, values) => {
   const dropdown = document.createElement("cc-dropdown");
   dropdown.choices = itemsWrapper.choices;
-  console.log(values);
   Object.keys(values).forEach((key, index) => {
     const value = values[key];
-    console.log(value);
     if (value) {
       dropdown[key] = value;
     }
-    dropdown.addEventListener("changeChoice", e => {
-      console.log("onChange", e.detail);
-    });
   });
   return dropdown;
 };
@@ -65,11 +60,11 @@ export const Dropdown = () => {
     helperText: "Incorrect entry"
   });
 
-  dropdown2.addEventListener("changeChoice", e => {
-    console.log("onChange", e.detail);
+  dropdown1.addEventListener("changeChoice", e => {
+    console.log("onChange ->", e);
   });
-  dropdown2.addEventListener("clickDropdown", e => {
-    console.log("onClick", e);
+  dropdown1.addEventListener("clickDropdown", e => {
+    console.log("onClick ->", e);
   });
 
   const wrap = document.createElement("div");
