@@ -1,8 +1,8 @@
-:host(.modalBase) {
+:host(.modal) {
   @apply block;
 }
 
-.modalBase {
+.modal {
   &__overlay,
   &__wrap {
     @apply fixed top-0 right-0 bottom-0 left-0 h-full z-1000;
@@ -35,9 +35,21 @@
     padding: 4.8rem 0;
   }
 
+  &__close {
+    @apply absolute top-0 right-0 mt-lg mr-lg outline-none block;
+
+    &--primary {
+      @apply text-primary;
+    }
+
+    &--secondary {
+      @apply text-secondary;
+    }
+  }
+
   &__content {
-    @apply bg-neutral-04 mx-auto rounded-sm;
-    // padding: 4.8rem 3.2rem 3.2rem;
+    @apply bg-neutral-04 mx-auto rounded-sm relative;
+    padding: 4.8rem 3.2rem 3.2rem;
     transform-origin: top center;
 
     &--sm {
