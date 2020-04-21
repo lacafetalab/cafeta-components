@@ -11,5 +11,6 @@ export declare class CcButton {
     size?: "lg" | "md" | "sm";
     glow: boolean;
     type: "button" | "submit";
+    loading?: boolean;
     render(): any;
 }

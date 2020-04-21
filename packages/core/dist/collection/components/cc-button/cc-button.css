@@ -1,4 +1,4 @@
-.button__host {
+:host(.button__host) {
   display: inline-block;
   --cc-button-color-base: var(--primary);
   --cc-button-color-dark: var(--primary-dark);
@@ -6,11 +6,11 @@
   --cc-button-color-contrast: var(--neutral-04);
 }
 
-.button--block {
+:host(.button--block) {
   display: block;
 }
 
-.button--secondary {
+:host(.button--secondary) {
   --cc-button-color-base: var(--secondary);
   --cc-button-color-dark: var(--secondary-dark);
   --cc-button-color-lightest: var(--secondary-10);

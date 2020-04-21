@@ -20,6 +20,7 @@ export namespace Components {
     'iconName': string;
     'iconOnly': boolean;
     'iconReverse': boolean;
+    'loading'?: boolean;
     'size'?: "lg" | "md" | "sm";
     'target'?: string;
     'type': "button" | "submit";
@@ -59,12 +60,16 @@ export namespace Components {
     'value'?: string;
   }
   interface CcLoader {
-    'size': number;
+    'size'?: number;
   }
-  interface CcText {
-    'strong': boolean;
-    'tag': string;
-    'type': string;
+  interface CcModal {
+    'color': "primary" | "secondary";
+    'hideCloseButton': boolean;
+    'size': "sm" | "md";
+    'visible': boolean;
+  }
+  interface CcModalController {
+    'modalRef': HTMLElement;
   }
   interface CcTextarea {
     'color': "primary" | "secondary";
@@ -113,10 +118,16 @@ declare global {
     new (): HTMLCcLoaderElement;
   };
 
-  interface HTMLCcTextElement extends Components.CcText, HTMLStencilElement {}
-  var HTMLCcTextElement: {
-    prototype: HTMLCcTextElement;
-    new (): HTMLCcTextElement;
+  interface HTMLCcModalElement extends Components.CcModal, HTMLStencilElement {}
+  var HTMLCcModalElement: {
+    prototype: HTMLCcModalElement;
+    new (): HTMLCcModalElement;
+  };
+
+  interface HTMLCcModalControllerElement extends Components.CcModalController, HTMLStencilElement {}
+  var HTMLCcModalControllerElement: {
+    prototype: HTMLCcModalControllerElement;
+    new (): HTMLCcModalControllerElement;
   };
 
   interface HTMLCcTextareaElement extends Components.CcTextarea, HTMLStencilElement {}
@@ -130,7 +141,8 @@ declare global {
     'cc-icon': HTMLCcIconElement;
     'cc-input': HTMLCcInputElement;
     'cc-loader': HTMLCcLoaderElement;
-    'cc-text': HTMLCcTextElement;
+    'cc-modal': HTMLCcModalElement;
+    'cc-modal-controller': HTMLCcModalControllerElement;
     'cc-textarea': HTMLCcTextareaElement;
   }
 }
@@ -146,6 +158,7 @@ declare namespace LocalJSX {
     'iconName'?: string;
     'iconOnly'?: boolean;
     'iconReverse'?: boolean;
+    'loading'?: boolean;
     'size'?: "lg" | "md" | "sm";
     'target'?: string;
     'type'?: "button" | "submit";
@@ -189,10 +202,16 @@ declare namespace LocalJSX {
   interface CcLoader {
     'size'?: number;
   }
-  interface CcText {
-    'strong'?: boolean;
-    'tag'?: string;
-    'type'?: string;
+  interface CcModal {
+    'color'?: "primary" | "secondary";
+    'hideCloseButton'?: boolean;
+    'onCancel'?: (event: CustomEvent<any>) => void;
+    'onClose'?: (event: CustomEvent<any>) => void;
+    'size'?: "sm" | "md";
+    'visible'?: boolean;
+  }
+  interface CcModalController {
+    'modalRef'?: HTMLElement;
   }
   interface CcTextarea {
     'color'?: "primary" | "secondary";
@@ -214,7 +233,8 @@ declare namespace LocalJSX {
     'cc-icon': CcIcon;
     'cc-input': CcInput;
     'cc-loader': CcLoader;
-    'cc-text': CcText;
+    'cc-modal': CcModal;
+    'cc-modal-controller': CcModalController;
     'cc-textarea': CcTextarea;
   }
 }
@@ -230,7 +250,8 @@ declare module "@stencil/core" {
       'cc-icon': LocalJSX.CcIcon & JSXBase.HTMLAttributes<HTMLCcIconElement>;
       'cc-input': LocalJSX.CcInput & JSXBase.HTMLAttributes<HTMLCcInputElement>;
       'cc-loader': LocalJSX.CcLoader & JSXBase.HTMLAttributes<HTMLCcLoaderElement>;
-      'cc-text': LocalJSX.CcText & JSXBase.HTMLAttributes<HTMLCcTextElement>;
+      'cc-modal': LocalJSX.CcModal & JSXBase.HTMLAttributes<HTMLCcModalElement>;
+      'cc-modal-controller': LocalJSX.CcModalController & JSXBase.HTMLAttributes<HTMLCcModalControllerElement>;
       'cc-textarea': LocalJSX.CcTextarea & JSXBase.HTMLAttributes<HTMLCcTextareaElement>;
     }
   }
