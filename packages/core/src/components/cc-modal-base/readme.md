@@ -13,6 +13,14 @@
 | `visible` | `visible` |             | `boolean`      | `false` |
 
 
+## Events
+
+| Event    | Description | Type               |
+| -------- | ----------- | ------------------ |
+| `cancel` |             | `CustomEvent<any>` |
+| `close`  |             | `CustomEvent<any>` |
+
+
 ## Dependencies
 
 ### Depends on
@@ -22,8 +30,8 @@
 ### Graph
 ```mermaid
 graph TD;
-  cc-modal --> cc-modal-controller
-  style cc-modal fill:#f9f,stroke:#333,stroke-width:4px
+  cc-modal-base --> cc-modal-controller
+  style cc-modal-base fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
 ----------------------------------------------
