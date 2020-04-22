@@ -34,6 +34,8 @@ export class CcDropdown {
   @Prop() noResultsText?: string = "No se encontraron resultados";
   @Prop() noChoicesText?: string = "No se encontraron opciones";
   @Prop() helperText?: string;
+  @Prop() border: boolean = true;
+
 
   @State() openDropdown: boolean = false;
 
@@ -64,9 +66,15 @@ export class CcDropdown {
     });
   });
 
-  changeChoiceHandler(value: any) {
+  changeChoiceHandler(event: any) {
+    let value = event;
     if (this.type === "single") {
       this.openDropdown = false;
+      value = event.detail;
+    } else if (this.type === "multiple") {
+      const selectorMultiple = '.choices__list.choices__list--multiple .choices__item.choices__item--selectable';
+      const selectedChoices: NodeListOf<Element> = this.el.querySelectorAll(selectorMultiple);
+      value = Array.from(selectedChoices).map((option: any) => option.dataset.value);
     }
     this.changeChoice.emit(value);
   }
@@ -80,16 +88,6 @@ export class CcDropdown {
   }
 
   componentDidLoad() {
-    /*
-    let newChoices = [...this.choices];
-    if (this.placeholder !== "") {
-      newChoices.push({
-        value: "",
-        label: this.placeholder,
-        placeholder: true
-      });
-    }
-    */
     const element = this.el.querySelector("choicesjs-stencil");
     if (this.disabled) {
       element.disable();
@@ -124,7 +122,8 @@ export class CcDropdown {
             "dropdown--readonly": this.fieldReadonly,
             "dropdown--disabled": this.disabled,
             "dropdown--secondary": this.color === "secondary",
-            "dropdown--error": this.error && !this.disabled
+            "dropdown--error": this.error && !this.disabled,
+            "dropdown--no-border": !this.border
           }}
         >
           {this.label && <span class="dropdown__label">{this.label}</span>}
