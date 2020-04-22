@@ -48,7 +48,7 @@
   }
 
   &__content {
-    @apply bg-neutral-04 mx-auto rounded-sm relative;
+    @apply bg-neutral-04 mx-auto rounded-sm relative shadow-md-dark;
     padding: 4.8rem 3.2rem 3.2rem;
     transform-origin: top center;
 

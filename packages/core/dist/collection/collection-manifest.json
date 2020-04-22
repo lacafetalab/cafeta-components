@@ -3,10 +3,10 @@
     "components\\cc-icon\\cc-icon.js",
     "components\\cc-loader\\cc-loader.js",
     "components\\cc-modal-controller\\cc-modal-controller.js",
-    "components\\cc-input\\cc-input.js",
     "components\\cc-modal\\cc-modal.js",
-    "components\\cc-dropdown\\cc-dropdown.js",
     "components\\cc-button\\cc-button.js",
+    "components\\cc-dropdown\\cc-dropdown.js",
+    "components\\cc-input\\cc-input.js",
     "components\\cc-textarea\\cc-textarea.js"
   ],
   "compiler": {
