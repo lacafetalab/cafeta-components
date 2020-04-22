@@ -106,6 +106,17 @@ module.exports = {
     zIndex: {
       ...defaultTheme.zIndex,
       "1000": 1000
+    },
+    boxShadow: {
+      default: "0 4px 16px -8px #b0c0ca",
+      dark: "0 4px 16px -8px #4a4a4a",
+      "sm-light": "0 2px 8px -4px #b0c0ca",
+      "sm-dark": "0 2px 8px -4px #4a4a4a",
+      "md-light": "0 8px 32px -16px #b0c0ca",
+      "md-dark": "0 8px 32px -16px #4a4a4a",
+      outline: "0 0 0 3px rgba(66,153,225,0.5)",
+      focus: "0 0 0 3px rgba(66,153,225,0.5)",
+      none: "none"
     }
   }
 };
