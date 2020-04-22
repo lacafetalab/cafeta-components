@@ -41,7 +41,7 @@ export class CcModal {
 
   @Listen("keydown", { target: "document" })
   handleKeyDown(ev: KeyboardEvent) {
-    if (ev.key === "Escape") this.cancelHandler();
+    if (ev.key === "Escape" && this.visible) this.cancelHandler();
   }
 
   cancelHandler = () => {
