@@ -152,7 +152,7 @@ export class CcDropdown {
                   dropdown__icon: true,
                   "dropdown__icon--inverted": this.openDropdown
                 }}
-                name={this.iconName}
+                name={this.error ? 'x' : this.iconName}
               ></cc-icon>
             </choicesjs-stencil>
           </div>
