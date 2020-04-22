@@ -2,8 +2,7 @@ import { h, Component, Host, Prop } from "@stencil/core";
 
 @Component({
   tag: "cc-input",
-  styleUrl: "cc-input.scss",
-  scoped: true
+  styleUrl: "cc-input.scss"
 })
 export class CcInput {
   private inputEl?: HTMLInputElement;
