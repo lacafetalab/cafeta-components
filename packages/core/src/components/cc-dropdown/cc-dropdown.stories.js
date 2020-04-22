@@ -53,6 +53,13 @@ export const Dropdown = () => {
     label: value4,
     helperText: "Incorrect entry"
   });
+  
+  dropdown11.addEventListener("changeChoice", e => {
+    console.log("onChange ->", e);
+  });
+  dropdown11.addEventListener("clickDropdown", e => {
+    console.log("onClick ->", e);
+  });
 
   const dropdown12 = dropdownBuilder(itemsWrapper, {
     placeholder: defaultValue1,
