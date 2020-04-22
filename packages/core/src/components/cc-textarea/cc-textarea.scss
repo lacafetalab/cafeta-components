@@ -139,6 +139,10 @@
     }
   }
 
+  .ck.ck-toolbar.ck-toolbar_grouping > .ck-toolbar__items {
+    justify-content: flex-end;
+  }
+
   &.textarea--primary .ck.ck-editor__main > .ck-editor__editable.ck-focused {
     @apply border-primary;
   }
