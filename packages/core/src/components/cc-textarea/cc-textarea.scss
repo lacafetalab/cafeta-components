@@ -1,6 +1,24 @@
 .textarea {
   @apply block;
 
+  h2,
+  h3,
+  h4 {
+    @apply font-black;
+  }
+
+  h2 {
+    @apply text-heading-02;
+  }
+
+  h3 {
+    @apply text-subheading-01;
+  }
+
+  h4 {
+    @apply text-subheading-02;
+  }
+
   li {
     @apply ml-lg;
   }
@@ -16,6 +34,18 @@
   b,
   strong {
     @apply font-black;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+  &.textarea--primary a {
+    @apply text-primary;
+  }
+
+  &.textarea--secondary a {
+    @apply text-secondary;
   }
 
   &__field {
