@@ -70,7 +70,7 @@ export class CcDropdown {
     let value = event;
     if (this.type === "single") {
       this.openDropdown = false;
-      value = event.detail;
+      value = event;
     } else if (this.type === "multiple") {
       const selectorMultiple = '.choices__list.choices__list--multiple .choices__item.choices__item--selectable';
       const selectedChoices: NodeListOf<Element> = this.el.querySelectorAll(selectorMultiple);
