@@ -29,7 +29,8 @@
   .dropdown {
     &__input {
       border-color: theme("colors.error");
-      &:focus-within {
+      &:focus-within,
+      &:hover {
         border-color: theme("colors.error");
       }
     }
@@ -42,7 +43,8 @@
   .dropdown {
     &__input {
       border-width: 0;
-      &:focus-within {
+      &:focus-within,
+      &:hover {
         border-width: 0;
       }
     }
@@ -61,11 +63,15 @@
     }
   }
 }
+@mixin dropdown-no-background {
+  background: transparent;
+}
 @mixin dropdown-state-disabled {
   .dropdown {
     &__input {
       border-color: theme("backgroundColor.disabled");
-      &:focus-within {
+      &:focus-within, 
+      &:hover {
         border-color: theme("backgroundColor.disabled");
       }
     }
@@ -189,8 +195,7 @@
     }
   }
   &__input {
-    /*todo: background 04 */
-    @apply px-lg py-sm flex items-center rounded-sm bg-neutral-04;
+    @apply px-lg py-sm flex items-center rounded-sm;
     border: 1px solid theme("colors.neutral.02");
     &:focus-within,
     &:hover {
@@ -227,20 +232,23 @@
     color: theme("colors.neutral.03");
   }
   &.dropdown {
-    &--readonly {
-      @include dropdown-state-readonly;
-    }
     &--secondary {
       @include dropdown-state-secondary;
+    }
+    &--readonly {
+      @include dropdown-state-readonly;
     }
     &--error {
       @include dropdown-state-error;
     }
-    &--disabled {
-      @include dropdown-state-disabled;
+    &--no-background {
+      @include dropdown-no-background;
     }
     &--no-border {
       @include dropdown-no-border;
+    }
+    &--disabled {
+      @include dropdown-state-disabled;
     }
   }
   @media (min-width: 640px) {
