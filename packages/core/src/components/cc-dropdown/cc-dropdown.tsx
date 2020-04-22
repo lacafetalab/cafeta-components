@@ -35,6 +35,7 @@ export class CcDropdown {
   @Prop() noChoicesText?: string = "No se encontraron opciones";
   @Prop() helperText?: string;
   @Prop() border: boolean = true;
+  @Prop() bgField: string = "";
 
 
   @State() openDropdown: boolean = false;
@@ -123,12 +124,16 @@ export class CcDropdown {
             "dropdown--disabled": this.disabled,
             "dropdown--secondary": this.color === "secondary",
             "dropdown--error": this.error && !this.disabled,
-            "dropdown--no-border": !this.border
+            "dropdown--no-border": !this.border,
+            "dropdown--no-background": !this.bgField
           }}
         >
           {this.label && <span class="dropdown__label">{this.label}</span>}
 
-          <div class="dropdown__input">
+          <div class={{
+              dropdown__input: true,
+              [`${this.bgField}`]: !!this.bgField
+            }}>
             <choicesjs-stencil
               searchEnabled={false}
               name={this.name}
