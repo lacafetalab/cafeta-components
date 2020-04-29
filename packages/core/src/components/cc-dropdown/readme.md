@@ -9,6 +9,7 @@
 
 | Property        | Attribute         | Description | Type                               | Default                          |
 | --------------- | ----------------- | ----------- | ---------------------------------- | -------------------------------- |
+| `bgField`       | `bg-field`        |             | `string`                           | `""`                             |
 | `border`        | `border`          |             | `boolean`                          | `true`                           |
 | `choices`       | --                |             | `any[]`                            | `undefined`                      |
 | `color`         | `color`           |             | `"primary" \| "secondary"`         | `"primary"`                      |
