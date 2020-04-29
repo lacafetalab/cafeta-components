@@ -1,5 +1,6 @@
 import notes from "./readme.md";
 import { withKnobs, boolean } from "@storybook/addon-knobs/html";
+import {h} from "@stencil/core";
 
 export default { title: "Form", decorators: [withKnobs] };
 
@@ -17,11 +18,11 @@ export const Dropdown = () => {
   const itemsWrapper = {
     choices: [
       { value: "123", label: "Seleccione una opción", placeholder: true },
-      { value: "123", label: "Opción 1" },
+      { value: "123", label: "Opción muy grande que aparece en el dropdown que debe ser controlado. Lorem ipsoum selet amonet os sebut" },
       { value: "124", label: "Opción 2" },
       { value: "125", label: "Opción 3" },
       { value: "126", label: "Opción 4" },
-      { value: "127", label: "Opción 5" },
+      { value: "127", label: "Opción 5", disabled: true },
       { value: "128", label: "Opción 6" }
     ]
   };
@@ -53,7 +54,7 @@ export const Dropdown = () => {
     label: value4,
     helperText: "Incorrect entry"
   });
-  
+
   dropdown11.addEventListener("changeChoice", e => {
     console.log("onChange ->", e);
   });
@@ -122,19 +123,19 @@ export const Dropdown = () => {
     <section class="py-xlg  ">
       <h2 class="text-subheading-02 mb-lg font-regular font-black">Dropdown Primary</h1>
       <div class="flex items-end mb-lg">
-        <div class="mr-lg mt-lg flex flex-col align-middle" style="min-width: 250px" id="drop11"></div>
-        <div class="mr-lg mt-lg flex flex-col align-middle" style="min-width: 250px" id="drop12"></div>
+        <div class="mr-lg mt-lg flex flex-col align-middle max-w-sm" style="min-width: 250px" id="drop11"></div>
+        <div class="mr-lg mt-lg flex flex-col align-middle max-w-sm" style="min-width: 250px" id="drop12"></div>
       </div>
       <h2 class="text-subheading-02 mb-lg font-regular font-black mt-xlg inline-block">Dropdown Secondary</h1>
       <div class="flex items-end mb-lg">
-        <div class="mr-lg mt-lg flex flex-col align-middle" style="min-width: 250px" id="drop21"></div>
-        <div class="mr-lg mt-lg flex flex-col align-middle" style="min-width: 250px" id="drop22"></div>
-      </div>    
+        <div class="mr-lg mt-lg flex flex-col align-middle max-w-sm" style="min-width: 250px" id="drop21"></div>
+        <div class="mr-lg mt-lg flex flex-col align-middle max-w-sm" style="min-width: 250px" id="drop22"></div>
+      </div>
       <h2 class="text-subheading-02 mb-lg font-regular font-black mt-xlg inline-block">Dropdown No Border</h1>
       <div class="flex items-end mb-lg">
-        <div class="mr-lg mt-lg flex flex-col align-middle" style="min-width: 250px" id="drop31"></div>
-        <div class="mr-lg mt-lg flex flex-col align-middle" style="min-width: 250px" id="drop32"></div>
-      </div>    
+        <div class="mr-lg mt-lg flex flex-col align-middle max-w-sm" style="min-width: 250px" id="drop31"></div>
+        <div class="mr-lg mt-lg flex flex-col align-middle max-w-sm" style="min-width: 250px" id="drop32"></div>
+      </div>
     </section>
   </div>`;
 

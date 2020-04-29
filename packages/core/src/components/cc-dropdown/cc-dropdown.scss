@@ -29,7 +29,8 @@
   .dropdown {
     &__input {
       border-color: theme("colors.error");
-      &:focus-within {
+      &:focus-within,
+      &:hover {
         border-color: theme("colors.error");
       }
     }
@@ -42,7 +43,8 @@
   .dropdown {
     &__input {
       border-width: 0;
-      &:focus-within {
+      &:focus-within,
+      &:hover {
         border-width: 0;
       }
     }
@@ -61,11 +63,15 @@
     }
   }
 }
+@mixin dropdown-no-background {
+  background: transparent;
+}
 @mixin dropdown-state-disabled {
   .dropdown {
     &__input {
       border-color: theme("backgroundColor.disabled");
-      &:focus-within {
+      &:focus-within,
+      &:hover {
         border-color: theme("backgroundColor.disabled");
       }
     }
@@ -95,7 +101,7 @@
   @apply flex flex-col relative;
   min-width: 150px;
   choicesjs-stencil {
-    @apply flex flex-grow;
+    @apply flex flex-grow items-end;
   }
   position: relative;
 
@@ -144,15 +150,18 @@
         }
       }
     }
-
+    &.is-flipped {
+      .choices__list.choices__list--dropdown {
+        transform: translateY(-0.8rem);
+      }
+    }
     &__input {
       margin: 0;
       padding: 0;
       min-height: auto;
     }
     &__list {
-      @apply mt-sm rounded-sm border-0;
-      box-shadow: 0 4px 16px -8px rgba(0, 0, 0, 0.5);
+      @apply mt-sm rounded-sm border-0 shadow;
       &--single {
         margin: 0;
         padding: 0;
@@ -189,8 +198,7 @@
     }
   }
   &__input {
-    /*todo: background 04 */
-    @apply px-lg py-sm flex items-center rounded-sm bg-neutral-04;
+    @apply px-lg py-sm flex items-center rounded-sm;
     border: 1px solid theme("colors.neutral.02");
     &:focus-within,
     &:hover {
@@ -227,20 +235,23 @@
     color: theme("colors.neutral.03");
   }
   &.dropdown {
-    &--readonly {
-      @include dropdown-state-readonly;
-    }
     &--secondary {
       @include dropdown-state-secondary;
+    }
+    &--readonly {
+      @include dropdown-state-readonly;
     }
     &--error {
       @include dropdown-state-error;
     }
-    &--disabled {
-      @include dropdown-state-disabled;
+    &--no-background {
+      @include dropdown-no-background;
     }
     &--no-border {
       @include dropdown-no-border;
+    }
+    &--disabled {
+      @include dropdown-state-disabled;
     }
   }
   @media (min-width: 640px) {
