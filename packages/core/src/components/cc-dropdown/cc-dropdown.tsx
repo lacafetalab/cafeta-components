@@ -34,10 +34,10 @@ export class CcDropdown {
   @Prop() noResultsText?: string = "No se encontraron resultados";
   @Prop() noChoicesText?: string = "No se encontraron opciones";
   @Prop() helperText?: string;
-  @Prop() border: boolean = true;
-  @Prop() bgField: string = "";
-  @Prop() loader: boolean = false;
-  @Prop() iconOnly: boolean = false;
+  @Prop() border?: boolean = true;
+  @Prop() bgField?: string = "";
+  @Prop() loader?: boolean = false;
+  @Prop() iconOnly?: boolean = false;
 
 
   @State() openDropdown: boolean = false;
