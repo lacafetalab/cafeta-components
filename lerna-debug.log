@@ -5,7 +5,7 @@
 1 notice cli v3.20.2
 2 verbose rootPath /mnt/c/Users/Carlos/Documents/Projects/work/cafeta/cafeta-components
 3 info versioning independent
-4 verbose session e3244b76bad72428
+4 verbose session 7509afc0900da173
 5 verbose user-agent lerna/3.20.2/node@v10.15.3+x64 (linux)
 6 silly argv { _: [ 'publish' ], composed: 'publish', lernaVersion: '3.20.2' }
 7 verbose rootPath /mnt/c/Users/Carlos/Documents/Projects/work/cafeta/cafeta-components
@@ -15,24 +15,34 @@
 11 verbose currentBranch master
 12 silly remoteBranchExists
 13 silly isBehindUpstream
-14 silly isBehindUpstream master is behind origin/master by 0 commit(s) and ahead by 2
+14 silly isBehindUpstream master is behind origin/master by 0 commit(s) and ahead by 1
 15 silly hasTags
 16 verbose hasTags true
-17 silly git-describe.sync "@cafeta/components-react@1.3.52-alpha.0-2-gd2037cf" => {"lastTagName":"@cafeta/components-react@1.3.52-alpha.0","lastVersion":"1.3.52-alpha.0","refCount":"2","sha":"d2037cf","isDirty":false}
-18 info Looking for changed packages since @cafeta/components-react@1.3.52-alpha.0
+17 silly git-describe.sync "@cafeta/components-react@1.3.61-2-ga09f412" => {"lastTagName":"@cafeta/components-react@1.3.61","lastVersion":"1.3.61","refCount":"2","sha":"a09f412","isDirty":false}
+18 info Looking for changed packages since @cafeta/components-react@1.3.61
 19 silly checking diff packages/core
 20 silly found diff in packages/core/dist/cafeta-components/cafeta-components.esm.js
 20 silly found diff in packages/core/dist/collection/collection-manifest.json
+20 silly found diff in packages/core/dist/types/components.d.ts
+20 silly found diff in packages/core/src/components.d.ts
+20 silly found diff in packages/core/src/components/cc-dropdown/cc-dropdown.scss
+20 silly found diff in packages/core/src/components/cc-dropdown/cc-dropdown.stories.js
 20 silly found diff in packages/core/src/components/cc-dropdown/cc-dropdown.tsx
+20 silly found diff in packages/core/src/components/cc-dropdown/readme.md
 21 verbose filtered diff [ 'packages/core/dist/cafeta-components/cafeta-components.esm.js',
 21 verbose filtered diff   'packages/core/dist/collection/collection-manifest.json',
-21 verbose filtered diff   'packages/core/src/components/cc-dropdown/cc-dropdown.tsx' ]
+21 verbose filtered diff   'packages/core/dist/types/components.d.ts',
+21 verbose filtered diff   'packages/core/src/components.d.ts',
+21 verbose filtered diff   'packages/core/src/components/cc-dropdown/cc-dropdown.scss',
+21 verbose filtered diff   'packages/core/src/components/cc-dropdown/cc-dropdown.stories.js',
+21 verbose filtered diff   'packages/core/src/components/cc-dropdown/cc-dropdown.tsx',
+21 verbose filtered diff   'packages/core/src/components/cc-dropdown/readme.md' ]
 22 silly checking diff packages/react
 23 silly no diff found in @cafeta/components-react
 24 verbose updated @cafeta/components
 25 verbose updated @cafeta/components-react
-26 verbose git-describe undefined => "@cafeta/components-react@1.3.52-alpha.0-2-gd2037cf"
-27 silly git-describe parsed => {"lastTagName":"@cafeta/components-react@1.3.52-alpha.0","lastVersion":"1.3.52-alpha.0","refCount":"2","sha":"d2037cf","isDirty":false}
+26 verbose git-describe undefined => "@cafeta/components-react@1.3.61-2-ga09f412"
+27 silly git-describe parsed => {"lastTagName":"@cafeta/components-react@1.3.61","lastVersion":"1.3.61","refCount":"2","sha":"a09f412","isDirty":false}
 28 info execute Skipping releases
 29 silly lifecycle No script for "preversion" in "root", continuing
 30 silly lifecycle No script for "preversion" in "@cafeta/components", continuing
@@ -44,21 +54,21 @@
 35 silly gitAdd   '/mnt/c/Users/Carlos/Documents/Projects/work/cafeta/cafeta-components/packages/react/package.json' ]
 36 silly gitCommit Publish
 36 silly gitCommit
-36 silly gitCommit  - @cafeta/components@1.2.52-alpha.0
-36 silly gitCommit  - @cafeta/components-react@1.3.53-alpha.0
+36 silly gitCommit  - @cafeta/components@1.2.61-alpha.0
+36 silly gitCommit  - @cafeta/components-react@1.3.62-alpha.0
 37 verbose git [ 'commit',
 37 verbose git   '-F',
-37 verbose git   '/tmp/93e50c4d-fdfa-495d-9365-df6378417f71/lerna-commit.txt' ]
-38 silly gitTag @cafeta/components@1.2.52-alpha.0
+37 verbose git   '/tmp/90d9c887-df23-4539-983c-7ec47d1bfc4e/lerna-commit.txt' ]
+38 silly gitTag @cafeta/components@1.2.61-alpha.0
 39 verbose git [ 'tag',
-39 verbose git   '@cafeta/components@1.2.52-alpha.0',
+39 verbose git   '@cafeta/components@1.2.61-alpha.0',
 39 verbose git   '-m',
-39 verbose git   '@cafeta/components@1.2.52-alpha.0' ]
-40 silly gitTag @cafeta/components-react@1.3.53-alpha.0
+39 verbose git   '@cafeta/components@1.2.61-alpha.0' ]
+40 silly gitTag @cafeta/components-react@1.3.62-alpha.0
 41 verbose git [ 'tag',
-41 verbose git   '@cafeta/components-react@1.3.53-alpha.0',
+41 verbose git   '@cafeta/components-react@1.3.62-alpha.0',
 41 verbose git   '-m',
-41 verbose git   '@cafeta/components-react@1.3.53-alpha.0' ]
+41 verbose git   '@cafeta/components-react@1.3.62-alpha.0' ]
 42 silly lifecycle No script for "postversion" in "@cafeta/components", continuing
 43 silly lifecycle No script for "postversion" in "@cafeta/components-react", continuing
 44 silly lifecycle No script for "postversion" in "root", continuing
@@ -67,21 +77,21 @@
 47 info publish Publishing packages to npm...
 48 info Verifying npm credentials
 49 verbose Retrieving npm user profile
-50 http fetch GET 200 https://registry.npmjs.org/-/npm/v1/user 1786ms
+50 http fetch GET 200 https://registry.npmjs.org/-/npm/v1/user 2378ms
 51 silly npm profile get received {"tfa":false,"name":"carlos.cafetalab","email":"carlos@lacafetalab.pe","email_verified":true,"created":"2020-03-17T14:33:39.062Z","updated":"2020-03-17T14:33:39.060Z","cidr_whitelist":null,"fullname":"Carlos Huamani"}
 52 silly get npm username received {"username":"carlos.cafetalab","tfa":false,"name":"carlos.cafetalab","email":"carlos@lacafetalab.pe","email_verified":true,"created":"2020-03-17T14:33:39.062Z","updated":"2020-03-17T14:33:39.060Z","cidr_whitelist":null,"fullname":"Carlos Huamani"}
 53 silly verifyNpmPackageAccess
-54 http fetch GET 200 https://registry.npmjs.org/-/org/carlos.cafetalab/package?format=cli 819ms
+54 http fetch GET 200 https://registry.npmjs.org/-/org/carlos.cafetalab/package?format=cli 821ms
 55 info Checking two-factor auth mode
 56 verbose Retrieving npm user profile
-57 http fetch GET 200 https://registry.npmjs.org/-/npm/v1/user 305ms
+57 http fetch GET 200 https://registry.npmjs.org/-/npm/v1/user 687ms
 58 silly npm profile get received {"tfa":false,"name":"carlos.cafetalab","email":"carlos@lacafetalab.pe","email_verified":true,"created":"2020-03-17T14:33:39.062Z","updated":"2020-03-17T14:33:39.060Z","cidr_whitelist":null,"fullname":"Carlos Huamani"}
 59 silly 2FA false
 60 warn ENOLICENSE Package @cafeta/components-react is missing a license.
 60 warn ENOLICENSE One way to fix this is to add a LICENSE.md file to the root of this repository.
 60 warn ENOLICENSE See https://choosealicense.com for additional guidance.
 61 silly getCurrentSHA
-62 verbose getCurrentSHA 80aa4c86da46c145869dcda78a72d4e804cf2f15
+62 verbose getCurrentSHA dbfccf89393d3f74bc551480e63df0337e58cf57
 63 silly lifecycle No script for "prepublish" in "root", continuing
 64 silly lifecycle No script for "prepare" in "root", continuing
 65 silly lifecycle No script for "prepublishOnly" in "root", continuing
@@ -91,7 +101,7 @@
 69 silly lifecycle No script for "prepare" in "@cafeta/components", continuing
 70 silly lifecycle No script for "prepublishOnly" in "@cafeta/components", continuing
 71 silly lifecycle No script for "prepack" in "@cafeta/components", continuing
-72 error ZlibError: zlib: invalid distance code
+72 error ZlibError: zlib: invalid block type
 72 error     at Unzip.ZlibBase.(anonymous function).on.er (/mnt/c/Users/Carlos/Documents/Projects/work/cafeta/cafeta-components/node_modules/minizlib/index.js:73:52)
 72 error     at Unzip.emit (events.js:194:15)
 72 error     at Zlib.zlibOnError [as onerror] (zlib.js:157:8)
