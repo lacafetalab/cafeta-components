@@ -36,7 +36,9 @@ export namespace Components {
     'fieldReadonly'?: boolean;
     'helperText'?: string;
     'iconName'?: string;
+    'iconOnly': boolean;
     'label': string;
+    'loader': boolean;
     'name'?: string;
     'noChoicesText'?: string;
     'noResultsText'?: string;
@@ -175,7 +177,9 @@ declare namespace LocalJSX {
     'fieldReadonly'?: boolean;
     'helperText'?: string;
     'iconName'?: string;
+    'iconOnly'?: boolean;
     'label'?: string;
+    'loader'?: boolean;
     'name'?: string;
     'noChoicesText'?: string;
     'noResultsText'?: string;

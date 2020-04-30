@@ -17,11 +17,13 @@
 ### Used by
 
  - [cc-button](../cc-button)
+ - [cc-dropdown](../cc-dropdown)
 
 ### Graph
 ```mermaid
 graph TD;
   cc-button --> cc-loader
+  cc-dropdown --> cc-loader
   style cc-loader fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
