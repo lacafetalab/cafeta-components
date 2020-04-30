@@ -1,6 +1,6 @@
 {
   "name": "@cafeta/components",
-  "version": "1.2.60",
+  "version": "1.2.61-alpha.0",
   "publishConfig": {
     "access": "public"
   },
