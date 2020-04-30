@@ -1,18 +1,15 @@
 @import url("~choices.js/public/assets/styles/choices.min.css");
 
 @mixin item-state-hover {
-  &:not(.choices__placeholder) {
-    @apply font-bold;
-    color: theme("colors.neutral.03");
-    background: theme("backgroundColor.02");
-  }
+  @apply font-bold;
+  color: theme("colors.neutral.03");
+  background: theme("backgroundColor.02");
 }
+
 @mixin item-state-focus {
-  &:not(.choices__placeholder) {
-    @apply font-bold;
-    color: theme("colors.neutral.02");
-    background: theme("backgroundColor.01");
-  }
+  @apply font-bold;
+  color: theme("colors.neutral.02");
+  background: theme("backgroundColor.01");
 }
 @mixin dropdown-state-readonly {
   &:after {
@@ -114,10 +111,22 @@
     position: initial;
     width: 100%;
     &__item {
-      &--selectable {
+      &.choices__placeholder {
         @apply px-sm text-body font-light;
         margin: 0;
         color: theme("colors.neutral.03");
+      }
+      &--selectable {
+        &.choices__item {
+          @apply px-sm text-body font-light;
+          margin: 0;
+          color: theme("colors.neutral.03");
+        }
+      }
+      &--disabled {
+        &.choices__item {
+          color: theme("textColor.disabled");
+        }
       }
     }
     &__inner {
@@ -133,6 +142,7 @@
       .choices__list {
         &--multiple {
           .choices__item {
+            &.choices__placeholder,
             &.choices__item--selectable,
             &.is-highlighted {
               @apply text-small-02 border-0;
@@ -170,8 +180,13 @@
         left: 0;
         .choices {
           &__item {
+            &.choices__placeholder, &.is-selected {
+              opacity: 1;
+              color: theme("colors.neutral.03");
+            }
             &--selectable {
               color: theme("colors.neutral.03");
+              opacity: 1;
               &:focus,
               &.is-selected {
                 @include item-state-focus;
