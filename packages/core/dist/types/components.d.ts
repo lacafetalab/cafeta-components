@@ -26,8 +26,8 @@ export namespace Components {
     'type': "button" | "submit";
   }
   interface CcDropdown {
-    'bgField': string;
-    'border': boolean;
+    'bgField'?: string;
+    'border'?: boolean;
     'choices': Array<any>;
     'color': "primary" | "secondary";
     'currentValue'?: string;
@@ -36,9 +36,9 @@ export namespace Components {
     'fieldReadonly'?: boolean;
     'helperText'?: string;
     'iconName'?: string;
-    'iconOnly': boolean;
+    'iconOnly'?: boolean;
     'label': string;
-    'loader': boolean;
+    'loader'?: boolean;
     'name'?: string;
     'noChoicesText'?: string;
     'noResultsText'?: string;
