@@ -1,5 +1,16 @@
 @import url("~choices.js/public/assets/styles/choices.min.css");
 
+@mixin dropdown-icon-only {
+  min-width: 42px;
+  width: 42px;
+  .choices {
+    display: none;
+  }
+  .dropdown__input {
+    @apply p-sm;
+  }
+}
+
 @mixin item-state-hover {
   @apply font-bold;
   color: theme("colors.neutral.03");
@@ -55,7 +66,7 @@
         border: 1px solid theme("colors.secondary.default");
       }
     }
-    &__icon {
+    &__icon, &__loader {
       color: theme("colors.secondary.default");
     }
   }
@@ -97,6 +108,7 @@
 .dropdown {
   @apply flex flex-col relative;
   min-width: 150px;
+  transition: width 0.4s ease-in-out;
   choicesjs-stencil {
     @apply flex flex-grow items-end;
   }
@@ -237,7 +249,7 @@
       outline: none;
     }
   }
-  &__icon {
+  &__icon, &__loader {
     @apply border-0;
     order: 1;
     color: theme("colors.primary.default");
@@ -250,6 +262,9 @@
     color: theme("colors.neutral.03");
   }
   &.dropdown {
+    &--icon-only {
+      @include dropdown-icon-only;
+    }
     &--secondary {
       @include dropdown-state-secondary;
     }

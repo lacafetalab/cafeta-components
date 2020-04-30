@@ -47,11 +47,23 @@ export const Dropdown = () => {
   const groupId4 = "GROUP-ID1";
   const value4 = boolean(label4, defaultValue4, groupId4) ? 'LABEL' : '';
 
+  const label5 = "Loader";
+  const defaultValue5 = false;
+  const groupId5 = "GROUP-ID1";
+  const value5 = boolean(label5, defaultValue5, groupId5);
+
+  const label6 = "Icon Only";
+  const defaultValue6 = false;
+  const groupId6 = "GROUP-ID1";
+  const value6 = boolean(label6, defaultValue6, groupId6);
+
   const dropdown11 = dropdownBuilder(itemsWrapper, {
     placeholder: defaultValue1,
     disabled: value2,
     error: value3,
     label: value4,
+    loader: value5,
+    iconOnly: value6,
     helperText: "Incorrect entry"
   });
 
@@ -67,7 +79,9 @@ export const Dropdown = () => {
     disabled: value2,
     error: value3,
     label: value4,
+    loader: value5,
     type: "multiple",
+    iconOnly: value6,
     helperText: "Incorrect entry"
   });
 
@@ -83,7 +97,9 @@ export const Dropdown = () => {
     disabled: value2,
     error: value3,
     label: value4,
+    loader: value5,
     color: "secondary",
+    iconOnly: value6,
     helperText: "Incorrect entry"
   });
 
@@ -92,8 +108,10 @@ export const Dropdown = () => {
     disabled: value2,
     error: value3,
     label: value4,
+    loader: value5,
     color: "secondary",
     type: "multiple",
+    iconOnly: value6,
     helperText: "Incorrect entry"
   });
 
@@ -102,7 +120,9 @@ export const Dropdown = () => {
     disabled: value2,
     error: value3,
     label: value4,
+    loader: value5,
     border: false,
+    iconOnly: value6,
     helperText: "Incorrect entry"
   });
 
@@ -112,6 +132,8 @@ export const Dropdown = () => {
     error: value3,
     border: false,
     label: value4,
+    loader: value5,
+    iconOnly: value6,
     type: "multiple",
     helperText: "Incorrect entry"
   });
