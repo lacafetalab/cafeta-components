@@ -108,7 +108,7 @@
 .dropdown {
   @apply flex flex-col relative;
   min-width: 150px;
-  transition: width 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
   choicesjs-stencil {
     @apply flex flex-grow items-end;
   }
