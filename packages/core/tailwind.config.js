@@ -64,6 +64,7 @@ module.exports = {
       disabled: "var(--disabled-background)"
     }),
     spacing: {
+      none: "0",
       xsm: "0.4rem",
       sm: "0.8rem",
       md: "1.2rem",
