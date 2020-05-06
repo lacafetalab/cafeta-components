@@ -1,6 +1,6 @@
 declare const _default: {
     "IcoMoonType": string;
-    "icons": {
+    "icons": ({
         "icon": {
             "paths": string[];
             "attrs": {}[];
@@ -15,16 +15,33 @@ declare const _default: {
             "id": number;
             "name": string;
             "prevSize": number;
+            "code"?: undefined;
+        };
+        "setIdx": number;
+        "setId": number;
+        "iconIdx": number;
+    } | {
+        "icon": {
+            "paths": string[];
+            "attrs": {}[];
+            "isMulticolor": boolean;
+            "isMulticolor2": boolean;
+            "tags": string[];
+            "grid": number;
+        };
+        "attrs": {}[];
+        "properties": {
+            "order": number;
+            "id": number;
+            "name": string;
+            "prevSize": number;
             "code": number;
         };
         "setIdx": number;
         "setId": number;
         "iconIdx": number;
-    }[];
+    })[];
     "height": number;
-    "metadata": {
-        "name": string;
-    };
     "preferences": {
         "showGlyphs": boolean;
         "showCodes": boolean;
@@ -50,6 +67,8 @@ declare const _default: {
             "useClassSelector": boolean;
             "color": number;
             "bgColor": number;
+            "name": string;
+            "classSelector": string;
         };
         "historySize": number;
         "gridSize": number;

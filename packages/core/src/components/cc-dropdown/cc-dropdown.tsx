@@ -34,7 +34,10 @@ export class CcDropdown {
   @Prop() noResultsText?: string = "No se encontraron resultados";
   @Prop() noChoicesText?: string = "No se encontraron opciones";
   @Prop() helperText?: string;
-  @Prop() border: boolean = true;
+  @Prop() border?: boolean = true;
+  @Prop() bgField?: string = "";
+  @Prop() loader?: boolean = false;
+  @Prop() iconOnly?: boolean = false;
 
 
   @State() openDropdown: boolean = false;
@@ -119,16 +122,21 @@ export class CcDropdown {
         <div
           class={{
             dropdown: true,
-            "dropdown--readonly": this.fieldReadonly,
+            "dropdown--readonly": this.fieldReadonly || this.loader || this.iconOnly,
             "dropdown--disabled": this.disabled,
             "dropdown--secondary": this.color === "secondary",
             "dropdown--error": this.error && !this.disabled,
-            "dropdown--no-border": !this.border
+            "dropdown--no-border": !this.border,
+            "dropdown--no-background": !this.bgField,
+            "dropdown--icon-only": this.iconOnly
           }}
         >
           {this.label && <span class="dropdown__label">{this.label}</span>}
 
-          <div class="dropdown__input">
+          <div class={{
+              dropdown__input: true,
+              [`${this.bgField}`]: !!this.bgField
+            }}>
             <choicesjs-stencil
               searchEnabled={false}
               name={this.name}
@@ -141,14 +149,20 @@ export class CcDropdown {
               onChange={(e: any) => this.changeChoiceHandler(e.target?.value)}
               type={this.type}
             >
-              <cc-icon
-                onClick={this.toggleDropdown}
-                class={{
-                  dropdown__icon: true,
-                  "dropdown__icon--inverted": this.openDropdown
-                }}
-                name={this.iconName}
-              ></cc-icon>
+              {
+                this.loader ?
+                  <div class='dropdown__loader'>
+                    <cc-loader></cc-loader>
+                  </div>:
+                  <cc-icon
+                    onClick={this.toggleDropdown}
+                    class={{
+                      dropdown__icon: true,
+                      "dropdown__icon--inverted": this.openDropdown
+                    }}
+                    name={this.error ? 'x' : this.iconName}
+                  ></cc-icon>
+              }
             </choicesjs-stencil>
           </div>
 
