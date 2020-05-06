@@ -4,7 +4,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "1.3.61",
+  "version": "1.3.66-alpha.0",
   "description": "React specific wrapper for cafeta-components",
   "repository": {
     "type": "git",
@@ -41,7 +41,7 @@
     "typescript": "~3.7.2"
   },
   "dependencies": {
-    "@cafeta/components": "^1.2.60"
+    "@cafeta/components": "^1.2.65-alpha.0"
   },
   "peerDependencies": {
     "react": "^16.7.0",
@@ -60,5 +60,5 @@
     "minimist": "^1.2.2"
   },
   "license": "MIT",
-  "gitHead": "80aa4c86da46c145869dcda78a72d4e804cf2f15"
+  "gitHead": "3aab117268994cf0eb83c014aeeea1bc9f04b808"
 }
