@@ -185,7 +185,10 @@ export class CcTabsUnderline {
             </button>
           ))}
           <div
-            class="tabLine__underline"
+            class={{
+              tabLine__underline: true,
+              "tabLine__underline--secondary": this.color === "secondary"
+            }}
             style={{
               left: `${this.linePosition.left}px`,
               width: `${this.linePosition.width}px`
