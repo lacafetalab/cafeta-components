@@ -1,0 +1,50 @@
+@import "../../utils/sass/mixins.scss";
+
+:host {
+  @apply block;
+}
+
+.tabLine {
+  @apply flex relative;
+
+  &__button {
+    @include reset-button;
+    @apply my-md mx-xxlg text-body font-black;
+    line-height: 2.4rem;
+
+    &--sm {
+      @apply text-small-01;
+      line-height: 1.6rem;
+    }
+
+    &--disabled {
+      @apply text-disabled cursor-not-allowed;
+    }
+
+    &--active {
+      @apply text-primary;
+
+      &--secondary {
+        @apply text-secondary;
+      }
+    }
+  }
+
+  &__underline {
+    @apply absolute bg-primary bottom-0;
+    height: 0.3rem;
+    transition: all 0.3s ease;
+
+    .tabLine--secondary {
+      @apply bg-secondary;
+    }
+  }
+
+  &--center {
+    @apply justify-around;
+  }
+
+  &--border {
+    @apply border-0 border-b border-solid border-neutral-01;
+  }
+}
