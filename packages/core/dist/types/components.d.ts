@@ -74,6 +74,13 @@ export namespace Components {
   interface CcModalController {
     'modalRef': HTMLElement;
   }
+  interface CcTabsUnderline {
+    'border'?: boolean;
+    'center'?: boolean;
+    'color'?: "primary" | "secondary";
+    'options'?: TabOption[];
+    'size'?: "sm" | "md";
+  }
   interface CcTextarea {
     'color': "primary" | "secondary";
     'disabled'?: boolean;
@@ -133,6 +140,12 @@ declare global {
     new (): HTMLCcModalControllerElement;
   };
 
+  interface HTMLCcTabsUnderlineElement extends Components.CcTabsUnderline, HTMLStencilElement {}
+  var HTMLCcTabsUnderlineElement: {
+    prototype: HTMLCcTabsUnderlineElement;
+    new (): HTMLCcTabsUnderlineElement;
+  };
+
   interface HTMLCcTextareaElement extends Components.CcTextarea, HTMLStencilElement {}
   var HTMLCcTextareaElement: {
     prototype: HTMLCcTextareaElement;
@@ -146,6 +159,7 @@ declare global {
     'cc-loader': HTMLCcLoaderElement;
     'cc-modal': HTMLCcModalElement;
     'cc-modal-controller': HTMLCcModalControllerElement;
+    'cc-tabs-underline': HTMLCcTabsUnderlineElement;
     'cc-textarea': HTMLCcTextareaElement;
   }
 }
@@ -219,6 +233,14 @@ declare namespace LocalJSX {
   interface CcModalController {
     'modalRef'?: HTMLElement;
   }
+  interface CcTabsUnderline {
+    'border'?: boolean;
+    'center'?: boolean;
+    'color'?: "primary" | "secondary";
+    'onChangeOption'?: (event: CustomEvent<TabOption>) => void;
+    'options'?: TabOption[];
+    'size'?: "sm" | "md";
+  }
   interface CcTextarea {
     'color'?: "primary" | "secondary";
     'disabled'?: boolean;
@@ -241,6 +263,7 @@ declare namespace LocalJSX {
     'cc-loader': CcLoader;
     'cc-modal': CcModal;
     'cc-modal-controller': CcModalController;
+    'cc-tabs-underline': CcTabsUnderline;
     'cc-textarea': CcTextarea;
   }
 }
@@ -258,6 +281,7 @@ declare module "@stencil/core" {
       'cc-loader': LocalJSX.CcLoader & JSXBase.HTMLAttributes<HTMLCcLoaderElement>;
       'cc-modal': LocalJSX.CcModal & JSXBase.HTMLAttributes<HTMLCcModalElement>;
       'cc-modal-controller': LocalJSX.CcModalController & JSXBase.HTMLAttributes<HTMLCcModalControllerElement>;
+      'cc-tabs-underline': LocalJSX.CcTabsUnderline & JSXBase.HTMLAttributes<HTMLCcTabsUnderlineElement>;
       'cc-textarea': LocalJSX.CcTextarea & JSXBase.HTMLAttributes<HTMLCcTextareaElement>;
     }
   }
