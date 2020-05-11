@@ -24,7 +24,7 @@
     &--active {
       @apply text-primary;
 
-      &--secondary {
+      &.tabLine__button--secondary {
         @apply text-secondary;
       }
     }
@@ -35,7 +35,7 @@
     height: 0.3rem;
     transition: all 0.3s ease;
 
-    .tabLine--secondary {
+    &--secondary {
       @apply bg-secondary;
     }
   }

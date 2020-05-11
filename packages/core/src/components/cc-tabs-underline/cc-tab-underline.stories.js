@@ -33,6 +33,11 @@ export const Line = () => {
     </div>
 
     <div class="p-xxlg">
+      <h2 class="font-bold text-heading-02 text-neutral-03">Color Secondary</h2>
+      <cc-tabs-underline color="secondary"></cc-tabs-underline>
+    </div>
+
+    <div class="p-xxlg">
       <h2 class="font-bold text-heading-02 text-neutral-03">Center</h2>
       <cc-tabs-underline center></cc-tabs-underline>
     </div>
