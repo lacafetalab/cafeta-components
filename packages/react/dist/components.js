@@ -11,5 +11,6 @@ export const CcInput = /*@__PURE__*/ createReactComponent('cc-input');
 export const CcLoader = /*@__PURE__*/ createReactComponent('cc-loader');
 export const CcModal = /*@__PURE__*/ createReactComponent('cc-modal');
 export const CcModalController = /*@__PURE__*/ createReactComponent('cc-modal-controller');
+export const CcTabsUnderline = /*@__PURE__*/ createReactComponent('cc-tabs-underline');
 export const CcTextarea = /*@__PURE__*/ createReactComponent('cc-textarea');
 //# sourceMappingURL=components.js.map

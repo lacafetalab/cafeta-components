@@ -15,4 +15,5 @@ export const CcInput = /*@__PURE__*/createReactComponent<JSX.CcInput, HTMLCcInpu
 export const CcLoader = /*@__PURE__*/createReactComponent<JSX.CcLoader, HTMLCcLoaderElement>('cc-loader');
 export const CcModal = /*@__PURE__*/createReactComponent<JSX.CcModal, HTMLCcModalElement>('cc-modal');
 export const CcModalController = /*@__PURE__*/createReactComponent<JSX.CcModalController, HTMLCcModalControllerElement>('cc-modal-controller');
+export const CcTabsUnderline = /*@__PURE__*/createReactComponent<JSX.CcTabsUnderline, HTMLCcTabsUnderlineElement>('cc-tabs-underline');
 export const CcTextarea = /*@__PURE__*/createReactComponent<JSX.CcTextarea, HTMLCcTextareaElement>('cc-textarea');

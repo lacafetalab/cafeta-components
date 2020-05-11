@@ -10,7 +10,7 @@ import {
   Element
 } from "@stencil/core";
 
-type TabOption = {
+export type TabOption = {
   active?: boolean;
   disabled?: boolean;
   text: string;

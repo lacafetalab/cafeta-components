@@ -7,7 +7,9 @@
 
 
 import { HTMLStencilElement, JSXBase } from './stencil.core';
-
+import {
+  TabOption,
+} from './components/cc-tabs-underline/cc-tabs-underline';
 
 export namespace Components {
   interface CcButton {
