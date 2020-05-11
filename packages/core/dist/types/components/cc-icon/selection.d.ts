@@ -3,11 +3,43 @@ declare const _default: {
     "icons": ({
         "icon": {
             "paths": string[];
-            "attrs": {}[];
+            "attrs": {
+                "fill": string;
+            }[];
             "isMulticolor": boolean;
             "isMulticolor2": boolean;
             "grid": number;
             "tags": string[];
+            "colorPermutations": {
+                "17474741": {
+                    "f": number;
+                }[];
+            };
+        };
+        "attrs": {
+            "fill": string;
+        }[];
+        "properties": {
+            "order": number;
+            "id": number;
+            "name": string;
+            "prevSize": number;
+            "code"?: undefined;
+        };
+        "setIdx": number;
+        "setId": number;
+        "iconIdx": number;
+    } | {
+        "icon": {
+            "paths": string[];
+            "attrs": {}[];
+            "isMulticolor": boolean;
+            "isMulticolor2": boolean;
+            "tags": string[];
+            "grid": number;
+            "colorPermutations": {
+                "17474741": {}[];
+            };
         };
         "attrs": {}[];
         "properties": {
@@ -28,6 +60,9 @@ declare const _default: {
             "isMulticolor2": boolean;
             "tags": string[];
             "grid": number;
+            "colorPermutations": {
+                "17474741": {}[];
+            };
         };
         "attrs": {}[];
         "properties": {
