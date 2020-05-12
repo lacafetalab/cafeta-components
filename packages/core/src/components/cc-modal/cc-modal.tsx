@@ -24,6 +24,7 @@ export class CcModal {
   @Prop() visible: boolean = false;
   @Prop() color: "primary" | "secondary" = "primary";
   @Prop() hideCloseButton: boolean = false;
+  @Prop() disableESC: boolean = false;
 
   @Element() el: HTMLElement;
 
@@ -41,7 +42,9 @@ export class CcModal {
 
   @Listen("keydown", { target: "document" })
   handleKeyDown(ev: KeyboardEvent) {
-    if (ev.key === "Escape" && this.visible) this.cancelHandler();
+    if (ev.key === "Escape" && this.visible && !this.disableESC) {
+      this.cancelHandler();
+    }
   }
 
   cancelHandler = () => {

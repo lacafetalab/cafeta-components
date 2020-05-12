@@ -1,0 +1,31 @@
+@import "../../utils/sass/mixins.scss";
+
+:host {
+  @apply block;
+}
+
+.tabTags {
+  @apply overflow-hidden;
+
+  &__wrap {
+    @apply -mx-md;
+  }
+
+  &__button {
+    @include reset-button;
+    @apply font-black text-small-02 px-md rounded-full inline-flex mx-md items-center justify-center;
+    height: 3.2rem;
+
+    &--active {
+      @apply bg-primary text-neutral-04;
+
+      &.tabTags__button--secondary {
+        @apply bg-secondary;
+      }
+    }
+
+    &--disabled {
+      @apply text-disabled;
+    }
+  }
+}

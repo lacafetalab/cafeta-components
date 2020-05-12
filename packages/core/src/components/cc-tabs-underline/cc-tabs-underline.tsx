@@ -9,13 +9,7 @@ import {
   Watch,
   Element
 } from "@stencil/core";
-
-export type TabOption = {
-  active?: boolean;
-  disabled?: boolean;
-  text: string;
-  value: any;
-};
+import { TabOption } from "../../utils/types/TabOption";
 
 @Component({
   tag: "cc-tabs-underline",
