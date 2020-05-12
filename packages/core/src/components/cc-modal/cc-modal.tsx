@@ -65,7 +65,7 @@ export class CcModal {
     this.overlayEl.classList.remove("modal__overlay--hidden");
     this.overlayEl.classList.add("modal__overlay--fadeIn");
 
-    this.wrapEl.classList.remove("hidden");
+    this.wrapEl.classList.remove("modal__wrap--hidden");
     this.contentEl.classList.add("modal__content--zoomIn");
   }
 
@@ -110,7 +110,7 @@ export class CcModal {
 
     if (e.animationName === "zoomOutModal") {
       this.contentEl.classList.remove("modal__content--zoomOut");
-      this.wrapEl.classList.add("hidden");
+      this.wrapEl.classList.add("modal__wrap--hidden");
     }
   };
 
@@ -137,7 +137,7 @@ export class CcModal {
 
         <div
           ref={el => (this.wrapEl = el)}
-          class="modal__wrap hidden"
+          class="modal__wrap modal__wrap--hidden"
           onClick={this.handleWrapClick}
         >
           <div
