@@ -13,7 +13,7 @@
 
   &__button {
     @include reset-button;
-    @apply font-black text-small-02 px-md rounded-full inline-flex mx-md items-center justify-center;
+    @apply font-black text-small-02 px-md rounded-full inline-flex mx-md items-center justify-center bg-neutral-04;
     height: 3.2rem;
 
     &--active {
@@ -25,7 +25,7 @@
     }
 
     &--disabled {
-      @apply text-disabled;
+      @apply text-disabled bg-disabled;
     }
   }
 }
