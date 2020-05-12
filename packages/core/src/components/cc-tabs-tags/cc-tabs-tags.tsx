@@ -5,7 +5,8 @@ import {
   h,
   Host,
   EventEmitter,
-  Event
+  Event,
+  Watch
 } from "@stencil/core";
 import { TabOption } from "../../utils/types/TabOption";
 
@@ -21,6 +22,16 @@ export class CcTabsTags {
   @State() _options: TabOption[];
 
   @Event() changeOption: EventEmitter<TabOption>;
+
+  @Watch("options")
+  setOptions(newValue: TabOption[], oldValue: TabOption[]) {
+    const newValueStringify = JSON.stringify(newValue);
+    const oldValueStringify = JSON.stringify(oldValue);
+
+    if (newValueStringify !== oldValueStringify) {
+      this._options = newValue;
+    }
+  }
 
   updateOptions(index: number) {
     const newOptions = [...this._options].map(option => ({
