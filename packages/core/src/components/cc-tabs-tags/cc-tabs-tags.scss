@@ -8,13 +8,14 @@
   @apply overflow-hidden;
 
   &__wrap {
-    @apply -mx-md;
+    margin: 0 -0.6rem;
   }
 
   &__button {
     @include reset-button;
-    @apply font-black text-small-02 px-md rounded-full inline-flex mx-md items-center justify-center bg-neutral-04;
+    @apply font-black text-small-02 px-md rounded-full inline-flex items-center justify-center bg-neutral-04;
     height: 3.2rem;
+    margin: 0 0.6rem;
 
     &--active {
       @apply bg-primary text-neutral-04;
