@@ -33,6 +33,10 @@
   &__wrap {
     @apply overflow-auto outline-none;
     padding: 4.8rem 0;
+
+    &--hidden {
+      display: none;
+    }
   }
 
   &__close {
