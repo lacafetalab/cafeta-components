@@ -77,6 +77,16 @@ export namespace Components {
   interface CcModalController {
     'modalRef': HTMLElement;
   }
+  interface CcSwitcher {
+    'checked'?: boolean;
+    'color'?: "primary" | "secondary";
+    'disabled'?: boolean;
+    'error'?: boolean;
+    'inputRef'?: (el: HTMLInputElement) => void;
+    'name'?: string;
+    'size'?: "sm" | "md";
+    'value'?: string;
+  }
   interface CcTabsTags {
     'color'?: "primary" | "secondary";
     'options'?: TabOption[];
@@ -147,6 +157,12 @@ declare global {
     new (): HTMLCcModalControllerElement;
   };
 
+  interface HTMLCcSwitcherElement extends Components.CcSwitcher, HTMLStencilElement {}
+  var HTMLCcSwitcherElement: {
+    prototype: HTMLCcSwitcherElement;
+    new (): HTMLCcSwitcherElement;
+  };
+
   interface HTMLCcTabsTagsElement extends Components.CcTabsTags, HTMLStencilElement {}
   var HTMLCcTabsTagsElement: {
     prototype: HTMLCcTabsTagsElement;
@@ -172,6 +188,7 @@ declare global {
     'cc-loader': HTMLCcLoaderElement;
     'cc-modal': HTMLCcModalElement;
     'cc-modal-controller': HTMLCcModalControllerElement;
+    'cc-switcher': HTMLCcSwitcherElement;
     'cc-tabs-tags': HTMLCcTabsTagsElement;
     'cc-tabs-underline': HTMLCcTabsUnderlineElement;
     'cc-textarea': HTMLCcTextareaElement;
@@ -248,6 +265,16 @@ declare namespace LocalJSX {
   interface CcModalController {
     'modalRef'?: HTMLElement;
   }
+  interface CcSwitcher {
+    'checked'?: boolean;
+    'color'?: "primary" | "secondary";
+    'disabled'?: boolean;
+    'error'?: boolean;
+    'inputRef'?: (el: HTMLInputElement) => void;
+    'name'?: string;
+    'size'?: "sm" | "md";
+    'value'?: string;
+  }
   interface CcTabsTags {
     'color'?: "primary" | "secondary";
     'onChangeOption'?: (event: CustomEvent<TabOption>) => void;
@@ -283,6 +310,7 @@ declare namespace LocalJSX {
     'cc-loader': CcLoader;
     'cc-modal': CcModal;
     'cc-modal-controller': CcModalController;
+    'cc-switcher': CcSwitcher;
     'cc-tabs-tags': CcTabsTags;
     'cc-tabs-underline': CcTabsUnderline;
     'cc-textarea': CcTextarea;
@@ -302,6 +330,7 @@ declare module "@stencil/core" {
       'cc-loader': LocalJSX.CcLoader & JSXBase.HTMLAttributes<HTMLCcLoaderElement>;
       'cc-modal': LocalJSX.CcModal & JSXBase.HTMLAttributes<HTMLCcModalElement>;
       'cc-modal-controller': LocalJSX.CcModalController & JSXBase.HTMLAttributes<HTMLCcModalControllerElement>;
+      'cc-switcher': LocalJSX.CcSwitcher & JSXBase.HTMLAttributes<HTMLCcSwitcherElement>;
       'cc-tabs-tags': LocalJSX.CcTabsTags & JSXBase.HTMLAttributes<HTMLCcTabsTagsElement>;
       'cc-tabs-underline': LocalJSX.CcTabsUnderline & JSXBase.HTMLAttributes<HTMLCcTabsUnderlineElement>;
       'cc-textarea': LocalJSX.CcTextarea & JSXBase.HTMLAttributes<HTMLCcTextareaElement>;
