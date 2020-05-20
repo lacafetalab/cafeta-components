@@ -15,8 +15,8 @@ export class UploadAdapter {
       return {
         default: imageUrl
       };
-    } catch {
-      throw new Error(`Couldn't upload file: ${file.name}.`);
+    } catch (e) {
+      throw new Error(e);
     }
   }
 }
