@@ -58,9 +58,13 @@ export class CcDropdown {
 
   @Watch("disabled")
   setDisabled(newValue: any, oldValue: any) {
+    const element = this.el.querySelector("choicesjs-stencil");
     if (!oldValue && newValue) {
-      const element = this.el.querySelector("choicesjs-stencil");
       element.disable();
+    }
+
+    if (oldValue && !newValue) {
+      element.enable();
     }
   }
 
