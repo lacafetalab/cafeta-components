@@ -101,8 +101,10 @@ export namespace Components {
   interface CcTextarea {
     'color': "primary" | "secondary";
     'disabled'?: boolean;
+    'enableImage'?: boolean;
     'error'?: boolean;
     'helperText'?: string;
+    'imageService'?: (file: any) => Promise<string>;
     'label'?: string;
     'name'?: string;
     'placeholder'?: string;
@@ -291,8 +293,10 @@ declare namespace LocalJSX {
   interface CcTextarea {
     'color'?: "primary" | "secondary";
     'disabled'?: boolean;
+    'enableImage'?: boolean;
     'error'?: boolean;
     'helperText'?: string;
+    'imageService'?: (file: any) => Promise<string>;
     'label'?: string;
     'name'?: string;
     'onChangeText'?: (event: CustomEvent<string>) => void;
