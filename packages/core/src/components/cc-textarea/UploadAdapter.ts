@@ -16,7 +16,7 @@ export class UploadAdapter {
         default: imageUrl
       };
     } catch (e) {
-      throw new Error(e);
+      throw e;
     }
   }
 }
