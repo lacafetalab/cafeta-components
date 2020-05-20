@@ -60,6 +60,12 @@ export const TextareaWithRichEditor = () => {
   } placeholder="${placeholder}"></cc-textarea>
   </div>`;
 
+  wrap.querySelector("#rich").enableImage = true;
+  wrap.querySelector("#rich").imageService = async file => {
+    throw new Error(`Error al subir la imagen ${file.name}`);
+    return "asd";
+  };
+
   wrap.querySelector("#rich").addEventListener("changeText", e => {
     console.log("rich text: onChangeText -->", e.detail);
   });
