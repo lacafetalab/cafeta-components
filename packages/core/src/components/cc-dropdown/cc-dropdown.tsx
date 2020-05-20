@@ -39,7 +39,6 @@ export class CcDropdown {
   @Prop() loader?: boolean = false;
   @Prop() iconOnly?: boolean = false;
 
-
   @State() openDropdown: boolean = false;
 
   @Element() el: HTMLElement;
@@ -54,6 +53,14 @@ export class CcDropdown {
 
     if (newValueStringify !== oldValueStringify) {
       this._choices = newValue;
+    }
+  }
+
+  @Watch("disabled")
+  setDisabled(newValue: any, oldValue: any) {
+    if (!oldValue && newValue) {
+      const element = this.el.querySelector("choicesjs-stencil");
+      element.disable();
     }
   }
 
@@ -75,9 +82,14 @@ export class CcDropdown {
       this.openDropdown = false;
       value = event;
     } else if (this.type === "multiple") {
-      const selectorMultiple = '.choices__list.choices__list--multiple .choices__item.choices__item--selectable';
-      const selectedChoices: NodeListOf<Element> = this.el.querySelectorAll(selectorMultiple);
-      value = Array.from(selectedChoices).map((option: any) => option.dataset.value);
+      const selectorMultiple =
+        ".choices__list.choices__list--multiple .choices__item.choices__item--selectable";
+      const selectedChoices: NodeListOf<Element> = this.el.querySelectorAll(
+        selectorMultiple
+      );
+      value = Array.from(selectedChoices).map(
+        (option: any) => option.dataset.value
+      );
     }
     this.changeChoice.emit(value);
   }
@@ -122,7 +134,8 @@ export class CcDropdown {
         <div
           class={{
             dropdown: true,
-            "dropdown--readonly": this.fieldReadonly || this.loader || this.iconOnly,
+            "dropdown--readonly":
+              this.fieldReadonly || this.loader || this.iconOnly,
             "dropdown--disabled": this.disabled,
             "dropdown--secondary": this.color === "secondary",
             "dropdown--error": this.error && !this.disabled,
@@ -133,10 +146,12 @@ export class CcDropdown {
         >
           {this.label && <span class="dropdown__label">{this.label}</span>}
 
-          <div class={{
+          <div
+            class={{
               dropdown__input: true,
               [`${this.bgField}`]: !!this.bgField
-            }}>
+            }}
+          >
             <choicesjs-stencil
               searchEnabled={false}
               name={this.name}
@@ -149,20 +164,20 @@ export class CcDropdown {
               onChange={(e: any) => this.changeChoiceHandler(e.target?.value)}
               type={this.type}
             >
-              {
-                this.loader ?
-                  <div class='dropdown__loader'>
-                    <cc-loader></cc-loader>
-                  </div>:
-                  <cc-icon
-                    onClick={this.toggleDropdown}
-                    class={{
-                      dropdown__icon: true,
-                      "dropdown__icon--inverted": this.openDropdown
-                    }}
-                    name={this.error ? 'x' : this.iconName}
-                  ></cc-icon>
-              }
+              {this.loader ? (
+                <div class="dropdown__loader">
+                  <cc-loader></cc-loader>
+                </div>
+              ) : (
+                <cc-icon
+                  onClick={this.toggleDropdown}
+                  class={{
+                    dropdown__icon: true,
+                    "dropdown__icon--inverted": this.openDropdown
+                  }}
+                  name={this.error ? "x" : this.iconName}
+                ></cc-icon>
+              )}
             </choicesjs-stencil>
           </div>
 
