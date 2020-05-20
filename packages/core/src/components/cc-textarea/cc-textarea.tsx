@@ -7,6 +7,7 @@ import {
   Event,
   EventEmitter
 } from "@stencil/core";
+import { UploadAdapter } from "./UploadAdapter";
 
 @Component({
   tag: "cc-textarea",
@@ -27,6 +28,8 @@ export class CcTextarea {
   @Prop() rich?: boolean = false;
   @Prop() value?: string;
   @Prop() helperText?: string;
+  @Prop() enableImage?: boolean;
+  @Prop() imageService?: (file: any) => Promise<string>;
 
   @Watch("disabled")
   validateName(newDisabled: boolean) {
@@ -69,29 +72,46 @@ export class CcTextarea {
   }
 
   async enableRichTextEditor() {
+    let toolbar = [
+      "Undo",
+      "Redo",
+      "Heading",
+      "Bold",
+      "Italic",
+      "numberedList",
+      "bulletedList",
+      "Link",
+      "blockQuote"
+    ];
+
     if (!this.rich) return null;
 
     const { default: ClassicEditor } = await import(
       "@ckeditor/ckeditor5-build-classic"
     );
 
+    if (this.enableImage && this.imageService) {
+      toolbar.push("imageUpload");
+    }
+
     this.editorInstance = await ClassicEditor.create(this.richTextEl, {
-      toolbar: [
-        "Undo",
-        "Redo",
-        "Heading",
-        "Bold",
-        "Italic",
-        "numberedList",
-        "bulletedList",
-        "Link",
-        "blockQuote"
-      ],
+      toolbar,
       placeholder: this.placeholder
     });
 
     this.setRichTextEditorDefaults();
+    this.setAdapterUpload(this.editorInstance);
     return this.editorInstance;
+  }
+
+  setAdapterUpload(editor) {
+    if (!this.enableImage && !this.imageService) {
+      return;
+    }
+
+    editor.plugins.get("FileRepository").createUploadAdapter = loader => {
+      return new UploadAdapter({ loader, serviceUpload: this.imageService });
+    };
   }
 
   disableRichTextEditor() {
