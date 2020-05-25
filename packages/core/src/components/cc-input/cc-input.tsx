@@ -18,6 +18,7 @@ export class CcInput {
   @Prop() success?: boolean = false;
   @Prop() helperText?: string;
   @Prop() name?: string;
+  @Prop() iconName?: string;
 
   focusInput = () => {
     this.inputEl.focus();
@@ -50,15 +51,28 @@ export class CcInput {
           </label>
         )}
 
-        <input
-          class="input__field"
-          type={this.type}
-          placeholder={this.placeholder}
-          disabled={this.disabled}
-          name={this.name}
-          value={this.value}
-          ref={this.setInputRef}
-        />
+        <div class="input__wrapper">
+          <input
+            class="input__field"
+            type={this.type}
+            placeholder={this.placeholder}
+            disabled={this.disabled}
+            name={this.name}
+            value={this.value}
+            ref={this.setInputRef}
+          />
+
+          {this.iconName && (
+            <cc-icon
+              class={{
+                input__icon: true,
+                "input__icon--primary": this.color === "primary",
+                "input__icon--secondary": this.color === "secondary"
+              }}
+              name={this.iconName}
+            />
+          )}
+        </div>
 
         {this.helperText && this.error && !this.success && !this.disabled && (
           <span class="input__helperText" onClick={this.focusInput}>

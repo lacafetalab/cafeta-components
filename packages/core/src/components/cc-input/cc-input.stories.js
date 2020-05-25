@@ -26,6 +26,12 @@ export const Input = () => {
     <cc-input value="${value}" ${
     disabled ? "disabled" : ""
   } placeholder="${placeholder}" error helper-text="Incorrect entry" label="ERROR"></cc-input>
+  </div>
+
+  <div class="p-xxlg">
+    <cc-input value="${value}" ${
+    disabled ? "disabled" : ""
+  } placeholder="${placeholder}" icon-name="calendar" label="ICON"></cc-input>
   </div>`;
 
   wrap.querySelector("#default").addEventListener("input", e => {

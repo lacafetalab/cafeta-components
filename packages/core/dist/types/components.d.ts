@@ -56,6 +56,7 @@ export namespace Components {
     'disabled'?: boolean;
     'error'?: boolean;
     'helperText'?: string;
+    'iconName'?: string;
     'inputRef'?: (el: HTMLInputElement) => void;
     'label'?: string;
     'name'?: string;
@@ -244,6 +245,7 @@ declare namespace LocalJSX {
     'disabled'?: boolean;
     'error'?: boolean;
     'helperText'?: string;
+    'iconName'?: string;
     'inputRef'?: (el: HTMLInputElement) => void;
     'label'?: string;
     'name'?: string;
