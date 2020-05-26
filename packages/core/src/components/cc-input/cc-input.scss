@@ -20,7 +20,8 @@
   }
 
   &__field {
-    @apply w-full rounded-sm border border-neutral-02 px-lg py-sm bg-neutral-04 text-body block leading-relaxed;
+    @apply w-full rounded-sm border border-neutral-02 px-lg py-sm bg-neutral-04 text-body block;
+    line-height: 2.4rem;
 
     &:disabled {
       @apply border-disabled;

@@ -19,6 +19,7 @@ export class CcInput {
   @Prop() helperText?: string;
   @Prop() name?: string;
   @Prop() iconName?: string;
+  @Prop() autocomplete?: string = "";
 
   focusInput = () => {
     this.inputEl.focus();
@@ -60,6 +61,7 @@ export class CcInput {
             name={this.name}
             value={this.value}
             ref={this.setInputRef}
+            autocomplete={this.autocomplete}
           />
 
           {this.iconName && (
