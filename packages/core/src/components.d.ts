@@ -52,6 +52,7 @@ export namespace Components {
     'size': number;
   }
   interface CcInput {
+    'autocomplete'?: string;
     'color': "primary" | "secondary";
     'disabled'?: boolean;
     'error'?: boolean;
@@ -241,6 +242,7 @@ declare namespace LocalJSX {
     'size'?: number;
   }
   interface CcInput {
+    'autocomplete'?: string;
     'color'?: "primary" | "secondary";
     'disabled'?: boolean;
     'error'?: boolean;

@@ -2,15 +2,15 @@
   "entries": [
     "components\\cc-input\\cc-input.js",
     "components\\cc-icon\\cc-icon.js",
+    "components\\cc-modal-controller\\cc-modal-controller.js",
     "components\\cc-loader\\cc-loader.js",
     "components\\cc-modal\\cc-modal.js",
-    "components\\cc-switcher\\cc-switcher.js",
     "components\\cc-tabs-tags\\cc-tabs-tags.js",
-    "components\\cc-tabs-underline\\cc-tabs-underline.js",
+    "components\\cc-switcher\\cc-switcher.js",
     "components\\cc-button\\cc-button.js",
     "components\\cc-textarea\\cc-textarea.js",
-    "components\\cc-dropdown\\cc-dropdown.js",
-    "components\\cc-modal-controller\\cc-modal-controller.js"
+    "components\\cc-tabs-underline\\cc-tabs-underline.js",
+    "components\\cc-dropdown\\cc-dropdown.js"
   ],
   "compiler": {
     "name": "@stencil/core",
