@@ -20,7 +20,7 @@
   }
 
   &__field {
-    @apply w-full rounded-sm border border-neutral-02 px-lg py-sm bg-neutral-04 text-body block;
+    @apply w-full rounded-sm border border-neutral-02 px-lg py-sm text-body block;
     line-height: 2.4rem;
 
     &:disabled {
@@ -53,6 +53,14 @@
       .input--error & {
         @apply border-error;
       }
+    }
+
+    &--default-bg {
+      @apply bg-neutral-04;
+    }
+
+    &--icon {
+      padding-right: 3.8rem;
     }
   }
 

@@ -53,6 +53,7 @@ export namespace Components {
   }
   interface CcInput {
     'autocomplete'?: string;
+    'bgField'?: string;
     'color': "primary" | "secondary";
     'disabled'?: boolean;
     'error'?: boolean;
@@ -243,6 +244,7 @@ declare namespace LocalJSX {
   }
   interface CcInput {
     'autocomplete'?: string;
+    'bgField'?: string;
     'color'?: "primary" | "secondary";
     'disabled'?: boolean;
     'error'?: boolean;
