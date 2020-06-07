@@ -19,6 +19,7 @@ export class CcInput {
   @Prop() helperText?: string;
   @Prop() name?: string;
   @Prop() iconName?: string;
+  @Prop() bgField?: string = "";
   @Prop() autocomplete?: string = "";
 
   focusInput = () => {
@@ -54,7 +55,9 @@ export class CcInput {
 
         <div class="input__wrapper">
           <input
-            class="input__field"
+            class={`input__field ${
+              this.iconName ? "input__field--icon" : ""
+            } ${this.bgField || "input__field--default-bg"}`}
             type={this.type}
             placeholder={this.placeholder}
             disabled={this.disabled}

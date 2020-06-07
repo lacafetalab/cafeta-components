@@ -10,6 +10,7 @@
 | Property       | Attribute      | Description | Type                               | Default     |
 | -------------- | -------------- | ----------- | ---------------------------------- | ----------- |
 | `autocomplete` | `autocomplete` |             | `string`                           | `""`        |
+| `bgField`      | `bg-field`     |             | `string`                           | `""`        |
 | `color`        | `color`        |             | `"primary" \| "secondary"`         | `"primary"` |
 | `disabled`     | `disabled`     |             | `boolean`                          | `false`     |
 | `error`        | `error`        |             | `boolean`                          | `false`     |
