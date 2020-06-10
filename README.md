@@ -8,6 +8,7 @@
 
 Dentro del proyecto (cafeta-components)
 ```
+yarn build
 git add .
 git commit -m ‘feat’
 lerna publish
@@ -19,10 +20,10 @@ yarn add @cafeta/components
 ```
 ## ¿Cómo usar el Design System?
 
-*Para empezar a usarlo basta con instalar @cafeta/components en el proyecto*
+*Para empezar a usarlo basta con instalar @cafeta/components-react en el proyecto*
 
 ```
-yarn add @cafeta/components
+yarn add @cafeta/components-react
 ```
 
 Los siguientes pasos son para customizar el DS acorde al proyecto.
