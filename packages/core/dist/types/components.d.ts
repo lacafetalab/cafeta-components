@@ -47,6 +47,23 @@ export namespace Components {
     'placeholder'?: string;
     'type'?: "single" | "multiple" | "text";
   }
+  interface CcDropdownNew {
+    'bgField'?: string;
+    'border'?: boolean;
+    'choices': Array<any>;
+    'color': "primary" | "secondary";
+    'currentValue'?: string;
+    'disabled'?: boolean;
+    'error'?: boolean;
+    'fieldReadonly'?: boolean;
+    'helperText'?: string;
+    'iconName'?: string;
+    'iconOnly'?: boolean;
+    'label': string;
+    'loader'?: boolean;
+    'name'?: string;
+    'placeholder'?: string;
+  }
   interface CcIcon {
     'name': string;
     'size': number;
@@ -132,6 +149,12 @@ declare global {
     new (): HTMLCcDropdownElement;
   };
 
+  interface HTMLCcDropdownNewElement extends Components.CcDropdownNew, HTMLStencilElement {}
+  var HTMLCcDropdownNewElement: {
+    prototype: HTMLCcDropdownNewElement;
+    new (): HTMLCcDropdownNewElement;
+  };
+
   interface HTMLCcIconElement extends Components.CcIcon, HTMLStencilElement {}
   var HTMLCcIconElement: {
     prototype: HTMLCcIconElement;
@@ -188,6 +211,7 @@ declare global {
   interface HTMLElementTagNameMap {
     'cc-button': HTMLCcButtonElement;
     'cc-dropdown': HTMLCcDropdownElement;
+    'cc-dropdown-new': HTMLCcDropdownNewElement;
     'cc-icon': HTMLCcIconElement;
     'cc-input': HTMLCcInputElement;
     'cc-loader': HTMLCcLoaderElement;
@@ -237,6 +261,24 @@ declare namespace LocalJSX {
     'onClickDropdown'?: (event: CustomEvent<any>) => void;
     'placeholder'?: string;
     'type'?: "single" | "multiple" | "text";
+  }
+  interface CcDropdownNew {
+    'bgField'?: string;
+    'border'?: boolean;
+    'choices'?: Array<any>;
+    'color'?: "primary" | "secondary";
+    'currentValue'?: string;
+    'disabled'?: boolean;
+    'error'?: boolean;
+    'fieldReadonly'?: boolean;
+    'helperText'?: string;
+    'iconName'?: string;
+    'iconOnly'?: boolean;
+    'label'?: string;
+    'loader'?: boolean;
+    'name'?: string;
+    'onChangeChoice'?: (event: CustomEvent<any>) => void;
+    'placeholder'?: string;
   }
   interface CcIcon {
     'name'?: string;
@@ -315,6 +357,7 @@ declare namespace LocalJSX {
   interface IntrinsicElements {
     'cc-button': CcButton;
     'cc-dropdown': CcDropdown;
+    'cc-dropdown-new': CcDropdownNew;
     'cc-icon': CcIcon;
     'cc-input': CcInput;
     'cc-loader': CcLoader;
@@ -335,6 +378,7 @@ declare module "@stencil/core" {
     interface IntrinsicElements {
       'cc-button': LocalJSX.CcButton & JSXBase.HTMLAttributes<HTMLCcButtonElement>;
       'cc-dropdown': LocalJSX.CcDropdown & JSXBase.HTMLAttributes<HTMLCcDropdownElement>;
+      'cc-dropdown-new': LocalJSX.CcDropdownNew & JSXBase.HTMLAttributes<HTMLCcDropdownNewElement>;
       'cc-icon': LocalJSX.CcIcon & JSXBase.HTMLAttributes<HTMLCcIconElement>;
       'cc-input': LocalJSX.CcInput & JSXBase.HTMLAttributes<HTMLCcInputElement>;
       'cc-loader': LocalJSX.CcLoader & JSXBase.HTMLAttributes<HTMLCcLoaderElement>;

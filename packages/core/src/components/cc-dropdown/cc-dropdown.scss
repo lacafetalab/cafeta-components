@@ -22,6 +22,8 @@
   color: theme("colors.neutral.02");
   background: theme("backgroundColor.01");
 }
+
+
 @mixin dropdown-state-readonly {
   &:after {
     position: absolute;
