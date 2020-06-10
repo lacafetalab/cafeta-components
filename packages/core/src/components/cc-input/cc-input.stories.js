@@ -9,6 +9,7 @@ export const Input = () => {
   const value = text("Value", "");
 
   const wrap = document.createElement("div");
+
   wrap.innerHTML = `
   <div class="p-xxlg">
     <cc-input value="${value}" ${
