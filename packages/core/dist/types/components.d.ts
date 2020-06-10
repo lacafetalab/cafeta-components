@@ -61,6 +61,7 @@ export namespace Components {
     'iconName'?: string;
     'inputRef'?: (el: HTMLInputElement) => void;
     'label'?: string;
+    'maxLength'?: number;
     'name'?: string;
     'placeholder'?: string;
     'success'?: boolean;
@@ -252,6 +253,7 @@ declare namespace LocalJSX {
     'iconName'?: string;
     'inputRef'?: (el: HTMLInputElement) => void;
     'label'?: string;
+    'maxLength'?: number;
     'name'?: string;
     'placeholder'?: string;
     'success'?: boolean;

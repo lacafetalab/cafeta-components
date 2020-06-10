@@ -5,16 +5,49 @@ declare const _default: {
             "paths": string[];
             "attrs": {
                 "fill": string;
+                "strokeLinejoin": string;
+                "strokeLinecap": string;
+                "strokeMiterlimit": string;
+                "strokeWidth": number;
             }[];
             "isMulticolor": boolean;
             "isMulticolor2": boolean;
             "grid": number;
             "tags": string[];
+            "colorPermutations"?: undefined;
+        };
+        "attrs": {
+            "fill": string;
+            "strokeLinejoin": string;
+            "strokeLinecap": string;
+            "strokeMiterlimit": string;
+            "strokeWidth": number;
+        }[];
+        "properties": {
+            "order": number;
+            "id": number;
+            "name": string;
+            "prevSize": number;
+            "code"?: undefined;
+        };
+        "setIdx": number;
+        "setId": number;
+        "iconIdx": number;
+    } | {
+        "icon": {
+            "paths": string[];
+            "attrs": {
+                "fill": string;
+            }[];
+            "isMulticolor": boolean;
+            "isMulticolor2": boolean;
             "colorPermutations": {
                 "17474741": {
                     "f": number;
                 }[];
             };
+            "tags": string[];
+            "grid": number;
         };
         "attrs": {
             "fill": string;
@@ -35,11 +68,11 @@ declare const _default: {
             "attrs": {}[];
             "isMulticolor": boolean;
             "isMulticolor2": boolean;
-            "tags": string[];
-            "grid": number;
             "colorPermutations": {
                 "17474741": {}[];
             };
+            "tags": string[];
+            "grid": number;
         };
         "attrs": {}[];
         "properties": {
@@ -58,11 +91,11 @@ declare const _default: {
             "attrs": {}[];
             "isMulticolor": boolean;
             "isMulticolor2": boolean;
-            "tags": string[];
-            "grid": number;
             "colorPermutations": {
                 "17474741": {}[];
             };
+            "tags": string[];
+            "grid": number;
         };
         "attrs": {}[];
         "properties": {

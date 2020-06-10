@@ -21,6 +21,7 @@ export class CcInput {
   @Prop() iconName?: string;
   @Prop() bgField?: string = "";
   @Prop() autocomplete?: string = "";
+  @Prop() maxLength?: number;
 
   focusInput = () => {
     this.inputEl.focus();
@@ -65,6 +66,7 @@ export class CcInput {
             value={this.value}
             ref={this.setInputRef}
             autocomplete={this.autocomplete}
+            maxLength={this.maxLength}
           />
 
           {this.iconName && (
