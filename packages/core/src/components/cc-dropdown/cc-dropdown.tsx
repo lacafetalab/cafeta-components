@@ -138,8 +138,7 @@ export class CcDropdown {
         <div
           class={{
             dropdown: true,
-            "dropdown--readonly":
-              this.fieldReadonly || this.loader || this.iconOnly,
+            "dropdown--readonly":this.fieldReadonly || this.loader || this.iconOnly,
             "dropdown--disabled": this.disabled,
             "dropdown--secondary": this.color === "secondary",
             "dropdown--error": this.error && !this.disabled,

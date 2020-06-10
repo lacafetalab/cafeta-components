@@ -18,12 +18,14 @@
 
  - [cc-button](../cc-button)
  - [cc-dropdown](../cc-dropdown)
+ - [cc-dropdown-new](../cc-dropdown-new)
 
 ### Graph
 ```mermaid
 graph TD;
   cc-button --> cc-loader
   cc-dropdown --> cc-loader
+  cc-dropdown-new --> cc-loader
   style cc-loader fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

@@ -1,11 +1,10 @@
 import notes from "./readme.md";
 import { withKnobs, boolean } from "@storybook/addon-knobs/html";
-import {h} from "@stencil/core";
 
 export default { title: "Form", decorators: [withKnobs] };
 
 const dropdownBuilder = (itemsWrapper, values) => {
-  const dropdown = document.createElement("cc-dropdown");
+  const dropdown = document.createElement("cc-dropdown-new");
   dropdown.choices = itemsWrapper.choices;
   Object.keys(values).forEach((key, index) => {
     const value = values[key];
@@ -14,10 +13,11 @@ const dropdownBuilder = (itemsWrapper, values) => {
   return dropdown;
 };
 
-export const Dropdown = () => {
+
+export const DropdownNew = () => {
   const itemsWrapper = {
     choices: [
-      { value: "123", label: "Seleccione una opción", placeholder: true },
+      { value: "123", label: "Seleccione una opción", placeholder: true, selected:true },
       { value: "123", label: "Opción muy grande que aparece en el dropdown que debe ser controlado. Lorem ipsoum selet amonet os sebut" },
       { value: "124", label: "Opción 2" },
       { value: "125", label: "Opción 3" },
@@ -171,7 +171,7 @@ export const Dropdown = () => {
   return wrap;
 };
 
-Dropdown.story = {
+DropdownNew.story = {
   parameters: {
     notes
   }
