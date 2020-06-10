@@ -19,7 +19,7 @@ yarn add @cafeta/components
 ```
 ## ¿Cómo usar el Design System?
 
-*Para empezar ausar los basta con instalar @cafeta/components en el proyecto*
+*Para empezar a usarlo basta con instalar @cafeta/components en el proyecto*
 
 ```
 yarn add @cafeta/components
