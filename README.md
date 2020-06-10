@@ -19,7 +19,13 @@ yarn add @cafeta/components
 ```
 ## ¿Cómo usar el Design System?
 
-*Aquí se detalla lo que se tiene que considerar previamente*
+*Para empezar ausar los basta con instalar @cafeta/components en el proyecto*
+
+```
+yarn add @cafeta/components
+```
+
+Los siguientes pasos son para customizar el DS acorde al proyecto.
 
 ### Pasos:
 1. Instalar Dependencias
