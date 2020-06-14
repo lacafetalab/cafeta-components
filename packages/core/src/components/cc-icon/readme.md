@@ -21,7 +21,6 @@
  - [cc-dropdown](../cc-dropdown)
  - [cc-input](../cc-input)
  - [cc-modal](../cc-modal)
- - [cc-single-select-input](../cc-single-select-input)
 
 ### Graph
 ```mermaid
@@ -30,7 +29,6 @@ graph TD;
   cc-dropdown --> cc-icon
   cc-input --> cc-icon
   cc-modal --> cc-icon
-  cc-single-select-input --> cc-icon
   style cc-icon fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
