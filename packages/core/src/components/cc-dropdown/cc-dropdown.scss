@@ -10,20 +10,16 @@
     @apply p-sm;
   }
 }
-
 @mixin item-state-hover {
   @apply font-bold;
   color: theme("colors.neutral.03");
   background: theme("backgroundColor.02");
 }
-
 @mixin item-state-focus {
   @apply font-bold;
   color: theme("colors.neutral.02");
   background: theme("backgroundColor.01");
 }
-
-
 @mixin dropdown-state-readonly {
   &:after {
     position: absolute;

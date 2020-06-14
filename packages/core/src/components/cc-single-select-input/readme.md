@@ -1,4 +1,4 @@
-# cc-dropdown-new
+# cc-single-select-input
 
 
 
@@ -19,7 +19,6 @@
 | `fieldReadonly` | `field-readonly` |             | `boolean`                  | `false`          |
 | `helperText`    | `helper-text`    |             | `string`                   | `undefined`      |
 | `iconName`      | `icon-name`      |             | `string`                   | `"chevron-down"` |
-| `iconOnly`      | `icon-only`      |             | `boolean`                  | `false`          |
 | `label`         | `label`          |             | `string`                   | `""`             |
 | `loader`        | `loader`         |             | `boolean`                  | `false`          |
 | `name`          | `name`           |             | `string`                   | `""`             |
@@ -37,15 +36,17 @@
 
 ### Depends on
 
+- [cc-wrapper-field](../cc-wrapper-field)
 - [cc-loader](../cc-loader)
 - [cc-icon](../cc-icon)
 
 ### Graph
 ```mermaid
 graph TD;
-  cc-dropdown-new --> cc-loader
-  cc-dropdown-new --> cc-icon
-  style cc-dropdown-new fill:#f9f,stroke:#333,stroke-width:4px
+  cc-single-select-input --> cc-wrapper-field
+  cc-single-select-input --> cc-loader
+  cc-single-select-input --> cc-icon
+  style cc-single-select-input fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
 ----------------------------------------------
