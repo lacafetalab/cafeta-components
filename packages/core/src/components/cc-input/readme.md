@@ -18,6 +18,7 @@
 | `iconName`     | `icon-name`    |             | `string`                           | `undefined` |
 | `inputRef`     | --             |             | `(el: HTMLInputElement) => void`   | `undefined` |
 | `label`        | `label`        |             | `string`                           | `undefined` |
+| `maxLength`    | `max-length`   |             | `number`                           | `undefined` |
 | `name`         | `name`         |             | `string`                           | `undefined` |
 | `placeholder`  | `placeholder`  |             | `string`                           | `undefined` |
 | `success`      | `success`      |             | `boolean`                          | `false`     |
