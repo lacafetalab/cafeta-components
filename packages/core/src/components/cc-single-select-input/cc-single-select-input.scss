@@ -1,0 +1,84 @@
+*{
+  box-sizing: border-box;
+}
+
+.single-file-input{
+  $minHeightWrapperBox:40px;
+  $separationInputToOptions:8px;
+  &__wrapper{
+    &-icon{
+      @apply absolute;
+      right: 8px;
+      bottom:8px;
+      max-height: 2.4rem;
+    }
+  }
+  &__field{
+    @apply py-sm px-lg ;
+    padding-right: 32px;
+    &-option{
+      @apply m-none p-none ;
+      display: none;
+      visibility: hidden;
+      @apply text-neutral-03;
+      user-select: none;
+      &--is-selected{
+        display: block;
+        visibility: visible;
+      }
+    }
+  }
+  &__placeholder{
+    @apply text-neutral-02;
+    display: block;
+    visibility: visible;
+    user-select: none;
+    &--is-hidden{
+      display: none;
+      visibility: hidden;
+    }
+  }
+  &__options{
+    @apply absolute w-full bg-neutral-04 rounded-sm overflow-auto p-none m-none ;
+    left:0;
+    top: calc(100% + 8px);
+    box-shadow: 0 4px 16px -8px rgba(0, 0, 0, 0.5);
+    max-height: 208px;
+    height: 300px;
+    display: none;
+    z-index: 1;
+    &--is-active{
+      display: block;
+    }
+    &--top{
+      bottom: calc(100% + 8px);
+      top: auto;
+    }
+  }
+  &__option{
+    min-height: 40px;
+    font-size: 14px;
+    line-height: 20px;
+    user-select: none;
+    padding: 10px 1.6rem;
+    &:hover{
+      @apply bg-01;
+    }
+    &--is-selected{
+      @apply bg-02 text-neutral-03 font-bold transition-all;
+      &:hover{
+        @apply bg-02;
+      }
+    }
+    &--is-disabled{
+      @apply text-disabled ;
+      &:hover{
+        @apply cursor-not-allowed ;
+        background: transparent;
+      }
+    }
+  }
+  &__label{
+    @apply py-xsm text-small-01 font-black text-neutral-03 ;
+  }
+}

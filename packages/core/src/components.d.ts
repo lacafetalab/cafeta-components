@@ -47,23 +47,6 @@ export namespace Components {
     'placeholder'?: string;
     'type'?: "single" | "multiple" | "text";
   }
-  interface CcDropdownNew {
-    'bgField'?: string;
-    'border'?: boolean;
-    'choices': Array<any>;
-    'color': "primary" | "secondary";
-    'currentValue'?: string;
-    'disabled'?: boolean;
-    'error'?: boolean;
-    'fieldReadonly'?: boolean;
-    'helperText'?: string;
-    'iconName'?: string;
-    'iconOnly'?: boolean;
-    'label': string;
-    'loader'?: boolean;
-    'name'?: string;
-    'placeholder'?: string;
-  }
   interface CcIcon {
     'name': string;
     'size': number;
@@ -96,6 +79,22 @@ export namespace Components {
   }
   interface CcModalController {
     'modalRef': HTMLElement;
+  }
+  interface CcSingleSelectInput {
+    'bgField'?: string;
+    'border'?: boolean;
+    'choices': Array<any>;
+    'color': "primary" | "secondary";
+    'currentValue'?: string;
+    'disabled'?: boolean;
+    'error'?: boolean;
+    'fieldReadonly'?: boolean;
+    'helperText'?: string;
+    'iconName'?: string;
+    'label': string;
+    'loader'?: boolean;
+    'name'?: string;
+    'placeholder'?: string;
   }
   interface CcSwitcher {
     'checked'?: boolean;
@@ -132,6 +131,18 @@ export namespace Components {
     'success'?: boolean;
     'value'?: string;
   }
+  interface CcWrapperField {
+    'bgField'?: string;
+    'border'?: boolean;
+    'color': "primary" | "secondary";
+    'disabled'?: boolean;
+    'error'?: boolean;
+    'fieldReadonly'?: boolean;
+    'iconOnly'?: boolean;
+    'isActive'?: boolean;
+    'isFocus'?: boolean;
+    'loader'?: boolean;
+  }
 }
 
 declare global {
@@ -147,12 +158,6 @@ declare global {
   var HTMLCcDropdownElement: {
     prototype: HTMLCcDropdownElement;
     new (): HTMLCcDropdownElement;
-  };
-
-  interface HTMLCcDropdownNewElement extends Components.CcDropdownNew, HTMLStencilElement {}
-  var HTMLCcDropdownNewElement: {
-    prototype: HTMLCcDropdownNewElement;
-    new (): HTMLCcDropdownNewElement;
   };
 
   interface HTMLCcIconElement extends Components.CcIcon, HTMLStencilElement {}
@@ -185,6 +190,12 @@ declare global {
     new (): HTMLCcModalControllerElement;
   };
 
+  interface HTMLCcSingleSelectInputElement extends Components.CcSingleSelectInput, HTMLStencilElement {}
+  var HTMLCcSingleSelectInputElement: {
+    prototype: HTMLCcSingleSelectInputElement;
+    new (): HTMLCcSingleSelectInputElement;
+  };
+
   interface HTMLCcSwitcherElement extends Components.CcSwitcher, HTMLStencilElement {}
   var HTMLCcSwitcherElement: {
     prototype: HTMLCcSwitcherElement;
@@ -208,19 +219,26 @@ declare global {
     prototype: HTMLCcTextareaElement;
     new (): HTMLCcTextareaElement;
   };
+
+  interface HTMLCcWrapperFieldElement extends Components.CcWrapperField, HTMLStencilElement {}
+  var HTMLCcWrapperFieldElement: {
+    prototype: HTMLCcWrapperFieldElement;
+    new (): HTMLCcWrapperFieldElement;
+  };
   interface HTMLElementTagNameMap {
     'cc-button': HTMLCcButtonElement;
     'cc-dropdown': HTMLCcDropdownElement;
-    'cc-dropdown-new': HTMLCcDropdownNewElement;
     'cc-icon': HTMLCcIconElement;
     'cc-input': HTMLCcInputElement;
     'cc-loader': HTMLCcLoaderElement;
     'cc-modal': HTMLCcModalElement;
     'cc-modal-controller': HTMLCcModalControllerElement;
+    'cc-single-select-input': HTMLCcSingleSelectInputElement;
     'cc-switcher': HTMLCcSwitcherElement;
     'cc-tabs-tags': HTMLCcTabsTagsElement;
     'cc-tabs-underline': HTMLCcTabsUnderlineElement;
     'cc-textarea': HTMLCcTextareaElement;
+    'cc-wrapper-field': HTMLCcWrapperFieldElement;
   }
 }
 
@@ -262,24 +280,6 @@ declare namespace LocalJSX {
     'placeholder'?: string;
     'type'?: "single" | "multiple" | "text";
   }
-  interface CcDropdownNew {
-    'bgField'?: string;
-    'border'?: boolean;
-    'choices'?: Array<any>;
-    'color'?: "primary" | "secondary";
-    'currentValue'?: string;
-    'disabled'?: boolean;
-    'error'?: boolean;
-    'fieldReadonly'?: boolean;
-    'helperText'?: string;
-    'iconName'?: string;
-    'iconOnly'?: boolean;
-    'label'?: string;
-    'loader'?: boolean;
-    'name'?: string;
-    'onChangeChoice'?: (event: CustomEvent<any>) => void;
-    'placeholder'?: string;
-  }
   interface CcIcon {
     'name'?: string;
     'size'?: number;
@@ -314,6 +314,23 @@ declare namespace LocalJSX {
   }
   interface CcModalController {
     'modalRef'?: HTMLElement;
+  }
+  interface CcSingleSelectInput {
+    'bgField'?: string;
+    'border'?: boolean;
+    'choices'?: Array<any>;
+    'color'?: "primary" | "secondary";
+    'currentValue'?: string;
+    'disabled'?: boolean;
+    'error'?: boolean;
+    'fieldReadonly'?: boolean;
+    'helperText'?: string;
+    'iconName'?: string;
+    'label'?: string;
+    'loader'?: boolean;
+    'name'?: string;
+    'onChangeChoice'?: (event: CustomEvent<any>) => void;
+    'placeholder'?: string;
   }
   interface CcSwitcher {
     'checked'?: boolean;
@@ -353,20 +370,33 @@ declare namespace LocalJSX {
     'success'?: boolean;
     'value'?: string;
   }
+  interface CcWrapperField {
+    'bgField'?: string;
+    'border'?: boolean;
+    'color'?: "primary" | "secondary";
+    'disabled'?: boolean;
+    'error'?: boolean;
+    'fieldReadonly'?: boolean;
+    'iconOnly'?: boolean;
+    'isActive'?: boolean;
+    'isFocus'?: boolean;
+    'loader'?: boolean;
+  }
 
   interface IntrinsicElements {
     'cc-button': CcButton;
     'cc-dropdown': CcDropdown;
-    'cc-dropdown-new': CcDropdownNew;
     'cc-icon': CcIcon;
     'cc-input': CcInput;
     'cc-loader': CcLoader;
     'cc-modal': CcModal;
     'cc-modal-controller': CcModalController;
+    'cc-single-select-input': CcSingleSelectInput;
     'cc-switcher': CcSwitcher;
     'cc-tabs-tags': CcTabsTags;
     'cc-tabs-underline': CcTabsUnderline;
     'cc-textarea': CcTextarea;
+    'cc-wrapper-field': CcWrapperField;
   }
 }
 
@@ -378,16 +408,17 @@ declare module "@stencil/core" {
     interface IntrinsicElements {
       'cc-button': LocalJSX.CcButton & JSXBase.HTMLAttributes<HTMLCcButtonElement>;
       'cc-dropdown': LocalJSX.CcDropdown & JSXBase.HTMLAttributes<HTMLCcDropdownElement>;
-      'cc-dropdown-new': LocalJSX.CcDropdownNew & JSXBase.HTMLAttributes<HTMLCcDropdownNewElement>;
       'cc-icon': LocalJSX.CcIcon & JSXBase.HTMLAttributes<HTMLCcIconElement>;
       'cc-input': LocalJSX.CcInput & JSXBase.HTMLAttributes<HTMLCcInputElement>;
       'cc-loader': LocalJSX.CcLoader & JSXBase.HTMLAttributes<HTMLCcLoaderElement>;
       'cc-modal': LocalJSX.CcModal & JSXBase.HTMLAttributes<HTMLCcModalElement>;
       'cc-modal-controller': LocalJSX.CcModalController & JSXBase.HTMLAttributes<HTMLCcModalControllerElement>;
+      'cc-single-select-input': LocalJSX.CcSingleSelectInput & JSXBase.HTMLAttributes<HTMLCcSingleSelectInputElement>;
       'cc-switcher': LocalJSX.CcSwitcher & JSXBase.HTMLAttributes<HTMLCcSwitcherElement>;
       'cc-tabs-tags': LocalJSX.CcTabsTags & JSXBase.HTMLAttributes<HTMLCcTabsTagsElement>;
       'cc-tabs-underline': LocalJSX.CcTabsUnderline & JSXBase.HTMLAttributes<HTMLCcTabsUnderlineElement>;
       'cc-textarea': LocalJSX.CcTextarea & JSXBase.HTMLAttributes<HTMLCcTextareaElement>;
+      'cc-wrapper-field': LocalJSX.CcWrapperField & JSXBase.HTMLAttributes<HTMLCcWrapperFieldElement>;
     }
   }
 }

@@ -99,6 +99,7 @@ export class CcDropdown {
   }
 
   clickDropdownHandler(event: any) {
+    console.log(event)
     this.clickDropdown.emit(event);
   }
 
