@@ -1,0 +1,122 @@
+@mixin wrapper-field-state-readonly {
+  &:after {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    content: "";
+    background: transparent;
+  }
+}
+
+
+@mixin wrapper-field-state-error {
+  @apply border-error;
+  &:focus-within,
+  &:hover {
+    @apply border-error;
+  }
+  cc-icon{
+    @apply text-error;
+  }
+}
+
+@mixin wrapper-field-no-border {
+  border-width: 0;
+
+  &:focus-within,
+  &:hover {
+    border-width: 0;
+  }
+}
+
+@mixin wrapper-field-state-secondary {
+  cc-icon{
+    @apply text-secondary;
+  }
+  cc-loader{
+    @apply text-secondary;
+  }
+  &:focus-within,
+  &:hover {
+    @apply border-secondary;
+    cc-icon{
+      @apply text-secondary;
+    }
+  }
+}
+
+@mixin wrapper-field-no-background {
+  background: transparent;
+}
+
+@mixin wrapper-field-state-disabled {
+  @apply border-disabled cursor-not-allowed;
+  cc-icon{
+    @apply text-disabled;
+  }
+  &:focus-within,
+  &:hover {
+    @apply border-disabled;
+    @apply text-disabled;
+  }
+
+}
+
+@mixin wrapper-field-state-primary {
+  &:hover{
+    @apply border-primary ;
+  }
+  cc-icon{
+    @apply text-primary;
+  }
+  cc-loader{
+    @apply text-primary;
+  }
+}
+
+.wrapper-field {
+  $minHeightWrapperBox:40px;
+  @apply relative w-full rounded-sm border border-solid border-neutral-02 text-body block cursor-pointer;
+  min-height: $minHeightWrapperBox;
+  @include wrapper-field-state-primary;
+  &--readonly{
+    @include wrapper-field-state-readonly;
+  }
+  &--no-border{
+    @include wrapper-field-no-border;
+  }
+  &--no-background{
+    @include wrapper-field-no-background;
+  }
+  &--secondary{
+    @include wrapper-field-state-secondary;
+  }
+  &--disabled{
+    @include wrapper-field-state-disabled;
+  }
+  &--error{
+    @include wrapper-field-state-error;
+  }
+  &--is-focus{
+    @apply border-primary;
+    &:hover{
+      @apply border-primary;
+    }
+    &.wrapper-field{
+      &--secondary{
+        @apply border-secondary;
+        &:hover{
+          @apply border-secondary;
+        }
+      }
+      &--error{
+        @include wrapper-field-state-error;
+      }
+    }
+    cc-icon{
+      transform: rotate(180deg);
+    }
+  }
+}

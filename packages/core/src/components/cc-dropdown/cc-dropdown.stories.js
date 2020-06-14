@@ -17,13 +17,13 @@ const dropdownBuilder = (itemsWrapper, values) => {
 export const Dropdown = () => {
   const itemsWrapper = {
     choices: [
-      { value: "123", label: "Seleccione una opción", placeholder: true },
+      { value: "123", label: "Seleccione una opción" },
       { value: "123", label: "Opción muy grande que aparece en el dropdown que debe ser controlado. Lorem ipsoum selet amonet os sebut" },
       { value: "124", label: "Opción 2" },
       { value: "125", label: "Opción 3" },
       { value: "126", label: "Opción 4" },
       { value: "127", label: "Opción 5", disabled: true },
-      { value: "128", label: "Opción 6" }
+      { value: "128", label: "Opción 6",}
     ]
   };
 
