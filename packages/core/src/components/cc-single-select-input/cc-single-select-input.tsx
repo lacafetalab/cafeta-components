@@ -64,6 +64,7 @@ export class CcSingleSelectInput {
   placeholderSelected = () =>{
     this.clearChoices();
     this.handleHideOptions();
+    this.changeChoice.emit(null);
   }
 
   handleToogleOptions(){
@@ -200,7 +201,10 @@ export class CcSingleSelectInput {
                 'single-file-input__options--is-active':this.isOpenDropdown,
                 "single-file-input__options--top": this.positionOptionstop,
               }}>
-            <li class={{"single-file-input__option":true, "single-file-input__option--is-selected": !this.knowIfThereIsAnItemSelected() }} onClick={this.placeholderSelected}>{this.placeholder}</li>
+            {
+              this.placeholder &&
+              <li class={{ "single-file-input__placeholder":true,"single-file-input__option":true, "single-file-input__option--is-selected": !this.knowIfThereIsAnItemSelected() }} onClick={this.placeholderSelected}>{this.placeholder}</li>
+            }
             {
               this._choices.map((c , index) =>{
                 return <li
