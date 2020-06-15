@@ -3,8 +3,6 @@
 }
 
 .single-file-input{
-  $minHeightWrapperBox:40px;
-  $separationInputToOptions:8px;
   &__wrapper{
     &-icon{
       @apply absolute;
@@ -16,6 +14,7 @@
   &__field{
     @apply py-sm px-lg ;
     padding-right: 32px;
+    min-height: 40px;
     &-option{
       @apply m-none p-none ;
       display: none;
@@ -78,6 +77,6 @@
     }
   }
   &__label{
-    @apply py-xsm text-small-01 font-black text-neutral-03 ;
+    @apply py-xsm text-small-01 font-black text-neutral-03 block ;
   }
 }
