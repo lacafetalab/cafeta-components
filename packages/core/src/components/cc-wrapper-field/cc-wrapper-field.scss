@@ -77,7 +77,7 @@
 }
 
 .wrapper-field {
-  $minHeightWrapperBox:40px;
+  $minHeightWrapperBox:42px;
   @apply relative w-full rounded-sm border border-solid border-neutral-02 text-body block cursor-pointer;
   min-height: $minHeightWrapperBox;
   @include wrapper-field-state-primary;
