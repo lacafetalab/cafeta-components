@@ -5,8 +5,7 @@ import {
   Prop,
   State,
   Event,
-  EventEmitter,
-  Watch
+  EventEmitter
 } from "@stencil/core";
 
 @Component({
@@ -44,15 +43,15 @@ export class CcSingleSelectInput {
 
   @Event() changeChoice: EventEmitter;
 
-  @Watch("choices")
-  setChoices(newValue: any, oldValue: any) {
-    const newValueStringify = JSON.stringify(newValue);
-    const oldValueStringify = JSON.stringify(oldValue);
+  // @Watch("choices")
+  // setChoices(newValue: any, oldValue: any) {
+  //   const newValueStringify = JSON.stringify(newValue);
+  //   const oldValueStringify = JSON.stringify(oldValue);
 
-    if (newValueStringify !== oldValueStringify) {
-      this._choices = newValue;
-    }
-  }
+  //   if (newValueStringify !== oldValueStringify) {
+  //     this._choices = newValue;
+  //   }
+  // }
 
   focusInput = () => {
     this.inputEl.focus();
@@ -80,6 +79,8 @@ export class CcSingleSelectInput {
   }
 
   handleOptionClick = (value: string | number) => {
+    this.handleHideOptions();
+
     if (!this.validateIfTheNewOptionSelectedIsDifferentFromThePrevious(value)) {
       this.clearChoices();
       const newChoices = [...this._choices];
@@ -91,7 +92,6 @@ export class CcSingleSelectInput {
       this.autocomplete ? (this.valueInput = choiceElementSelected.label) : "";
       this.changeChoice.emit(choiceElementSelected.value);
     }
-    this.handleHideOptions();
   };
 
   placeholderSelected = () => {
@@ -189,7 +189,7 @@ export class CcSingleSelectInput {
   };
 
   componentWillLoad() {
-    this._choices = [...this.choices];
+    this._choices = this.choices;
     document.addEventListener("click", this.closeDroprownIfClickOutDropdown);
   }
 
