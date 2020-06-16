@@ -25,7 +25,16 @@ export const SingleSelectInput = () => {
       { value: "124", label: "Opción 2" },
     ]
   };
+
   const itemsWrapper2 = {
+    choices: [
+      { label: "Todos los periodos", value: "", selected: true },
+      { label: "2020 - Ciclo 2 Agosto", value: "2203", selected: false },
+      { label: "2020 - Ciclo 1 Marzo", value: "2202", selected: false },
+      { label: "2020 - Ciclo Verano", value: "2201", selected: false }
+    ]
+  }
+  const itemsWrapper4 = {
     choices: [
       { value: "123", label: "Opción muy grande que aparece en el dropdown que debe ser controlado. Lorem ipsoum selet amonet os sebut" },
       { value: "124", label: "Opción 2" },
@@ -88,7 +97,6 @@ export const SingleSelectInput = () => {
   });
 
   const dropdown21 = dropdownBuilder(itemsWrapper2, {
-    placeholder: defaultValue1,
     disabled: value2,
     error: value3,
     label: value4,
