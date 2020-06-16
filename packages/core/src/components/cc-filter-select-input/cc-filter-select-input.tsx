@@ -108,9 +108,6 @@ export class CcFilterSelectInput {
               .toLowerCase()
               .normalize("NFD")
               .replace(/[\u0300-\u036f]/g, "");
-            console.log(loweredChoiceWithoutTilde);
-            console.log(loweredInputWithoutTilde);
-            console.log("--");
             return loweredChoiceWithoutTilde.includes(loweredInputWithoutTilde);
           }
         })
@@ -277,6 +274,7 @@ export class CcFilterSelectInput {
                 width: `${this.valueInput.length + 1}ch`,
                 maxWidth: "100%"
               }}
+              bgField="bg-transparent"
               onInput={(e: Event) => this.setInputText(e)}
               border={false}
               value={this.valueInput}

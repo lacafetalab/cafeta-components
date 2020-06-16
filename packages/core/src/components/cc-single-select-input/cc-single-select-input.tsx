@@ -68,17 +68,30 @@ export class CcSingleSelectInput {
     return this._choices.filter(choice => choice.selected === true).length > 0;
   }
 
+  validateIfTheNewOptionSelectedIsDifferentFromThePrevious(
+    value: string | number
+  ) {
+    if (this.knowIfThereIsAnItemSelected()) {
+      const choiceSelected = this._choices.filter(choice => choice.selected)[0]
+        .value;
+      return choiceSelected === value;
+    }
+    return false;
+  }
+
   handleOptionClick = (value: string | number) => {
-    this.clearChoices();
+    if (!this.validateIfTheNewOptionSelectedIsDifferentFromThePrevious(value)) {
+      this.clearChoices();
+      const newChoices = [...this._choices];
+      newChoices.filter(choice => choice.value === value)[0].selected = true;
+      this._choices = [...newChoices];
+      const choiceElementSelected = this._choices.filter(
+        choice => choice.value === value
+      )[0];
+      this.autocomplete ? (this.valueInput = choiceElementSelected.label) : "";
+      this.changeChoice.emit(choiceElementSelected.value);
+    }
     this.handleHideOptions();
-    const newChoices = [...this._choices];
-    newChoices.filter(choice => choice.value === value)[0].selected = true;
-    this._choices = [...newChoices];
-    const choiceElementSelected = this._choices.filter(
-      choice => choice.value === value
-    )[0];
-    this.autocomplete ? (this.valueInput = choiceElementSelected.label) : "";
-    this.changeChoice.emit(choiceElementSelected.value);
   };
 
   placeholderSelected = () => {
@@ -109,14 +122,10 @@ export class CcSingleSelectInput {
               .toLowerCase()
               .normalize("NFD")
               .replace(/[\u0300-\u036f]/g, "");
-            console.log(loweredChoiceWithoutTilde);
-            console.log(loweredInputWithoutTilde);
-            console.log("--");
             return loweredChoiceWithoutTilde.includes(loweredInputWithoutTilde);
           }
         })
       : this._choices;
-    console.log(filterdList);
     return filterdList;
   };
 
@@ -231,6 +240,7 @@ export class CcSingleSelectInput {
             )}
             {this.autocomplete && (
               <cc-input
+                bgField="bg-transparent"
                 value={this.valueInput}
                 placeholder={this.placeholder}
                 border={false}
