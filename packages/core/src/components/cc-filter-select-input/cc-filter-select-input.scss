@@ -2,7 +2,7 @@
   box-sizing: border-box;
 }
 
-.single-file-input {
+.filter-file-input {
   &__wrapper {
     &-icon {
       @apply absolute;
@@ -25,9 +25,6 @@
         display: block;
         visibility: visible;
       }
-    }
-    input {
-      padding: 0;
     }
   }
   &__placeholder {
@@ -67,6 +64,7 @@
     }
     &--is-selected {
       @apply bg-02 text-neutral-03 font-bold transition-all;
+      display: none;
       &:hover {
         @apply bg-02;
       }
@@ -81,5 +79,38 @@
   }
   &__label {
     @apply py-xsm text-small-01 font-black text-neutral-03 block;
+  }
+  &__input {
+    &--is-hidden {
+      display: none !important;
+    }
+  }
+  &__dot {
+    &-wrapper {
+      display: inline-block;
+      &--is-hidden {
+        display: none;
+      }
+    }
+    &-list {
+      display: flex;
+      flex-wrap: wrap;
+      margin: -4px;
+    }
+    &-item {
+      @apply bg-01 flex items-end;
+      border-radius: 10px;
+      padding: 0.2rem 0.8rem 0.2rem 1.2rem;
+      margin: 4px;
+    }
+    &-text {
+      @apply text-small-01;
+    }
+  }
+  cc-input {
+    display: inline-block;
+    .input__field {
+      padding: 0;
+    }
   }
 }

@@ -4,7 +4,7 @@ import { withKnobs, boolean } from "@storybook/addon-knobs/html";
 export default { title: "Form", decorators: [withKnobs] };
 
 const dropdownBuilder = (itemsWrapper, values) => {
-  const dropdown = document.createElement("cc-single-select-input");
+  const dropdown = document.createElement("cc-filter-select-input");
   dropdown.choices = itemsWrapper.choices;
   Object.keys(values).forEach((key, index) => {
     const value = values[key];
@@ -14,7 +14,7 @@ const dropdownBuilder = (itemsWrapper, values) => {
 };
 
 
-export const SingleSelectInput = () => {
+export const FilterSelectInput = () => {
   const itemsWrapper = {
     choices: [
       { value: "123", label: "Opción muy grande que aparece en el dropdown que debe ser controlado. Lorem ipsoum selet amonet os sebut" },
@@ -77,9 +77,6 @@ export const SingleSelectInput = () => {
     error: value3,
     label: value4,
     loader: value5,
-    autocomplete: true,
-    IconRotate: false,
-    iconName: "search",
     helperText: "Incorrect entry"
   });
 
@@ -134,7 +131,7 @@ export const SingleSelectInput = () => {
   return wrap;
 };
 
-SingleSelectInput.story = {
+FilterSelectInput.story = {
   parameters: {
     notes
   }
