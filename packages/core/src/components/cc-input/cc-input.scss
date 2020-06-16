@@ -34,7 +34,14 @@
     .input--error & {
       @apply border-error;
     }
+    .input--without-border & {
+      border-width: 0;
 
+      &:focus-within,
+      &:hover {
+        border-width: 0;
+      }
+    }
     &:focus {
       outline: 0;
 
@@ -53,6 +60,10 @@
       .input--error & {
         @apply border-error;
       }
+    }
+
+    &::placeholder {
+      @apply text-neutral-02;
     }
 
     &--default-bg {

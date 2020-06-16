@@ -1,4 +1,4 @@
-# cc-single-select-input
+# cc-filter-select-input
 
 
 
@@ -9,8 +9,6 @@
 
 | Property        | Attribute        | Description | Type                       | Default          |
 | --------------- | ---------------- | ----------- | -------------------------- | ---------------- |
-| `IconRotate`    | `icon-rotate`    |             | `boolean`                  | `true`           |
-| `autocomplete`  | `autocomplete`   |             | `boolean`                  | `false`          |
 | `bgField`       | `bg-field`       |             | `string`                   | `""`             |
 | `border`        | `border`         |             | `boolean`                  | `true`           |
 | `choices`       | --               |             | `any[]`                    | `undefined`      |
@@ -46,12 +44,12 @@
 ### Graph
 ```mermaid
 graph TD;
-  cc-single-select-input --> cc-wrapper-field
-  cc-single-select-input --> cc-input
-  cc-single-select-input --> cc-loader
-  cc-single-select-input --> cc-icon
+  cc-filter-select-input --> cc-wrapper-field
+  cc-filter-select-input --> cc-input
+  cc-filter-select-input --> cc-loader
+  cc-filter-select-input --> cc-icon
   cc-input --> cc-icon
-  style cc-single-select-input fill:#f9f,stroke:#333,stroke-width:4px
+  style cc-filter-select-input fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
 ----------------------------------------------

@@ -22,6 +22,7 @@ export class CcInput {
   @Prop() bgField?: string = "";
   @Prop() autocomplete?: string = "";
   @Prop() maxLength?: number;
+  @Prop() border?:boolean= true
 
   focusInput = () => {
     this.inputEl.focus();
@@ -44,7 +45,8 @@ export class CcInput {
           "input--secondary": this.color === "secondary",
           "input--success": this.success && !this.error && !this.disabled,
           "input--error": this.error && !this.success && !this.disabled,
-          "input--disabled": this.disabled
+          "input--disabled": this.disabled,
+          "input--without-border": !this.border
         }}
         data-testid="cc-input"
       >

@@ -84,6 +84,9 @@
         @apply border-error;
       }
     }
+    &::placeholder {
+      @apply text-neutral-02;
+    }
   }
 
   &__label {

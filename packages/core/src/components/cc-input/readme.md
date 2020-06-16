@@ -11,6 +11,7 @@
 | -------------- | -------------- | ----------- | ---------------------------------- | ----------- |
 | `autocomplete` | `autocomplete` |             | `string`                           | `""`        |
 | `bgField`      | `bg-field`     |             | `string`                           | `""`        |
+| `border`       | `border`       |             | `boolean`                          | `true`      |
 | `color`        | `color`        |             | `"primary" \| "secondary"`         | `"primary"` |
 | `disabled`     | `disabled`     |             | `boolean`                          | `false`     |
 | `error`        | `error`        |             | `boolean`                          | `false`     |
@@ -28,6 +29,11 @@
 
 ## Dependencies
 
+### Used by
+
+ - [cc-filter-select-input](../cc-filter-select-input)
+ - [cc-single-select-input](../cc-single-select-input)
+
 ### Depends on
 
 - [cc-icon](../cc-icon)
@@ -36,6 +42,8 @@
 ```mermaid
 graph TD;
   cc-input --> cc-icon
+  cc-filter-select-input --> cc-input
+  cc-single-select-input --> cc-input
   style cc-input fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
