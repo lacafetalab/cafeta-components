@@ -9,6 +9,7 @@
 
 | Property        | Attribute        | Description | Type                       | Default     |
 | --------------- | ---------------- | ----------- | -------------------------- | ----------- |
+| `IconRotate`    | `icon-rotate`    |             | `boolean`                  | `true`      |
 | `bgField`       | `bg-field`       |             | `string`                   | `""`        |
 | `border`        | `border`         |             | `boolean`                  | `true`      |
 | `color`         | `color`          |             | `"primary" \| "secondary"` | `"primary"` |
@@ -25,11 +26,13 @@
 
 ### Used by
 
+ - [cc-filter-select-input](../cc-filter-select-input)
  - [cc-single-select-input](../cc-single-select-input)
 
 ### Graph
 ```mermaid
 graph TD;
+  cc-filter-select-input --> cc-wrapper-field
   cc-single-select-input --> cc-wrapper-field
   style cc-wrapper-field fill:#f9f,stroke:#333,stroke-width:4px
 ```

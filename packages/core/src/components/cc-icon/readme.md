@@ -19,6 +19,7 @@
 
  - [cc-button](../cc-button)
  - [cc-dropdown](../cc-dropdown)
+ - [cc-filter-select-input](../cc-filter-select-input)
  - [cc-input](../cc-input)
  - [cc-modal](../cc-modal)
  - [cc-single-select-input](../cc-single-select-input)
@@ -28,6 +29,7 @@
 graph TD;
   cc-button --> cc-icon
   cc-dropdown --> cc-icon
+  cc-filter-select-input --> cc-icon
   cc-input --> cc-icon
   cc-modal --> cc-icon
   cc-single-select-input --> cc-icon

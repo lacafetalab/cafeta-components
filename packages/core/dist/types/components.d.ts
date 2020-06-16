@@ -47,6 +47,22 @@ export namespace Components {
     'placeholder'?: string;
     'type'?: "single" | "multiple" | "text";
   }
+  interface CcFilterSelectInput {
+    'bgField'?: string;
+    'border'?: boolean;
+    'choices': Array<any>;
+    'color': "primary" | "secondary";
+    'currentValue'?: string;
+    'disabled'?: boolean;
+    'error'?: boolean;
+    'fieldReadonly'?: boolean;
+    'helperText'?: string;
+    'iconName'?: string;
+    'label': string;
+    'loader'?: boolean;
+    'name'?: string;
+    'placeholder'?: string;
+  }
   interface CcIcon {
     'name': string;
     'size': number;
@@ -54,6 +70,7 @@ export namespace Components {
   interface CcInput {
     'autocomplete'?: string;
     'bgField'?: string;
+    'border'?: boolean;
     'color': "primary" | "secondary";
     'disabled'?: boolean;
     'error'?: boolean;
@@ -82,6 +99,8 @@ export namespace Components {
     'modalRef': HTMLElement;
   }
   interface CcSingleSelectInput {
+    'IconRotate'?: boolean;
+    'autocomplete'?: boolean;
     'bgField'?: string;
     'border'?: boolean;
     'choices': Array<any>;
@@ -133,6 +152,7 @@ export namespace Components {
     'value'?: string;
   }
   interface CcWrapperField {
+    'IconRotate'?: boolean;
     'bgField'?: string;
     'border'?: boolean;
     'color': "primary" | "secondary";
@@ -159,6 +179,12 @@ declare global {
   var HTMLCcDropdownElement: {
     prototype: HTMLCcDropdownElement;
     new (): HTMLCcDropdownElement;
+  };
+
+  interface HTMLCcFilterSelectInputElement extends Components.CcFilterSelectInput, HTMLStencilElement {}
+  var HTMLCcFilterSelectInputElement: {
+    prototype: HTMLCcFilterSelectInputElement;
+    new (): HTMLCcFilterSelectInputElement;
   };
 
   interface HTMLCcIconElement extends Components.CcIcon, HTMLStencilElement {}
@@ -229,6 +255,7 @@ declare global {
   interface HTMLElementTagNameMap {
     'cc-button': HTMLCcButtonElement;
     'cc-dropdown': HTMLCcDropdownElement;
+    'cc-filter-select-input': HTMLCcFilterSelectInputElement;
     'cc-icon': HTMLCcIconElement;
     'cc-input': HTMLCcInputElement;
     'cc-loader': HTMLCcLoaderElement;
@@ -281,6 +308,23 @@ declare namespace LocalJSX {
     'placeholder'?: string;
     'type'?: "single" | "multiple" | "text";
   }
+  interface CcFilterSelectInput {
+    'bgField'?: string;
+    'border'?: boolean;
+    'choices'?: Array<any>;
+    'color'?: "primary" | "secondary";
+    'currentValue'?: string;
+    'disabled'?: boolean;
+    'error'?: boolean;
+    'fieldReadonly'?: boolean;
+    'helperText'?: string;
+    'iconName'?: string;
+    'label'?: string;
+    'loader'?: boolean;
+    'name'?: string;
+    'onChangeChoice'?: (event: CustomEvent<any>) => void;
+    'placeholder'?: string;
+  }
   interface CcIcon {
     'name'?: string;
     'size'?: number;
@@ -288,6 +332,7 @@ declare namespace LocalJSX {
   interface CcInput {
     'autocomplete'?: string;
     'bgField'?: string;
+    'border'?: boolean;
     'color'?: "primary" | "secondary";
     'disabled'?: boolean;
     'error'?: boolean;
@@ -318,6 +363,8 @@ declare namespace LocalJSX {
     'modalRef'?: HTMLElement;
   }
   interface CcSingleSelectInput {
+    'IconRotate'?: boolean;
+    'autocomplete'?: boolean;
     'bgField'?: string;
     'border'?: boolean;
     'choices'?: Array<any>;
@@ -373,6 +420,7 @@ declare namespace LocalJSX {
     'value'?: string;
   }
   interface CcWrapperField {
+    'IconRotate'?: boolean;
     'bgField'?: string;
     'border'?: boolean;
     'color'?: "primary" | "secondary";
@@ -388,6 +436,7 @@ declare namespace LocalJSX {
   interface IntrinsicElements {
     'cc-button': CcButton;
     'cc-dropdown': CcDropdown;
+    'cc-filter-select-input': CcFilterSelectInput;
     'cc-icon': CcIcon;
     'cc-input': CcInput;
     'cc-loader': CcLoader;
@@ -410,6 +459,7 @@ declare module "@stencil/core" {
     interface IntrinsicElements {
       'cc-button': LocalJSX.CcButton & JSXBase.HTMLAttributes<HTMLCcButtonElement>;
       'cc-dropdown': LocalJSX.CcDropdown & JSXBase.HTMLAttributes<HTMLCcDropdownElement>;
+      'cc-filter-select-input': LocalJSX.CcFilterSelectInput & JSXBase.HTMLAttributes<HTMLCcFilterSelectInputElement>;
       'cc-icon': LocalJSX.CcIcon & JSXBase.HTMLAttributes<HTMLCcIconElement>;
       'cc-input': LocalJSX.CcInput & JSXBase.HTMLAttributes<HTMLCcInputElement>;
       'cc-loader': LocalJSX.CcLoader & JSXBase.HTMLAttributes<HTMLCcLoaderElement>;

@@ -1,4 +1,13 @@
-import { h, Component, Host, Prop, State , Event , EventEmitter, Watch } from "@stencil/core";
+import {
+  h,
+  Component,
+  Host,
+  Prop,
+  State,
+  Event,
+  EventEmitter,
+  Watch
+} from "@stencil/core";
 
 @Component({
   tag: "cc-single-select-input",
@@ -8,12 +17,14 @@ import { h, Component, Host, Prop, State , Event , EventEmitter, Watch } from "@
 export class CcSingleSelectInput {
   private singleFileInput: HTMLElement;
   private dropdownItems: HTMLElement;
+  private inputEl: HTMLElement;
   private observerItems: MutationObserver;
 
   @State() _choices: Array<any> = [];
   @State() isOpenDropdown: boolean = false;
-  @State() thereIsLowerSpace:boolean = false;
-  @State() positionOptionstop:boolean = false;
+  @State() thereIsLowerSpace: boolean = false;
+  @State() positionOptionstop: boolean = false;
+  @State() valueInput: string = "";
   @Prop() label: string = "";
   @Prop() choices: Array<any>;
   @Prop() error?: boolean = false;
@@ -28,6 +39,8 @@ export class CcSingleSelectInput {
   @Prop() border?: boolean = true;
   @Prop() bgField?: string = "";
   @Prop() loader?: boolean = false;
+  @Prop() autocomplete?: boolean = false;
+  @Prop() IconRotate?: boolean = true;
 
   @Event() changeChoice: EventEmitter;
 
@@ -41,93 +54,130 @@ export class CcSingleSelectInput {
     }
   }
 
-  clearChoices(){
+  focusInput = () => {
+    this.inputEl.focus();
+  };
+
+  clearChoices() {
     const newChoices = [...this._choices];
-    newChoices.map( choice => choice.selected = false);
+    newChoices.map(choice => (choice.selected = false));
     this._choices = newChoices;
   }
 
-  knowIfThereIsAnItemSelected(){
+  knowIfThereIsAnItemSelected() {
     return this._choices.filter(choice => choice.selected === true).length > 0;
   }
 
-  handleOptionClick = (index:number) =>{
+  handleOptionClick = (value: string | number) => {
     this.clearChoices();
     this.handleHideOptions();
     const newChoices = [...this._choices];
-    newChoices[index].selected = true;
+    newChoices.filter(choice => choice.value === value)[0].selected = true;
     this._choices = [...newChoices];
-    const valueEmit = this._choices[index].value;
-    this.changeChoice.emit(valueEmit)
-  }
+    const choiceElementSelected = this._choices.filter(
+      choice => choice.value === value
+    )[0];
+    this.autocomplete ? (this.valueInput = choiceElementSelected.label) : "";
+    this.changeChoice.emit(choiceElementSelected.value);
+  };
 
-  placeholderSelected = () =>{
+  placeholderSelected = () => {
     this.clearChoices();
     this.handleHideOptions();
     this.changeChoice.emit(null);
-  }
+  };
 
-  handleToogleOptions(){
+  handleToogleOptions() {
     this.isOpenDropdown = !this.isOpenDropdown;
-    this.calculatePositionOfOptions()
+    this.calculatePositionOfOptions();
   }
 
-  handleShowOptions= () =>{
+  setInputValue(value: string) {
+    this.valueInput = value;
+    if (this.valueInput.length) this.handleShowOptions();
+  }
+
+  filteredChoices = () => {
+    const filterdList = this.valueInput.length
+      ? this._choices.filter(choice => {
+          if (!choice.selected) {
+            const loweredChoiceWithoutTilde = choice.label
+              .toLowerCase()
+              .normalize("NFD")
+              .replace(/[\u0300-\u036f]/g, "");
+            const loweredInputWithoutTilde = this.valueInput
+              .toLowerCase()
+              .normalize("NFD")
+              .replace(/[\u0300-\u036f]/g, "");
+            console.log(loweredChoiceWithoutTilde);
+            console.log(loweredInputWithoutTilde);
+            console.log("--");
+            return loweredChoiceWithoutTilde.includes(loweredInputWithoutTilde);
+          }
+        })
+      : this._choices;
+    console.log(filterdList);
+    return filterdList;
+  };
+
+  handleShowOptions = () => {
     this.isOpenDropdown = true;
-  }
+  };
 
-  handleHideOptions = () =>{
+  handleHideOptions = () => {
     this.isOpenDropdown = false;
-  }
+  };
 
-  closeDroprownIfClickOutDropdown = (event) =>{
+  closeDroprownIfClickOutDropdown = event => {
     const elementActiveDropdown = this.singleFileInput;
     let targetElement = event.target;
 
-    if (
-      !elementActiveDropdown.contains(targetElement)
-    ) {
+    if (!elementActiveDropdown.contains(targetElement)) {
       return this.handleHideOptions();
     }
-  }
+  };
 
   getHeigthWrapperOptions = () => {
     return this.dropdownItems.getBoundingClientRect().height;
-  }
+  };
 
-  observerListItems = () =>{
-
+  observerListItems = () => {
     const config = { attributes: true, childList: false, characterData: false };
 
-    this.observerItems = new MutationObserver((mutations) => {
-      mutations.forEach((mutation) => {
-        if( mutation.type === "attributes" ){
+    this.observerItems = new MutationObserver(mutations => {
+      mutations.forEach(mutation => {
+        if (mutation.type === "attributes") {
           this.calculatePositionOfOptions();
+          if (this.autocomplete) this.focusInput();
         }
       });
     });
 
     this.observerItems.observe(this.dropdownItems, config);
-  }
+  };
 
-  calculatePositionOfOptions = () =>{
-    if(this.isOpenDropdown){
-      const dropdown =  this.singleFileInput;
+  calculatePositionOfOptions = () => {
+    if (this.isOpenDropdown) {
+      const dropdown = this.singleFileInput;
       const elementItems = this.dropdownItems;
-      const heightBody =  document.body.getBoundingClientRect().height;
+      const heightBody = document.body.getBoundingClientRect().height;
       const listHeight = elementItems.getBoundingClientRect().height;
       const dropdownField = dropdown.getBoundingClientRect().height;
       const positionDropdown = dropdown.getBoundingClientRect().top;
       const MARGIN_DROPDOWN_TO_ITEMS = 8;
-      const elementPos = positionDropdown + dropdownField + MARGIN_DROPDOWN_TO_ITEMS + listHeight;
-      return this.positionOptionstop = heightBody < elementPos
+      const elementPos =
+        positionDropdown +
+        dropdownField +
+        MARGIN_DROPDOWN_TO_ITEMS +
+        listHeight;
+      return (this.positionOptionstop = heightBody < elementPos);
     }
     this.positionOptionstop = false;
-  }
+  };
 
-  validateDisabled = () =>{
-    this.disabled ? false : this.handleToogleOptions()
-  }
+  validateDisabled = () => {
+    this.disabled ? false : this.handleToogleOptions();
+  };
 
   componentWillLoad() {
     this._choices = [...this.choices];
@@ -135,12 +185,12 @@ export class CcSingleSelectInput {
   }
 
   componentDidLoad() {
-    this.observerListItems()
+    this.observerListItems();
   }
 
   componentDidUnload() {
-    if(this.observerItems) this.observerItems.disconnect();
-    document.removeEventListener("click",this.closeDroprownIfClickOutDropdown);
+    if (this.observerItems) this.observerItems.disconnect();
+    document.removeEventListener("click", this.closeDroprownIfClickOutDropdown);
   }
 
   render() {
@@ -148,74 +198,124 @@ export class CcSingleSelectInput {
       disabled: this.disabled,
       loader: this.loader,
       fieldReadonly: this.fieldReadonly,
-      color:this.color,
-      error:this.error,
-      border:this.border,
-      bgField:this.bgField,
-      isActive:this.isOpenDropdown
+      color: this.color,
+      error: this.error,
+      border: this.border,
+      bgField: this.bgField,
+      isActive: this.isOpenDropdown,
+      IconRotate: this.IconRotate
     };
     return (
       <Host data-testid="cc-single-file-input" class="single-file-input">
-        {this.label && <span class="single-file-input__label">{this.label}</span> }
+        {this.label && (
+          <span class="single-file-input__label">{this.label}</span>
+        )}
         <cc-wrapper-field
           ref={el => (this.singleFileInput = el)}
           class={{
-            "single-file-input__wrapper":true,
-            "single-file-input--is-collapse":this.isOpenDropdown
+            "single-file-input__wrapper": true,
+            "single-file-input--is-collapse": this.isOpenDropdown
           }}
           {...attrs}
-          >
+        >
           <div class="single-file-input__field" onClick={this.validateDisabled}>
-            <p class={{
-              "single-file-input__placeholder":true,
-              "single-file-input__placeholder--is-hidden": this.knowIfThereIsAnItemSelected()
-
-            }}>{this.placeholder}</p>
-            {
-              this._choices.map((c) =>{
-                return <p class={
-                  {
-                    'single-file-input__field-option':true,
-                    'single-file-input__field-option--is-selected':c.selected
-                  }
-                }>{c.label}</p>
-              })
-            }
+            {!this.autocomplete && (
+              <p
+                class={{
+                  "single-file-input__placeholder": true,
+                  "single-file-input__placeholder--is-hidden": this.knowIfThereIsAnItemSelected()
+                }}
+              >
+                {this.placeholder}
+              </p>
+            )}
+            {this.autocomplete && (
+              <cc-input
+                value={this.valueInput}
+                placeholder={this.placeholder}
+                border={false}
+                ref={el => (this.inputEl = el)}
+                onInput={(e: any) => this.setInputValue(e.target?.value)}
+              />
+            )}
+            {!this.autocomplete &&
+              this._choices
+                .filter(choice => choice.selected)
+                .map(c => {
+                  return (
+                    <p class="single-file-input__field-option--is-selected">
+                      {c.label}
+                    </p>
+                  );
+                })}
             <div class="single-file-input__wrapper-icon">
               {this.loader ? (
-                  <cc-loader></cc-loader>
-                ) : (
-                  <cc-icon
-                    class={{
-                      dropdown__icon: true,
-                      "dropdown__icon--inverted": this.isOpenDropdown
-                    }}
-                    name={this.error ? "x" : this.iconName}
-                  ></cc-icon>
-                )}
+                <cc-loader></cc-loader>
+              ) : (
+                <cc-icon name={this.error ? "x" : this.iconName}></cc-icon>
+              )}
             </div>
           </div>
-          <ul ref={el => (this.dropdownItems = el)}
-              class={{
-                "single-file-input__options":true ,
-                'single-file-input__options--is-active':this.isOpenDropdown,
-                "single-file-input__options--top": this.positionOptionstop,
-              }}>
-            {
-              this.placeholder &&
-              <li class={{ "single-file-input__placeholder":true,"single-file-input__option":true, "single-file-input__option--is-selected": !this.knowIfThereIsAnItemSelected() }} onClick={this.placeholderSelected}>{this.placeholder}</li>
-            }
-            {
-              this._choices.map((c , index) =>{
-                return <li
-                  onClick={  () =>  c.disabled ? false : this.handleOptionClick(index)}
-                  class={{
-                    'single-file-input__option':true,
-                    'single-file-input__option--is-selected': c.selected,
-                    'single-file-input__option--is-disabled': c.disabled,
-                  }}>{c.label}</li>
-              })
-            }
+          <ul
+            ref={el => (this.dropdownItems = el)}
+            class={{
+              "single-file-input__options": true,
+              "single-file-input__options--is-active": this.isOpenDropdown,
+              "single-file-input__options--top": this.positionOptionstop
+            }}
+          >
+            {!this.autocomplete && this.placeholder && (
+              <li
+                class={{
+                  "single-file-input__placeholder": true,
+                  "single-file-input__option": true,
+                  "single-file-input__option--is-selected": !this.knowIfThereIsAnItemSelected()
+                }}
+                onClick={this.placeholderSelected}
+              >
+                {this.placeholder}
+              </li>
+            )}
+            {this.autocomplete && this.filteredChoices().length > 0
+              ? this.filteredChoices().map(c => {
+                  return (
+                    <li
+                      onClick={() =>
+                        c.disabled ? false : this.handleOptionClick(c.value)
+                      }
+                      class={{
+                        "single-file-input__option": true,
+                        "single-file-input__option--is-selected": c.selected,
+                        "single-file-input__option--is-disabled": c.disabled
+                      }}
+                    >
+                      {c.label}
+                    </li>
+                  );
+                })
+              : this.autocomplete &&
+                this.filteredChoices().length === 0 && (
+                  <li class="single-file-input__option">
+                    No se encontraron los resultados
+                  </li>
+                )}
+            {!this.autocomplete &&
+              this._choices.map(c => {
+                return (
+                  <li
+                    onClick={() =>
+                      c.disabled ? false : this.handleOptionClick(c.value)
+                    }
+                    class={{
+                      "single-file-input__option": true,
+                      "single-file-input__option--is-selected": c.selected,
+                      "single-file-input__option--is-disabled": c.disabled
+                    }}
+                  >
+                    {c.label}
+                  </li>
+                );
+              })}
           </ul>
         </cc-wrapper-field>
       </Host>
