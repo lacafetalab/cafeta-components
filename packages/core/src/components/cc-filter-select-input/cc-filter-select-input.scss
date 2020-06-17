@@ -54,17 +54,18 @@
     }
   }
   &__option {
+    @apply flex items-center;
     min-height: 40px;
     font-size: 14px;
     line-height: 20px;
     user-select: none;
     padding: 10px 1.6rem;
-    &:hover {
+    &:hover,
+    &--hover {
       @apply bg-01;
     }
     &--is-selected {
       @apply bg-02 text-neutral-03 font-bold transition-all;
-      display: none;
       &:hover {
         @apply bg-02;
       }
@@ -75,6 +76,9 @@
         @apply cursor-not-allowed;
         background: transparent;
       }
+    }
+    &-checkbox {
+      @apply mr-lg;
     }
   }
   &__label {

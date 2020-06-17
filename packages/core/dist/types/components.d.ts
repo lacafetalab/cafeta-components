@@ -62,6 +62,7 @@ export namespace Components {
     'loader'?: boolean;
     'name'?: string;
     'placeholder'?: string;
+    'type'?: "checkbox";
   }
   interface CcIcon {
     'name': string;
@@ -324,6 +325,7 @@ declare namespace LocalJSX {
     'name'?: string;
     'onChangeChoice'?: (event: CustomEvent<any>) => void;
     'placeholder'?: string;
+    'type'?: "checkbox";
   }
   interface CcIcon {
     'name'?: string;
