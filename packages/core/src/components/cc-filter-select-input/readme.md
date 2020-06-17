@@ -23,6 +23,7 @@
 | `loader`        | `loader`         |             | `boolean`                  | `false`          |
 | `name`          | `name`           |             | `string`                   | `""`             |
 | `placeholder`   | `placeholder`    |             | `string`                   | `""`             |
+| `type`          | `type`           |             | `"checkbox"`               | `undefined`      |
 
 
 ## Events

@@ -5,7 +5,8 @@ import {
   Prop,
   State,
   Event,
-  EventEmitter
+  EventEmitter,
+  Watch
 } from "@stencil/core";
 
 @Component({
@@ -43,15 +44,15 @@ export class CcSingleSelectInput {
 
   @Event() changeChoice: EventEmitter;
 
-  // @Watch("choices")
-  // setChoices(newValue: any, oldValue: any) {
-  //   const newValueStringify = JSON.stringify(newValue);
-  //   const oldValueStringify = JSON.stringify(oldValue);
+  @Watch("choices")
+  setChoices(newValue: any, oldValue: any) {
+    const newValueStringify = JSON.stringify(newValue);
+    const oldValueStringify = JSON.stringify(oldValue);
 
-  //   if (newValueStringify !== oldValueStringify) {
-  //     this._choices = newValue;
-  //   }
-  // }
+    if (newValueStringify !== oldValueStringify) {
+      this._choices = newValue;
+    }
+  }
 
   focusInput = () => {
     this.inputEl.focus();
