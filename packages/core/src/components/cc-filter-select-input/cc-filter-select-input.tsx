@@ -62,25 +62,45 @@ export class CcFilterSelectInput {
       const indexHoveredChoice = this._choices.findIndex(
         choice => choice.value === this.hoveredChoice
       );
-      const lastChoiceIndex = this._choices.length - 1;
-      const firstChoiceIndex = 0;
+
+      const scrollToElem = (elem: any, top: boolean) => {
+        elem.scrollIntoViewIfNeeded(top);
+      };
+
+      const getIndexFromValue = (value: string) =>
+        this._choices.findIndex(choice => choice.value === value);
+
+      const nextEnabledIndex = this._choices.find(
+        (choice, index) => index > indexHoveredChoice && !choice.disabled
+      );
+
+      const prevEnabledIndex = this._choices
+        .filter(
+          (choice, index) => index < indexHoveredChoice && !choice.disabled
+        )
+        .pop();
+
       switch (ev.key) {
         case "ArrowDown":
-          if (indexHoveredChoice < lastChoiceIndex) {
-            const nextHoveredIndex = indexHoveredChoice + 1;
-            this.hoveredChoice = this._choices[nextHoveredIndex].value;
-            this.dropdownItems
-              .querySelectorAll(".filter-file-input__option")
-              [nextHoveredIndex].scrollIntoView(false);
+          if (nextEnabledIndex) {
+            this.hoveredChoice = nextEnabledIndex.value;
+            scrollToElem(
+              this.dropdownItems.querySelectorAll(".filter-file-input__option")[
+                getIndexFromValue(nextEnabledIndex.value)
+              ],
+              false
+            );
           }
           break;
         case "ArrowUp":
-          if (indexHoveredChoice > firstChoiceIndex) {
-            const prevtHoveredIndex = indexHoveredChoice - 1;
-            this.hoveredChoice = this._choices[prevtHoveredIndex].value;
-            this.dropdownItems
-              .querySelectorAll(".filter-file-input__option")
-              [prevtHoveredIndex].scrollIntoView(true);
+          if (prevEnabledIndex) {
+            this.hoveredChoice = prevEnabledIndex.value;
+            scrollToElem(
+              this.dropdownItems.querySelectorAll(".filter-file-input__option")[
+                getIndexFromValue(prevEnabledIndex.value)
+              ],
+              true
+            );
           }
           break;
         case "Enter":
@@ -103,6 +123,8 @@ export class CcFilterSelectInput {
     this.selectedChoices = this.selectedChoices.includes(value)
       ? this.selectedChoices.filter(choice => choice !== value)
       : [...this.selectedChoices, value];
+
+    this.changeChoice.emit(this.selectedChoices);
   };
 
   setInputText = e => {
@@ -145,7 +167,6 @@ export class CcFilterSelectInput {
   filteredChoices = () => {
     const filterdList = this.valueInput.length
       ? this._choices.filter(choice => {
-          // if (!choice.selected) {
           const loweredChoiceWithoutTilde = choice.label
             .toLowerCase()
             .normalize("NFD")
@@ -155,7 +176,6 @@ export class CcFilterSelectInput {
             .normalize("NFD")
             .replace(/[\u0300-\u036f]/g, "");
           return loweredChoiceWithoutTilde.includes(loweredInputWithoutTilde);
-          // }
         })
       : this._choices;
     return filterdList;
@@ -182,9 +202,7 @@ export class CcFilterSelectInput {
   };
 
   handleRemoveItemSelected = (value: string) => {
-    const newChoices = [...this._choices];
-    newChoices.filter(choice => choice.value === value)[0].selected = false;
-    this._choices = newChoices;
+    this.updateChoicesList(value);
   };
 
   closeDroprownIfClickOutDropdown = e => {
@@ -299,14 +317,15 @@ export class CcFilterSelectInput {
                     <li class="filter-file-input__dot-item">
                       <div class="filter-file-input__dot-text">
                         {choice.label}
-                      </div>
-                      <div
-                        onClick={() =>
-                          this.handleRemoveItemSelected(choice.value)
-                        }
-                        class="filter-file-input__dot-delete"
-                      >
-                        x
+
+                        <div
+                          onClick={() =>
+                            this.handleRemoveItemSelected(choice.value)
+                          }
+                          class="filter-file-input__dot-delete"
+                        >
+                          <cc-icon size={12} name="x" />
+                        </div>
                       </div>
                     </li>
                   ))}
@@ -387,7 +406,7 @@ export class CcFilterSelectInput {
                         c.value === this.hoveredChoice
                     }}
                   >
-                    {this.type === "checkbox" || (
+                    {this.type === "checkbox" && (
                       <input
                         class="filter-file-input__option-checkbox"
                         type="checkbox"

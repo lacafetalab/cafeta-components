@@ -13,21 +13,28 @@ const dropdownBuilder = (itemsWrapper, values) => {
   return dropdown;
 };
 
-
 export const FilterSelectInput = () => {
   const itemsWrapper = {
     choices: [
-      { value: "123", label: "Opción muy grande que aparece en el dropdown que debe ser controlado. Lorem ipsoum selet amonet os sebut" },
+      {
+        value: "123",
+        label:
+          "Opción muy grande que aparece en el dropdown que debe ser controlado. Lorem ipsoum selet amonet os sebut"
+      },
       { value: "125", label: "Opción 3" },
       { value: "126", label: "Opción 4" },
       { value: "127", label: "Opción 5", disabled: true },
-      { value: "128", label: "Opción 6" },
-      { value: "124", label: "Opción 2" },
+      { value: "128", label: "Opción 6", disabled: true },
+      { value: "124", label: "Opción 2" }
     ]
   };
   const itemsWrapper2 = {
     choices: [
-      { value: "123", label: "Opción muy grande que aparece en el dropdown que debe ser controlado. Lorem ipsoum selet amonet os sebut" },
+      {
+        value: "123",
+        label:
+          "Opción muy grande que aparece en el dropdown que debe ser controlado. Lorem ipsoum selet amonet os sebut"
+      },
       { value: "124", label: "Opción 2" },
       { value: "125", label: "Opción 3" },
       { value: "126", label: "Opción 4" },
@@ -37,7 +44,11 @@ export const FilterSelectInput = () => {
   };
   const itemsWrapper3 = {
     choices: [
-      { value: "123", label: "Opción muy grande que aparece en el dropdown que debe ser controlado. Lorem ipsoum selet amonet os sebut" },
+      {
+        value: "123",
+        label:
+          "Opción muy grande que aparece en el dropdown que debe ser controlado. Lorem ipsoum selet amonet os sebut"
+      },
       { value: "124", label: "Opción 2" },
       { value: "125", label: "Opción 3" },
       { value: "126", label: "Opción 4" },
@@ -64,7 +75,7 @@ export const FilterSelectInput = () => {
   const label4 = "Label";
   const defaultValue4 = false;
   const groupId4 = "GROUP-ID1";
-  const value4 = boolean(label4, defaultValue4, groupId4) ? 'LABEL' : '';
+  const value4 = boolean(label4, defaultValue4, groupId4) ? "LABEL" : "";
 
   const label5 = "Loader";
   const defaultValue5 = false;
@@ -77,7 +88,8 @@ export const FilterSelectInput = () => {
     error: value3,
     label: value4,
     loader: value5,
-    helperText: "Incorrect entry"
+    helperText: "Incorrect entry",
+    type: "checkbox"
   });
 
   dropdown11.addEventListener("changeChoice", e => {
@@ -93,7 +105,6 @@ export const FilterSelectInput = () => {
     color: "secondary",
     helperText: "Incorrect entry"
   });
-
 
   const dropdown31 = dropdownBuilder(itemsWrapper3, {
     placeholder: defaultValue1,
