@@ -108,7 +108,15 @@
       margin: 4px;
     }
     &-text {
-      @apply text-small-01;
+      @apply text-small-01 align-middle;
+    }
+    &-delete {
+      @apply inline-flex ml-sm align-text-bottom;
+
+      cc-icon {
+        @apply inline-flex;
+        color: inherit;
+      }
     }
   }
   cc-input {
