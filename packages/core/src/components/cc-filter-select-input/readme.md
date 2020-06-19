@@ -9,6 +9,7 @@
 
 | Property        | Attribute        | Description | Type                       | Default          |
 | --------------- | ---------------- | ----------- | -------------------------- | ---------------- |
+| `IconRotate`    | `icon-rotate`    |             | `boolean`                  | `true`           |
 | `bgField`       | `bg-field`       |             | `string`                   | `""`             |
 | `border`        | `border`         |             | `boolean`                  | `true`           |
 | `choices`       | --               |             | `any[]`                    | `undefined`      |
@@ -40,7 +41,6 @@
 - [cc-wrapper-field](../cc-wrapper-field)
 - [cc-icon](../cc-icon)
 - [cc-input](../cc-input)
-- [cc-loader](../cc-loader)
 - [cc-checkfield](../cc-checkfield)
 
 ### Graph
@@ -49,8 +49,9 @@ graph TD;
   cc-filter-select-input --> cc-wrapper-field
   cc-filter-select-input --> cc-icon
   cc-filter-select-input --> cc-input
-  cc-filter-select-input --> cc-loader
   cc-filter-select-input --> cc-checkfield
+  cc-wrapper-field --> cc-loader
+  cc-wrapper-field --> cc-icon
   cc-input --> cc-icon
   cc-checkfield --> cc-icon
   style cc-filter-select-input fill:#f9f,stroke:#333,stroke-width:4px

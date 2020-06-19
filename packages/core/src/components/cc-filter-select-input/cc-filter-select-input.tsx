@@ -12,7 +12,8 @@ import {
 
 @Component({
   tag: "cc-filter-select-input",
-  styleUrl: "cc-filter-select-input.scss"
+  styleUrl: "cc-filter-select-input.scss",
+  shadow: false
 })
 export class CcFilterSelectInput {
   private singleFileInput: HTMLElement;
@@ -42,6 +43,7 @@ export class CcFilterSelectInput {
   @Prop() bgField?: string = "";
   @Prop() loader?: boolean = false;
   @Prop() type?: "checkbox";
+  @Prop() IconRotate?: boolean = true;
 
   @Event() changeChoice: EventEmitter;
 
@@ -283,7 +285,10 @@ export class CcFilterSelectInput {
       error: this.error,
       border: this.border,
       bgField: this.bgField,
-      isActive: this.isOpenDropdown
+      isActive: this.isOpenDropdown,
+      iconRotate: this.IconRotate,
+      iconName: this.iconName,
+      helperText: this.helperText
     };
     return (
       <Host data-testid="cc-filter-file-input" class="filter-file-input">
@@ -353,19 +358,6 @@ export class CcFilterSelectInput {
                 "filter-file-input__input--is-hidden": !this.validateShowPlaceholder()
               }}
             />
-            <div class="filter-file-input__wrapper-icon">
-              {this.loader ? (
-                <cc-loader></cc-loader>
-              ) : (
-                <cc-icon
-                  class={{
-                    dropdown__icon: true,
-                    "dropdown__icon--inverted": this.isOpenDropdown
-                  }}
-                  name={this.error ? "x" : this.iconName}
-                ></cc-icon>
-              )}
-            </div>
           </div>
           <ul
             ref={el => (this.dropdownItems = el)}

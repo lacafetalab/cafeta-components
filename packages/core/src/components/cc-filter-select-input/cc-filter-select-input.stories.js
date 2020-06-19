@@ -89,7 +89,8 @@ export const FilterSelectInput = () => {
     label: value4,
     loader: value5,
     helperText: "Incorrect entry",
-    type: "checkbox"
+    type: "checkbox",
+    iconRotate: false
   });
 
   dropdown11.addEventListener("changeChoice", e => {

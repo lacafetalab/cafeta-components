@@ -3,14 +3,6 @@
 }
 
 .filter-file-input {
-  &__wrapper {
-    &-icon {
-      @apply absolute;
-      right: 8px;
-      bottom: 8px;
-      max-height: 2.4rem;
-    }
-  }
   &__field {
     @apply py-sm px-lg;
     padding-right: 40px;
@@ -112,11 +104,15 @@
     }
     &-delete {
       @apply inline-flex ml-sm align-text-bottom;
-
       cc-icon {
         @apply inline-flex;
         color: inherit;
       }
+    }
+  }
+  &__icon {
+    &--inverted {
+      transform: rotate(180deg);
     }
   }
   cc-input {
