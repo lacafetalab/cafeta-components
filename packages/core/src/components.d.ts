@@ -32,6 +32,7 @@ export namespace Components {
     'color': "primary" | "secondary";
     'disabled'?: boolean;
     'error'?: boolean;
+    'inputRef'?: (el: HTMLInputElement) => void;
     'label'?: string;
     'name'?: string;
     'shape'?: "circle" | "square";
@@ -311,6 +312,7 @@ declare namespace LocalJSX {
     'color'?: "primary" | "secondary";
     'disabled'?: boolean;
     'error'?: boolean;
+    'inputRef'?: (el: HTMLInputElement) => void;
     'label'?: string;
     'name'?: string;
     'shape'?: "circle" | "square";
