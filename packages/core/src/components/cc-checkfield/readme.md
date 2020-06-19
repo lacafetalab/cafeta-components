@@ -23,6 +23,10 @@
 
 ## Dependencies
 
+### Used by
+
+ - [cc-filter-select-input](../cc-filter-select-input)
+
 ### Depends on
 
 - [cc-icon](../cc-icon)
@@ -31,6 +35,7 @@
 ```mermaid
 graph TD;
   cc-checkfield --> cc-icon
+  cc-filter-select-input --> cc-checkfield
   style cc-checkfield fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
