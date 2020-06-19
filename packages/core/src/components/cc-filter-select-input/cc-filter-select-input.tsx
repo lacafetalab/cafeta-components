@@ -6,7 +6,8 @@ import {
   State,
   Event,
   EventEmitter,
-  Watch
+  Watch,
+  Listen
 } from "@stencil/core";
 
 @Component({
@@ -25,6 +26,8 @@ export class CcFilterSelectInput {
   @State() thereIsLowerSpace: boolean = false;
   @State() positionOptionstop: boolean = false;
   @State() valueInput: string = "";
+  @State() selectedChoices: Array<any> = [];
+  @State() hoveredChoice: string = "";
   @Prop() label: string = "";
   @Prop() choices: Array<any>;
   @Prop() error?: boolean = false;
@@ -39,6 +42,7 @@ export class CcFilterSelectInput {
   @Prop() border?: boolean = true;
   @Prop() bgField?: string = "";
   @Prop() loader?: boolean = false;
+  @Prop() type?: "checkbox";
 
   @Event() changeChoice: EventEmitter;
 
@@ -52,10 +56,75 @@ export class CcFilterSelectInput {
     }
   }
 
-  updateChoicesList = (value: string | number) => {
-    const newChoices = [...this._choices];
-    newChoices.filter(choice => choice.value === value)[0].selected = true;
-    this._choices = [...newChoices];
+  @Listen("keydown", { target: "document" })
+  handleKeyDown(ev: KeyboardEvent) {
+    if (this.isOpenDropdown) {
+      const indexHoveredChoice = this._choices.findIndex(
+        choice => choice.value === this.hoveredChoice
+      );
+
+      const scrollToElem = (elem: any, top: boolean) => {
+        elem.scrollIntoViewIfNeeded(top);
+      };
+
+      const getIndexFromValue = (value: string) =>
+        this._choices.findIndex(choice => choice.value === value);
+
+      const nextEnabledIndex = this._choices.find(
+        (choice, index) => index > indexHoveredChoice && !choice.disabled
+      );
+
+      const prevEnabledIndex = this._choices
+        .filter(
+          (choice, index) => index < indexHoveredChoice && !choice.disabled
+        )
+        .pop();
+
+      switch (ev.key) {
+        case "ArrowDown":
+          if (nextEnabledIndex) {
+            this.hoveredChoice = nextEnabledIndex.value;
+            scrollToElem(
+              this.dropdownItems.querySelectorAll(".filter-file-input__option")[
+                getIndexFromValue(nextEnabledIndex.value)
+              ],
+              false
+            );
+          }
+          break;
+        case "ArrowUp":
+          if (prevEnabledIndex) {
+            this.hoveredChoice = prevEnabledIndex.value;
+            scrollToElem(
+              this.dropdownItems.querySelectorAll(".filter-file-input__option")[
+                getIndexFromValue(prevEnabledIndex.value)
+              ],
+              true
+            );
+          }
+          break;
+        case "Enter":
+          this.handleOptionClick(this.hoveredChoice);
+          break;
+        case "Backspace":
+          if (!this.valueInput.length && this.selectedChoices.length) {
+            const newChoices = [...this.selectedChoices];
+            newChoices.pop();
+            this.selectedChoices = newChoices;
+          }
+          break;
+        default:
+          break;
+      }
+    }
+  }
+
+  updateChoicesList = (value: string) => {
+    this.selectedChoices = this.selectedChoices.includes(value)
+      ? this.selectedChoices.filter(choice => choice !== value)
+      : [...this.selectedChoices, value];
+
+    this.changeChoice.emit(this.selectedChoices);
   };
 
   setInputText = e => {
@@ -87,11 +156,10 @@ export class CcFilterSelectInput {
   }
 
   knowIfThereIsASelected = () => {
-    return this._choices.filter(choice => choice.selected).length > 0;
+    return this.selectedChoices.length > 0;
   };
 
-  handleOptionClick = (value: number) => {
-    this.handleHideOptions();
+  handleOptionClick = (value: string) => {
     this.updateChoicesList(value);
     this.clearInputValue();
   };
@@ -99,17 +167,15 @@ export class CcFilterSelectInput {
   filteredChoices = () => {
     const filterdList = this.valueInput.length
       ? this._choices.filter(choice => {
-          if (!choice.selected) {
-            const loweredChoiceWithoutTilde = choice.label
-              .toLowerCase()
-              .normalize("NFD")
-              .replace(/[\u0300-\u036f]/g, "");
-            const loweredInputWithoutTilde = this.valueInput
-              .toLowerCase()
-              .normalize("NFD")
-              .replace(/[\u0300-\u036f]/g, "");
-            return loweredChoiceWithoutTilde.includes(loweredInputWithoutTilde);
-          }
+          const loweredChoiceWithoutTilde = choice.label
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "");
+          const loweredInputWithoutTilde = this.valueInput
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "");
+          return loweredChoiceWithoutTilde.includes(loweredInputWithoutTilde);
         })
       : this._choices;
     return filterdList;
@@ -128,16 +194,15 @@ export class CcFilterSelectInput {
 
   handleShowOptions = () => {
     this.isOpenDropdown = true;
+    this.hoveredChoice = this._choices[0].value;
   };
 
   handleHideOptions = () => {
     this.isOpenDropdown = false;
   };
 
-  handleRemoveItemSelected = (value: string | number) => {
-    const newChoices = [...this._choices];
-    newChoices.filter(choice => choice.value === value)[0].selected = false;
-    this._choices = newChoices;
+  handleRemoveItemSelected = (value: string) => {
+    this.updateChoicesList(value);
   };
 
   closeDroprownIfClickOutDropdown = e => {
@@ -242,20 +307,25 @@ export class CcFilterSelectInput {
               }}
             >
               <ul class="filter-file-input__dot-list">
-                {this._choices
-                  .filter(choice => choice.selected)
+                {this.selectedChoices
+                  .map(selectedChoice =>
+                    this._choices.find(
+                      choice => choice.value === selectedChoice
+                    )
+                  )
                   .map(choice => (
                     <li class="filter-file-input__dot-item">
                       <div class="filter-file-input__dot-text">
                         {choice.label}
-                      </div>
-                      <div
-                        onClick={() =>
-                          this.handleRemoveItemSelected(choice.value)
-                        }
-                        class="filter-file-input__dot-delete"
-                      >
-                        x
+
+                        <div
+                          onClick={() =>
+                            this.handleRemoveItemSelected(choice.value)
+                          }
+                          class="filter-file-input__dot-delete"
+                        >
+                          <cc-icon size={12} name="x" />
+                        </div>
                       </div>
                     </li>
                   ))}
@@ -316,22 +386,39 @@ export class CcFilterSelectInput {
                 No se encontraron resultados
               </li>
             )}
-            {this.filteredChoices().map(c => {
-              return (
-                <li
-                  onClick={() =>
-                    c.disabled ? false : this.handleOptionClick(c.value)
-                  }
-                  class={{
-                    "filter-file-input__option": true,
-                    "filter-file-input__option--is-selected": c.selected,
-                    "filter-file-input__option--is-disabled": c.disabled
-                  }}
-                >
-                  {c.label}
-                </li>
-              );
-            })}
+
+            {this.filteredChoices()
+              .map(choice => ({
+                ...choice,
+                selected: this.selectedChoices.includes(choice.value)
+              }))
+              .map(c => {
+                return (
+                  <li
+                    onClick={() =>
+                      c.disabled ? false : this.handleOptionClick(c.value)
+                    }
+                    class={{
+                      "filter-file-input__option": true,
+                      "filter-file-input__option--is-selected": c.selected,
+                      "filter-file-input__option--is-disabled": c.disabled,
+                      "filter-file-input__option--hover":
+                        c.value === this.hoveredChoice
+                    }}
+                  >
+                    {this.type === "checkbox" && (
+                      <input
+                        class="filter-file-input__option-checkbox"
+                        type="checkbox"
+                        name=""
+                        id=""
+                        checked={c.selected}
+                      />
+                    )}
+                    <span>{c.label}</span>
+                  </li>
+                );
+              })}
           </ul>
         </cc-wrapper-field>
       </Host>
