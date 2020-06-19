@@ -6,6 +6,7 @@ import { h, Component, Host, Prop } from "@stencil/core";
   shadow: true
 })
 export class CcCheckfield {
+  private inputEl;
   @Prop() type?: "checkbox" | "radio" = "checkbox";
   @Prop() name?: string;
   @Prop() value?: string;
@@ -16,6 +17,15 @@ export class CcCheckfield {
   @Prop() shape?: "circle" | "square" = "square";
   @Prop() error?: boolean = false;
   @Prop() color: "primary" | "secondary" = "primary";
+  @Prop() inputRef?: (el: HTMLInputElement) => void;
+
+  setInputRef = (el: HTMLInputElement) => {
+    this.inputEl = el;
+
+    if (this.inputRef) {
+      this.inputRef(this.inputEl);
+    }
+  };
 
   render() {
     return (
@@ -33,6 +43,7 @@ export class CcCheckfield {
               value={this.value}
               checked={this.checked}
               disabled={this.disabled}
+              ref={this.setInputRef}
               class={{
                 checkfield__input: true,
                 "checkfield__input--secondary": this.color === "secondary",

@@ -7,18 +7,19 @@
 
 ## Properties
 
-| Property   | Attribute  | Description | Type                       | Default      |
-| ---------- | ---------- | ----------- | -------------------------- | ------------ |
-| `checked`  | `checked`  |             | `boolean`                  | `false`      |
-| `color`    | `color`    |             | `"primary" \| "secondary"` | `"primary"`  |
-| `disabled` | `disabled` |             | `boolean`                  | `false`      |
-| `error`    | `error`    |             | `boolean`                  | `false`      |
-| `label`    | `label`    |             | `string`                   | `undefined`  |
-| `name`     | `name`     |             | `string`                   | `undefined`  |
-| `shape`    | `shape`    |             | `"circle" \| "square"`     | `"square"`   |
-| `size`     | `size`     |             | `"medium" \| "small"`      | `"small"`    |
-| `type`     | `type`     |             | `"checkbox" \| "radio"`    | `"checkbox"` |
-| `value`    | `value`    |             | `string`                   | `undefined`  |
+| Property   | Attribute  | Description | Type                             | Default      |
+| ---------- | ---------- | ----------- | -------------------------------- | ------------ |
+| `checked`  | `checked`  |             | `boolean`                        | `false`      |
+| `color`    | `color`    |             | `"primary" \| "secondary"`       | `"primary"`  |
+| `disabled` | `disabled` |             | `boolean`                        | `false`      |
+| `error`    | `error`    |             | `boolean`                        | `false`      |
+| `inputRef` | --         |             | `(el: HTMLInputElement) => void` | `undefined`  |
+| `label`    | `label`    |             | `string`                         | `undefined`  |
+| `name`     | `name`     |             | `string`                         | `undefined`  |
+| `shape`    | `shape`    |             | `"circle" \| "square"`           | `"square"`   |
+| `size`     | `size`     |             | `"medium" \| "small"`            | `"small"`    |
+| `type`     | `type`     |             | `"checkbox" \| "radio"`          | `"checkbox"` |
+| `value`    | `value`    |             | `string`                         | `undefined`  |
 
 
 ## Dependencies
