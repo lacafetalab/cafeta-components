@@ -1,0 +1,116 @@
+@mixin state-secondary {
+  @apply border-secondary;
+  &:focus-within,
+  &:hover {
+    @apply border-secondary-dark;
+  }
+}
+
+.checkfield {
+  &__wrapper {
+    @apply flex items-center;
+    width: max-content;
+    &-input {
+      width: 16px;
+      height: 16px;
+      @apply relative;
+      &--medium {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+  &__input {
+    @apply border-primary border border-solid bg-neutral-04 cursor-pointer;
+    width: 16px;
+    height: 16px;
+    appearance: none;
+    &:hover {
+      @apply border-primary-dark;
+    }
+    &:focus {
+      outline: 0;
+    }
+    &:disabled {
+      @apply border-disabled cursor-not-allowed;
+    }
+    &--secondary {
+      @include state-secondary;
+    }
+    &--medium {
+      width: 20px;
+      height: 20px;
+    }
+    &--circle {
+      @apply rounded-full;
+      &:checked {
+        border-width: 4px;
+        border-style: solid inset solid solid;
+      }
+      &.checkfield__input--medium {
+        &:checked {
+          border-width: 5px;
+        }
+      }
+      &:disabled {
+        @apply border-disabled;
+      }
+    }
+    &--square {
+      border-radius: 0.2rem;
+      &:checked {
+        @apply bg-primary border-primary;
+        + cc-icon {
+          @apply block;
+        }
+      }
+      &.checkfield__input--secondary {
+        &:checked {
+          @apply bg-secondary border-secondary;
+          + cc-icon {
+            @apply block;
+          }
+        }
+      }
+      &.checkfield__input--error {
+        @apply border-error;
+        &:checked {
+          @apply bg-error border-error;
+        }
+      }
+      &:disabled {
+        @apply border-disabled;
+        &:checked {
+          @apply border-disabled bg-disabled;
+          + cc-icon {
+            @apply text-disabled cursor-not-allowed;
+          }
+        }
+      }
+    }
+    &--error {
+      @apply border-error;
+      &:hover {
+        @apply border-error;
+      }
+      &:disabled {
+        &:hover {
+          @apply border-disabled;
+        }
+      }
+    }
+  }
+  &__label {
+    @apply ml-sm text-small-02 text-neutral-02;
+    line-height: 1.6rem;
+    &--medium {
+    }
+  }
+  &__check {
+    @apply cursor-pointer absolute text-neutral-04;
+    display: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

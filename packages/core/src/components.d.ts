@@ -27,6 +27,18 @@ export namespace Components {
     'target'?: string;
     'type': "button" | "submit";
   }
+  interface CcCheckfield {
+    'checked'?: boolean;
+    'color': "primary" | "secondary";
+    'disabled'?: boolean;
+    'error'?: boolean;
+    'label'?: string;
+    'name'?: string;
+    'shape'?: "circle" | "square";
+    'size'?: "small" | "medium";
+    'type'?: "checkbox" | "radio";
+    'value'?: string;
+  }
   interface CcDropdown {
     'bgField'?: string;
     'border'?: boolean;
@@ -175,6 +187,12 @@ declare global {
     new (): HTMLCcButtonElement;
   };
 
+  interface HTMLCcCheckfieldElement extends Components.CcCheckfield, HTMLStencilElement {}
+  var HTMLCcCheckfieldElement: {
+    prototype: HTMLCcCheckfieldElement;
+    new (): HTMLCcCheckfieldElement;
+  };
+
   interface HTMLCcDropdownElement extends Components.CcDropdown, HTMLStencilElement {}
   var HTMLCcDropdownElement: {
     prototype: HTMLCcDropdownElement;
@@ -254,6 +272,7 @@ declare global {
   };
   interface HTMLElementTagNameMap {
     'cc-button': HTMLCcButtonElement;
+    'cc-checkfield': HTMLCcCheckfieldElement;
     'cc-dropdown': HTMLCcDropdownElement;
     'cc-filter-select-input': HTMLCcFilterSelectInputElement;
     'cc-icon': HTMLCcIconElement;
@@ -285,6 +304,18 @@ declare namespace LocalJSX {
     'size'?: "lg" | "md" | "sm";
     'target'?: string;
     'type'?: "button" | "submit";
+  }
+  interface CcCheckfield {
+    'checked'?: boolean;
+    'color'?: "primary" | "secondary";
+    'disabled'?: boolean;
+    'error'?: boolean;
+    'label'?: string;
+    'name'?: string;
+    'shape'?: "circle" | "square";
+    'size'?: "small" | "medium";
+    'type'?: "checkbox" | "radio";
+    'value'?: string;
   }
   interface CcDropdown {
     'bgField'?: string;
@@ -435,6 +466,7 @@ declare namespace LocalJSX {
 
   interface IntrinsicElements {
     'cc-button': CcButton;
+    'cc-checkfield': CcCheckfield;
     'cc-dropdown': CcDropdown;
     'cc-filter-select-input': CcFilterSelectInput;
     'cc-icon': CcIcon;
@@ -458,6 +490,7 @@ declare module "@stencil/core" {
   export namespace JSX {
     interface IntrinsicElements {
       'cc-button': LocalJSX.CcButton & JSXBase.HTMLAttributes<HTMLCcButtonElement>;
+      'cc-checkfield': LocalJSX.CcCheckfield & JSXBase.HTMLAttributes<HTMLCcCheckfieldElement>;
       'cc-dropdown': LocalJSX.CcDropdown & JSXBase.HTMLAttributes<HTMLCcDropdownElement>;
       'cc-filter-select-input': LocalJSX.CcFilterSelectInput & JSXBase.HTMLAttributes<HTMLCcFilterSelectInputElement>;
       'cc-icon': LocalJSX.CcIcon & JSXBase.HTMLAttributes<HTMLCcIconElement>;

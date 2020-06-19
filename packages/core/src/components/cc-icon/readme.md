@@ -18,6 +18,7 @@
 ### Used by
 
  - [cc-button](../cc-button)
+ - [cc-checkfield](../cc-checkfield)
  - [cc-dropdown](../cc-dropdown)
  - [cc-filter-select-input](../cc-filter-select-input)
  - [cc-input](../cc-input)
@@ -28,6 +29,7 @@
 ```mermaid
 graph TD;
   cc-button --> cc-icon
+  cc-checkfield --> cc-icon
   cc-dropdown --> cc-icon
   cc-filter-select-input --> cc-icon
   cc-input --> cc-icon
