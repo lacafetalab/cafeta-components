@@ -40,16 +40,14 @@
 
 - [cc-wrapper-field](../cc-wrapper-field)
 - [cc-input](../cc-input)
-- [cc-loader](../cc-loader)
-- [cc-icon](../cc-icon)
 
 ### Graph
 ```mermaid
 graph TD;
   cc-single-select-input --> cc-wrapper-field
   cc-single-select-input --> cc-input
-  cc-single-select-input --> cc-loader
-  cc-single-select-input --> cc-icon
+  cc-wrapper-field --> cc-loader
+  cc-wrapper-field --> cc-icon
   cc-input --> cc-icon
   style cc-single-select-input fill:#f9f,stroke:#333,stroke-width:4px
 ```

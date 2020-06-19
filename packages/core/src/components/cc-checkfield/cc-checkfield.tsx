@@ -2,8 +2,7 @@ import { h, Component, Host, Prop } from "@stencil/core";
 
 @Component({
   tag: "cc-checkfield",
-  styleUrl: "cc-checkfield.scss",
-  shadow: true
+  styleUrl: "cc-checkfield.scss"
 })
 export class CcCheckfield {
   private inputEl;
