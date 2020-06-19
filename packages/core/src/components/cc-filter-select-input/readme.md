@@ -41,6 +41,7 @@
 - [cc-icon](../cc-icon)
 - [cc-input](../cc-input)
 - [cc-loader](../cc-loader)
+- [cc-checkfield](../cc-checkfield)
 
 ### Graph
 ```mermaid
@@ -49,7 +50,9 @@ graph TD;
   cc-filter-select-input --> cc-icon
   cc-filter-select-input --> cc-input
   cc-filter-select-input --> cc-loader
+  cc-filter-select-input --> cc-checkfield
   cc-input --> cc-icon
+  cc-checkfield --> cc-icon
   style cc-filter-select-input fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

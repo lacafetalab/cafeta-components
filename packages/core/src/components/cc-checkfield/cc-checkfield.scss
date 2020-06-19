@@ -21,7 +21,7 @@
     }
   }
   &__input {
-    @apply border-primary border border-solid bg-neutral-04 cursor-pointer;
+    @apply border-primary border border-solid bg-neutral-04 cursor-pointer m-none;
     width: 16px;
     height: 16px;
     appearance: none;
