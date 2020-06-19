@@ -3,6 +3,7 @@
     "components\\cc-button\\cc-button.js",
     "components\\cc-checkfield\\cc-checkfield.js",
     "components\\cc-dropdown\\cc-dropdown.js",
+    "components\\cc-icon\\cc-icon.js",
     "components\\cc-input\\cc-input.js",
     "components\\cc-loader\\cc-loader.js",
     "components\\cc-modal-controller\\cc-modal-controller.js",
@@ -11,10 +12,11 @@
     "components\\cc-switcher\\cc-switcher.js",
     "components\\cc-tabs-underline\\cc-tabs-underline.js",
     "components\\cc-tabs-tags\\cc-tabs-tags.js",
-    "components\\cc-icon\\cc-icon.js",
+    "components\\cc-tabs-underline\\cc-tabs-underline.js",
     "components\\cc-textarea\\cc-textarea.js",
     "components\\cc-wrapper-field\\cc-wrapper-field.js",
-    "components\\cc-filter-select-input\\cc-filter-select-input.js"
+    "components\\cc-filter-select-input\\cc-filter-select-input.js",
+    "components\\cc-single-select-input\\cc-single-select-input.js"
   ],
   "compiler": {
     "name": "@stencil/core",
@@ -24,10 +26,9 @@
   "collections": [
     {
       "name": "choicesjs-stencil",
-      "tags": [
-        "choicesjs-stencil"
-      ]
+      "tags": ["choicesjs-stencil"]
     }
   ],
-  "bundles": []
+  "bundles": [],
+  "global": "global\\global.js"
 }
