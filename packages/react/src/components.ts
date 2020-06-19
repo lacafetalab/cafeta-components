@@ -9,6 +9,7 @@ import { defineCustomElements, applyPolyfills } from '@cafeta/components/loader'
 
 applyPolyfills().then(() => defineCustomElements());
 export const CcButton = /*@__PURE__*/createReactComponent<JSX.CcButton, HTMLCcButtonElement>('cc-button');
+export const CcCheckfield = /*@__PURE__*/createReactComponent<JSX.CcCheckfield, HTMLCcCheckfieldElement>('cc-checkfield');
 export const CcDropdown = /*@__PURE__*/createReactComponent<JSX.CcDropdown, HTMLCcDropdownElement>('cc-dropdown');
 export const CcFilterSelectInput = /*@__PURE__*/createReactComponent<JSX.CcFilterSelectInput, HTMLCcFilterSelectInputElement>('cc-filter-select-input');
 export const CcIcon = /*@__PURE__*/createReactComponent<JSX.CcIcon, HTMLCcIconElement>('cc-icon');
