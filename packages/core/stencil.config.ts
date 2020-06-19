@@ -7,6 +7,7 @@ import autoprefixer from "autoprefixer";
 export const config: Config = {
   namespace: "cafeta-components",
   globalStyle: "src/global/app.scss",
+  globalScript: "src/global/global.ts",
   outputTargets: [
     reactOutputTarget({
       componentCorePackage: "@cafeta/components",

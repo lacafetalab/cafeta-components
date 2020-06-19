@@ -23,6 +23,7 @@
 | `loader`        | `loader`         |             | `boolean`                  | `false`          |
 | `name`          | `name`           |             | `string`                   | `""`             |
 | `placeholder`   | `placeholder`    |             | `string`                   | `""`             |
+| `type`          | `type`           |             | `"checkbox"`               | `undefined`      |
 
 
 ## Events
@@ -37,17 +38,17 @@
 ### Depends on
 
 - [cc-wrapper-field](../cc-wrapper-field)
+- [cc-icon](../cc-icon)
 - [cc-input](../cc-input)
 - [cc-loader](../cc-loader)
-- [cc-icon](../cc-icon)
 
 ### Graph
 ```mermaid
 graph TD;
   cc-filter-select-input --> cc-wrapper-field
+  cc-filter-select-input --> cc-icon
   cc-filter-select-input --> cc-input
   cc-filter-select-input --> cc-loader
-  cc-filter-select-input --> cc-icon
   cc-input --> cc-icon
   style cc-filter-select-input fill:#f9f,stroke:#333,stroke-width:4px
 ```
