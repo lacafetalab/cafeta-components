@@ -213,7 +213,9 @@ export class CcSingleSelectInput {
       border: this.border,
       bgField: this.bgField,
       isActive: this.isOpenDropdown,
-      IconRotate: this.IconRotate
+      IconRotate: this.IconRotate,
+      iconName: this.iconName,
+      helperText: this.helperText
     };
     return (
       <Host data-testid="cc-single-file-input" class="single-file-input">
@@ -259,13 +261,6 @@ export class CcSingleSelectInput {
                     </p>
                   );
                 })}
-            <div class="single-file-input__wrapper-icon">
-              {this.loader ? (
-                <cc-loader></cc-loader>
-              ) : (
-                <cc-icon name={this.error ? "x" : this.iconName}></cc-icon>
-              )}
-            </div>
           </div>
           <ul
             ref={el => (this.dropdownItems = el)}

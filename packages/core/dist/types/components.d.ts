@@ -61,6 +61,7 @@ export namespace Components {
     'type'?: "single" | "multiple" | "text";
   }
   interface CcFilterSelectInput {
+    'IconRotate'?: boolean;
     'bgField'?: string;
     'border'?: boolean;
     'choices': Array<any>;
@@ -173,6 +174,8 @@ export namespace Components {
     'disabled'?: boolean;
     'error'?: boolean;
     'fieldReadonly'?: boolean;
+    'helperText'?: string;
+    'iconName'?: string;
     'iconOnly'?: boolean;
     'isActive'?: boolean;
     'isFocus'?: boolean;
@@ -343,6 +346,7 @@ declare namespace LocalJSX {
     'type'?: "single" | "multiple" | "text";
   }
   interface CcFilterSelectInput {
+    'IconRotate'?: boolean;
     'bgField'?: string;
     'border'?: boolean;
     'choices'?: Array<any>;
@@ -462,6 +466,8 @@ declare namespace LocalJSX {
     'disabled'?: boolean;
     'error'?: boolean;
     'fieldReadonly'?: boolean;
+    'helperText'?: string;
+    'iconName'?: string;
     'iconOnly'?: boolean;
     'isActive'?: boolean;
     'isFocus'?: boolean;

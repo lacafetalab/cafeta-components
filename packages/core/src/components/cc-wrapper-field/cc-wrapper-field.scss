@@ -16,7 +16,7 @@
   &:hover {
     @apply border-error;
   }
-  cc-icon {
+  .wrapper-field__icon {
     @apply text-error;
   }
 }
@@ -31,7 +31,7 @@
 }
 
 @mixin wrapper-field-state-secondary {
-  cc-icon {
+  .wrapper-field__icon {
     @apply text-secondary;
   }
   cc-loader {
@@ -40,7 +40,7 @@
   &:focus-within,
   &:hover {
     @apply border-secondary;
-    cc-icon {
+    .wrapper-field__icon {
       @apply text-secondary;
     }
   }
@@ -52,7 +52,7 @@
 
 @mixin wrapper-field-state-disabled {
   @apply border-disabled cursor-not-allowed;
-  cc-icon {
+  .wrapper-field__icon {
     @apply text-disabled;
   }
   &:focus-within,
@@ -66,7 +66,7 @@
   &:hover {
     @apply border-primary;
   }
-  cc-icon {
+  .wrapper-field__icon {
     @apply text-primary;
   }
   cc-loader {
@@ -97,6 +97,9 @@
   &--error {
     @include wrapper-field-state-error;
   }
+  &--helperText {
+    @apply mb-lg;
+  }
   &--is-focus {
     @apply border-primary;
     &:hover {
@@ -113,13 +116,20 @@
         @include wrapper-field-state-error;
       }
     }
-    cc-icon {
+  }
+  &__wrapper-icon {
+    pointer-events: none;
+    @apply absolute;
+    right: 8px;
+    bottom: 8px;
+    max-height: 2.4rem;
+  }
+  &__icon {
+    &--inverted {
       transform: rotate(180deg);
     }
   }
-  &--icon-without-rotate {
-    cc-icon {
-      transform: rotate(0deg);
-    }
+  &__helperText {
+    @apply absolute text-small-01 mt-xsm text-error left-0;
   }
 }

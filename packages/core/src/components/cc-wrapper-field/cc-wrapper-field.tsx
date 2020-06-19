@@ -17,6 +17,8 @@ export class CcWrapperField {
   @Prop() isFocus?: boolean = false;
   @Prop() isActive?: boolean = false;
   @Prop() IconRotate?: boolean = true;
+  @Prop() iconName?: string;
+  @Prop() helperText?: string;
 
   render() {
     return (
@@ -33,10 +35,28 @@ export class CcWrapperField {
           "wrapper-field--no-border": !this.border,
           "wrapper-field--no-background": !this.bgField,
           "wrapper-field--icon-only": this.iconOnly,
-          "wrapper-field--icon-without-rotate": !this.IconRotate
+          "wrapper-field--helperText":
+            this.helperText && this.error && !this.disabled
         }}
       >
         <slot />
+        <div class="wrapper-field__wrapper-icon">
+          {this.loader ? (
+            <cc-loader></cc-loader>
+          ) : (
+            <cc-icon
+              class={{
+                "wrapper-field__icon": true,
+                "wrapper-field__icon--inverted":
+                  this.isActive && this.IconRotate
+              }}
+              name={this.error ? "x" : this.iconName}
+            ></cc-icon>
+          )}
+        </div>
+        {this.helperText && this.error && !this.disabled && (
+          <span class="wrapper-field__helperText">{this.helperText}</span>
+        )}
       </Host>
     );
   }
