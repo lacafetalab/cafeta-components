@@ -12,8 +12,7 @@ import {
 
 @Component({
   tag: "cc-filter-select-input",
-  styleUrl: "cc-filter-select-input.scss",
-  shadow: false
+  styleUrl: "cc-filter-select-input.scss"
 })
 export class CcFilterSelectInput {
   private singleFileInput: HTMLElement;
@@ -407,13 +406,20 @@ export class CcFilterSelectInput {
                     }}
                   >
                     {this.type === "checkbox" && (
-                      <input
+                      <cc-checkfield
                         class="filter-file-input__option-checkbox"
                         type="checkbox"
-                        name=""
-                        id=""
+                        shape="square"
+                        color={this.color}
                         checked={c.selected}
                       />
+                      // <input
+                      //
+                      //   type="checkbox"
+                      //   name=""
+                      //   id=""
+                      //   checked={c.selected}
+                      // />
                     )}
                     <span>{c.label}</span>
                   </li>
