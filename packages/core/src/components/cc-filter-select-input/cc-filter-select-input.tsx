@@ -135,11 +135,11 @@ export class CcFilterSelectInput {
   };
 
   focusInput = () => {
-    this.inputEl.focus();
+    if (this.isOpenDropdown) this.inputEl.focus();
   };
 
   removeFocus = () => {
-    document.body.focus();
+    if (!this.isOpenDropdown) this.inputEl.blur();
   };
 
   clearChoices() {
@@ -163,6 +163,7 @@ export class CcFilterSelectInput {
   handleOptionClick = (value: string) => {
     this.updateChoicesList(value);
     this.clearInputValue();
+    this.focusInput();
   };
 
   filteredChoices = () => {
@@ -204,6 +205,7 @@ export class CcFilterSelectInput {
 
   handleRemoveItemSelected = (value: string) => {
     this.updateChoicesList(value);
+    this.focusInput();
   };
 
   closeDroprownIfClickOutDropdown = e => {
@@ -229,6 +231,7 @@ export class CcFilterSelectInput {
         if (mutation.type === "attributes") {
           this.calculatePositionOfOptions();
           this.focusInput();
+          this.removeFocus();
         }
       });
     });
@@ -257,8 +260,8 @@ export class CcFilterSelectInput {
 
   validateDisabled = () => {
     if (!this.disabled) {
-      this.focusInput();
       this.handleShowOptions();
+      // this.focusInput();
     }
   };
 
