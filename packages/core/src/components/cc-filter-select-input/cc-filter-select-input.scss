@@ -78,7 +78,9 @@
   }
   &__input {
     &--is-hidden {
-      display: none !important;
+      visibility: hidden;
+      position: absolute;
+      z-index: -2;
     }
   }
   &__dot {
