@@ -54,6 +54,9 @@ export class CcFilterSelectInput {
 
     if (newValueStringify !== oldValueStringify) {
       this._choices = newValue;
+      this.selectedChoices = this._choices
+        .filter(c => c.selected)
+        .map(c => c.value);
     }
   }
 
@@ -267,6 +270,9 @@ export class CcFilterSelectInput {
 
   componentWillLoad() {
     this._choices = [...this.choices];
+    this.selectedChoices = this._choices
+      .filter(c => c.selected)
+      .map(c => c.value);
     document.addEventListener("click", this.closeDroprownIfClickOutDropdown);
   }
 

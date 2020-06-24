@@ -22,7 +22,7 @@ export const FilterSelectInput = () => {
           "Opción muy grande que aparece en el dropdown que debe ser controlado. Lorem ipsoum selet amonet os sebut"
       },
       { value: "125", label: "Opción 3" },
-      { value: "126", label: "Opción 4" },
+      { value: "126", label: "Opción 4", selected: true },
       { value: "127", label: "Opción 5", disabled: true },
       { value: "128", label: "Opción 6", disabled: true },
       { value: "124", label: "Opción 2" }
