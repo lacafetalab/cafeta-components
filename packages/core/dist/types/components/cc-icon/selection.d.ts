@@ -3,26 +3,14 @@ declare const _default: {
     "icons": ({
         "icon": {
             "paths": string[];
-            "attrs": {
-                "fill": string;
-                "strokeLinejoin": string;
-                "strokeLinecap": string;
-                "strokeMiterlimit": string;
-                "strokeWidth": number;
-            }[];
+            "attrs": {}[];
             "isMulticolor": boolean;
             "isMulticolor2": boolean;
             "grid": number;
             "tags": string[];
             "colorPermutations"?: undefined;
         };
-        "attrs": {
-            "fill": string;
-            "strokeLinejoin": string;
-            "strokeLinecap": string;
-            "strokeMiterlimit": string;
-            "strokeWidth": number;
-        }[];
+        "attrs": {}[];
         "properties": {
             "order": number;
             "id": number;
