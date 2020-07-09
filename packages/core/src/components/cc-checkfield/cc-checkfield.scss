@@ -1,9 +1,37 @@
 @mixin state-secondary {
-  @apply border-secondary;
   &:focus-within,
   &:hover {
     @apply border-secondary-dark;
   }
+  &:checked {
+    @apply border-secondary-dark;
+    &.checkfield__input--square {
+      @apply bg-secondary-dark;
+    }
+  }
+}
+
+@mixin state-error {
+  @apply border-error;
+  &:hover {
+    @apply border-error;
+  }
+  &:disabled {
+    &:hover {
+      @apply border-disabled;
+    }
+  }
+  &:checked {
+    @apply border-error;
+  }
+  &.checkfield__input--square {
+    &:checked {
+      @apply bg-error border-error;
+    }
+  }
+}
+
+@mixin state-disabled {
 }
 
 .checkfield {
@@ -21,7 +49,7 @@
     }
   }
   &__input {
-    @apply border-primary border border-solid cursor-pointer m-none;
+    @apply border-primary border border-neutral-02 border-solid cursor-pointer m-none;
     width: 16px;
     height: 16px;
     appearance: none;
@@ -31,8 +59,8 @@
     &:focus {
       outline: 0;
     }
-    &:disabled {
-      @apply border-disabled cursor-not-allowed;
+    &:checked {
+      @apply border-primary-dark;
     }
     &--secondary {
       @include state-secondary;
@@ -52,9 +80,6 @@
           border-width: 5px;
         }
       }
-      &:disabled {
-        @apply border-disabled;
-      }
     }
     &--square {
       border-radius: 0.2rem;
@@ -72,16 +97,9 @@
           }
         }
       }
-      &.checkfield__input--error {
-        @apply border-error;
-        &:checked {
-          @apply bg-error border-error;
-        }
-      }
       &:disabled {
         @apply border-disabled;
         &:checked {
-          @apply border-disabled bg-disabled;
           + cc-icon {
             @apply text-disabled cursor-not-allowed;
           }
@@ -89,13 +107,13 @@
       }
     }
     &--error {
-      @apply border-error;
-      &:hover {
-        @apply border-error;
-      }
-      &:disabled {
-        &:hover {
-          @apply border-disabled;
+      @include state-error;
+    }
+    &:disabled {
+      @apply border-disabled cursor-not-allowed;
+      &.checkfield__input--square {
+        &:checked {
+          @apply bg-disabled border-disabled;
         }
       }
     }
