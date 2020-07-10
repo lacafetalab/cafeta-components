@@ -164,6 +164,7 @@ export namespace Components {
     'name'?: string;
     'placeholder'?: string;
     'rich'?: boolean;
+    'setDataRichEditor': (data: string) => Promise<void>;
     'success'?: boolean;
     'value'?: string;
   }

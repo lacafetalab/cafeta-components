@@ -38,6 +38,12 @@ export class CcTextarea {
     return;
   }
 
+  @Method()
+  async setDataRichEditor(data: string) {
+    this.editorInstance.setData(data);
+    return;
+  }
+
   @Watch("disabled")
   validateName(newDisabled: boolean) {
     if (this.editorInstance) this.editorInstance.isReadOnly = newDisabled;
@@ -59,7 +65,6 @@ export class CcTextarea {
     if (this.rich) {
       if (this.editorInstance) {
         this.editorInstance.setData(newValue);
-        this.putCursorAtTheEnd();
       }
     } else {
       this.textAreaEl.value = newValue;
