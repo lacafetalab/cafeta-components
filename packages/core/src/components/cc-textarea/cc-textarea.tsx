@@ -5,7 +5,8 @@ import {
   Host,
   Watch,
   Event,
-  EventEmitter
+  EventEmitter,
+  Method
 } from "@stencil/core";
 import { UploadAdapter } from "./UploadAdapter";
 
@@ -30,6 +31,12 @@ export class CcTextarea {
   @Prop() helperText?: string;
   @Prop() enableImage?: boolean;
   @Prop() imageService?: (file: any) => Promise<string>;
+
+  @Method()
+  async focusTextEditor() {
+    this.focusEditor();
+    return;
+  }
 
   @Watch("disabled")
   validateName(newDisabled: boolean) {
@@ -101,6 +108,16 @@ export class CcTextarea {
 
     this.setRichTextEditorDefaults();
     this.setAdapterUpload(this.editorInstance);
+
+    this.editorInstance.model.change(writer => {
+      writer.setSelection(
+        writer.createPositionAt(
+          this.editorInstance.model.document.getRoot(),
+          "end"
+        )
+      );
+    });
+
     return this.editorInstance;
   }
 

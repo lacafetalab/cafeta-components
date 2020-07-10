@@ -157,6 +157,7 @@ export namespace Components {
     'disabled'?: boolean;
     'enableImage'?: boolean;
     'error'?: boolean;
+    'focusTextEditor': () => Promise<void>;
     'helperText'?: string;
     'imageService'?: (file: any) => Promise<string>;
     'label'?: string;
