@@ -40,7 +40,7 @@ export class CcTextarea {
 
   @Method()
   async setDataRichEditor(data: string) {
-    this.editorInstance.setData(data);
+    this.editorInstance.data.set(data);
     return;
   }
 
@@ -64,7 +64,7 @@ export class CcTextarea {
   setValue(newValue: string) {
     if (this.rich) {
       if (this.editorInstance) {
-        this.editorInstance.setData(newValue);
+        this.editorInstance.data.set(newValue);
       }
     } else {
       this.textAreaEl.value = newValue;
