@@ -42,6 +42,16 @@ Type: `Promise<void>`
 
 
 
+### `setDataRichEditor(data: string) => Promise<void>`
+
+
+
+#### Returns
+
+Type: `Promise<void>`
+
+
+
 
 ----------------------------------------------
 
