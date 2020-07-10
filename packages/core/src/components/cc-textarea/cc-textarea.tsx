@@ -57,7 +57,10 @@ export class CcTextarea {
   @Watch("value")
   setValue(newValue: string) {
     if (this.rich) {
-      if (this.editorInstance) this.editorInstance.data.set(newValue);
+      if (this.editorInstance) {
+        this.editorInstance.setData(newValue);
+        this.putCursorAtTheEnd();
+      }
     } else {
       this.textAreaEl.value = newValue;
     }
@@ -109,15 +112,6 @@ export class CcTextarea {
     this.setRichTextEditorDefaults();
     this.setAdapterUpload(this.editorInstance);
 
-    this.editorInstance.model.change(writer => {
-      writer.setSelection(
-        writer.createPositionAt(
-          this.editorInstance.model.document.getRoot(),
-          "end"
-        )
-      );
-    });
-
     return this.editorInstance;
   }
 
@@ -135,9 +129,21 @@ export class CcTextarea {
     if (this.rich && this.editorInstance) this.editorInstance.destroy();
   }
 
+  putCursorAtTheEnd() {
+    this.editorInstance.model.change(writer => {
+      writer.setSelection(
+        writer.createPositionAt(
+          this.editorInstance.model.document.getRoot(),
+          "end"
+        )
+      );
+    });
+  }
+
   focusEditor = () => {
     if (this.rich) {
       this.editorInstance.editing.view.focus();
+      this.putCursorAtTheEnd();
     } else {
       this.textAreaEl.focus();
     }
