@@ -157,12 +157,14 @@ export namespace Components {
     'disabled'?: boolean;
     'enableImage'?: boolean;
     'error'?: boolean;
+    'focusTextEditor': () => Promise<void>;
     'helperText'?: string;
     'imageService'?: (file: any) => Promise<string>;
     'label'?: string;
     'name'?: string;
     'placeholder'?: string;
     'rich'?: boolean;
+    'setDataRichEditor': (data: string) => Promise<void>;
     'success'?: boolean;
     'value'?: string;
   }
