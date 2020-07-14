@@ -5,7 +5,8 @@ import {
   Host,
   Watch,
   Event,
-  EventEmitter
+  EventEmitter,
+  Method
 } from "@stencil/core";
 import { UploadAdapter } from "./UploadAdapter";
 
@@ -31,6 +32,18 @@ export class CcTextarea {
   @Prop() enableImage?: boolean;
   @Prop() imageService?: (file: any) => Promise<string>;
 
+  @Method()
+  async focusTextEditor() {
+    this.focusEditor();
+    return;
+  }
+
+  @Method()
+  async setDataRichEditor(data: string) {
+    this.editorInstance.data.set(data);
+    return;
+  }
+
   @Watch("disabled")
   validateName(newDisabled: boolean) {
     if (this.editorInstance) this.editorInstance.isReadOnly = newDisabled;
@@ -50,7 +63,9 @@ export class CcTextarea {
   @Watch("value")
   setValue(newValue: string) {
     if (this.rich) {
-      if (this.editorInstance) this.editorInstance.data.set(newValue);
+      if (this.editorInstance) {
+        this.editorInstance.data.set(newValue);
+      }
     } else {
       this.textAreaEl.value = newValue;
     }
@@ -101,6 +116,7 @@ export class CcTextarea {
 
     this.setRichTextEditorDefaults();
     this.setAdapterUpload(this.editorInstance);
+
     return this.editorInstance;
   }
 
@@ -118,9 +134,21 @@ export class CcTextarea {
     if (this.rich && this.editorInstance) this.editorInstance.destroy();
   }
 
+  putCursorAtTheEnd() {
+    this.editorInstance.model.change(writer => {
+      writer.setSelection(
+        writer.createPositionAt(
+          this.editorInstance.model.document.getRoot(),
+          "end"
+        )
+      );
+    });
+  }
+
   focusEditor = () => {
     if (this.rich) {
       this.editorInstance.editing.view.focus();
+      this.putCursorAtTheEnd();
     } else {
       this.textAreaEl.focus();
     }
