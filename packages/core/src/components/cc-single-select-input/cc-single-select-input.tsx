@@ -190,7 +190,7 @@ export class CcSingleSelectInput {
   };
 
   componentWillLoad() {
-    this._choices = this.choices;
+    this._choices = JSON.parse(JSON.stringify(this.choices));
     document.addEventListener("click", this.closeDroprownIfClickOutDropdown);
   }
 
