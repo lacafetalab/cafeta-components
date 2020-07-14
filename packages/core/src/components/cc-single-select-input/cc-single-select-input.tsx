@@ -50,7 +50,7 @@ export class CcSingleSelectInput {
     const oldValueStringify = JSON.stringify(oldValue);
 
     if (newValueStringify !== oldValueStringify) {
-      this._choices = newValue;
+      this._choices = JSON.parse(newValueStringify);
     }
   }
 
