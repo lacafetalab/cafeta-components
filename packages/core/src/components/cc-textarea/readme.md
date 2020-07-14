@@ -30,6 +30,29 @@
 | `changeText` |             | `CustomEvent<string>` |
 
 
+## Methods
+
+### `focusTextEditor() => Promise<void>`
+
+
+
+#### Returns
+
+Type: `Promise<void>`
+
+
+
+### `setDataRichEditor(data: string) => Promise<void>`
+
+
+
+#### Returns
+
+Type: `Promise<void>`
+
+
+
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*
