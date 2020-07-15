@@ -161,6 +161,7 @@ export namespace Components {
     'helperText'?: string;
     'imageService'?: (file: any) => Promise<string>;
     'label'?: string;
+    'maxLength'?: number;
     'name'?: string;
     'placeholder'?: string;
     'rich'?: boolean;
@@ -453,6 +454,7 @@ declare namespace LocalJSX {
     'helperText'?: string;
     'imageService'?: (file: any) => Promise<string>;
     'label'?: string;
+    'maxLength'?: number;
     'name'?: string;
     'onChangeText'?: (event: CustomEvent<string>) => void;
     'placeholder'?: string;
