@@ -31,6 +31,7 @@ export class CcTextarea {
   @Prop() helperText?: string;
   @Prop() enableImage?: boolean;
   @Prop() imageService?: (file: any) => Promise<string>;
+  @Prop() maxLength?: number;
 
   @Method()
   async focusTextEditor() {
@@ -194,6 +195,7 @@ export class CcTextarea {
             disabled={this.disabled}
             placeholder={this.placeholder}
             class="textarea__field"
+            maxLength={this.maxLength}
             name={this.name}
             value={this.value}
             onInput={e =>

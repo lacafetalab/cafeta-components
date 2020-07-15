@@ -16,6 +16,7 @@
 | `helperText`   | `helper-text`  |             | `string`                         | `undefined` |
 | `imageService` | --             |             | `(file: any) => Promise<string>` | `undefined` |
 | `label`        | `label`        |             | `string`                         | `undefined` |
+| `maxLength`    | `max-length`   |             | `number`                         | `undefined` |
 | `name`         | `name`         |             | `string`                         | `undefined` |
 | `placeholder`  | `placeholder`  |             | `string`                         | `undefined` |
 | `rich`         | `rich`         |             | `boolean`                        | `false`     |
