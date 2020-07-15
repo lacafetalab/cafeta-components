@@ -32,9 +32,8 @@
 
   &__underline {
     @apply absolute bg-primary bottom-0 rounded-lg;
-    height: 0.3rem;
     transition: all 0.3s ease;
-
+    height: 0.3rem;
     &--secondary {
       @apply bg-secondary;
     }
