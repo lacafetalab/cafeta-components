@@ -173,6 +173,8 @@ export class CcTextarea {
 
   componentDidLoad() {
     this.enableRichTextEditor();
+  }
+  componentWillLoad() {
     this.lengthCharacter = this.value.length;
   }
 
