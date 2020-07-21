@@ -90,7 +90,11 @@ export class CcTextarea {
       this.textAreaEl.style.height = "5px";
       this.textAreaEl.style.height = this.textAreaEl.scrollHeight + "px";
     }
-    this.lengthCharacter = newText.length;
+
+    if (this.counter) {
+      this.lengthCharacter = newText.length;
+    }
+
     this.changeText.emit(newText);
   }
 
@@ -175,7 +179,9 @@ export class CcTextarea {
     this.enableRichTextEditor();
   }
   componentWillLoad() {
-    this.lengthCharacter = this.value.length;
+    if (this.value) {
+      this.lengthCharacter = this.value.length;
+    }
   }
 
   componentDidUnload() {
