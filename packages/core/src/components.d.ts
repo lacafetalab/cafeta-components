@@ -153,9 +153,9 @@ export namespace Components {
     'size'?: "sm" | "md";
   }
   interface CcTextarea {
-    'autoGrow': boolean;
+    'autoGrow'?: boolean;
     'color': "primary" | "secondary";
-    'counter': boolean;
+    'counter'?: boolean;
     'disabled'?: boolean;
     'enableImage'?: boolean;
     'error'?: boolean;
@@ -171,7 +171,7 @@ export namespace Components {
     'setDataRichEditor': (data: string) => Promise<void>;
     'success'?: boolean;
     'value'?: string;
-    'withoutRadius': boolean;
+    'withoutRadius'?: boolean;
   }
   interface CcWrapperField {
     'IconRotate'?: boolean;

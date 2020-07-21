@@ -34,10 +34,10 @@ export class CcTextarea {
   @Prop() enableImage?: boolean;
   @Prop() imageService?: (file: any) => Promise<string>;
   @Prop() maxLength?: number;
-  @Prop() outlined: boolean = true;
-  @Prop() autoGrow: boolean = true;
-  @Prop() withoutRadius: boolean = true;
-  @Prop() counter: boolean = true;
+  @Prop() outlined: boolean = false;
+  @Prop() autoGrow?: boolean = false;
+  @Prop() withoutRadius?: boolean = false;
+  @Prop() counter?: boolean = false;
 
   @Method()
   async focusTextEditor() {

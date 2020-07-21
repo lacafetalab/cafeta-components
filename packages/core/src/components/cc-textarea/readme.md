@@ -9,9 +9,9 @@
 
 | Property        | Attribute        | Description | Type                             | Default     |
 | --------------- | ---------------- | ----------- | -------------------------------- | ----------- |
-| `autoGrow`      | `auto-grow`      |             | `boolean`                        | `true`      |
+| `autoGrow`      | `auto-grow`      |             | `boolean`                        | `false`     |
 | `color`         | `color`          |             | `"primary" \| "secondary"`       | `"primary"` |
-| `counter`       | `counter`        |             | `boolean`                        | `true`      |
+| `counter`       | `counter`        |             | `boolean`                        | `false`     |
 | `disabled`      | `disabled`       |             | `boolean`                        | `false`     |
 | `enableImage`   | `enable-image`   |             | `boolean`                        | `undefined` |
 | `error`         | `error`          |             | `boolean`                        | `false`     |
@@ -20,12 +20,12 @@
 | `label`         | `label`          |             | `string`                         | `undefined` |
 | `maxLength`     | `max-length`     |             | `number`                         | `undefined` |
 | `name`          | `name`           |             | `string`                         | `undefined` |
-| `outlined`      | `outlined`       |             | `boolean`                        | `true`      |
+| `outlined`      | `outlined`       |             | `boolean`                        | `false`     |
 | `placeholder`   | `placeholder`    |             | `string`                         | `undefined` |
 | `rich`          | `rich`           |             | `boolean`                        | `false`     |
 | `success`       | `success`        |             | `boolean`                        | `false`     |
 | `value`         | `value`          |             | `string`                         | `undefined` |
-| `withoutRadius` | `without-radius` |             | `boolean`                        | `true`      |
+| `withoutRadius` | `without-radius` |             | `boolean`                        | `false`     |
 
 
 ## Events
