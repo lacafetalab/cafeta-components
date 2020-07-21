@@ -6,7 +6,8 @@ import {
   Watch,
   Event,
   EventEmitter,
-  Method
+  Method,
+  State
 } from "@stencil/core";
 import { UploadAdapter } from "./UploadAdapter";
 
@@ -19,6 +20,7 @@ export class CcTextarea {
   private textAreaEl?: HTMLTextAreaElement;
   private editorInstance: any;
 
+  @State() lengthCharacter: Number = 0;
   @Prop() color: "primary" | "secondary" = "primary";
   @Prop() label?: string;
   @Prop() error?: boolean = false;
@@ -32,6 +34,10 @@ export class CcTextarea {
   @Prop() enableImage?: boolean;
   @Prop() imageService?: (file: any) => Promise<string>;
   @Prop() maxLength?: number;
+  @Prop() outlined: boolean = true;
+  @Prop() autoGrow: boolean = true;
+  @Prop() withoutRadius: boolean = true;
+  @Prop() counter: boolean = true;
 
   @Method()
   async focusTextEditor() {
@@ -60,6 +66,11 @@ export class CcTextarea {
       }
     }
   }
+  getAmountOfCharacters() {
+    if (this.textAreaEl) {
+      return this.textAreaEl.value.length;
+    }
+  }
 
   @Watch("value")
   setValue(newValue: string) {
@@ -75,6 +86,11 @@ export class CcTextarea {
   @Event() changeText: EventEmitter<string>;
 
   changeTextHandler(newText: string) {
+    if (this.autoGrow) {
+      this.textAreaEl.style.height = "5px";
+      this.textAreaEl.style.height = this.textAreaEl.scrollHeight + "px";
+    }
+    this.lengthCharacter = newText.length;
     this.changeText.emit(newText);
   }
 
@@ -157,6 +173,7 @@ export class CcTextarea {
 
   componentDidLoad() {
     this.enableRichTextEditor();
+    this.lengthCharacter = this.value.length;
   }
 
   componentDidUnload() {
@@ -168,6 +185,7 @@ export class CcTextarea {
       <Host
         class={{
           textarea: true,
+          relative: true,
           "textarea--primary": this.color === "primary",
           "textarea--secondary": this.color === "secondary",
           "textarea--success": this.success && !this.error && !this.disabled,
@@ -191,10 +209,16 @@ export class CcTextarea {
           </div>
         ) : (
           <textarea
+            rows={1}
             ref={el => (this.textAreaEl = el)}
             disabled={this.disabled}
             placeholder={this.placeholder}
-            class="textarea__field"
+            class={{
+              textarea__field: true,
+              "textarea__field--outlined": this.outlined,
+              "textarea__field--auto-grow": this.autoGrow,
+              "textarea__field--without-radius": this.withoutRadius
+            }}
             maxLength={this.maxLength}
             name={this.name}
             value={this.value}
@@ -203,12 +227,26 @@ export class CcTextarea {
             }
           />
         )}
-
-        {this.helperText && this.error && !this.success && !this.disabled && (
-          <span class="textarea__helperText" onClick={this.focusEditor}>
-            {this.helperText}
-          </span>
-        )}
+        <div class="textarea__wrapper-helper">
+          <div>
+            {this.helperText && this.error && !this.success && !this.disabled && (
+              <span class="textarea__helperText" onClick={this.focusEditor}>
+                {this.helperText}
+              </span>
+            )}
+          </div>
+          <div>
+            {this.counter && (
+              <span class="textarea__counter">
+                <span>{this.lengthCharacter}</span>
+                <span>/</span>
+                <span>
+                  {this.maxLength ? this.maxLength : "maxlength is missing"}
+                </span>
+              </span>
+            )}
+          </div>
+        </div>
       </Host>
     );
   }

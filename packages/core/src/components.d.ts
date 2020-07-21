@@ -153,7 +153,9 @@ export namespace Components {
     'size'?: "sm" | "md";
   }
   interface CcTextarea {
+    'autoGrow': boolean;
     'color': "primary" | "secondary";
+    'counter': boolean;
     'disabled'?: boolean;
     'enableImage'?: boolean;
     'error'?: boolean;
@@ -163,11 +165,13 @@ export namespace Components {
     'label'?: string;
     'maxLength'?: number;
     'name'?: string;
+    'outlined': boolean;
     'placeholder'?: string;
     'rich'?: boolean;
     'setDataRichEditor': (data: string) => Promise<void>;
     'success'?: boolean;
     'value'?: string;
+    'withoutRadius': boolean;
   }
   interface CcWrapperField {
     'IconRotate'?: boolean;
@@ -447,7 +451,9 @@ declare namespace LocalJSX {
     'size'?: "sm" | "md";
   }
   interface CcTextarea {
+    'autoGrow'?: boolean;
     'color'?: "primary" | "secondary";
+    'counter'?: boolean;
     'disabled'?: boolean;
     'enableImage'?: boolean;
     'error'?: boolean;
@@ -457,10 +463,12 @@ declare namespace LocalJSX {
     'maxLength'?: number;
     'name'?: string;
     'onChangeText'?: (event: CustomEvent<string>) => void;
+    'outlined'?: boolean;
     'placeholder'?: string;
     'rich'?: boolean;
     'success'?: boolean;
     'value'?: string;
+    'withoutRadius'?: boolean;
   }
   interface CcWrapperField {
     'IconRotate'?: boolean;
