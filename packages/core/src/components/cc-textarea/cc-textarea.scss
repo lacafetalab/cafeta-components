@@ -49,7 +49,7 @@
   }
 
   &__field {
-    @apply w-full rounded-sm border border-neutral-02 px-lg py-sm bg-neutral-04 text-body block leading-relaxed;
+    @apply w-full rounded-sm border border-neutral-02 px-lg py-sm  text-body block leading-relaxed;
     resize: none;
     min-height: 13.6rem;
     &--outlined {
@@ -60,6 +60,12 @@
     }
     &--without-radius {
       border-radius: 0;
+    }
+    &--bg-white {
+      @apply bg-neutral-04;
+    }
+    &--bg-transparent {
+      @apply bg-transparent;
     }
     &:disabled {
       @apply border-disabled;
@@ -126,6 +132,19 @@
     &-helper {
       display: flex;
       justify-content: space-between;
+    }
+  }
+
+  &--bg {
+    &-transparent {
+      .ck.ck-editor__main > .ck-editor__editable {
+        @apply bg-transparent;
+      }
+    }
+    &-white {
+      .ck.ck-editor__main > .ck-editor__editable {
+        @apply bg-neutral-04;
+      }
     }
   }
 

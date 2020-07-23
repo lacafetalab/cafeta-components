@@ -10,6 +10,7 @@
 | Property        | Attribute        | Description | Type                             | Default     |
 | --------------- | ---------------- | ----------- | -------------------------------- | ----------- |
 | `autoGrow`      | `auto-grow`      |             | `boolean`                        | `false`     |
+| `bgField`       | `bg-field`       |             | `"transparent" \| "white"`       | `"white"`   |
 | `color`         | `color`          |             | `"primary" \| "secondary"`       | `"primary"` |
 | `counter`       | `counter`        |             | `boolean`                        | `false`     |
 | `disabled`      | `disabled`       |             | `boolean`                        | `false`     |

@@ -38,6 +38,7 @@ export class CcTextarea {
   @Prop() autoGrow?: boolean = false;
   @Prop() withoutRadius?: boolean = false;
   @Prop() counter?: boolean = false;
+  @Prop() bgField?: "transparent" | "white" = "white";
 
   @Method()
   async focusTextEditor() {
@@ -198,7 +199,9 @@ export class CcTextarea {
           "textarea--secondary": this.color === "secondary",
           "textarea--success": this.success && !this.error && !this.disabled,
           "textarea--error": this.error && !this.success && !this.disabled,
-          "textarea--disabled": this.disabled
+          "textarea--disabled": this.disabled,
+          "textarea--bg-transparent": this.bgField === "transparent",
+          "textarea--bg-white": this.bgField === "white"
         }}
         data-testid="cc-textarea"
       >
@@ -225,7 +228,9 @@ export class CcTextarea {
               textarea__field: true,
               "textarea__field--outlined": this.outlined,
               "textarea__field--auto-grow": this.autoGrow,
-              "textarea__field--without-radius": this.withoutRadius
+              "textarea__field--without-radius": this.withoutRadius,
+              "textarea__field--bg-white": this.bgField === "white",
+              "textarea__field--bg-transparent": this.bgField === "transparent"
             }}
             maxLength={this.maxLength}
             name={this.name}

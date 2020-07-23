@@ -154,6 +154,7 @@ export namespace Components {
   }
   interface CcTextarea {
     'autoGrow'?: boolean;
+    'bgField'?: "transparent" | "white";
     'color': "primary" | "secondary";
     'counter'?: boolean;
     'disabled'?: boolean;
@@ -452,6 +453,7 @@ declare namespace LocalJSX {
   }
   interface CcTextarea {
     'autoGrow'?: boolean;
+    'bgField'?: "transparent" | "white";
     'color'?: "primary" | "secondary";
     'counter'?: boolean;
     'disabled'?: boolean;
