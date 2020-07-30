@@ -39,6 +39,7 @@ export class CcTextarea {
   @Prop() withoutRadius?: boolean = false;
   @Prop() counter?: boolean = false;
   @Prop() bgField?: "transparent" | "white" = "white";
+  @Prop() toolbar?: string[];
 
   @Method()
   async focusTextEditor() {
@@ -109,7 +110,7 @@ export class CcTextarea {
   }
 
   async enableRichTextEditor() {
-    let toolbar = [
+    let toolbar = this.toolbar || [
       "Undo",
       "Redo",
       "Heading",

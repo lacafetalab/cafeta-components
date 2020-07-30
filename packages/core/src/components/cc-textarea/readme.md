@@ -25,6 +25,7 @@
 | `placeholder`   | `placeholder`    |             | `string`                         | `undefined` |
 | `rich`          | `rich`           |             | `boolean`                        | `false`     |
 | `success`       | `success`        |             | `boolean`                        | `false`     |
+| `toolbar`       | --               |             | `string[]`                       | `undefined` |
 | `value`         | `value`          |             | `string`                         | `undefined` |
 | `withoutRadius` | `without-radius` |             | `boolean`                        | `false`     |
 

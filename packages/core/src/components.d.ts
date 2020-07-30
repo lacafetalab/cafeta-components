@@ -171,6 +171,7 @@ export namespace Components {
     'rich'?: boolean;
     'setDataRichEditor': (data: string) => Promise<void>;
     'success'?: boolean;
+    'toolbar'?: string[];
     'value'?: string;
     'withoutRadius'?: boolean;
   }
@@ -469,6 +470,7 @@ declare namespace LocalJSX {
     'placeholder'?: string;
     'rich'?: boolean;
     'success'?: boolean;
+    'toolbar'?: string[];
     'value'?: string;
     'withoutRadius'?: boolean;
   }
