@@ -103,7 +103,6 @@ export class CcTextarea {
   setRichTextEditorDefaults() {
     this.editorInstance.isReadOnly = this.disabled;
     if (this.value) this.editorInstance.data.set(this.value);
-
     this.editorInstance.model.document.on("change:data", () => {
       this.changeTextHandler(this.editorInstance.getData());
     });
@@ -134,7 +133,10 @@ export class CcTextarea {
 
     this.editorInstance = await ClassicEditor.create(this.richTextEl, {
       toolbar,
-      placeholder: this.placeholder
+      placeholder: this.placeholder,
+      mediaEmbed: {
+        providers: []
+      }
     });
 
     this.setRichTextEditorDefaults();
