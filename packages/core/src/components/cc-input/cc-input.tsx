@@ -1,4 +1,4 @@
-import { h, Component, Host, Prop } from "@stencil/core";
+import { h, Component, Host, Prop, Element } from "@stencil/core";
 
 @Component({
   tag: "cc-input",
@@ -22,7 +22,9 @@ export class CcInput {
   @Prop() bgField?: string = "";
   @Prop() autocomplete?: string = "";
   @Prop() maxLength?: number;
-  @Prop() border?:boolean= true
+  @Prop() border?: boolean = true;
+
+  @Element() el: HTMLElement;
 
   focusInput = () => {
     this.inputEl.focus();
@@ -37,6 +39,7 @@ export class CcInput {
   };
 
   render() {
+    const hasAdornment = this.el.querySelector("[slot='adornment']");
     return (
       <Host
         class={{
@@ -58,9 +61,11 @@ export class CcInput {
 
         <div class="input__wrapper">
           <input
-            class={`input__field ${
-              this.iconName ? "input__field--icon" : ""
-            } ${this.bgField || "input__field--default-bg"}`}
+            class={{
+              input__field: true,
+              "input__field--icon": !!this.iconName || !!hasAdornment,
+              "input__field--default-bg": !!this.bgField
+            }}
             type={this.type}
             placeholder={this.placeholder}
             disabled={this.disabled}
@@ -80,6 +85,12 @@ export class CcInput {
               }}
               name={this.iconName}
             />
+          )}
+
+          {hasAdornment && (
+            <div class="input__icon">
+              <slot name="adornment" />
+            </div>
           )}
         </div>
 

@@ -38,6 +38,12 @@ export const Input = () => {
   <div class="p-xxlg">
     <cc-input value="${value}" ${
     disabled ? "disabled" : ""
+  } placeholder="${placeholder}" id="adornment" label="adornment"><cc-icon slot="adornment" name='eye' class="text-error" onclick="alert('click en icono')"></cc-icon></cc-input>
+  </div>
+
+  <div class="p-xxlg">
+    <cc-input value="${value}" ${
+    disabled ? "disabled" : ""
   } placeholder="${placeholder}" bg-field="bg-transparent" label="CUSTOM BG"></cc-input>
   </div>`;
 
