@@ -9,7 +9,7 @@ import {
   Watch,
   Element
 } from "@stencil/core";
-import { TabOption } from "../../utils/types/TabOption";
+import { TabOptionWithTag } from "../../utils/types/TabOption";
 
 @Component({
   tag: "cc-tabs-underline",
@@ -24,9 +24,9 @@ export class CcTabsUnderline {
   @Prop() border?: boolean = false;
   @Prop() center?: boolean = false;
   @Prop() color?: "primary" | "secondary" = "primary";
-  @Prop() options?: TabOption[] = [];
+  @Prop() options?: TabOptionWithTag[] = [];
 
-  @State() _options: TabOption[];
+  @State() _options: TabOptionWithTag[];
 
   @State() linePosition: {
     left: number;
@@ -36,12 +36,12 @@ export class CcTabsUnderline {
     width: 0
   };
 
-  @Event() changeOption: EventEmitter<TabOption>;
+  @Event() changeOption: EventEmitter<TabOptionWithTag>;
 
   @Element() el: HTMLElement;
 
   @Watch("options")
-  setOptions(newValue: TabOption[], oldValue: TabOption[]) {
+  setOptions(newValue: TabOptionWithTag[], oldValue: TabOptionWithTag[]) {
     const newValueStringify = JSON.stringify(newValue);
     const oldValueStringify = JSON.stringify(oldValue);
 
@@ -51,7 +51,7 @@ export class CcTabsUnderline {
   }
 
   @Watch("_options")
-  animateFromToTab(newValue: TabOption[]) {
+  animateFromToTab(newValue: TabOptionWithTag[]) {
     if (this.linePosition.left === 0 && this.linePosition.width === 0) {
       return;
     }
@@ -164,19 +164,38 @@ export class CcTabsUnderline {
           ref={el => (this.wrapTabs = el)}
         >
           {this._options.map((option, index) => (
-            <button
-              key={`tabItem_${index}`}
-              class={{
-                tabLine__button: true,
-                "tabLine__button--secondary": this.color === "secondary",
-                "tabLine__button--sm": this.size === "sm",
-                "tabLine__button--active": option.active,
-                "tabLine__button--disabled": option.disabled
-              }}
-              onClick={this.handleOptionClick(index)}
-            >
-              {option.text}
-            </button>
+            <div class="tabLine__buttonWrapper" key={`tabItem_${index}`}>
+              <button
+                class={{
+                  tabLine__button: true,
+                  "tabLine__button--secondary": this.color === "secondary",
+                  "tabLine__button--sm": this.size === "sm",
+                  "tabLine__button--active": option.active,
+                  "tabLine__button--disabled": option.disabled
+                }}
+                onClick={this.handleOptionClick(index)}
+              >
+                {option.text}
+              </button>
+              {option.tag && (
+                <div
+                  class={{
+                    tabLine__tag: true,
+                    "tabLine__tag--tabCenter": this.center
+                  }}
+                  style={
+                    option.tag.color
+                      ? {
+                          borderColor: option.tag.color,
+                          color: option.tag.color
+                        }
+                      : undefined
+                  }
+                >
+                  {option.tag?.text}
+                </div>
+              )}
+            </div>
           ))}
           <div
             class={{

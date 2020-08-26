@@ -4,3 +4,10 @@ export type TabOption = {
   text: string;
   value: any;
 };
+
+export type TabOptionWithTag = TabOption & {
+  tag?: {
+    color?: string;
+    text: string;
+  };
+};

@@ -30,6 +30,21 @@
     }
   }
 
+  &__buttonWrapper {
+    @apply flex items-center;
+  }
+
+  &__tag {
+    @apply font-black text-small-02 px-xsm border-neutral-01 text-neutral-01 rounded-sm mr-xxlg;
+    border-width: 0.2rem;
+    border-style: solid;
+    line-height: 2rem;
+
+    &--tabCenter {
+      @apply mr-auto;
+    }
+  }
+
   &__underline {
     @apply absolute bg-primary bottom-0 rounded-lg;
     transition: all 0.3s ease;

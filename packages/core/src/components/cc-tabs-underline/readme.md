@@ -12,15 +12,15 @@
 | `border`  | `border`  |             | `boolean`                  | `false`     |
 | `center`  | `center`  |             | `boolean`                  | `false`     |
 | `color`   | `color`   |             | `"primary" \| "secondary"` | `"primary"` |
-| `options` | --        |             | `TabOption[]`              | `[]`        |
+| `options` | --        |             | `TabOptionWithTag[]`       | `[]`        |
 | `size`    | `size`    |             | `"md" \| "sm"`             | `"md"`      |
 
 
 ## Events
 
-| Event          | Description | Type                                                                               |
-| -------------- | ----------- | ---------------------------------------------------------------------------------- |
-| `changeOption` |             | `CustomEvent<{ active?: boolean; disabled?: boolean; text: string; value: any; }>` |
+| Event          | Description | Type                                                                    |
+| -------------- | ----------- | ----------------------------------------------------------------------- |
+| `changeOption` |             | `CustomEvent<TabOption & { tag?: { color?: string; text: string; }; }>` |
 
 
 ----------------------------------------------

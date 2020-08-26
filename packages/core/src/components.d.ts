@@ -9,6 +9,7 @@
 import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 import {
   TabOption,
+  TabOptionWithTag,
 } from './utils/types/TabOption';
 
 export namespace Components {
@@ -149,7 +150,7 @@ export namespace Components {
     'border'?: boolean;
     'center'?: boolean;
     'color'?: "primary" | "secondary";
-    'options'?: TabOption[];
+    'options'?: TabOptionWithTag[];
     'size'?: "sm" | "md";
   }
   interface CcTextarea {
@@ -448,8 +449,8 @@ declare namespace LocalJSX {
     'border'?: boolean;
     'center'?: boolean;
     'color'?: "primary" | "secondary";
-    'onChangeOption'?: (event: CustomEvent<TabOption>) => void;
-    'options'?: TabOption[];
+    'onChangeOption'?: (event: CustomEvent<TabOptionWithTag>) => void;
+    'options'?: TabOptionWithTag[];
     'size'?: "sm" | "md";
   }
   interface CcTextarea {

@@ -51,6 +51,16 @@ export const Line = () => {
       <h2 class="font-bold text-heading-02 text-neutral-03">Border</h2>
       <cc-tabs-underline border></cc-tabs-underline>
     </div>
+
+    <div class="p-xxlg">
+      <h2 class="font-bold text-heading-02 text-neutral-03">Border and tags</h2>
+      <cc-tabs-underline border class="tags"></cc-tabs-underline>
+    </div>
+
+    <div class="p-xxlg">
+      <h2 class="font-bold text-heading-02 text-neutral-03">Border and tags centered</h2>
+      <cc-tabs-underline border center class="tags"></cc-tabs-underline>
+    </div>
   `;
 
   wrap.querySelectorAll("cc-tabs-underline").forEach(el => {
@@ -58,6 +68,33 @@ export const Line = () => {
     el.addEventListener("changeOption", e => {
       console.log(e.detail);
     });
+  });
+
+  wrap.querySelectorAll(".tags").forEach(el => {
+    el.options = [
+      {
+        text: "Pestaña 1",
+        value: "1",
+        tag: {
+          color: "#00aebc",
+          text: "12345"
+        }
+      },
+      {
+        text: "Pestaña 2",
+        value: "2",
+        active: true
+      },
+      {
+        text: "Pestaña 3",
+        value: "3",
+        disabled: true
+      },
+      {
+        text: "Pestaña 4",
+        value: "4"
+      }
+    ];
   });
 
   return wrap;
