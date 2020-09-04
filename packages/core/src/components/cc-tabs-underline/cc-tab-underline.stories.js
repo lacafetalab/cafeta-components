@@ -52,16 +52,28 @@ export const Line = () => {
       <cc-tabs-underline border></cc-tabs-underline>
     </div>
 
-    <div class="p-xxlg">
+    <div class="p-xxlg tagsWrap">
       <h2 class="font-bold text-heading-02 text-neutral-03">Border and tags</h2>
       <cc-tabs-underline border class="tags"></cc-tabs-underline>
     </div>
 
-    <div class="p-xxlg">
+    <div class="p-xxlg tagsWrap">
       <h2 class="font-bold text-heading-02 text-neutral-03">Border and tags centered</h2>
       <cc-tabs-underline border center class="tags"></cc-tabs-underline>
     </div>
+
+    <button id="hide" type="button">hide last tabs</div>
   `;
+
+  wrap.querySelector("#hide").addEventListener("click", () => {
+    wrap.querySelectorAll(".tagsWrap").forEach(el => {
+      if (el.style.display === "none") {
+        el.style.display = "block";
+      } else {
+        el.style.display = "none";
+      }
+    });
+  });
 
   wrap.querySelectorAll("cc-tabs-underline").forEach(el => {
     el.options = options;

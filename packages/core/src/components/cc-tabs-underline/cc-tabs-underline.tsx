@@ -150,6 +150,18 @@ export class CcTabsUnderline {
 
   componentDidLoad() {
     this.animateDefaultLine();
+
+    var options = {
+      root: document.documentElement
+    };
+
+    const observerItems = new IntersectionObserver(mutations => {
+      mutations.forEach(() => {
+        this.animateDefaultLine();
+      });
+    }, options);
+
+    observerItems.observe(this.el);
   }
 
   render() {
