@@ -25,6 +25,7 @@ export class CcModal {
   @Prop() color: "primary" | "secondary" = "primary";
   @Prop() hideCloseButton: boolean = false;
   @Prop() disableESC: boolean = false;
+  @Prop() customWidth?: string;
 
   @Element() el: HTMLElement;
 
@@ -145,8 +146,11 @@ export class CcModal {
             onAnimationEnd={this.contentAnimationEnd}
             class={{
               modal__content: true,
-              "modal__content--sm": this.size === "sm",
-              "modal__content--md": this.size === "md"
+              "modal__content--sm": this.size === "sm" && !this.customWidth,
+              "modal__content--md": this.size === "md" && !this.customWidth
+            }}
+            style={{
+              width: this.customWidth || undefined
             }}
           >
             <slot />

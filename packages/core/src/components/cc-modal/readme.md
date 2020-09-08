@@ -10,6 +10,7 @@
 | Property          | Attribute           | Description | Type                       | Default     |
 | ----------------- | ------------------- | ----------- | -------------------------- | ----------- |
 | `color`           | `color`             |             | `"primary" \| "secondary"` | `"primary"` |
+| `customWidth`     | `custom-width`      |             | `string`                   | `undefined` |
 | `disableESC`      | `disable-e-s-c`     |             | `boolean`                  | `false`     |
 | `hideCloseButton` | `hide-close-button` |             | `boolean`                  | `false`     |
 | `size`            | `size`              |             | `"md" \| "sm"`             | `"md"`      |

@@ -106,6 +106,7 @@ export namespace Components {
   }
   interface CcModal {
     'color': "primary" | "secondary";
+    'customWidth'?: string;
     'disableESC': boolean;
     'hideCloseButton': boolean;
     'size': "sm" | "md";
@@ -401,6 +402,7 @@ declare namespace LocalJSX {
   }
   interface CcModal {
     'color'?: "primary" | "secondary";
+    'customWidth'?: string;
     'disableESC'?: boolean;
     'hideCloseButton'?: boolean;
     'onCancel'?: (event: CustomEvent<any>) => void;
