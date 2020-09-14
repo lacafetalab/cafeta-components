@@ -78,6 +78,9 @@
         background: transparent;
       }
     }
+    &--is-hidden {
+      display: none;
+    }
   }
   &__label {
     @apply py-xsm text-small-01 font-black text-neutral-03 block;

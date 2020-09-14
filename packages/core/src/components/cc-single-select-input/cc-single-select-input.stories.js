@@ -102,7 +102,8 @@ export const SingleSelectInput = () => {
     label: value4,
     loader: value5,
     color: "secondary",
-    helperText: "Incorrect entry"
+    helperText: "Incorrect entry",
+    hideItemsIfSelected: true
   });
 
 
@@ -113,7 +114,8 @@ export const SingleSelectInput = () => {
     label: value4,
     loader: value5,
     border: false,
-    helperText: "Incorrect entry"
+    helperText: "Incorrect entry",
+    hideItemsIfSelected: true
   });
 
   const wrap = document.createElement("div");

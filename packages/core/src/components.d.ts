@@ -127,6 +127,7 @@ export namespace Components {
     'error'?: boolean;
     'fieldReadonly'?: boolean;
     'helperText'?: string;
+    'hideItemsIfSelected'?: boolean;
     'iconName'?: string;
     'label': string;
     'loader'?: boolean;
@@ -425,6 +426,7 @@ declare namespace LocalJSX {
     'error'?: boolean;
     'fieldReadonly'?: boolean;
     'helperText'?: string;
+    'hideItemsIfSelected'?: boolean;
     'iconName'?: string;
     'label'?: string;
     'loader'?: boolean;

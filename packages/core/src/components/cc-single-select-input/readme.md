@@ -7,24 +7,25 @@
 
 ## Properties
 
-| Property        | Attribute        | Description | Type                       | Default          |
-| --------------- | ---------------- | ----------- | -------------------------- | ---------------- |
-| `IconRotate`    | `icon-rotate`    |             | `boolean`                  | `true`           |
-| `autocomplete`  | `autocomplete`   |             | `boolean`                  | `false`          |
-| `bgField`       | `bg-field`       |             | `string`                   | `""`             |
-| `border`        | `border`         |             | `boolean`                  | `true`           |
-| `choices`       | --               |             | `any[]`                    | `undefined`      |
-| `color`         | `color`          |             | `"primary" \| "secondary"` | `"primary"`      |
-| `currentValue`  | `current-value`  |             | `string`                   | `""`             |
-| `disabled`      | `disabled`       |             | `boolean`                  | `false`          |
-| `error`         | `error`          |             | `boolean`                  | `false`          |
-| `fieldReadonly` | `field-readonly` |             | `boolean`                  | `false`          |
-| `helperText`    | `helper-text`    |             | `string`                   | `undefined`      |
-| `iconName`      | `icon-name`      |             | `string`                   | `"chevron-down"` |
-| `label`         | `label`          |             | `string`                   | `""`             |
-| `loader`        | `loader`         |             | `boolean`                  | `false`          |
-| `name`          | `name`           |             | `string`                   | `""`             |
-| `placeholder`   | `placeholder`    |             | `string`                   | `""`             |
+| Property              | Attribute                | Description | Type                       | Default          |
+| --------------------- | ------------------------ | ----------- | -------------------------- | ---------------- |
+| `IconRotate`          | `icon-rotate`            |             | `boolean`                  | `true`           |
+| `autocomplete`        | `autocomplete`           |             | `boolean`                  | `false`          |
+| `bgField`             | `bg-field`               |             | `string`                   | `""`             |
+| `border`              | `border`                 |             | `boolean`                  | `true`           |
+| `choices`             | --                       |             | `any[]`                    | `undefined`      |
+| `color`               | `color`                  |             | `"primary" \| "secondary"` | `"primary"`      |
+| `currentValue`        | `current-value`          |             | `string`                   | `""`             |
+| `disabled`            | `disabled`               |             | `boolean`                  | `false`          |
+| `error`               | `error`                  |             | `boolean`                  | `false`          |
+| `fieldReadonly`       | `field-readonly`         |             | `boolean`                  | `false`          |
+| `helperText`          | `helper-text`            |             | `string`                   | `undefined`      |
+| `hideItemsIfSelected` | `hide-items-if-selected` |             | `boolean`                  | `false`          |
+| `iconName`            | `icon-name`              |             | `string`                   | `"chevron-down"` |
+| `label`               | `label`                  |             | `string`                   | `""`             |
+| `loader`              | `loader`                 |             | `boolean`                  | `false`          |
+| `name`                | `name`                   |             | `string`                   | `""`             |
+| `placeholder`         | `placeholder`            |             | `string`                   | `""`             |
 
 
 ## Events

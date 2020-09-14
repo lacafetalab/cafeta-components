@@ -25,6 +25,7 @@ export class CcSingleSelectInput {
   @State() thereIsLowerSpace: boolean = false;
   @State() positionOptionstop: boolean = false;
   @State() valueInput: string = "";
+  @Prop() hideItemsIfSelected?: boolean = false;
   @Prop() label: string = "";
   @Prop() choices: Array<any>;
   @Prop() error?: boolean = false;
@@ -315,7 +316,9 @@ export class CcSingleSelectInput {
                     class={{
                       "single-file-input__option": true,
                       "single-file-input__option--is-selected": c.selected,
-                      "single-file-input__option--is-disabled": c.disabled
+                      "single-file-input__option--is-disabled": c.disabled,
+                      "single-file-input__option--is-hidden":
+                        this.hideItemsIfSelected && c.selected
                     }}
                   >
                     {c.label}
