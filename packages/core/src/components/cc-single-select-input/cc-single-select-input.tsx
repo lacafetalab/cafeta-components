@@ -318,7 +318,7 @@ export class CcSingleSelectInput {
                       "single-file-input__option--is-selected": c.selected,
                       "single-file-input__option--is-disabled": c.disabled,
                       "single-file-input__option--is-hidden":
-                        this.hideItemsIfSelected && c.selected
+                        this.hideItemsIfSelected && c.invisible
                     }}
                   >
                     {c.label}
