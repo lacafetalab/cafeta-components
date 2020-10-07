@@ -64,7 +64,7 @@ export const SingleSelectInput = () => {
           "Opción muy grande que aparece en el dropdown que debe ser controlado. Lorem ipsoum selet amonet os sebut",
         labelInfo: "2020"
       },
-      { value: "124", label: "Opción 2", labelInfo: "230" },
+      { value: "124", label: "Opción 2", labelInfo: "240" },
       { value: "125", label: "Opción 3" },
       { value: "126", label: "Opción 4" },
       { value: "127", label: "Opción 5", disabled: true },
