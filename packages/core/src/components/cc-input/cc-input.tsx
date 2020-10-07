@@ -64,7 +64,8 @@ export class CcInput {
             class={{
               input__field: true,
               "input__field--icon": !!this.iconName || !!hasAdornment,
-              "input__field--default-bg": !!this.bgField
+              "input__field--default-bg": !this.bgField,
+              [this.bgField]: !!this.bgField
             }}
             type={this.type}
             placeholder={this.placeholder}
