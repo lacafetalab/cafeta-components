@@ -321,7 +321,7 @@ export class CcSingleSelectInput {
                         this.hideItemsIfSelected && c.invisible
                     }}
                   >
-                    {c.label}
+                    {c.label} {c.labelInfo && <span>{c.labelInfo}</span>}
                   </li>
                 );
               })}

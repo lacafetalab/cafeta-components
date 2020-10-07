@@ -13,30 +13,42 @@ const dropdownBuilder = (itemsWrapper, values) => {
   return dropdown;
 };
 
-
 export const SingleSelectInput = () => {
   const itemsWrapper = {
     choices: [
-      { value: "123", label: "Opción muy grande que aparece en el dropdown que debe ser controlado. Lorem ipsoum selet amonet os sebut" },
+      {
+        value: "123",
+        label:
+          "Opción muy grande que aparece en el dropdown que debe ser controlado. Lorem ipsoum selet amonet os sebut"
+      },
       { value: "125", label: "Opción 3" },
       { value: "126", label: "Opción 4" },
       { value: "127", label: "Opción 5", disabled: true },
       { value: "128", label: "Opción 6" },
-      { value: "124", label: "Opción 2" },
+      { value: "124", label: "Opción 2" }
     ]
   };
 
   const itemsWrapper2 = {
     choices: [
       { label: "Todos los periodos", value: "", selected: true },
-      { label: "2020 - Ciclo 2 Agosto", value: "2203", selected: false },
+      {
+        label: "2020 - Ciclo 2 Agosto",
+        value: "2203",
+        selected: false,
+        labelInfo: "230"
+      },
       { label: "2020 - Ciclo 1 Marzo", value: "2202", selected: false },
       { label: "2020 - Ciclo Verano", value: "2201", selected: false }
     ]
-  }
+  };
   const itemsWrapper4 = {
     choices: [
-      { value: "123", label: "Opción muy grande que aparece en el dropdown que debe ser controlado. Lorem ipsoum selet amonet os sebut" },
+      {
+        value: "123",
+        label:
+          "Opción muy grande que aparece en el dropdown que debe ser controlado. Lorem ipsoum selet amonet os sebut"
+      },
       { value: "124", label: "Opción 2" },
       { value: "125", label: "Opción 3" },
       { value: "126", label: "Opción 4" },
@@ -46,8 +58,13 @@ export const SingleSelectInput = () => {
   };
   const itemsWrapper3 = {
     choices: [
-      { value: "123", label: "Opción muy grande que aparece en el dropdown que debe ser controlado. Lorem ipsoum selet amonet os sebut" },
-      { value: "124", label: "Opción 2" },
+      {
+        value: "123",
+        label:
+          "Opción muy grande que aparece en el dropdown que debe ser controlado. Lorem ipsoum selet amonet os sebut",
+        labelInfo: "2020"
+      },
+      { value: "124", label: "Opción 2", labelInfo: "230" },
       { value: "125", label: "Opción 3" },
       { value: "126", label: "Opción 4" },
       { value: "127", label: "Opción 5", disabled: true },
@@ -73,7 +90,7 @@ export const SingleSelectInput = () => {
   const label4 = "Label";
   const defaultValue4 = false;
   const groupId4 = "GROUP-ID1";
-  const value4 = boolean(label4, defaultValue4, groupId4) ? 'LABEL' : '';
+  const value4 = boolean(label4, defaultValue4, groupId4) ? "LABEL" : "";
 
   const label5 = "Loader";
   const defaultValue5 = false;
@@ -105,7 +122,6 @@ export const SingleSelectInput = () => {
     helperText: "Incorrect entry",
     hideItemsIfSelected: true
   });
-
 
   const dropdown31 = dropdownBuilder(itemsWrapper3, {
     placeholder: defaultValue1,

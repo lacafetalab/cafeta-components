@@ -62,6 +62,14 @@
     line-height: 20px;
     user-select: none;
     padding: 10px 1.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    span {
+      margin-left: 12px;
+    }
+
     &:hover {
       @apply bg-01;
     }
