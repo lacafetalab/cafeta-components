@@ -18,10 +18,10 @@
     esutils "^2.0.2"
     js-tokens "^4.0.0"
 
-"@cafeta/components@^1.2.122":
-  version "1.2.122"
-  resolved "https://registry.yarnpkg.com/@cafeta/components/-/components-1.2.122.tgz#89ba0786c5c0632af19ce5c8af034c1c92f80bf2"
-  integrity sha512-07SIUq4o86IjDBPTWKF4Dbcua3iwQaS6oJFK/EYrmrxpmz3rNnXz+KvSkYaLCH+ncq5Z/X2A5v74YL84+miliQ==
+"@cafeta/components@^1.2.126":
+  version "1.2.126"
+  resolved "https://registry.yarnpkg.com/@cafeta/components/-/components-1.2.126.tgz#fdf98355cf6555c2e3799103b08a20b870ad160b"
+  integrity sha512-6nvTa4EZwFyOjaMXO5e23gvRZlp2JI+eTt0Xve2DyKBaMlCmEULeqPkLF2wdGsq0jLbchkqjbH36Es2lzdMHJg==
   dependencies:
     choices.js "^9.0.1"
     choicesjs-stencil "^1.4.0"

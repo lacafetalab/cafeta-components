@@ -34,7 +34,7 @@
     "@ckeditor/ckeditor5-build-classic": "^18.0.0",
     "@stencil/core": "^1.8.6",
     "@stencil/postcss": "^1.0.1",
-    "@stencil/react-output-target": "^0.0.3",
+    "@stencil/react-output-target": "^0.0.4",
     "@stencil/sass": "^1.1.1",
     "@storybook/addon-knobs": "^5.3.9",
     "@storybook/addon-notes": "^5.3.9",
