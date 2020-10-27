@@ -333,7 +333,9 @@ export class CcFilterSelectInput {
 
                         <div
                           onClick={() =>
-                            this.handleRemoveItemSelected(choice.value)
+                            choice.disableRemove
+                              ? null
+                              : this.handleRemoveItemSelected(choice.value)
                           }
                           class="filter-file-input__dot-delete"
                         >
