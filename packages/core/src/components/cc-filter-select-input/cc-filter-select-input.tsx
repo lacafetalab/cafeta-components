@@ -113,8 +113,9 @@ export class CcFilterSelectInput {
         case "Backspace":
           if (!this.valueInput.length && this.selectedChoices.length) {
             const newChoices = [...this.selectedChoices];
+            const removedValue = newChoices.pop();
             const removedChoice = this._choices.find(
-              (choice) => choice.value === newChoices.pop()
+              (choice) => choice.value === removedValue
             );
 
             if (!removedChoice?.disableRemove)
