@@ -398,7 +398,9 @@ export class CcFilterSelectInput {
                 return (
                   <li
                     onClick={() =>
-                      c.disabled ? false : this.handleOptionClick(c.value)
+                      c.disabled || c.disableRemove
+                        ? null
+                        : this.handleOptionClick(c.value)
                     }
                     class={{
                       "filter-file-input__option": true,
