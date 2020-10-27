@@ -117,7 +117,8 @@ export class CcFilterSelectInput {
               (choice) => choice.value === newChoices.pop()
             );
 
-            if (!removedChoice.disableRemove) this.selectedChoices = newChoices;
+            if (!removedChoice?.disableRemove)
+              this.selectedChoices = newChoices;
           }
           break;
         default:
