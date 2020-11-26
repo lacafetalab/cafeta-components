@@ -7,13 +7,13 @@ import {
   Event,
   EventEmitter,
   Watch,
-  Listen
+  Listen,
 } from "@stencil/core";
 
 @Component({
   tag: "cc-filter-select-input",
   styleUrl: "cc-filter-select-input.scss",
-  shadow: false
+  shadow: false,
 })
 export class CcFilterSelectInput {
   private singleFileInput: HTMLElement;
@@ -55,8 +55,8 @@ export class CcFilterSelectInput {
     if (newValueStringify !== oldValueStringify) {
       this._choices = newValue;
       this.selectedChoices = this._choices
-        .filter(c => c.selected)
-        .map(c => c.value);
+        .filter((c) => c.selected)
+        .map((c) => c.value);
     }
   }
 
@@ -64,7 +64,7 @@ export class CcFilterSelectInput {
   handleKeyDown(ev: KeyboardEvent) {
     if (this.isOpenDropdown) {
       const indexHoveredChoice = this._choices.findIndex(
-        choice => choice.value === this.hoveredChoice
+        (choice) => choice.value === this.hoveredChoice
       );
 
       const scrollToElem = (elem: any, top: boolean) => {
@@ -72,7 +72,7 @@ export class CcFilterSelectInput {
       };
 
       const getIndexFromValue = (value: string) =>
-        this._choices.findIndex(choice => choice.value === value);
+        this._choices.findIndex((choice) => choice.value === value);
 
       const nextEnabledIndex = this._choices.find(
         (choice, index) => index > indexHoveredChoice && !choice.disabled
@@ -113,8 +113,13 @@ export class CcFilterSelectInput {
         case "Backspace":
           if (!this.valueInput.length && this.selectedChoices.length) {
             const newChoices = [...this.selectedChoices];
-            newChoices.pop();
-            this.selectedChoices = newChoices;
+            const removedValue = newChoices.pop();
+            const removedChoice = this._choices.find(
+              (choice) => choice.value === removedValue
+            );
+
+            if (!removedChoice?.disableRemove)
+              this.selectedChoices = newChoices;
           }
           break;
         default:
@@ -125,13 +130,13 @@ export class CcFilterSelectInput {
 
   updateChoicesList = (value: string) => {
     this.selectedChoices = this.selectedChoices.includes(value)
-      ? this.selectedChoices.filter(choice => choice !== value)
+      ? this.selectedChoices.filter((choice) => choice !== value)
       : [...this.selectedChoices, value];
 
     this.changeChoice.emit(this.selectedChoices);
   };
 
-  setInputText = e => {
+  setInputText = (e) => {
     const value = e.target.value;
     this.valueInput = value;
     this.valueInput.length ? this.handleShowOptions() : false;
@@ -147,7 +152,7 @@ export class CcFilterSelectInput {
 
   clearChoices() {
     const newChoices = [...this._choices];
-    newChoices.map(choice => (choice.selected = false));
+    newChoices.map((choice) => (choice.selected = false));
     this._choices = newChoices;
   }
 
@@ -171,7 +176,7 @@ export class CcFilterSelectInput {
 
   filteredChoices = () => {
     const filterdList = this.valueInput.length
-      ? this._choices.filter(choice => {
+      ? this._choices.filter((choice) => {
           const loweredChoiceWithoutTilde = choice.label
             .toLowerCase()
             .normalize("NFD")
@@ -211,7 +216,7 @@ export class CcFilterSelectInput {
     this.focusInput();
   };
 
-  closeDroprownIfClickOutDropdown = e => {
+  closeDroprownIfClickOutDropdown = (e) => {
     const elementActiveDropdown = this.singleFileInput;
     let targetElement = e.target;
 
@@ -229,8 +234,8 @@ export class CcFilterSelectInput {
   observerListItems = () => {
     const config = { attributes: true, childList: false, characterData: false };
 
-    this.observerItems = new MutationObserver(mutations => {
-      mutations.forEach(mutation => {
+    this.observerItems = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
         if (mutation.type === "attributes") {
           this.calculatePositionOfOptions();
           this.focusInput();
@@ -271,8 +276,8 @@ export class CcFilterSelectInput {
   componentWillLoad() {
     this._choices = [...this.choices];
     this.selectedChoices = this._choices
-      .filter(c => c.selected)
-      .map(c => c.value);
+      .filter((c) => c.selected)
+      .map((c) => c.value);
     document.addEventListener("click", this.closeDroprownIfClickOutDropdown);
   }
 
@@ -297,7 +302,7 @@ export class CcFilterSelectInput {
       isActive: this.isOpenDropdown,
       iconRotate: this.IconRotate,
       iconName: this.iconName,
-      helperText: this.helperText
+      helperText: this.helperText,
     };
     return (
       <Host data-testid="cc-filter-file-input" class="filter-file-input">
@@ -305,10 +310,10 @@ export class CcFilterSelectInput {
           <span class="filter-file-input__label">{this.label}</span>
         )}
         <cc-wrapper-field
-          ref={el => (this.singleFileInput = el)}
+          ref={(el) => (this.singleFileInput = el)}
           class={{
             "filter-file-input__wrapper": true,
-            "filter-file-input--is-collapse": this.isOpenDropdown
+            "filter-file-input--is-collapse": this.isOpenDropdown,
           }}
           {...attrs}
         >
@@ -316,24 +321,26 @@ export class CcFilterSelectInput {
             <div
               class={{
                 "filter-file-input__dot-wrapper": true,
-                "filter-file-input__dot-wrapper--is-hidden": !this.knowIfThereIsASelected()
+                "filter-file-input__dot-wrapper--is-hidden": !this.knowIfThereIsASelected(),
               }}
             >
               <ul class="filter-file-input__dot-list">
                 {this.selectedChoices
-                  .map(selectedChoice =>
+                  .map((selectedChoice) =>
                     this._choices.find(
-                      choice => choice.value === selectedChoice
+                      (choice) => choice.value === selectedChoice
                     )
                   )
-                  .map(choice => (
+                  .map((choice) => (
                     <li class="filter-file-input__dot-item">
                       <div class="filter-file-input__dot-text">
                         {choice.label}
 
                         <div
                           onClick={() =>
-                            this.handleRemoveItemSelected(choice.value)
+                            choice.disableRemove
+                              ? null
+                              : this.handleRemoveItemSelected(choice.value)
                           }
                           class="filter-file-input__dot-delete"
                         >
@@ -347,7 +354,7 @@ export class CcFilterSelectInput {
             <p
               class={{
                 "filter-file-input__placeholder": true,
-                "filter-file-input__placeholder--is-hidden": this.validateShowPlaceholder()
+                "filter-file-input__placeholder--is-hidden": this.validateShowPlaceholder(),
               }}
             >
               {this.placeholder}
@@ -355,32 +362,32 @@ export class CcFilterSelectInput {
             <cc-input
               style={{
                 width: `${this.valueInput.length + 1}ch`,
-                maxWidth: "100%"
+                maxWidth: "100%",
               }}
               bgField="bg-transparent"
               onInput={(e: Event) => this.setInputText(e)}
               border={false}
               value={this.valueInput}
-              inputRef={el => (this.inputEl = el)}
+              inputRef={(el) => (this.inputEl = el)}
               class={{
                 "filter-file-input__input": true,
-                "filter-file-input__input--is-hidden": !this.validateShowPlaceholder()
+                "filter-file-input__input--is-hidden": !this.validateShowPlaceholder(),
               }}
             />
           </div>
           <ul
-            ref={el => (this.dropdownItems = el)}
+            ref={(el) => (this.dropdownItems = el)}
             class={{
               "filter-file-input__options": true,
               "filter-file-input__options--is-active": this.isOpenDropdown,
-              "filter-file-input__options--top": this.positionOptionstop
+              "filter-file-input__options--top": this.positionOptionstop,
             }}
           >
             {this.filteredChoices().length === 0 && (
               <li
                 class={{
                   "filter-file-input__placeholder": true,
-                  "filter-file-input__option": true
+                  "filter-file-input__option": true,
                 }}
               >
                 No se encontraron resultados
@@ -388,22 +395,24 @@ export class CcFilterSelectInput {
             )}
 
             {this.filteredChoices()
-              .map(choice => ({
+              .map((choice) => ({
                 ...choice,
-                selected: this.selectedChoices.includes(choice.value)
+                selected: this.selectedChoices.includes(choice.value),
               }))
-              .map(c => {
+              .map((c) => {
                 return (
                   <li
                     onClick={() =>
-                      c.disabled ? false : this.handleOptionClick(c.value)
+                      c.disabled || c.disableRemove
+                        ? null
+                        : this.handleOptionClick(c.value)
                     }
                     class={{
                       "filter-file-input__option": true,
                       "filter-file-input__option--is-selected": c.selected,
                       "filter-file-input__option--is-disabled": c.disabled,
                       "filter-file-input__option--hover":
-                        c.value === this.hoveredChoice
+                        c.value === this.hoveredChoice,
                     }}
                   >
                     {this.type === "checkbox" && (
