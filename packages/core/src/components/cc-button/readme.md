@@ -9,6 +9,7 @@
 | ------------- | -------------- | ----------- | --------------------------------- | ----------- |
 | `color`       | `color`        |             | `"primary" \| "secondary"`        | `"primary"` |
 | `disabled`    | `disabled`     |             | `boolean`                         | `false`     |
+| `download`    | `download`     |             | `boolean`                         | `false`     |
 | `expand`      | `expand`       |             | `boolean`                         | `false`     |
 | `fill`        | `fill`         |             | `"clear" \| "outline" \| "solid"` | `"solid"`   |
 | `glow`        | `glow`         |             | `boolean`                         | `false`     |

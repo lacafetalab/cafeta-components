@@ -16,6 +16,7 @@ export namespace Components {
   interface CcButton {
     'color': "primary" | "secondary";
     'disabled': boolean;
+    'download'?: boolean;
     'expand': boolean;
     'fill': "outline" | "clear" | "solid";
     'glow': boolean;
@@ -310,6 +311,7 @@ declare namespace LocalJSX {
   interface CcButton {
     'color'?: "primary" | "secondary";
     'disabled'?: boolean;
+    'download'?: boolean;
     'expand'?: boolean;
     'fill'?: "outline" | "clear" | "solid";
     'glow'?: boolean;
