@@ -10,7 +10,7 @@ export class CcModalController {
 
   componentDidLoad() {
     const modalParent = this.modalRef.parentElement;
-    const body = document.querySelector("body");
+    const body = document.querySelector("body > div");
 
     modalParent.appendChild(this.el);
     body.appendChild(this.modalRef);
