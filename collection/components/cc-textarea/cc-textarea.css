@@ -1,0 +1,272 @@
+.textarea {
+  display: block;
+}
+
+.textarea h2,
+.textarea h3,
+.textarea h4 {
+  font-weight: 900;
+}
+
+.textarea h2 {
+  font-size: 2rem;
+}
+
+.textarea h3 {
+  font-size: 1.8rem;
+}
+
+.textarea h4 {
+  font-size: 1.6rem;
+}
+
+.textarea li {
+  margin-left: 1.6rem;
+}
+
+.textarea ol {
+  list-style: decimal;
+}
+
+.textarea ul {
+  list-style: disc;
+}
+
+.textarea b,
+.textarea strong {
+  font-weight: 900;
+}
+
+.textarea a {
+  text-decoration: underline;
+}
+
+.textarea.textarea--primary a {
+  color: var(--primary);
+}
+
+.textarea.textarea--secondary a {
+  color: var(--secondary);
+}
+
+.textarea__field {
+  width: 100%;
+  border-radius: 0.4rem;
+  border-width: 1px;
+  border-color: var(--neutral-02);
+  padding-left: 1.6rem;
+  padding-right: 1.6rem;
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+  font-size: 1.4rem;
+  display: block;
+  line-height: 1.625;
+  resize: none;
+  min-height: 13.6rem;
+}
+
+.textarea__field--outlined {
+  border-top-width: 0;
+  border-left-width: 0;
+  border-right-width: 0;
+  border-bottom-width: 1px;
+}
+
+.textarea__field--auto-grow {
+  min-height: 4.2rem;
+}
+
+.textarea__field--without-radius {
+  border-radius: 0;
+}
+
+.textarea__field--bg-white {
+  background-color: var(--neutral-04);
+}
+
+.textarea__field--bg-transparent {
+  background-color: transparent;
+}
+
+.textarea__field:disabled {
+  border-color: var(--disabled-background);
+}
+
+.textarea--success .textarea__field {
+  border-color: var(--success);
+}
+
+.textarea--error .textarea__field {
+  border-color: var(--error);
+}
+
+.textarea__field:focus {
+  outline: 0;
+}
+
+.textarea--primary .textarea__field:focus {
+  border-color: var(--primary);
+}
+
+.textarea--secondary .textarea__field:focus {
+  border-color: var(--secondary);
+}
+
+.textarea--success .textarea__field:focus {
+  border-color: var(--success);
+}
+
+.textarea--error .textarea__field:focus {
+  border-color: var(--error);
+}
+
+.textarea__field::-webkit-input-placeholder {
+  color: var(--neutral-02);
+}
+
+.textarea__field::-moz-placeholder {
+  color: var(--neutral-02);
+}
+
+.textarea__field:-ms-input-placeholder {
+  color: var(--neutral-02);
+}
+
+.textarea__field::-ms-input-placeholder {
+  color: var(--neutral-02);
+}
+
+.textarea__field::placeholder {
+  color: var(--neutral-02);
+}
+
+.textarea__label {
+  display: block;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+  font-size: 1.1rem;
+  font-weight: 900;
+  color: var(--neutral-03);
+}
+
+.textarea--disabled .textarea__label {
+  color: var(--disabled-text);
+}
+
+.textarea__helperText {
+  display: block;
+  font-size: 1.1rem;
+  margin-top: 0.4rem;
+  color: var(--error);
+}
+
+.textarea__richTextSkeleton {
+  width: 100%;
+  border-radius: 0.4rem;
+  border-width: 1px;
+  border-color: var(--neutral-02);
+  padding-left: 1.6rem;
+  padding-right: 1.6rem;
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+  background-color: var(--neutral-04);
+  font-size: 1.4rem;
+  display: block;
+  line-height: 1.625;
+  min-height: 13.6rem;
+}
+
+.textarea__richTextSkeleton + .textarea__helperText {
+  display: none;
+}
+
+.textarea__counter {
+  font-size: 1.2rem;
+  color: var(--neutral-02);
+}
+
+.textarea__wrapper-helper {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+}
+
+.textarea--bg-transparent .ck.ck-editor__main > .ck-editor__editable {
+  background-color: transparent;
+}
+
+.textarea--bg-white .ck.ck-editor__main > .ck-editor__editable {
+  background-color: var(--neutral-04);
+}
+
+.textarea .ck.ck-toolbar {
+  border-color: var(--neutral-02);
+}
+
+.textarea.textarea--disabled .ck.ck-toolbar {
+  border-color: var(--disabled-background);
+}
+
+.textarea .ck-rounded-corners .ck.ck-editor__top .ck-sticky-panel .ck-toolbar,
+.textarea .ck.ck-editor__top .ck-sticky-panel .ck-toolbar.ck-rounded-corners {
+  border-top-left-radius: 0.4rem;
+  border-top-right-radius: 0.4rem;
+}
+
+.textarea .ck-rounded-corners .ck.ck-editor__main > .ck-editor__editable,
+.textarea .ck.ck-editor__main > .ck-editor__editable.ck-rounded-corners {
+  border-bottom-right-radius: 0.4rem;
+  border-bottom-left-radius: 0.4rem;
+}
+
+.textarea .ck.ck-editor__main > .ck-editor__editable.ck-focused {
+  box-shadow: none;
+}
+
+.textarea .ck.ck-editor__main > .ck-editor__editable:not(.ck-focused) {
+  border-color: var(--neutral-02);
+}
+
+.textarea .ck.ck-editor__main > .ck-editor__editable:not(.ck-focused).ck-read-only {
+  border-color: var(--disabled-background);
+}
+
+.textarea .ck.ck-toolbar.ck-toolbar_grouping > .ck-toolbar__items {
+  -webkit-box-pack: end;
+          justify-content: flex-end;
+}
+
+.textarea.textarea--primary .ck.ck-editor__main > .ck-editor__editable.ck-focused {
+  border-color: var(--primary);
+}
+
+.textarea.textarea--secondary .ck.ck-editor__main > .ck-editor__editable.ck-focused {
+  border-color: var(--secondary);
+}
+
+.textarea--error .textarea {
+  border-color: var(--error);
+}
+
+.textarea.textarea--success .ck.ck-editor__main > .ck-editor__editable:not(.ck-focused), .textarea.textarea--success .ck.ck-editor__main > .ck-editor__editable.ck-focused {
+  border-color: var(--success);
+}
+
+.textarea.textarea--error .ck.ck-editor__main > .ck-editor__editable:not(.ck-focused), .textarea.textarea--error .ck.ck-editor__main > .ck-editor__editable.ck-focused {
+  border-color: var(--error);
+}
+
+.textarea .ck.ck-editor__editable_inline > :first-child {
+  margin-top: 0.8rem;
+}
+
+.textarea .ck.ck-editor__editable_inline > :last-child {
+  margin-bottom: 0.8rem;
+}
+
+.textarea .ck.ck-editor__editable_inline {
+  padding-left: 1.6rem;
+  padding-right: 1.6rem;
+  min-height: 13.6rem;
+}

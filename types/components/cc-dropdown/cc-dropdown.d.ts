@@ -1,0 +1,37 @@
+import { EventEmitter } from "../../stencil.core";
+import "choices.js/public/assets/scripts/choices.min.js";
+import "choicesjs-stencil";
+export declare class CcDropdown {
+    _choices: Array<any>;
+    label: string;
+    choices: Array<any>;
+    error?: boolean;
+    disabled?: boolean;
+    fieldReadonly?: boolean;
+    placeholder?: string;
+    name?: string;
+    currentValue?: string;
+    iconName?: string;
+    color: "primary" | "secondary";
+    type?: "single" | "multiple" | "text";
+    noResultsText?: string;
+    noChoicesText?: string;
+    helperText?: string;
+    border?: boolean;
+    bgField?: string;
+    loader?: boolean;
+    iconOnly?: boolean;
+    openDropdown: boolean;
+    el: HTMLElement;
+    changeChoice: EventEmitter;
+    clickDropdown: EventEmitter;
+    setChoices(newValue: any, oldValue: any): void;
+    setDisabled(newValue: any, oldValue: any): void;
+    private mutationObserver;
+    changeChoiceHandler(event: any): void;
+    clickDropdownHandler(event: any): void;
+    componentWillLoad(): void;
+    componentDidLoad(): void;
+    toggleDropdown: (e: any) => void;
+    render(): any;
+}

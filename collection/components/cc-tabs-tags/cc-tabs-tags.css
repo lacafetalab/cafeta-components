@@ -1,0 +1,53 @@
+:host {
+  display: block;
+}
+
+.tabTags {
+  overflow: hidden;
+}
+
+.tabTags__wrap {
+  margin: -1rem -0.6rem;
+}
+
+.tabTags__button {
+  -webkit-appearance: button;
+  padding: 0;
+  margin: 0;
+  font-family: inherit;
+  cursor: pointer;
+  background-color: transparent;
+  background-image: none;
+  color: inherit;
+  border: none;
+  font-size: 100%;
+  outline: 0;
+  font-weight: 900;
+  font-size: 1.2rem;
+  padding-left: 1.2rem;
+  padding-right: 1.2rem;
+  border-radius: 9999px;
+  display: -webkit-inline-box;
+  display: inline-flex;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+  background-color: var(--neutral-04);
+  height: 3.2rem;
+  margin: 1rem 0.6rem;
+}
+
+.tabTags__button--active {
+  background-color: var(--primary);
+  color: var(--neutral-04);
+}
+
+.tabTags__button--active.tabTags__button--secondary {
+  background-color: var(--secondary);
+}
+
+.tabTags__button--disabled {
+  color: var(--disabled-text);
+  background-color: var(--disabled-background);
+}

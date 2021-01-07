@@ -1,0 +1,30 @@
+import { EventEmitter } from "../../stencil.core";
+export declare class CcModal {
+    private overlayEl;
+    private wrapEl;
+    private contentEl;
+    size: "sm" | "md";
+    visible: boolean;
+    color: "primary" | "secondary";
+    hideCloseButton: boolean;
+    disableESC: boolean;
+    customWidth?: string;
+    el: HTMLElement;
+    close: EventEmitter;
+    cancel: EventEmitter;
+    toggleBodyScroll(newVisible: boolean): void;
+    handleKeyDown(ev: KeyboardEvent): void;
+    cancelHandler: () => void;
+    closeHandler(): void;
+    handleWrapClick: (e: Event) => void;
+    animatedShow(): void;
+    animatedHide(): void;
+    enableBodyScroll(): void;
+    disableBodyScroll(): void;
+    otherModalIsVisible(): boolean;
+    overlayAnimationEnd: (e: AnimationEvent) => void;
+    contentAnimationEnd: (e: AnimationEvent) => void;
+    componentDidLoad(): void;
+    componentDidUnload(): void;
+    render(): any;
+}
