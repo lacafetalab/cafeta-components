@@ -18,6 +18,7 @@
     "loader/",
     "tailwind.config.js"
   ],
+  "homepage": "http://lacafetalab.github.io/cafeta-components",
   "scripts": {
     "icons:update": "node ./scripts/update-icons.js",
     "build": "stencil build --docs",
@@ -27,7 +28,10 @@
     "generate": "stencil generate",
     "start": "npm-run-all --parallel dev storybook",
     "storybook": "start-storybook -p 9001 -c .storybook -s www",
-    "build-storybook": "build-storybook -c .storybook -s www"
+    "predeploy": "npm run build-storybook",
+    "deploy-storybook": "gh-pages -d storybook-static",
+    "build-storybook": "build-storybook"
+
   },
   "devDependencies": {
     "@babel/core": "^7.8.3",
@@ -40,7 +44,9 @@
     "@storybook/addon-notes": "^5.3.9",
     "@storybook/addon-storysource": "^5.3.9",
     "@storybook/addon-viewport": "^5.3.9",
+    "@storybook/addons": "^6.1.11",
     "@storybook/html": "^5.3.9",
+    "@storybook/theming": "^6.1.11",
     "@types/jest": "24.0.25",
     "@types/puppeteer": "1.19.0",
     "audit-ci": "^2.5.1",
@@ -48,6 +54,7 @@
     "babel-loader": "^8.0.6",
     "copy-webpack-plugin": "^5.1.1",
     "cssnano": "^4.1.10",
+    "gh-pages": "^3.1.0",
     "jest": "24.9.0",
     "jest-cli": "24.9.0",
     "npm-run-all": "^4.1.5",
