@@ -13,6 +13,11 @@ git add .
 git commit -m ‘feat’
 lerna publish
 ```
+Dentro del proyecto (cafeta-components/packages/core)
+
+```
+yarn run deploy-storybook
+```
 
 En el proyecto a utilizar, con esto actualizaras la dependencia
 ```
