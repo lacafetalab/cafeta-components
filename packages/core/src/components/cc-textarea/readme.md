@@ -17,6 +17,7 @@
 | `enableImage`   | `enable-image`   |             | `boolean`                        | `undefined` |
 | `error`         | `error`          |             | `boolean`                        | `false`     |
 | `helperText`    | `helper-text`    |             | `string`                         | `undefined` |
+| `iconName`      | `icon-name`      |             | `string`                         | `undefined` |
 | `imageService`  | --               |             | `(file: any) => Promise<string>` | `undefined` |
 | `label`         | `label`          |             | `string`                         | `undefined` |
 | `maxLength`     | `max-length`     |             | `number`                         | `undefined` |
@@ -59,6 +60,19 @@ Type: `Promise<void>`
 
 
 
+
+## Dependencies
+
+### Depends on
+
+- [cc-icon](../cc-icon)
+
+### Graph
+```mermaid
+graph TD;
+  cc-textarea --> cc-icon
+  style cc-textarea fill:#f9f,stroke:#333,stroke-width:4px
+```
 
 ----------------------------------------------
 

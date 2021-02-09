@@ -23,6 +23,7 @@
  - [cc-filter-select-input](../cc-filter-select-input)
  - [cc-input](../cc-input)
  - [cc-modal](../cc-modal)
+ - [cc-textarea](../cc-textarea)
  - [cc-wrapper-field](../cc-wrapper-field)
 
 ### Graph
@@ -34,6 +35,7 @@ graph TD;
   cc-filter-select-input --> cc-icon
   cc-input --> cc-icon
   cc-modal --> cc-icon
+  cc-textarea --> cc-icon
   cc-wrapper-field --> cc-icon
   style cc-icon fill:#f9f,stroke:#333,stroke-width:4px
 ```

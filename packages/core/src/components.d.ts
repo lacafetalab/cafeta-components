@@ -166,6 +166,7 @@ export namespace Components {
     'error'?: boolean;
     'focusTextEditor': () => Promise<void>;
     'helperText'?: string;
+    'iconName'?: string;
     'imageService'?: (file: any) => Promise<string>;
     'label'?: string;
     'maxLength'?: number;
@@ -468,6 +469,7 @@ declare namespace LocalJSX {
     'enableImage'?: boolean;
     'error'?: boolean;
     'helperText'?: string;
+    'iconName'?: string;
     'imageService'?: (file: any) => Promise<string>;
     'label'?: string;
     'maxLength'?: number;

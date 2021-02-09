@@ -30,6 +30,7 @@ export class CcTextarea {
   @Prop() name?: string;
   @Prop() rich?: boolean = false;
   @Prop() value?: string;
+  @Prop() iconName?: string;
   @Prop() helperText?: string;
   @Prop() enableImage?: boolean;
   @Prop() imageService?: (file: any) => Promise<string>;
@@ -230,6 +231,7 @@ export class CcTextarea {
             class={{
               textarea__field: true,
               "textarea__field--outlined": this.outlined,
+              "textarea__field--icon": !!this.iconName && !this.rich,
               "textarea__field--auto-grow": this.autoGrow,
               "textarea__field--without-radius": this.withoutRadius,
               "textarea__field--bg-white": this.bgField === "white",
@@ -241,6 +243,16 @@ export class CcTextarea {
             onInput={e =>
               this.changeTextHandler((e.target as HTMLTextAreaElement).value)
             }
+          />
+        )}
+        {(!!this.iconName && !this.rich) && (
+          <cc-icon
+            class={{
+              textarea__icon: true,
+              "textarea__icon--primary": this.color === "primary",
+              "textarea__icon--secondary": this.color === "secondary"
+            }}
+            name={this.iconName}
           />
         )}
         <div class="textarea__wrapper-helper">
