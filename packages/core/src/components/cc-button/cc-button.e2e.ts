@@ -179,14 +179,14 @@ describe("cc-button", () => {
   it("should hide text when is icon only", async () => {
     const page = await newE2EPage();
 
-    await page.setContent("<cc-button></cc-button>");
+    await page.setContent("<cc-button>my button</cc-button>");
     const component = await page.find("cc-button");
 
     let icon = await page.find("cc-button cc-icon");
     let text = await page.find("cc-button [data-testid='cc-button__text']");
 
     expect(icon).toBeFalsy();
-    expect(text).toBeTruthy();
+    expect(text).toEqualText('my button');
 
     component.setProperty("iconName", "chest");
     component.setProperty("iconOnly", true);
@@ -197,6 +197,6 @@ describe("cc-button", () => {
     text = await page.find("cc-button [data-testid='cc-button__text']");
 
     expect(icon).toBeTruthy();
-    expect(text).toBeFalsy();
+    expect(text).toHaveClass('hidden');
   });
 });
