@@ -66,7 +66,7 @@
     "minimist": "^1.2.2"
   },
   "license": "MIT",
-  "gitHead": "3aab117268994cf0eb83c014aeeea1bc9f04b808",
+  "gitHead": "63ee03924b5313389b52afce40dd8a1beebe69c2",
   "dependencies": {
     "choices.js": "^9.0.1",
     "choicesjs-stencil": "^1.4.0"

@@ -306,6 +306,7 @@ export class CcSingleSelectInput {
                     No se encontraron los resultados
                   </li>
                 )}
+                
             {!this.autocomplete &&
               this._choices.map(c => {
                 return (
