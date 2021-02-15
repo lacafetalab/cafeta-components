@@ -50,7 +50,7 @@ export class CcWrapperField {
                 "wrapper-field__icon--inverted":
                   this.isActive && this.IconRotate
               }}
-              name={this.error ? "x" : this.iconName}
+              name={this.iconName}
             ></cc-icon>
           )}
         </div>
