@@ -22,7 +22,6 @@
       @apply text-neutral-03;
       user-select: none;
       &--is-selected {
-        @apply text-neutral-03;
         display: block;
         visibility: visible;
       }
