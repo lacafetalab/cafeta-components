@@ -33,32 +33,33 @@
     "build-storybook": "build-storybook"
   },
   "devDependencies": {
-    "@babel/core": "^7.8.3",
-    "@ckeditor/ckeditor5-build-classic": "^18.0.0",
-    "@stencil/core": "^1.8.6",
+    "@babel/core": "^7.12.17",
+    "@ckeditor/ckeditor5-build-classic": "^25.0.0",
+    "@ckeditor/ckeditor5-image": "^25.0.0",
+    "@stencil/core": "^1.17.4",
     "@stencil/postcss": "^1.0.1",
     "@stencil/react-output-target": "^0.0.4",
-    "@stencil/sass": "^1.1.1",
-    "@storybook/addon-knobs": "^5.3.9",
-    "@storybook/addon-notes": "^5.3.9",
-    "@storybook/addon-storysource": "^5.3.9",
-    "@storybook/addon-viewport": "^5.3.9",
-    "@storybook/addons": "^6.1.11",
-    "@storybook/html": "^5.3.9",
-    "@storybook/theming": "^6.1.11",
+    "@stencil/sass": "^1.4.1",
+    "@storybook/addon-knobs": "^5.3.21",
+    "@storybook/addon-notes": "^5.3.21",
+    "@storybook/addon-storysource": "^5.3.21",
+    "@storybook/addon-viewport": "^5.3.21",
+    "@storybook/addons": "^6.1.18",
+    "@storybook/html": "^5.3.21",
+    "@storybook/theming": "^6.1.18",
     "@types/jest": "24.0.25",
     "@types/puppeteer": "1.19.0",
     "audit-ci": "^2.5.1",
-    "autoprefixer": "^9.7.4",
-    "babel-loader": "^8.0.6",
-    "copy-webpack-plugin": "^5.1.1",
+    "autoprefixer": "^9.8.6",
+    "babel-loader": "^8.2.2",
+    "copy-webpack-plugin": "^5.1.2",
     "cssnano": "^4.1.10",
     "gh-pages": "^3.1.0",
     "jest": "24.9.0",
     "jest-cli": "24.9.0",
     "npm-run-all": "^4.1.5",
     "puppeteer": "1.19.0",
-    "tailwindcss": "^1.2.0",
+    "tailwindcss": "^1.9.6",
     "write-file-webpack-plugin": "^4.5.1"
   },
   "resolutions": {
@@ -68,7 +69,7 @@
   "license": "MIT",
   "gitHead": "63ee03924b5313389b52afce40dd8a1beebe69c2",
   "dependencies": {
-    "choices.js": "^9.0.1",
-    "choicesjs-stencil": "^1.4.0"
+    "choices.js": "9.0.1",
+    "choicesjs-stencil": "1.5.1"
   }
 }
