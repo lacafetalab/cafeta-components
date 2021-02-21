@@ -157,6 +157,7 @@ export namespace Components {
         "counter"?: boolean;
         "disabled"?: boolean;
         "enableImage"?: boolean;
+        "enableMediaEmbed"?: boolean;
         "error"?: boolean;
         "focusTextEditor": () => Promise<void>;
         "helperText"?: string;
@@ -458,6 +459,7 @@ declare namespace LocalJSX {
         "counter"?: boolean;
         "disabled"?: boolean;
         "enableImage"?: boolean;
+        "enableMediaEmbed"?: boolean;
         "error"?: boolean;
         "helperText"?: string;
         "iconName"?: string;

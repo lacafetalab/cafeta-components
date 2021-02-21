@@ -32,8 +32,6 @@ export class CcTextarea {
   @Prop() value?: string;
   @Prop() iconName?: string;
   @Prop() helperText?: string;
-  @Prop() enableImage?: boolean;
-  @Prop() imageService?: (file: any) => Promise<string>;
   @Prop() maxLength?: number;
   @Prop() outlined: boolean = false;
   @Prop() autoGrow?: boolean = false;
@@ -41,6 +39,9 @@ export class CcTextarea {
   @Prop() counter?: boolean = false;
   @Prop() bgField?: "transparent" | "white" = "white";
   @Prop() toolbar?: string[];
+  @Prop() enableImage?: boolean;
+  @Prop() imageService?: (file: any) => Promise<string>;
+  @Prop() enableMediaEmbed?: boolean = false;
 
   @Method()
   async focusTextEditor() {
@@ -128,17 +129,34 @@ export class CcTextarea {
       "@ckeditor/ckeditor5-build-classic"
     );
 
-    if (this.enableImage && this.imageService) {
-      toolbar.push("imageUpload");
+    const { default: Image } = await import(
+      "@ckeditor/ckeditor5-image/src/image"
+    );
+
+    const { default: ImageResize } = await import(
+      "@ckeditor/ckeditor5-image/src/imageresize"
+    );
+
+    const optionsEditor = {
+      toolbar,
+      placeholder: this.placeholder
     }
 
-    this.editorInstance = await ClassicEditor.create(this.richTextEl, {
-      toolbar,
-      placeholder: this.placeholder,
-      mediaEmbed: {
+    if (!this.enableMediaEmbed) {
+      optionsEditor['mediaEmbed'] = {
         providers: []
       }
-    });
+    };
+
+    if (this.enableImage && this.imageService) {
+      toolbar.push("imageUpload");
+      optionsEditor['plugins'] = [
+        Image,
+        ImageResize
+      ]
+    }
+
+    this.editorInstance = await ClassicEditor.create(this.richTextEl, optionsEditor);
 
     this.setRichTextEditorDefaults();
     this.setAdapterUpload(this.editorInstance);
