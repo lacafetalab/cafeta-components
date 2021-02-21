@@ -33,7 +33,8 @@
     "build-storybook": "build-storybook"
   },
   "devDependencies": {
-    "@babel/core": "^7.8.3",
+    "@babel/core": "^7.12.17",
+    "@babel/preset-env": "^7.12.17",
     "@ckeditor/ckeditor5-build-classic": "^18.0.0",
     "@stencil/core": "^1.8.6",
     "@stencil/postcss": "^1.0.1",
@@ -49,8 +50,8 @@
     "@types/jest": "24.0.25",
     "@types/puppeteer": "1.19.0",
     "audit-ci": "^2.5.1",
-    "autoprefixer": "^9.7.4",
-    "babel-loader": "^8.0.6",
+    "autoprefixer": "^9.0.0",
+    "babel-loader": "^8.2.2",
     "copy-webpack-plugin": "^5.1.1",
     "cssnano": "^4.1.10",
     "gh-pages": "^3.1.0",
@@ -68,7 +69,8 @@
   "license": "MIT",
   "gitHead": "63ee03924b5313389b52afce40dd8a1beebe69c2",
   "dependencies": {
-    "choices.js": "^9.0.1",
-    "choicesjs-stencil": "^1.4.0"
+    "acorn": "^6.4.1",
+    "choices.js": "9.0.1",
+    "choicesjs-stencil": "1.4.0"
   }
 }
