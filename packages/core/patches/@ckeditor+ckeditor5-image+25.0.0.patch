@@ -1,0 +1,13 @@
+diff --git a/node_modules/@ckeditor/ckeditor5-image/theme/textalternativeform.css b/node_modules/@ckeditor/ckeditor5-image/theme/textalternativeform.css
+index 36ebc37..20da92f 100644
+--- a/node_modules/@ckeditor/ckeditor5-image/theme/textalternativeform.css
++++ b/node_modules/@ckeditor/ckeditor5-image/theme/textalternativeform.css
+@@ -3,7 +3,7 @@
+  * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
+  */
+ 
+-@import "@ckeditor/ckeditor5-ui/theme/mixins/_rwd.css";
++@import "../../ckeditor5-ui/theme/mixins/_rwd.css";
+ 
+ .ck.ck-text-alternative-form {
+ 	display: flex;

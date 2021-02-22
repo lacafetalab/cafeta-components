@@ -30,13 +30,13 @@
     "storybook": "start-storybook -p 9001 -c .storybook -s www",
     "predeploy": "npm run build-storybook",
     "deploy-storybook": "gh-pages -d storybook-static",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "postinstall": "patch-package"
   },
   "devDependencies": {
     "@babel/core": "^7.12.17",
     "@babel/preset-env": "^7.12.17",
-    "@ckeditor/ckeditor5-build-classic": "^25.0.0",
-    "@ckeditor/ckeditor5-image": "^25.0.0",
+    "@ckeditor/ckeditor5-build-classic": "25.0.0",
     "@stencil/core": "^1.8.6",
     "@stencil/postcss": "^1.0.1",
     "@stencil/react-output-target": "^0.0.4",
@@ -59,6 +59,8 @@
     "jest": "24.9.0",
     "jest-cli": "24.9.0",
     "npm-run-all": "^4.1.5",
+    "patch-package": "^6.2.2",
+    "postinstall-postinstall": "^2.1.0",
     "puppeteer": "1.19.0",
     "tailwindcss": "^1.2.0",
     "write-file-webpack-plugin": "^4.5.1"
