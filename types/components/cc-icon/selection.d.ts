@@ -1,115 +1,115 @@
 declare const _default: {
-    "IcoMoonType": string;
-    "icons": ({
-        "icon": {
-            "paths": string[];
-            "attrs": {}[];
-            "isMulticolor": boolean;
-            "isMulticolor2": boolean;
-            "grid": number;
-            "tags": string[];
-            "colorPermutations"?: undefined;
+    IcoMoonType: string;
+    icons: ({
+        icon: {
+            paths: string[];
+            attrs: {}[];
+            isMulticolor: boolean;
+            isMulticolor2: boolean;
+            grid: number;
+            tags: string[];
+            colorPermutations?: undefined;
         };
-        "attrs": {}[];
-        "properties": {
-            "order": number;
-            "id": number;
-            "name": string;
-            "prevSize": number;
-            "code": number;
+        attrs: {}[];
+        properties: {
+            order: number;
+            id: number;
+            name: string;
+            prevSize: number;
+            code: number;
         };
-        "setIdx": number;
-        "setId": number;
-        "iconIdx": number;
+        setIdx: number;
+        setId: number;
+        iconIdx: number;
     } | {
-        "icon": {
-            "paths": string[];
-            "attrs": {
-                "fill": string;
+        icon: {
+            paths: string[];
+            attrs: {
+                fill: string;
             }[];
-            "isMulticolor": boolean;
-            "isMulticolor2": boolean;
-            "colorPermutations": {
-                "17474741": {
-                    "f": number;
+            isMulticolor: boolean;
+            isMulticolor2: boolean;
+            colorPermutations: {
+                17474741: {
+                    f: number;
                 }[];
             };
-            "tags": string[];
-            "grid": number;
+            tags: string[];
+            grid: number;
         };
-        "attrs": {
-            "fill": string;
+        attrs: {
+            fill: string;
         }[];
-        "properties": {
-            "order": number;
-            "id": number;
-            "name": string;
-            "prevSize": number;
-            "code": number;
+        properties: {
+            order: number;
+            id: number;
+            name: string;
+            prevSize: number;
+            code: number;
         };
-        "setIdx": number;
-        "setId": number;
-        "iconIdx": number;
+        setIdx: number;
+        setId: number;
+        iconIdx: number;
     } | {
-        "icon": {
-            "paths": string[];
-            "attrs": {}[];
-            "isMulticolor": boolean;
-            "isMulticolor2": boolean;
-            "colorPermutations": {
-                "17474741": {}[];
+        icon: {
+            paths: string[];
+            attrs: {}[];
+            isMulticolor: boolean;
+            isMulticolor2: boolean;
+            colorPermutations: {
+                17474741: {}[];
             };
-            "tags": string[];
-            "grid": number;
+            tags: string[];
+            grid: number;
         };
-        "attrs": {}[];
-        "properties": {
-            "order": number;
-            "id": number;
-            "name": string;
-            "prevSize": number;
-            "code": number;
+        attrs: {}[];
+        properties: {
+            order: number;
+            id: number;
+            name: string;
+            prevSize: number;
+            code: number;
         };
-        "setIdx": number;
-        "setId": number;
-        "iconIdx": number;
+        setIdx: number;
+        setId: number;
+        iconIdx: number;
     })[];
-    "height": number;
-    "metadata": {
-        "name": string;
+    height: number;
+    metadata: {
+        name: string;
     };
-    "preferences": {
-        "showGlyphs": boolean;
-        "showCodes": boolean;
-        "showQuickUse": boolean;
-        "showQuickUse2": boolean;
-        "showSVGs": boolean;
-        "fontPref": {
-            "prefix": string;
-            "metadata": {
-                "fontFamily": string;
+    preferences: {
+        showGlyphs: boolean;
+        showCodes: boolean;
+        showQuickUse: boolean;
+        showQuickUse2: boolean;
+        showSVGs: boolean;
+        fontPref: {
+            prefix: string;
+            metadata: {
+                fontFamily: string;
             };
-            "metrics": {
-                "emSize": number;
-                "baseline": number;
-                "whitespace": number;
+            metrics: {
+                emSize: number;
+                baseline: number;
+                whitespace: number;
             };
-            "embed": boolean;
-            "autoHost": boolean;
+            embed: boolean;
+            autoHost: boolean;
         };
-        "imagePref": {
-            "prefix": string;
-            "png": boolean;
-            "useClassSelector": boolean;
-            "color": number;
-            "bgColor": number;
-            "name": string;
-            "classSelector": string;
+        imagePref: {
+            prefix: string;
+            png: boolean;
+            useClassSelector: boolean;
+            color: number;
+            bgColor: number;
+            name: string;
+            classSelector: string;
         };
-        "historySize": number;
-        "gridSize": number;
-        "quickUsageToken": {
-            "UntitledProject": string;
+        historySize: number;
+        gridSize: number;
+        quickUsageToken: {
+            UntitledProject: string;
         };
     };
 };

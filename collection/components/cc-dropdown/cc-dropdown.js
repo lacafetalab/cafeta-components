@@ -1,5 +1,6 @@
-import { h, Host } from "@stencil/core";
+import { Component, h, Host, Prop, Element, State, Event, Watch } from "@stencil/core";
 import "choices.js/public/assets/scripts/choices.min.js";
+import "choicesjs-stencil";
 export class CcDropdown {
     constructor() {
         this._choices = [];

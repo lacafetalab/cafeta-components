@@ -1,4 +1,4 @@
-import { h, Host } from "@stencil/core";
+import { Component, Prop, h, Host } from "@stencil/core";
 import iconPaths from "./selection";
 export class CcIcon {
     constructor() {

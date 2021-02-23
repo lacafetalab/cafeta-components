@@ -1,4 +1,4 @@
-import { h, Host } from "@stencil/core";
+import { Component, h, Host, Prop } from "@stencil/core";
 export class CcSwitcher {
     constructor() {
         this.color = "primary";

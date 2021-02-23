@@ -44,7 +44,6 @@
   right: 0;
   bottom: 0;
   border-radius: 9999px;
-  -webkit-transition: background-color 0.3s ease 0s;
   transition: background-color 0.3s ease 0s;
   background-color: var(--cc-switcher-color-base);
 }
@@ -64,18 +63,14 @@
   height: 3.2rem;
   width: 3.2rem;
   top: -0.2rem;
-  -webkit-transition: -webkit-transform 0.3s ease;
-  transition: -webkit-transform 0.3s ease;
   transition: transform 0.3s ease;
-  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
   box-sizing: border-box;
   border-color: var(--cc-switcher-color-base);
 }
 
 .switch__input:checked + .switch__slider::before {
   border-color: var(--cc-switcher-color-active);
-  -webkit-transform: translateX(2rem);
-          transform: translateX(2rem);
+  transform: translateX(2rem);
 }
 
 .switch__slider.switch__slider--sm::before {
@@ -84,6 +79,5 @@
 }
 
 .switch__input:checked + .switch__slider.switch__slider--sm::before {
-  -webkit-transform: translateX(1.6rem);
-          transform: translateX(1.6rem);
+  transform: translateX(1.6rem);
 }

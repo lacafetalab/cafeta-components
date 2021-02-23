@@ -1,4 +1,4 @@
-import { h, Host } from "@stencil/core";
+import { h, Component, Host, Prop, State, Event, Watch, Listen, } from "@stencil/core";
 export class CcFilterSelectInput {
     constructor() {
         this._choices = [];
@@ -141,7 +141,6 @@ export class CcFilterSelectInput {
         }
     }
     handleKeyDown(ev) {
-        var _a;
         if (this.isOpenDropdown) {
             const indexHoveredChoice = this._choices.findIndex((choice) => choice.value === this.hoveredChoice);
             const scrollToElem = (elem, top) => {
@@ -173,7 +172,7 @@ export class CcFilterSelectInput {
                         const newChoices = [...this.selectedChoices];
                         const removedValue = newChoices.pop();
                         const removedChoice = this._choices.find((choice) => choice.value === removedValue);
-                        if (!((_a = removedChoice) === null || _a === void 0 ? void 0 : _a.disableRemove))
+                        if (!(removedChoice === null || removedChoice === void 0 ? void 0 : removedChoice.disableRemove))
                             this.selectedChoices = newChoices;
                     }
                     break;

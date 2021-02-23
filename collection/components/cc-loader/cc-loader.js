@@ -1,4 +1,4 @@
-import { h, Host } from "@stencil/core";
+import { h, Component, Host, Prop } from "@stencil/core";
 export class CcLoader {
     constructor() {
         this.size = 24;

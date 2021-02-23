@@ -10,11 +10,9 @@
   position: absolute;
   right: 0;
   margin-right: 0.8rem;
-  display: -webkit-box;
   display: flex;
   top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 
 .input__icon--primary {
@@ -79,19 +77,11 @@
   border-color: var(--error);
 }
 
-.input__field::-webkit-input-placeholder {
-  color: var(--neutral-02);
-}
-
 .input__field::-moz-placeholder {
   color: var(--neutral-02);
 }
 
 .input__field:-ms-input-placeholder {
-  color: var(--neutral-02);
-}
-
-.input__field::-ms-input-placeholder {
   color: var(--neutral-02);
 }
 

@@ -1,4 +1,4 @@
-import { EventEmitter } from "../../stencil.core";
+import { EventEmitter } from "../../stencil-public-runtime";
 import { TabOption } from "../../utils/types/TabOption";
 export declare class CcTabsTags {
     color?: "primary" | "secondary";

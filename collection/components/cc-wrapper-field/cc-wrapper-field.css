@@ -129,8 +129,7 @@
 }
 
 .wrapper-field__icon--inverted {
-  -webkit-transform: rotate(180deg);
-          transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
 .wrapper-field__helperText {

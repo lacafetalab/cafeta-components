@@ -69,10 +69,8 @@
 }
 
 .filter-file-input__option {
-  display: -webkit-box;
   display: flex;
-  -webkit-box-align: center;
-          align-items: center;
+  align-items: center;
   min-height: 40px;
   font-size: 14px;
   line-height: 20px;
@@ -91,7 +89,6 @@
   background-color: var(--background-02);
   color: var(--neutral-03);
   font-weight: 700;
-  -webkit-transition-property: all;
   transition-property: all;
 }
 
@@ -136,7 +133,6 @@
 }
 
 .filter-file-input__dot-list {
-  display: -webkit-box;
   display: flex;
   flex-wrap: wrap;
   margin: -4px;
@@ -144,10 +140,8 @@
 
 .filter-file-input__dot-item {
   background-color: var(--background-01);
-  display: -webkit-box;
   display: flex;
-  -webkit-box-align: end;
-          align-items: flex-end;
+  align-items: flex-end;
   border-radius: 10px;
   padding: 0.2rem 0.8rem 0.2rem 1.2rem;
   margin: 4px;
@@ -159,21 +153,18 @@
 }
 
 .filter-file-input__dot-delete {
-  display: -webkit-inline-box;
   display: inline-flex;
   margin-left: 0.8rem;
   vertical-align: text-bottom;
 }
 
 .filter-file-input__dot-delete cc-icon {
-  display: -webkit-inline-box;
   display: inline-flex;
   color: inherit;
 }
 
 .filter-file-input__icon--inverted {
-  -webkit-transform: rotate(180deg);
-          transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
 .filter-file-input cc-input {

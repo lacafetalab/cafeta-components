@@ -1,4 +1,4 @@
-import { EventEmitter } from "../../stencil.core";
+import { EventEmitter } from "../../stencil-public-runtime";
 import "choices.js/public/assets/scripts/choices.min.js";
 import "choicesjs-stencil";
 export declare class CcDropdown {

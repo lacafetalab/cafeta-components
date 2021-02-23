@@ -1,4 +1,4 @@
-import { h, Host } from "@stencil/core";
+import { Component, h, Host, Prop } from "@stencil/core";
 export class CcButton {
     constructor() {
         this.iconName = "";
@@ -11,8 +11,8 @@ export class CcButton {
         this.size = "lg";
         this.glow = false;
         this.type = "button";
-        this.loading = false;
         this.download = false;
+        this.loading = false;
     }
     render() {
         const BtnElem = this.href ? "a" : "button";
@@ -271,24 +271,6 @@ export class CcButton {
             "reflect": false,
             "defaultValue": "\"button\""
         },
-        "loading": {
-            "type": "boolean",
-            "mutable": false,
-            "complexType": {
-                "original": "boolean",
-                "resolved": "boolean",
-                "references": {}
-            },
-            "required": false,
-            "optional": true,
-            "docs": {
-                "tags": [],
-                "text": ""
-            },
-            "attribute": "loading",
-            "reflect": false,
-            "defaultValue": "false"
-        },
         "download": {
             "type": "boolean",
             "mutable": false,
@@ -304,6 +286,24 @@ export class CcButton {
                 "text": ""
             },
             "attribute": "download",
+            "reflect": false,
+            "defaultValue": "false"
+        },
+        "loading": {
+            "type": "boolean",
+            "mutable": false,
+            "complexType": {
+                "original": "boolean",
+                "resolved": "boolean",
+                "references": {}
+            },
+            "required": false,
+            "optional": true,
+            "docs": {
+                "tags": [],
+                "text": ""
+            },
+            "attribute": "loading",
             "reflect": false,
             "defaultValue": "false"
         }

@@ -1,4 +1,4 @@
-import { Host, h } from "@stencil/core";
+import { Host, h, Component, Prop, Element } from "@stencil/core";
 export class CcModalController {
     componentDidLoad() {
         const modalParent = this.modalRef.parentElement;

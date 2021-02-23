@@ -1,4 +1,4 @@
-import { EventEmitter } from "../../stencil.core";
+import { EventEmitter } from "../../stencil-public-runtime";
 export declare class CcTextarea {
     private richTextEl?;
     private textAreaEl?;
@@ -13,9 +13,8 @@ export declare class CcTextarea {
     name?: string;
     rich?: boolean;
     value?: string;
+    iconName?: string;
     helperText?: string;
-    enableImage?: boolean;
-    imageService?: (file: any) => Promise<string>;
     maxLength?: number;
     outlined: boolean;
     autoGrow?: boolean;
@@ -23,6 +22,9 @@ export declare class CcTextarea {
     counter?: boolean;
     bgField?: "transparent" | "white";
     toolbar?: string[];
+    enableImage?: boolean;
+    imageService?: (file: any) => Promise<string>;
+    enableMediaEmbed?: boolean;
     focusTextEditor(): Promise<void>;
     setDataRichEditor(data: string): Promise<void>;
     validateName(newDisabled: boolean): void;

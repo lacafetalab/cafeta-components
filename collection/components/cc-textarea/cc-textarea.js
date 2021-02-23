@@ -1,4 +1,4 @@
-import { h, Host } from "@stencil/core";
+import { h, Component, Prop, Host, Watch, Event, Method, State } from "@stencil/core";
 import { UploadAdapter } from "./UploadAdapter";
 export class CcTextarea {
     constructor() {
@@ -13,6 +13,7 @@ export class CcTextarea {
         this.withoutRadius = false;
         this.counter = false;
         this.bgField = "white";
+        this.enableMediaEmbed = false;
         this.focusEditor = () => {
             if (this.rich) {
                 this.editorInstance.editing.view.focus();
@@ -93,16 +94,26 @@ export class CcTextarea {
         if (!this.rich)
             return null;
         const { default: ClassicEditor } = await import("@ckeditor/ckeditor5-build-classic");
+        const { default: Image } = await import("@ckeditor/ckeditor5-image/src/image");
+        const { default: ImageResize } = await import("@ckeditor/ckeditor5-image/src/imageresize");
+        const optionsEditor = {
+            toolbar,
+            placeholder: this.placeholder
+        };
+        if (!this.enableMediaEmbed) {
+            optionsEditor['mediaEmbed'] = {
+                providers: []
+            };
+        }
+        ;
         if (this.enableImage && this.imageService) {
             toolbar.push("imageUpload");
+            optionsEditor['plugins'] = [
+                Image,
+                ImageResize
+            ];
         }
-        this.editorInstance = await ClassicEditor.create(this.richTextEl, {
-            toolbar,
-            placeholder: this.placeholder,
-            mediaEmbed: {
-                providers: []
-            }
-        });
+        this.editorInstance = await ClassicEditor.create(this.richTextEl, optionsEditor);
         this.setRichTextEditorDefaults();
         this.setAdapterUpload(this.editorInstance);
         return this.editorInstance;
@@ -151,11 +162,17 @@ export class CcTextarea {
             this.rich ? (h("div", { class: "textarea__richTextSkeleton", ref: el => (this.richTextEl = el) }, this.value ? this.value : "")) : (h("textarea", { rows: 1, ref: el => (this.textAreaEl = el), disabled: this.disabled, placeholder: this.placeholder, class: {
                     textarea__field: true,
                     "textarea__field--outlined": this.outlined,
+                    "textarea__field--icon": !!this.iconName && !this.rich,
                     "textarea__field--auto-grow": this.autoGrow,
                     "textarea__field--without-radius": this.withoutRadius,
                     "textarea__field--bg-white": this.bgField === "white",
                     "textarea__field--bg-transparent": this.bgField === "transparent"
                 }, maxLength: this.maxLength, name: this.name, value: this.value, onInput: e => this.changeTextHandler(e.target.value) })),
+            (!!this.iconName && !this.rich) && (h("cc-icon", { class: {
+                    textarea__icon: true,
+                    "textarea__icon--primary": this.color === "primary",
+                    "textarea__icon--secondary": this.color === "secondary"
+                }, name: this.iconName })),
             h("div", { class: "textarea__wrapper-helper" },
                 h("div", null, this.helperText && this.error && !this.success && !this.disabled && (h("span", { class: "textarea__helperText", onClick: this.focusEditor }, this.helperText))),
                 h("div", null, this.counter && (h("span", { class: "textarea__counter" },
@@ -329,6 +346,23 @@ export class CcTextarea {
             "attribute": "value",
             "reflect": false
         },
+        "iconName": {
+            "type": "string",
+            "mutable": false,
+            "complexType": {
+                "original": "string",
+                "resolved": "string",
+                "references": {}
+            },
+            "required": false,
+            "optional": true,
+            "docs": {
+                "tags": [],
+                "text": ""
+            },
+            "attribute": "icon-name",
+            "reflect": false
+        },
         "helperText": {
             "type": "string",
             "mutable": false,
@@ -345,42 +379,6 @@ export class CcTextarea {
             },
             "attribute": "helper-text",
             "reflect": false
-        },
-        "enableImage": {
-            "type": "boolean",
-            "mutable": false,
-            "complexType": {
-                "original": "boolean",
-                "resolved": "boolean",
-                "references": {}
-            },
-            "required": false,
-            "optional": true,
-            "docs": {
-                "tags": [],
-                "text": ""
-            },
-            "attribute": "enable-image",
-            "reflect": false
-        },
-        "imageService": {
-            "type": "unknown",
-            "mutable": false,
-            "complexType": {
-                "original": "(file: any) => Promise<string>",
-                "resolved": "(file: any) => Promise<string>",
-                "references": {
-                    "Promise": {
-                        "location": "global"
-                    }
-                }
-            },
-            "required": false,
-            "optional": true,
-            "docs": {
-                "tags": [],
-                "text": ""
-            }
         },
         "maxLength": {
             "type": "number",
@@ -503,6 +501,60 @@ export class CcTextarea {
                 "tags": [],
                 "text": ""
             }
+        },
+        "enableImage": {
+            "type": "boolean",
+            "mutable": false,
+            "complexType": {
+                "original": "boolean",
+                "resolved": "boolean",
+                "references": {}
+            },
+            "required": false,
+            "optional": true,
+            "docs": {
+                "tags": [],
+                "text": ""
+            },
+            "attribute": "enable-image",
+            "reflect": false
+        },
+        "imageService": {
+            "type": "unknown",
+            "mutable": false,
+            "complexType": {
+                "original": "(file: any) => Promise<string>",
+                "resolved": "(file: any) => Promise<string>",
+                "references": {
+                    "Promise": {
+                        "location": "global"
+                    }
+                }
+            },
+            "required": false,
+            "optional": true,
+            "docs": {
+                "tags": [],
+                "text": ""
+            }
+        },
+        "enableMediaEmbed": {
+            "type": "boolean",
+            "mutable": false,
+            "complexType": {
+                "original": "boolean",
+                "resolved": "boolean",
+                "references": {}
+            },
+            "required": false,
+            "optional": true,
+            "docs": {
+                "tags": [],
+                "text": ""
+            },
+            "attribute": "enable-media-embed",
+            "reflect": false,
+            "defaultValue": "false"
         }
     }; }
     static get states() { return {

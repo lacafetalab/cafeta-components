@@ -1,4 +1,4 @@
-import { Host, h } from "@stencil/core";
+import { Host, h, Component, Prop, Element, Watch, Event, Listen } from "@stencil/core";
 export class CcModal {
     constructor() {
         this.size = "md";

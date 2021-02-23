@@ -1,4 +1,4 @@
-import { EventEmitter } from "../../stencil.core";
+import { Event, EventEmitter } from "../../stencil-public-runtime";
 export declare class CcModal {
     private overlayEl;
     private wrapEl;

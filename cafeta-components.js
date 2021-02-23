@@ -17,13 +17,14 @@
   scriptElm.setAttribute('data-stencil-namespace', 'cafeta-components');
   doc.head.appendChild(scriptElm);
 
+  
   scriptElm = doc.createElement('script');
   scriptElm.setAttribute('nomodule', '');
   scriptElm.src = url + '/cafeta-components.js';
   warn.push(scriptElm.outerHTML);
   scriptElm.setAttribute('data-stencil-namespace', 'cafeta-components');
-  doc.head.appendChild(scriptElm);
-
+  doc.head.appendChild(scriptElm)
+  
   console.warn(warn.join('\n'));
 
 })(document);

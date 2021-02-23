@@ -1,4 +1,4 @@
-import { EventEmitter } from "../../stencil.core";
+import { EventEmitter } from "../../stencil-public-runtime";
 import { TabOptionWithTag } from "../../utils/types/TabOption";
 export declare class CcTabsUnderline {
     private wrapTabs;

@@ -1,4 +1,4 @@
-import { h, Host } from "@stencil/core";
+import { h, Component, Host, Prop } from "@stencil/core";
 export class CcWrapperField {
     constructor() {
         this.fieldReadonly = false;
@@ -30,7 +30,7 @@ export class CcWrapperField {
             h("div", { class: "wrapper-field__wrapper-icon" }, this.loader ? (h("cc-loader", null)) : (h("cc-icon", { class: {
                     "wrapper-field__icon": true,
                     "wrapper-field__icon--inverted": this.isActive && this.IconRotate
-                }, name: this.error ? "x" : this.iconName }))),
+                }, name: this.iconName }))),
             this.helperText && this.error && !this.disabled && (h("span", { class: "wrapper-field__helperText" }, this.helperText))));
     }
     static get is() { return "cc-wrapper-field"; }

@@ -1,4 +1,4 @@
-import { h, Host } from "@stencil/core";
+import { Component, Prop, State, h, Host, Event, Watch } from "@stencil/core";
 export class CcTabsTags {
     constructor() {
         this.color = "primary";

@@ -11,7 +11,7 @@ export const Textarea = () => {
   const wrap = document.createElement("div");
   wrap.innerHTML = `
   <div class="p-xxlg">
-    <cc-textarea value="${value}" id="text" label="DEFAULT" ${
+    <cc-textarea value="${value}" id="text" icon-name="check" label="DEFAULT" ${
     disabled ? "disabled" : ""
   } placeholder="${placeholder}"></cc-textarea>
   </div>

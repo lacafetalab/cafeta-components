@@ -1,4 +1,4 @@
-import { Host, h } from "@stencil/core";
+import { Host, h, Component, Prop, Event, State, Watch, Element } from "@stencil/core";
 export class CcTabsUnderline {
     constructor() {
         this.animating = false;

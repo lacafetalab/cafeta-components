@@ -3,7 +3,6 @@
 }
 
 .tabLine {
-  display: -webkit-box;
   display: flex;
   position: relative;
 }
@@ -48,10 +47,8 @@
 }
 
 .tabLine__buttonWrapper {
-  display: -webkit-box;
   display: flex;
-  -webkit-box-align: center;
-          align-items: center;
+  align-items: center;
 }
 
 .tabLine__tag {
@@ -78,7 +75,6 @@
   background-color: var(--primary);
   bottom: 0;
   border-radius: 2.4rem;
-  -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
   height: 0.3rem;
 }

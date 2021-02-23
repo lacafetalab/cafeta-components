@@ -49,6 +49,23 @@
   color: var(--secondary);
 }
 
+.textarea__icon {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-right: 0.8rem;
+  margin-bottom: 0.8rem;
+  display: flex;
+}
+
+.textarea__icon--primary {
+  color: var(--primary);
+}
+
+.textarea__icon--secondary {
+  color: var(--secondary);
+}
+
 .textarea__field {
   width: 100%;
   border-radius: 0.4rem;
@@ -63,6 +80,10 @@
   line-height: 1.625;
   resize: none;
   min-height: 13.6rem;
+}
+
+.textarea__field--icon {
+  padding-right: 3.6rem;
 }
 
 .textarea__field--outlined {
@@ -120,19 +141,11 @@
   border-color: var(--error);
 }
 
-.textarea__field::-webkit-input-placeholder {
-  color: var(--neutral-02);
-}
-
 .textarea__field::-moz-placeholder {
   color: var(--neutral-02);
 }
 
 .textarea__field:-ms-input-placeholder {
-  color: var(--neutral-02);
-}
-
-.textarea__field::-ms-input-placeholder {
   color: var(--neutral-02);
 }
 
@@ -186,10 +199,8 @@
 }
 
 .textarea__wrapper-helper {
-  display: -webkit-box;
   display: flex;
-  -webkit-box-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
 }
 
 .textarea--bg-transparent .ck.ck-editor__main > .ck-editor__editable {
@@ -233,8 +244,7 @@
 }
 
 .textarea .ck.ck-toolbar.ck-toolbar_grouping > .ck-toolbar__items {
-  -webkit-box-pack: end;
-          justify-content: flex-end;
+  justify-content: flex-end;
 }
 
 .textarea.textarea--primary .ck.ck-editor__main > .ck-editor__editable.ck-focused {

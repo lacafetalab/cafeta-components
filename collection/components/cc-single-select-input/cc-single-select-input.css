@@ -88,12 +88,9 @@
       -ms-user-select: none;
           user-select: none;
   padding: 10px 1.6rem;
-  display: -webkit-box;
   display: flex;
-  -webkit-box-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-          justify-content: space-between;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .single-file-input__option span {
@@ -108,7 +105,6 @@
   background-color: var(--background-02);
   color: var(--neutral-03);
   font-weight: 700;
-  -webkit-transition-property: all;
   transition-property: all;
 }
 
