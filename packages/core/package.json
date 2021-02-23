@@ -29,7 +29,7 @@
     "start": "npm-run-all --parallel dev storybook",
     "storybook": "start-storybook -p 9001 -c .storybook -s www",
     "predeploy": "npm run build-storybook",
-    "deploy-storybook": "gh-pages -d storybook-static",
+    "deploy-storybook": "npm run build-storybook && gh-pages -d storybook-static",
     "build-storybook": "build-storybook",
     "postinstall": "patch-package"
   },
