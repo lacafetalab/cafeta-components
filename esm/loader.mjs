@@ -1,5 +1,5 @@
 import { b as bootstrapLazy } from './index-f424fde7.js';
-import { a as patchEsm } from './scrollIntoViewIfNeeded-polyfill-cddc7190.js';
+import { a as patchEsm } from './scrollIntoViewIfNeeded-polyfill-c3a5a14c.js';
 
 const defineCustomElements = (win, options) => {
   if (typeof window === 'undefined') return Promise.resolve();

@@ -124,8 +124,6 @@ const CcTextarea = class {
         if (!this.rich)
             return null;
         const { default: ClassicEditor } = await import('./ckeditor-f0d83522.js').then(function (n) { return n.c; });
-        const { default: Image } = await import('./image-51e7e477.js');
-        const { default: ImageResize } = await import('./imageresize-8c2d3dc1.js');
         const optionsEditor = {
             toolbar,
             placeholder: this.placeholder
@@ -137,10 +135,6 @@ const CcTextarea = class {
         }
         if (this.enableImage && this.imageService) {
             toolbar.push("imageUpload");
-            optionsEditor['plugins'] = [
-                Image,
-                ImageResize
-            ];
         }
         this.editorInstance = await ClassicEditor.create(this.richTextEl, optionsEditor);
         this.setRichTextEditorDefaults();

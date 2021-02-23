@@ -169,7 +169,7 @@ var CcTextarea = /** @class */ (function () {
     };
     class_1.prototype.enableRichTextEditor = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var toolbar, ClassicEditor, Image, ImageResize, optionsEditor, _a;
+            var toolbar, ClassicEditor, optionsEditor, _a;
             return __generator(this, function (_b) {
                 switch (_b.label) {
                     case 0:
@@ -189,12 +189,6 @@ var CcTextarea = /** @class */ (function () {
                         return [4 /*yield*/, import('./ckeditor-f0d83522.js').then(function (n) { return n.c; })];
                     case 1:
                         ClassicEditor = (_b.sent()).default;
-                        return [4 /*yield*/, import('./image-51e7e477.js')];
-                    case 2:
-                        Image = (_b.sent()).default;
-                        return [4 /*yield*/, import('./imageresize-8c2d3dc1.js')];
-                    case 3:
-                        ImageResize = (_b.sent()).default;
                         optionsEditor = {
                             toolbar: toolbar,
                             placeholder: this.placeholder
@@ -206,14 +200,10 @@ var CcTextarea = /** @class */ (function () {
                         }
                         if (this.enableImage && this.imageService) {
                             toolbar.push("imageUpload");
-                            optionsEditor['plugins'] = [
-                                Image,
-                                ImageResize
-                            ];
                         }
                         _a = this;
                         return [4 /*yield*/, ClassicEditor.create(this.richTextEl, optionsEditor)];
-                    case 4:
+                    case 2:
                         _a.editorInstance = _b.sent();
                         this.setRichTextEditorDefaults();
                         this.setAdapterUpload(this.editorInstance);

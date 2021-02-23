@@ -3,7 +3,7 @@
 Object.defineProperty(exports, '__esModule', { value: true });
 
 const index = require('./index-87a60bbb.js');
-const scrollIntoViewIfNeededPolyfill = require('./scrollIntoViewIfNeeded-polyfill-afb57a65.js');
+const scrollIntoViewIfNeededPolyfill = require('./scrollIntoViewIfNeeded-polyfill-6434ae7b.js');
 
 const defineCustomElements = (win, options) => {
   if (typeof window === 'undefined') return Promise.resolve();
