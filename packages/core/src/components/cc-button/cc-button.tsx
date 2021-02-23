@@ -18,8 +18,9 @@ export class CcButton {
   @Prop() size?: "lg" | "md" | "sm" = "lg";
   @Prop() glow: boolean = false;
   @Prop() type: "button" | "submit" = "button";
-  @Prop() loading?: boolean = false;
   @Prop() download?: boolean = false;
+  @Prop() loading?: boolean = false;
+  
 
   render() {
     const BtnElem = this.href ? "a" : "button";
