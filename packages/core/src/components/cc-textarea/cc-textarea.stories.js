@@ -43,7 +43,7 @@ export const TextareaWithRichEditor = () => {
   const wrap = document.createElement("div");
   wrap.innerHTML = `
   <div class="p-xxlg">
-    <cc-textarea value="${value}" id="rich" rich label="DEFAULT" ${
+    <cc-textarea value="${value}" id="rich" enable-media-embed rich label="DEFAULT" ${
     disabled ? "disabled" : ""
   } placeholder="${placeholder}"></cc-textarea>
   </div>
