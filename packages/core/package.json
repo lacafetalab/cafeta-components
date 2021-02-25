@@ -59,7 +59,6 @@
     "jest": "24.9.0",
     "jest-cli": "24.9.0",
     "npm-run-all": "^4.1.5",
-    "patch-package": "^6.2.2",
     "postinstall-postinstall": "^2.1.0",
     "puppeteer": "1.19.0",
     "tailwindcss": "^1.2.0",
@@ -72,6 +71,7 @@
   "license": "MIT",
   "gitHead": "63ee03924b5313389b52afce40dd8a1beebe69c2",
   "dependencies": {
+    "patch-package": "^6.2.2",
     "choices.js": "9.0.1",
     "choicesjs-stencil": "1.4.0"
   }
