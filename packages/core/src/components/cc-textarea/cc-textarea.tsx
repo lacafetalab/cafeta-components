@@ -140,6 +140,10 @@ export class CcTextarea {
       }
     };
 
+    if (this.enableMediaEmbed) {
+      optionsEditor['mediaEmbed']['previewsInData'] = true;
+    }
+
     if (this.enableImage && this.imageService) {
       toolbar.push("imageUpload");
     }
