@@ -72,7 +72,6 @@
   "license": "MIT",
   "gitHead": "63ee03924b5313389b52afce40dd8a1beebe69c2",
   "dependencies": {
-    "acorn": "^6.4.1",
     "choices.js": "9.0.1",
     "choicesjs-stencil": "1.4.0"
   }
