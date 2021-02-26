@@ -18,16 +18,13 @@ export class CcButton {
   @Prop() size?: "lg" | "md" | "sm" = "lg";
   @Prop() glow: boolean = false;
   @Prop() type: "button" | "submit" = "button";
-  @Prop() download?: boolean = false;
   @Prop() loading?: boolean = false;
-  
 
   render() {
     const BtnElem = this.href ? "a" : "button";
     const attrs = {
       disabled: this.href ? false : this.disabled,
       href: this.href,
-      download: this.download,
       target: this.target,
       type: this.type
     };
