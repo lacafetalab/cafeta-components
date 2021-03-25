@@ -18,48 +18,55 @@ import { ITrackerList } from "./interface";
 export class CcTracker {
   @Prop() trackersList: Array<ITrackerList>;
   @Prop() readonly: boolean = false;
+  @Prop() withoutLabel: boolean = false;
+  @Prop() showProgress: boolean = true;
   @Event() changeTracker: EventEmitter;
   @State() progress: number = 0;
 
-  handleClickTrack = (trackItem: ITrackerList) => {
+  handleClickTrack = (trackItem: ITrackerList, index: number) => {
     if (trackItem.isDisabled || this.readonly) return;
 
     const trackersListCopy = [...this.trackersList];
     trackersListCopy.map(
-      item => (
-        (item.isActive = trackItem.order === item.order && !item.isDisabled),
-        (item.isCompleted = item.order < trackItem.order && !item.isDisabled),
-        (item.isIncompleted = item.order > trackItem.order && !item.isDisabled)
+      (item, i) => (
+        (item.isActive = index === i && !item.isDisabled),
+        (item.isCompleted = i < index && !item.isDisabled),
+        (item.isIncompleted = i > index && !item.isDisabled)
       )
     );
 
     this.trackersList = [...trackersListCopy];
-    this.progress = this.getProgress(trackItem.order);
+    this.progress = this.getProgress(index);
     const value = trackItem.order;
     this.changeTracker.emit(value);
   };
 
   getProgress = (orderActive: number) => {
-    if (orderActive === 1) return 0;
+    if (orderActive === 0) return 0;
     const totalItems = this.trackersList.length;
     const totalIntervals = totalItems - 1;
     const percentForItem = 100 / totalIntervals;
-    return percentForItem * (orderActive - 1);
+    return percentForItem * (orderActive);
   };
 
   render() {
     return (
       <Host class={"tracker"} data-testid="cc-tracker">
         <ul class={{ tracker__list: true }}>
-          <div class="tracker__progress-base"></div>
-          <div class="tracker__progress" style={{ width: `${this.progress}%` }}>
-            {" "}
-          </div>
-          {this.trackersList?.map(trackerItem => {
+          {this.showProgress && <div class="tracker__progress-base"></div>}
+          {this.showProgress && (
+            <div
+              class="tracker__progress"
+              style={{ width: `${this.progress}%` }}
+            >
+              {" "}
+            </div>
+          )}
+          {this.trackersList?.map((trackerItem, index) => {
             return (
               <li
                 class={{ tracker__item: true }}
-                onClick={() => this.handleClickTrack(trackerItem)}
+                onClick={() => this.handleClickTrack(trackerItem, index)}
               >
                 <div
                   class={{
@@ -77,15 +84,18 @@ export class CcTracker {
                   )}
                   {!trackerItem.iconName && <span>{trackerItem.order}</span>}
                 </div>
-                <p
-                  class={{
-                    tracker__label: true,
-                    "tracker__label--is-disabled": trackerItem.isDisabled,
-                    "tracker__label--is-incompleted": trackerItem.isIncompleted
-                  }}
-                >
-                  {trackerItem.label}
-                </p>
+                {!this.withoutLabel && (
+                  <p
+                    class={{
+                      tracker__label: true,
+                      "tracker__label--is-disabled": trackerItem.isDisabled,
+                      "tracker__label--is-incompleted":
+                        trackerItem.isIncompleted
+                    }}
+                  >
+                    {trackerItem.label}
+                  </p>
+                )}
               </li>
             );
           })}

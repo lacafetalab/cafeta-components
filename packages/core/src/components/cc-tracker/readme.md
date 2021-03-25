@@ -7,10 +7,12 @@
 
 ## Properties
 
-| Property       | Attribute  | Description | Type             | Default     |
-| -------------- | ---------- | ----------- | ---------------- | ----------- |
-| `readonly`     | `readonly` |             | `boolean`        | `false`     |
-| `trackersList` | --         |             | `ITrackerList[]` | `undefined` |
+| Property       | Attribute       | Description | Type             | Default     |
+| -------------- | --------------- | ----------- | ---------------- | ----------- |
+| `readonly`     | `readonly`      |             | `boolean`        | `false`     |
+| `showProgress` | `show-progress` |             | `boolean`        | `true`      |
+| `trackersList` | --              |             | `ITrackerList[]` | `undefined` |
+| `withoutLabel` | `without-label` |             | `boolean`        | `false`     |
 
 
 ## Events

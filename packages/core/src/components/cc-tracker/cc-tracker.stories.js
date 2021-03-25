@@ -33,7 +33,7 @@ export const Tracker = () => {
         isCompleted: false,
         isIncompleted: true,
         isDisabled: false,
-        iconName: ""
+        iconName: "calendar"
       },
       {
         order: 3,
@@ -63,7 +63,13 @@ export const Tracker = () => {
 
 
   const tracker1 = trackerBuilder(itemsWrapper, {
-    readonly: value1
+    readonly: value1,
+  })
+
+  const trackerWithoutLabel = trackerBuilder(itemsWrapper, {
+    readonly: value1,
+    withoutLabel: true,
+    showProgress: true
   })
 
   tracker1.addEventListener("changeTracker", e => {
@@ -80,15 +86,23 @@ export const Tracker = () => {
         <div class="mt-lg flex flex-col align-middle w-full px-xxlg mx-xxlg"  id="track1"></div>
       </div>
     </section>
+
+    <section class="py-xlg  ">
+    <h2 class="text-subheading-02 mb-lg font-regular font-black">Tracker without labels</h1>
+    <div class="flex items-end mb-lg">
+      <div class="mt-lg flex flex-col align-middle w-full px-xxlg mx-xxlg"  id="track2"></div>
+    </div>
+  </section>
   </div>`;
 
-  wrap.querySelectorAll("cc-tracker").forEach(el => {
-    el.addEventListener("input", e => {
-      console.log(e);
-    });
-  });
+  // wrap.querySelectorAll("cc-tracker").forEach(el => {
+  //   el.addEventListener("input", e => {
+  //     console.log(e);
+  //   });
+  // });
 
   wrap.querySelector("#track1").appendChild(tracker1);
+  wrap.querySelector("#track2").appendChild(trackerWithoutLabel);
   return wrap
 };
 

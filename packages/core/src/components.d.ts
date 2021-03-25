@@ -177,7 +177,9 @@ export namespace Components {
     }
     interface CcTracker {
         "readonly": boolean;
+        "showProgress": boolean;
         "trackersList": Array<ITrackerList>;
+        "withoutLabel": boolean;
     }
     interface CcWrapperField {
         "IconRotate"?: boolean;
@@ -489,7 +491,9 @@ declare namespace LocalJSX {
     interface CcTracker {
         "onChangeTracker"?: (event: CustomEvent<any>) => void;
         "readonly"?: boolean;
+        "showProgress"?: boolean;
         "trackersList"?: Array<ITrackerList>;
+        "withoutLabel"?: boolean;
     }
     interface CcWrapperField {
         "IconRotate"?: boolean;
