@@ -61,15 +61,21 @@ export const Tracker = () => {
   const groupId1 = "GROUP-ID1";
   const value1 = boolean(label1, defaultValue1, groupId1);
 
+  const label2 = "withoutLabel";
+  const defaultValue2 = false;
+  const groupId2 = "GROUP-ID1";
+  const value2 = boolean(label2, defaultValue2, groupId2);
+
+  const label3 = "showProgress";
+  const defaultValue3 = true;
+  const groupId3 = "GROUP-ID1";
+  const value3 = boolean(label3, defaultValue3, groupId3);
+
 
   const tracker1 = trackerBuilder(itemsWrapper, {
     readonly: value1,
-  })
-
-  const trackerWithoutLabel = trackerBuilder(itemsWrapper, {
-    readonly: value1,
-    withoutLabel: true,
-    showProgress: true
+    withoutLabel: value2,
+    showProgress: value3
   })
 
   tracker1.addEventListener("changeTracker", e => {
@@ -95,14 +101,13 @@ export const Tracker = () => {
   </section>
   </div>`;
 
-  // wrap.querySelectorAll("cc-tracker").forEach(el => {
-  //   el.addEventListener("input", e => {
-  //     console.log(e);
-  //   });
-  // });
+  wrap.querySelectorAll("cc-tracker").forEach(el => {
+    el.addEventListener("input", e => {
+      console.log(e);
+    });
+  });
 
   wrap.querySelector("#track1").appendChild(tracker1);
-  wrap.querySelector("#track2").appendChild(trackerWithoutLabel);
   return wrap
 };
 
