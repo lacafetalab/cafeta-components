@@ -11,7 +11,6 @@ export class Ccbreadcrumb {
     return (
       <Host
         data-testid="cc-breadcrumb"
-        class="testing"
       >
         <h1>hola</h1>
       </Host>
