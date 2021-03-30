@@ -7,24 +7,25 @@
 
 ## Properties
 
-| Property       | Attribute      | Description | Type                               | Default     |
-| -------------- | -------------- | ----------- | ---------------------------------- | ----------- |
-| `autocomplete` | `autocomplete` |             | `string`                           | `""`        |
-| `bgField`      | `bg-field`     |             | `string`                           | `""`        |
-| `border`       | `border`       |             | `boolean`                          | `true`      |
-| `color`        | `color`        |             | `"primary" \| "secondary"`         | `"primary"` |
-| `disabled`     | `disabled`     |             | `boolean`                          | `false`     |
-| `error`        | `error`        |             | `boolean`                          | `false`     |
-| `helperText`   | `helper-text`  |             | `string`                           | `undefined` |
-| `iconName`     | `icon-name`    |             | `string`                           | `undefined` |
-| `inputRef`     | --             |             | `(el: HTMLInputElement) => void`   | `undefined` |
-| `label`        | `label`        |             | `string`                           | `undefined` |
-| `maxLength`    | `max-length`   |             | `number`                           | `undefined` |
-| `name`         | `name`         |             | `string`                           | `undefined` |
-| `placeholder`  | `placeholder`  |             | `string`                           | `undefined` |
-| `success`      | `success`      |             | `boolean`                          | `false`     |
-| `type`         | `type`         |             | `"number" \| "password" \| "text"` | `"text"`    |
-| `value`        | `value`        |             | `string`                           | `undefined` |
+| Property       | Attribute       | Description | Type                               | Default     |
+| -------------- | --------------- | ----------- | ---------------------------------- | ----------- |
+| `autocomplete` | `autocomplete`  |             | `string`                           | `""`        |
+| `bgField`      | `bg-field`      |             | `string`                           | `""`        |
+| `border`       | `border`        |             | `boolean`                          | `true`      |
+| `color`        | `color`         |             | `"primary" \| "secondary"`         | `"primary"` |
+| `defaultValue` | `default-value` |             | `string`                           | `""`        |
+| `disabled`     | `disabled`      |             | `boolean`                          | `false`     |
+| `error`        | `error`         |             | `boolean`                          | `false`     |
+| `helperText`   | `helper-text`   |             | `string`                           | `undefined` |
+| `iconName`     | `icon-name`     |             | `string`                           | `undefined` |
+| `inputRef`     | --              |             | `(el: HTMLInputElement) => void`   | `undefined` |
+| `label`        | `label`         |             | `string`                           | `undefined` |
+| `maxLength`    | `max-length`    |             | `number`                           | `undefined` |
+| `name`         | `name`          |             | `string`                           | `undefined` |
+| `placeholder`  | `placeholder`   |             | `string`                           | `undefined` |
+| `success`      | `success`       |             | `boolean`                          | `false`     |
+| `type`         | `type`          |             | `"number" \| "password" \| "text"` | `"text"`    |
+| `value`        | `value`         |             | `string`                           | `undefined` |
 
 
 ## Dependencies

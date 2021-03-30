@@ -23,6 +23,7 @@ export class CcInput {
   @Prop() autocomplete?: string = "";
   @Prop() maxLength?: number;
   @Prop() border?: boolean = true;
+  @Prop() defaultValue?: string = "";
 
   @Element() el: HTMLElement;
 
@@ -75,6 +76,7 @@ export class CcInput {
             ref={this.setInputRef}
             autocomplete={this.autocomplete}
             maxLength={this.maxLength}
+            defaultValue={this.defaultValue}
           />
 
           {this.iconName && (

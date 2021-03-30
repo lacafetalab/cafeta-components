@@ -82,6 +82,7 @@ export namespace Components {
         "bgField"?: string;
         "border"?: boolean;
         "color": "primary" | "secondary";
+        "defaultValue"?: string;
         "disabled"?: boolean;
         "error"?: boolean;
         "helperText"?: string;
@@ -378,6 +379,7 @@ declare namespace LocalJSX {
         "bgField"?: string;
         "border"?: boolean;
         "color"?: "primary" | "secondary";
+        "defaultValue"?: string;
         "disabled"?: boolean;
         "error"?: boolean;
         "helperText"?: string;
