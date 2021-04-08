@@ -14,6 +14,7 @@
     "./components/cc-tabs-tags/cc-tabs-tags.js",
     "./components/cc-tabs-underline/cc-tabs-underline.js",
     "./components/cc-textarea/cc-textarea.js",
+    "./components/cc-tracker/cc-tracker.js",
     "./components/cc-wrapper-field/cc-wrapper-field.js"
   ],
   "compiler": {

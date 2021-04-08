@@ -133,6 +133,11 @@ const CcTextarea = class {
                 providers: []
             };
         }
+        if (this.enableMediaEmbed) {
+            optionsEditor['mediaEmbed'] = {
+                previewsInData: true
+            };
+        }
         if (this.enableImage && this.imageService) {
             toolbar.push("imageUpload");
         }

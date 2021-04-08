@@ -198,6 +198,11 @@ var CcTextarea = /** @class */ (function () {
                                 providers: []
                             };
                         }
+                        if (this.enableMediaEmbed) {
+                            optionsEditor['mediaEmbed'] = {
+                                previewsInData: true
+                            };
+                        }
                         if (this.enableImage && this.imageService) {
                             toolbar.push("imageUpload");
                         }

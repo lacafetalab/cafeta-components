@@ -1,0 +1,110 @@
+.tracker__list {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin-bottom: 0.8rem;
+  z-index: 4;
+}
+
+.tracker__progress {
+  position: absolute;
+  left: 0;
+  background-color: var(--primary);
+  background-color: var(--primary);
+  height: 3px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+}
+
+.tracker__progress-base {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  background-color: var(--disabled-background);
+  height: 3px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+.tracker__item {
+  display: flex;
+  position: relative;
+  z-index: 5;
+}
+
+.tracker__circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  position: relative;
+  font-size: 1.4rem;
+  border-radius: 9999px;
+  min-width: 4.8rem;
+  min-height: 4.8rem;
+  max-height: 4.8rem;
+  max-width: 4.8rem;
+}
+
+.tracker__circle--readonly {
+  cursor: default !important;
+}
+
+.tracker__circle--is-active {
+  color: var(--primary);
+  background-color: var(--neutral-04);
+  border-color: var(--primary);
+  cursor: pointer;
+  border: 3px solid;
+}
+
+.tracker__circle--is-disabled {
+  cursor: not-allowed;
+}
+
+.tracker__circle--is-completed {
+  color: var(--neutral-04);
+  background-color: var(--primary);
+  cursor: pointer;
+}
+
+.tracker__circle--is-disabled, .tracker__circle--is-incompleted {
+  color: var(--disabled-text);
+  background-color: var(--disabled-background);
+}
+
+.tracker__circle--is-incompleted {
+  cursor: pointer;
+}
+
+.tracker__circle cc-icon--is-active {
+  color: var(--primary);
+}
+
+.tracker__circle cc-icon--is-completed {
+  color: var(--neutral-04);
+}
+
+.tracker__circle cc-icon--is-disabled, .tracker__circle cc-icon--is-incompleted {
+  color: var(--disabled-text);
+}
+
+.tracker__label {
+  position: absolute;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--primary);
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  left: 50%;
+  bottom: -28px;
+  transform: translateX(-50%);
+  line-height: 2rem;
+}
+
+.tracker__label--is-disabled, .tracker__label--is-incompleted {
+  color: var(--disabled-text);
+}

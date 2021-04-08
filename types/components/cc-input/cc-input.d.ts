@@ -16,6 +16,7 @@ export declare class CcInput {
     autocomplete?: string;
     maxLength?: number;
     border?: boolean;
+    defaultValue?: string;
     el: HTMLElement;
     focusInput: () => void;
     setInputRef: (el: HTMLInputElement) => void;

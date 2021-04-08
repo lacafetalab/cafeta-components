@@ -12,6 +12,7 @@ var CcInput = /** @class */ (function () {
         this.bgField = "";
         this.autocomplete = "";
         this.border = true;
+        this.defaultValue = "";
         this.focusInput = function () {
             _this.inputEl.focus();
         };
@@ -39,7 +40,7 @@ var CcInput = /** @class */ (function () {
                     "input__field--default-bg": !this.bgField
                 },
                 _a[this.bgField] = !!this.bgField,
-                _a), type: this.type, placeholder: this.placeholder, disabled: this.disabled, name: this.name, value: this.value, ref: this.setInputRef, autocomplete: this.autocomplete, maxLength: this.maxLength }), this.iconName && (h("cc-icon", { class: {
+                _a), type: this.type, placeholder: this.placeholder, disabled: this.disabled, name: this.name, value: this.value, ref: this.setInputRef, autocomplete: this.autocomplete, maxLength: this.maxLength, defaultValue: this.defaultValue }), this.iconName && (h("cc-icon", { class: {
                 input__icon: true,
                 "input__icon--primary": this.color === "primary",
                 "input__icon--secondary": this.color === "secondary"

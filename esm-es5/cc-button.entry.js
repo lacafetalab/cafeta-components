@@ -13,7 +13,6 @@ var CcButton = /** @class */ (function () {
         this.size = "lg";
         this.glow = false;
         this.type = "button";
-        this.download = false;
         this.loading = false;
     }
     CcButton.prototype.render = function () {
@@ -21,7 +20,6 @@ var CcButton = /** @class */ (function () {
         var attrs = {
             disabled: this.href ? false : this.disabled,
             href: this.href,
-            download: this.download,
             target: this.target,
             type: this.type
         };

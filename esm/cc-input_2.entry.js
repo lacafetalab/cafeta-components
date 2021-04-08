@@ -13,6 +13,7 @@ const CcInput = class {
         this.bgField = "";
         this.autocomplete = "";
         this.border = true;
+        this.defaultValue = "";
         this.focusInput = () => {
             this.inputEl.focus();
         };
@@ -38,7 +39,7 @@ const CcInput = class {
                 "input__field--icon": !!this.iconName || !!hasAdornment,
                 "input__field--default-bg": !this.bgField,
                 [this.bgField]: !!this.bgField
-            }, type: this.type, placeholder: this.placeholder, disabled: this.disabled, name: this.name, value: this.value, ref: this.setInputRef, autocomplete: this.autocomplete, maxLength: this.maxLength }), this.iconName && (h("cc-icon", { class: {
+            }, type: this.type, placeholder: this.placeholder, disabled: this.disabled, name: this.name, value: this.value, ref: this.setInputRef, autocomplete: this.autocomplete, maxLength: this.maxLength, defaultValue: this.defaultValue }), this.iconName && (h("cc-icon", { class: {
                 input__icon: true,
                 "input__icon--primary": this.color === "primary",
                 "input__icon--secondary": this.color === "secondary"

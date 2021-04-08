@@ -9,6 +9,7 @@ export class CcInput {
         this.bgField = "";
         this.autocomplete = "";
         this.border = true;
+        this.defaultValue = "";
         this.focusInput = () => {
             this.inputEl.focus();
         };
@@ -37,7 +38,7 @@ export class CcInput {
                         "input__field--icon": !!this.iconName || !!hasAdornment,
                         "input__field--default-bg": !this.bgField,
                         [this.bgField]: !!this.bgField
-                    }, type: this.type, placeholder: this.placeholder, disabled: this.disabled, name: this.name, value: this.value, ref: this.setInputRef, autocomplete: this.autocomplete, maxLength: this.maxLength }),
+                    }, type: this.type, placeholder: this.placeholder, disabled: this.disabled, name: this.name, value: this.value, ref: this.setInputRef, autocomplete: this.autocomplete, maxLength: this.maxLength, defaultValue: this.defaultValue }),
                 this.iconName && (h("cc-icon", { class: {
                         input__icon: true,
                         "input__icon--primary": this.color === "primary",
@@ -336,6 +337,24 @@ export class CcInput {
             "attribute": "border",
             "reflect": false,
             "defaultValue": "true"
+        },
+        "defaultValue": {
+            "type": "string",
+            "mutable": false,
+            "complexType": {
+                "original": "string",
+                "resolved": "string",
+                "references": {}
+            },
+            "required": false,
+            "optional": true,
+            "docs": {
+                "tags": [],
+                "text": ""
+            },
+            "attribute": "default-value",
+            "reflect": false,
+            "defaultValue": "\"\""
         }
     }; }
     static get elementRef() { return "el"; }

@@ -11,7 +11,6 @@ export class CcButton {
         this.size = "lg";
         this.glow = false;
         this.type = "button";
-        this.download = false;
         this.loading = false;
     }
     render() {
@@ -19,7 +18,6 @@ export class CcButton {
         const attrs = {
             disabled: this.href ? false : this.disabled,
             href: this.href,
-            download: this.download,
             target: this.target,
             type: this.type
         };
@@ -270,24 +268,6 @@ export class CcButton {
             "attribute": "type",
             "reflect": false,
             "defaultValue": "\"button\""
-        },
-        "download": {
-            "type": "boolean",
-            "mutable": false,
-            "complexType": {
-                "original": "boolean",
-                "resolved": "boolean",
-                "references": {}
-            },
-            "required": false,
-            "optional": true,
-            "docs": {
-                "tags": [],
-                "text": ""
-            },
-            "attribute": "download",
-            "reflect": false,
-            "defaultValue": "false"
         },
         "loading": {
             "type": "boolean",

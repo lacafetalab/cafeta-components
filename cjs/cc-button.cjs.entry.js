@@ -19,7 +19,6 @@ const CcButton = class {
         this.size = "lg";
         this.glow = false;
         this.type = "button";
-        this.download = false;
         this.loading = false;
     }
     render() {
@@ -27,7 +26,6 @@ const CcButton = class {
         const attrs = {
             disabled: this.href ? false : this.disabled,
             href: this.href,
-            download: this.download,
             target: this.target,
             type: this.type
         };
