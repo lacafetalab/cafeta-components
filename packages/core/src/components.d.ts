@@ -180,6 +180,14 @@ export namespace Components {
         "value"?: string;
         "withoutRadius"?: boolean;
     }
+    interface CcTooltip {
+        "customWidth"?: string;
+        "hideCloseButton"?: boolean;
+        "imagePath"?: string;
+        "message": HTMLElement | string;
+        "positionElement": HTMLElement;
+        "visible": boolean;
+    }
     interface CcTracker {
         "readonly": boolean;
         "showProgress": boolean;
@@ -293,6 +301,12 @@ declare global {
         prototype: HTMLCcTextareaElement;
         new (): HTMLCcTextareaElement;
     };
+    interface HTMLCcTooltipElement extends Components.CcTooltip, HTMLStencilElement {
+    }
+    var HTMLCcTooltipElement: {
+        prototype: HTMLCcTooltipElement;
+        new (): HTMLCcTooltipElement;
+    };
     interface HTMLCcTrackerElement extends Components.CcTracker, HTMLStencilElement {
     }
     var HTMLCcTrackerElement: {
@@ -321,6 +335,7 @@ declare global {
         "cc-tabs-tags": HTMLCcTabsTagsElement;
         "cc-tabs-underline": HTMLCcTabsUnderlineElement;
         "cc-textarea": HTMLCcTextareaElement;
+        "cc-tooltip": HTMLCcTooltipElement;
         "cc-tracker": HTMLCcTrackerElement;
         "cc-wrapper-field": HTMLCcWrapperFieldElement;
     }
@@ -507,6 +522,14 @@ declare namespace LocalJSX {
         "value"?: string;
         "withoutRadius"?: boolean;
     }
+    interface CcTooltip {
+        "customWidth"?: string;
+        "hideCloseButton"?: boolean;
+        "imagePath"?: string;
+        "message"?: HTMLElement | string;
+        "positionElement"?: HTMLElement;
+        "visible"?: boolean;
+    }
     interface CcTracker {
         "onChangeTracker"?: (event: CustomEvent<any>) => void;
         "readonly"?: boolean;
@@ -545,6 +568,7 @@ declare namespace LocalJSX {
         "cc-tabs-tags": CcTabsTags;
         "cc-tabs-underline": CcTabsUnderline;
         "cc-textarea": CcTextarea;
+        "cc-tooltip": CcTooltip;
         "cc-tracker": CcTracker;
         "cc-wrapper-field": CcWrapperField;
     }
@@ -568,6 +592,7 @@ declare module "@stencil/core" {
             "cc-tabs-tags": LocalJSX.CcTabsTags & JSXBase.HTMLAttributes<HTMLCcTabsTagsElement>;
             "cc-tabs-underline": LocalJSX.CcTabsUnderline & JSXBase.HTMLAttributes<HTMLCcTabsUnderlineElement>;
             "cc-textarea": LocalJSX.CcTextarea & JSXBase.HTMLAttributes<HTMLCcTextareaElement>;
+            "cc-tooltip": LocalJSX.CcTooltip & JSXBase.HTMLAttributes<HTMLCcTooltipElement>;
             "cc-tracker": LocalJSX.CcTracker & JSXBase.HTMLAttributes<HTMLCcTrackerElement>;
             "cc-wrapper-field": LocalJSX.CcWrapperField & JSXBase.HTMLAttributes<HTMLCcWrapperFieldElement>;
         }

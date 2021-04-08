@@ -27,6 +27,7 @@
 ### Used by
 
  - [cc-navbar-web](../cc-navbar-web)
+ - [cc-tooltip](../cc-tooltip)
 
 ### Depends on
 
@@ -39,6 +40,7 @@ graph TD;
   cc-button --> cc-icon
   cc-button --> cc-loader
   cc-navbar-web --> cc-button
+  cc-tooltip --> cc-button
   style cc-button fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

@@ -20,13 +20,13 @@ export const Tooltip = () => {
 
     const label2 = "hideCloseButton";
     const defaultValue2 = false;
-    const groupId2 = "GROUP-ID2";
+    const groupId2 = "GROUP-ID1";
     const value2 = boolean(label2, defaultValue2, groupId2);
 
     const label3 = "imagePath";
     const defaultValue3 = "";
-    const groupId3 = "GROUP-ID3";
-    const value3 = boolean(label3, defaultValue3, groupId3);
+    const groupId3 = "GROUP-ID1";
+    const value3 = text(label3, defaultValue3, groupId3);
 
     const tooltip1 = tooltipBuilder({
         message: value1,
