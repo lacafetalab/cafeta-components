@@ -22,4 +22,5 @@ export const CcSwitcher = /*@__PURE__*/createReactComponent<JSX.CcSwitcher, HTML
 export const CcTabsTags = /*@__PURE__*/createReactComponent<JSX.CcTabsTags, HTMLCcTabsTagsElement>('cc-tabs-tags');
 export const CcTabsUnderline = /*@__PURE__*/createReactComponent<JSX.CcTabsUnderline, HTMLCcTabsUnderlineElement>('cc-tabs-underline');
 export const CcTextarea = /*@__PURE__*/createReactComponent<JSX.CcTextarea, HTMLCcTextareaElement>('cc-textarea');
+export const CcTracker = /*@__PURE__*/createReactComponent<JSX.CcTracker, HTMLCcTrackerElement>('cc-tracker');
 export const CcWrapperField = /*@__PURE__*/createReactComponent<JSX.CcWrapperField, HTMLCcWrapperFieldElement>('cc-wrapper-field');

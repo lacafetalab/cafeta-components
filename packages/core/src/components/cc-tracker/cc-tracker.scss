@@ -1,0 +1,78 @@
+.tracker {
+  &__list {
+    @apply flex justify-between relative mb-sm;
+    z-index: 4;
+  }
+  &__progress {
+    @apply absolute left-0 bg-primary bg-primary;
+    height: 3px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+    &-base {
+      @apply w-full absolute left-0 bg-disabled;
+      height: 3px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 2;
+    }
+  }
+
+  &__item {
+    @apply flex relative;
+    z-index: 5;
+  }
+  &__circle {
+    @apply flex justify-center items-center font-bold relative text-body rounded-full;
+    min-width: 4.8rem;
+    min-height: 4.8rem;
+    max-height: 4.8rem;
+    max-width: 4.8rem;
+    &--readonly {
+      cursor: default !important;
+    }
+    &--is-active {
+      @apply text-primary bg-neutral-04 border-primary cursor-pointer;
+      border: 3px solid;
+    }
+    &--is-disabled {
+      @apply cursor-not-allowed;
+    }
+    &--is-completed {
+      @apply text-neutral-04 bg-primary cursor-pointer;
+    }
+    &--is-disabled,
+    &--is-incompleted {
+      @apply text-disabled bg-disabled;
+    }
+    &--is-incompleted {
+      @apply cursor-pointer;
+    }
+
+    cc-icon {
+      &--is-active {
+        @apply text-primary;
+      }
+      &--is-completed {
+        @apply text-neutral-04;
+      }
+      &--is-disabled,
+      &--is-incompleted {
+        @apply text-disabled;
+      }
+    }
+  }
+  &__label {
+    @apply absolute text-body font-bold text-primary;
+    width: max-content;
+    left: 50%;
+    bottom: -28px;
+    transform: translateX(-50%);
+    line-height: 2rem;
+
+    &--is-disabled,
+    &--is-incompleted {
+      @apply text-disabled;
+    }
+  }
+}

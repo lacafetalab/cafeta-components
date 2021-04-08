@@ -24,6 +24,7 @@
  - [cc-input](../cc-input)
  - [cc-modal](../cc-modal)
  - [cc-textarea](../cc-textarea)
+ - [cc-tracker](../cc-tracker)
  - [cc-wrapper-field](../cc-wrapper-field)
 
 ### Graph
@@ -36,6 +37,7 @@ graph TD;
   cc-input --> cc-icon
   cc-modal --> cc-icon
   cc-textarea --> cc-icon
+  cc-tracker --> cc-icon
   cc-wrapper-field --> cc-icon
   style cc-icon fill:#f9f,stroke:#333,stroke-width:4px
 ```
