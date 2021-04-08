@@ -18,10 +18,10 @@
     esutils "^2.0.2"
     js-tokens "^4.0.0"
 
-"@cafeta/components@^1.3.8":
-  version "1.3.8"
-  resolved "https://registry.yarnpkg.com/@cafeta/components/-/components-1.3.8.tgz#9a0c19bbb1c2b40a364e639e7b283cb6ead81806"
-  integrity sha512-pbUaY/AlHFHypRYT66JEmVQ1XorOZsiqjZJF8j53WjbsMZLGewX+4xuuzuf82NJzv7iOZHoVwAzt1jcg2m2Kvg==
+"@cafeta/components@^1.3.9":
+  version "1.3.9"
+  resolved "https://registry.yarnpkg.com/@cafeta/components/-/components-1.3.9.tgz#3b0687ff730faf8984863d2a18bc3d0bee6439cc"
+  integrity sha512-wDPcHpvG+W+Xb6VhR+2rJgW5EMH1H74z7b/owunwR+HvliVyU1DzxMKB3gGLQCaoDDITjzdKcmPmU0u1Bfn2CA==
   dependencies:
     choices.js "9.0.1"
     choicesjs-stencil "1.4.0"
@@ -5283,9 +5283,9 @@ xml-name-validator@^3.0.0:
   integrity sha512-A5CUptxDsvxKJEU3yO6DuWBSJz/qizqzJKOMIfUJHETbBw/sFaDxgd6fxm1ewUaM0jZ444Fc5vC5ROYurg/4Pw==
 
 y18n@^3.2.1:
-  version "3.2.1"
-  resolved "https://registry.yarnpkg.com/y18n/-/y18n-3.2.1.tgz#6d15fba884c08679c0d77e88e7759e811e07fa41"
-  integrity sha1-bRX7qITAhnnA136I53WegR4H+kE=
+  version "3.2.2"
+  resolved "https://registry.yarnpkg.com/y18n/-/y18n-3.2.2.tgz#85c901bd6470ce71fc4bb723ad209b70f7f28696"
+  integrity sha512-uGZHXkHnhF0XeeAPgnKfPv1bgKAYyVvmNL1xlKsPYZPaIHxGti2hHqvOCQv71XMsLxu1QjergkqogUnms5D3YQ==
 
 "y18n@^3.2.1 || ^4.0.0":
   version "4.0.0"
