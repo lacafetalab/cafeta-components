@@ -92,13 +92,6 @@ export const Tracker = () => {
         <div class="mt-lg flex flex-col align-middle w-full px-xxlg mx-xxlg"  id="track1"></div>
       </div>
     </section>
-
-    <section class="py-xlg  ">
-    <h2 class="text-subheading-02 mb-lg font-regular font-black">Tracker without labels</h1>
-    <div class="flex items-end mb-lg">
-      <div class="mt-lg flex flex-col align-middle w-full px-xxlg mx-xxlg"  id="track2"></div>
-    </div>
-  </section>
   </div>`;
 
   wrap.querySelectorAll("cc-tracker").forEach(el => {
