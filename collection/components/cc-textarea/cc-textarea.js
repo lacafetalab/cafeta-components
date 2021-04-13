@@ -1,5 +1,6 @@
 import { h, Component, Prop, Host, Watch, Event, Method, State } from "@stencil/core";
 import { UploadAdapter } from "./UploadAdapter";
+import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 export class CcTextarea {
     constructor() {
         this.lengthCharacter = 0;
@@ -93,19 +94,17 @@ export class CcTextarea {
         ];
         if (!this.rich)
             return null;
-        const { default: ClassicEditor } = await import("@ckeditor/ckeditor5-build-classic");
         const optionsEditor = {
             toolbar,
             placeholder: this.placeholder
         };
         if (!this.enableMediaEmbed) {
-            optionsEditor['mediaEmbed'] = {
+            optionsEditor["mediaEmbed"] = {
                 providers: []
             };
         }
-        ;
         if (this.enableMediaEmbed) {
-            optionsEditor['mediaEmbed'] = {
+            optionsEditor["mediaEmbed"] = {
                 previewsInData: true
             };
         }
@@ -167,7 +166,7 @@ export class CcTextarea {
                     "textarea__field--bg-white": this.bgField === "white",
                     "textarea__field--bg-transparent": this.bgField === "transparent"
                 }, maxLength: this.maxLength, name: this.name, value: this.value, onInput: e => this.changeTextHandler(e.target.value) })),
-            (!!this.iconName && !this.rich) && (h("cc-icon", { class: {
+            !!this.iconName && !this.rich && (h("cc-icon", { class: {
                     textarea__icon: true,
                     "textarea__icon--primary": this.color === "primary",
                     "textarea__icon--secondary": this.color === "secondary"
