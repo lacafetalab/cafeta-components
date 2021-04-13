@@ -110,6 +110,10 @@ export namespace Components {
     interface CcModalController {
         "modalRef": HTMLElement;
     }
+    interface CcNavbarWeb {
+        "disabled": boolean;
+        "iconOnly": boolean;
+    }
     interface CcSingleSelectInput {
         "IconRotate"?: boolean;
         "autocomplete"?: boolean;
@@ -246,6 +250,12 @@ declare global {
         prototype: HTMLCcModalControllerElement;
         new (): HTMLCcModalControllerElement;
     };
+    interface HTMLCcNavbarWebElement extends Components.CcNavbarWeb, HTMLStencilElement {
+    }
+    var HTMLCcNavbarWebElement: {
+        prototype: HTMLCcNavbarWebElement;
+        new (): HTMLCcNavbarWebElement;
+    };
     interface HTMLCcSingleSelectInputElement extends Components.CcSingleSelectInput, HTMLStencilElement {
     }
     var HTMLCcSingleSelectInputElement: {
@@ -292,6 +302,7 @@ declare global {
         "cc-loader": HTMLCcLoaderElement;
         "cc-modal": HTMLCcModalElement;
         "cc-modal-controller": HTMLCcModalControllerElement;
+        "cc-navbar-web": HTMLCcNavbarWebElement;
         "cc-single-select-input": HTMLCcSingleSelectInputElement;
         "cc-switcher": HTMLCcSwitcherElement;
         "cc-tabs-tags": HTMLCcTabsTagsElement;
@@ -409,6 +420,12 @@ declare namespace LocalJSX {
     interface CcModalController {
         "modalRef"?: HTMLElement;
     }
+    interface CcNavbarWeb {
+        "disabled"?: boolean;
+        "iconOnly"?: boolean;
+        "onChangeChoice"?: (event: CustomEvent<any>) => void;
+        "onClickProfileMenu"?: (event: CustomEvent<any>) => void;
+    }
     interface CcSingleSelectInput {
         "IconRotate"?: boolean;
         "autocomplete"?: boolean;
@@ -501,6 +518,7 @@ declare namespace LocalJSX {
         "cc-loader": CcLoader;
         "cc-modal": CcModal;
         "cc-modal-controller": CcModalController;
+        "cc-navbar-web": CcNavbarWeb;
         "cc-single-select-input": CcSingleSelectInput;
         "cc-switcher": CcSwitcher;
         "cc-tabs-tags": CcTabsTags;
@@ -522,6 +540,7 @@ declare module "@stencil/core" {
             "cc-loader": LocalJSX.CcLoader & JSXBase.HTMLAttributes<HTMLCcLoaderElement>;
             "cc-modal": LocalJSX.CcModal & JSXBase.HTMLAttributes<HTMLCcModalElement>;
             "cc-modal-controller": LocalJSX.CcModalController & JSXBase.HTMLAttributes<HTMLCcModalControllerElement>;
+            "cc-navbar-web": LocalJSX.CcNavbarWeb & JSXBase.HTMLAttributes<HTMLCcNavbarWebElement>;
             "cc-single-select-input": LocalJSX.CcSingleSelectInput & JSXBase.HTMLAttributes<HTMLCcSingleSelectInputElement>;
             "cc-switcher": LocalJSX.CcSwitcher & JSXBase.HTMLAttributes<HTMLCcSwitcherElement>;
             "cc-tabs-tags": LocalJSX.CcTabsTags & JSXBase.HTMLAttributes<HTMLCcTabsTagsElement>;
