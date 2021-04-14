@@ -17,6 +17,7 @@ export const CcInput = /*@__PURE__*/createReactComponent<JSX.CcInput, HTMLCcInpu
 export const CcLoader = /*@__PURE__*/createReactComponent<JSX.CcLoader, HTMLCcLoaderElement>('cc-loader');
 export const CcModal = /*@__PURE__*/createReactComponent<JSX.CcModal, HTMLCcModalElement>('cc-modal');
 export const CcModalController = /*@__PURE__*/createReactComponent<JSX.CcModalController, HTMLCcModalControllerElement>('cc-modal-controller');
+export const CcNavbarWeb = /*@__PURE__*/createReactComponent<JSX.CcNavbarWeb, HTMLCcNavbarWebElement>('cc-navbar-web');
 export const CcSingleSelectInput = /*@__PURE__*/createReactComponent<JSX.CcSingleSelectInput, HTMLCcSingleSelectInputElement>('cc-single-select-input');
 export const CcSwitcher = /*@__PURE__*/createReactComponent<JSX.CcSwitcher, HTMLCcSwitcherElement>('cc-switcher');
 export const CcTabsTags = /*@__PURE__*/createReactComponent<JSX.CcTabsTags, HTMLCcTabsTagsElement>('cc-tabs-tags');
