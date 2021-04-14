@@ -1,0 +1,70 @@
+.profileuser .button.sc-cc-button{
+    background-color:#b0c0ca;
+}
+.profileuser > *{
+    min-width: 300px;
+    min-height: 500px;
+}
+.border-b{
+    min-height: 90px;
+}
+.ml-auto_{
+    margin-left: auto;
+}
+
+.profileuser > * > .flex {
+    display: block;
+    float:right;
+}
+
+.relative {
+    position: relative;
+}
+
+.pr-xxlg {
+    padding-right: 2.4rem;
+}
+
+.hySdZr {
+    position: absolute;
+    top: 68px;
+    right: 40px;
+}
+
+.shadow {
+    box-shadow: 0 4px 16px -8px #b0c0ca;
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.flex-icon {
+    display: flex;
+    margin-top: 15px;
+}
+
+.rounded-sm {
+    border-radius: 0.4rem;
+}
+
+.bg-neutral-04 {
+    background-color: var(--neutral-04);
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.py-xlg {
+    border-color: var(--background-01);
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.mt-sm {
+    margin-top: 0.8rem;
+}
+.text-body {
+    min-width: 20.8rem;
+}
