@@ -10,7 +10,7 @@ import {
   State
 } from "@stencil/core";
 import { UploadAdapter } from "./UploadAdapter";
-import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
+import ClassicEditor from "@cafeta/ckeditor5-custom-build";
 @Component({
   tag: "cc-textarea",
   styleUrl: "cc-textarea.scss"

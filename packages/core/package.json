@@ -36,7 +36,7 @@
   "devDependencies": {
     "@babel/core": "^7.12.17",
     "@babel/preset-env": "^7.12.17",
-    "@ckeditor/ckeditor5-build-classic": "25.0.0",
+    "@cafeta/ckeditor5-custom-build": "^0.0.1",
     "@stencil/core": "^1.8.6",
     "@stencil/postcss": "^1.0.1",
     "@stencil/react-output-target": "^0.0.4",
