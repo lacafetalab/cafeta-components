@@ -1,0 +1,8 @@
+.tooltip {
+    @apply px-lg pt-md pb-lg rounded-sm grid;
+    grid-template-columns: 1fr 16px;
+    grid-column-gap: 8px;
+    &__close {
+        @apply cursor-pointer;
+    }
+}

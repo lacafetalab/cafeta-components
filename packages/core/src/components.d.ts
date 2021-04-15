@@ -181,12 +181,15 @@ export namespace Components {
         "withoutRadius"?: boolean;
     }
     interface CcTooltip {
+        "background"?: string;
+        "color"?: string;
         "customWidth"?: string;
         "hideCloseButton"?: boolean;
         "imagePath"?: string;
         "message": HTMLElement | string;
         "positionElement": HTMLElement;
         "visible": boolean;
+        "width"?: string;
     }
     interface CcTracker {
         "readonly": boolean;
@@ -523,12 +526,15 @@ declare namespace LocalJSX {
         "withoutRadius"?: boolean;
     }
     interface CcTooltip {
+        "background"?: string;
+        "color"?: string;
         "customWidth"?: string;
         "hideCloseButton"?: boolean;
         "imagePath"?: string;
         "message"?: HTMLElement | string;
         "positionElement"?: HTMLElement;
         "visible"?: boolean;
+        "width"?: string;
     }
     interface CcTracker {
         "onChangeTracker"?: (event: CustomEvent<any>) => void;

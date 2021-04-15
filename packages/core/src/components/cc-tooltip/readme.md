@@ -9,26 +9,27 @@
 
 | Property          | Attribute           | Description | Type                    | Default     |
 | ----------------- | ------------------- | ----------- | ----------------------- | ----------- |
+| `background`      | `background`        |             | `string`                | `"#2a3247"` |
+| `color`           | `color`             |             | `string`                | `"#ffffff"` |
 | `customWidth`     | `custom-width`      |             | `string`                | `""`        |
 | `hideCloseButton` | `hide-close-button` |             | `boolean`               | `true`      |
 | `imagePath`       | `image-path`        |             | `string`                | `""`        |
 | `message`         | `message`           |             | `HTMLElement \| string` | `undefined` |
 | `positionElement` | --                  |             | `HTMLElement`           | `undefined` |
 | `visible`         | `visible`           |             | `boolean`               | `false`     |
+| `width`           | `width`             |             | `string`                | `"220px"`   |
 
 
 ## Dependencies
 
 ### Depends on
 
-- [cc-button](../cc-button)
+- [cc-icon](../cc-icon)
 
 ### Graph
 ```mermaid
 graph TD;
-  cc-tooltip --> cc-button
-  cc-button --> cc-icon
-  cc-button --> cc-loader
+  cc-tooltip --> cc-icon
   style cc-tooltip fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
