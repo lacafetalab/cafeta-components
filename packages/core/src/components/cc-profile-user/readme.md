@@ -7,18 +7,11 @@
 
 ## Properties
 
-| Property   | Attribute   | Description | Type      | Default |
-| ---------- | ----------- | ----------- | --------- | ------- |
-| `disabled` | `disabled`  |             | `boolean` | `false` |
-| `iconOnly` | `icon-only` |             | `boolean` | `false` |
-
-
-## Events
-
-| Event              | Description | Type               |
-| ------------------ | ----------- | ------------------ |
-| `changeChoice`     |             | `CustomEvent<any>` |
-| `clickProfileMenu` |             | `CustomEvent<any>` |
+| Property   | Attribute   | Description | Type          | Default     |
+| ---------- | ----------- | ----------- | ------------- | ----------- |
+| `disabled` | `disabled`  |             | `boolean`     | `false`     |
+| `iconOnly` | `icon-only` |             | `boolean`     | `false`     |
+| `menuList` | --          |             | `IMenuList[]` | `undefined` |
 
 
 ## Dependencies
