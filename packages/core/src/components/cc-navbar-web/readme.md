@@ -13,14 +13,6 @@
 | `iconOnly` | `icon-only` |             | `boolean` | `false` |
 
 
-## Events
-
-| Event              | Description | Type               |
-| ------------------ | ----------- | ------------------ |
-| `changeChoice`     |             | `CustomEvent<any>` |
-| `clickProfileMenu` |             | `CustomEvent<any>` |
-
-
 ## Dependencies
 
 ### Depends on

@@ -4,9 +4,7 @@ import {
     Host,
     Prop,
     Element,
-    State,
-    Event,
-    EventEmitter
+    State
   } from "@stencil/core";
   import "choices.js/public/assets/scripts/choices.min.js";
   import "choicesjs-stencil";
@@ -19,7 +17,7 @@ import {
   })
   
   export class CcProfileMenu {
-    @Prop() iconOnly: boolean = false;
+    @Prop() itemMenuMode: boolean = false;
     @Prop() disabled: boolean = false;
     @State() openProfileMenu: boolean = false;
     @State() private datalist: MenuList[];
@@ -94,7 +92,7 @@ import {
             </div>
             </div>
           </div>
-           : <div>Loading...</div>
+           : <div>Cargando...</div>
           }
         </Host>
       );

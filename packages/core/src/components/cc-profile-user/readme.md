@@ -7,11 +7,11 @@
 
 ## Properties
 
-| Property   | Attribute   | Description | Type          | Default     |
-| ---------- | ----------- | ----------- | ------------- | ----------- |
-| `disabled` | `disabled`  |             | `boolean`     | `false`     |
-| `iconOnly` | `icon-only` |             | `boolean`     | `false`     |
-| `menuList` | --          |             | `IMenuList[]` | `undefined` |
+| Property       | Attribute        | Description | Type          | Default     |
+| -------------- | ---------------- | ----------- | ------------- | ----------- |
+| `disabled`     | `disabled`       |             | `boolean`     | `false`     |
+| `itemMenuMode` | `item-menu-mode` |             | `boolean`     | `false`     |
+| `menuList`     | --               |             | `IMenuList[]` | `undefined` |
 
 
 ## Dependencies

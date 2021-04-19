@@ -118,7 +118,7 @@ export namespace Components {
     }
     interface CcProfileUser {
         "disabled": boolean;
-        "iconOnly": boolean;
+        "itemMenuMode": boolean;
         "menuList": Array<IMenuList>;
     }
     interface CcSingleSelectInput {
@@ -450,12 +450,10 @@ declare namespace LocalJSX {
     interface CcNavbarWeb {
         "disabled"?: boolean;
         "iconOnly"?: boolean;
-        "onChangeChoice"?: (event: CustomEvent<any>) => void;
-        "onClickProfileMenu"?: (event: CustomEvent<any>) => void;
     }
     interface CcProfileUser {
         "disabled"?: boolean;
-        "iconOnly"?: boolean;
+        "itemMenuMode"?: boolean;
         "menuList"?: Array<IMenuList>;
     }
     interface CcSingleSelectInput {
