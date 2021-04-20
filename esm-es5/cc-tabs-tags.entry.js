@@ -5,7 +5,7 @@ var __spreadArrays = (this && this.__spreadArrays) || function () {
             r[k] = a[j];
     return r;
 };
-import { r as registerInstance, c as createEvent, h, H as Host } from './index-f424fde7.js';
+import { r as registerInstance, c as createEvent, h, H as Host } from './index-b08024e3.js';
 var ccTabsTagsCss = ":host{display:block}.tabTags{overflow:hidden}.tabTags__wrap{margin:-1rem -0.6rem}.tabTags__button{-webkit-appearance:button;padding:0;margin:0;font-family:inherit;cursor:pointer;background-color:transparent;background-image:none;color:inherit;border:none;font-size:100%;outline:0;font-weight:900;font-size:1.2rem;padding-left:1.2rem;padding-right:1.2rem;border-radius:9999px;display:-ms-inline-flexbox;display:inline-flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;background-color:var(--neutral-04);height:3.2rem;margin:1rem 0.6rem}.tabTags__button--active{background-color:var(--primary);color:var(--neutral-04)}.tabTags__button--active.tabTags__button--secondary{background-color:var(--secondary)}.tabTags__button--disabled{color:var(--disabled-text);background-color:var(--disabled-background)}";
 var CcTabsTags = /** @class */ (function () {
     function CcTabsTags(hostRef) {

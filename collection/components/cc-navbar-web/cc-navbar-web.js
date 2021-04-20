@@ -10,8 +10,7 @@ export class CcNavbarWeb {
             e.stopPropagation();
         };
     }
-    componentWillLoad() {
-    }
+    componentWillLoad() { }
     componentDidLoad() {
         this.loadMenu();
     }
@@ -23,21 +22,21 @@ export class CcNavbarWeb {
             { url: "126", label: "Opción 4", icon: "globe", active: false },
             { url: "127", label: "Opción 5", icon: "book", active: false },
             { url: "128", label: "Opción 6", icon: "dollar-sign", active: false },
-            { url: "123", label: "Option 7", icon: "send", active: false },
+            { url: "123", label: "Option 7", icon: "send", active: false }
         ];
     }
     render() {
-        return (h(Host, null, this.datalist && this.datalist.length
-            ?
-                h("div", { class: 'navbar' },
-                    h("div", null,
-                        h("cc-button", { class: 'navbar__toggle', href: "#", target: "_blank" },
-                            h("cc-icon", { name: "menu", class: 'menu' })),
-                        h("ul", { class: { 'navbar__list--vertical': true, navbar__list: true } }, this.datalist.map(list => h("li", { class: { navbar__item: true, 'navbar__item--selected': list.active } },
-                            h("cc-button", { fill: 'clear', href: list.url, target: "_blank" },
-                                h("cc-icon", { size: 24, name: list.icon }),
-                                h("span", { class: 'navbar__item-text' }, list.label)))))))
-            : h("div", null, "Loading...")));
+        return (h(Host, null, this.datalist && this.datalist.length ? (h("div", { class: "navbar" },
+            h("div", null,
+                h("cc-button", { class: "navbar__toggle", href: "#", target: "_blank" },
+                    h("cc-icon", { name: "menu", class: "menu" })),
+                h("ul", { class: { "navbar__list--vertical": true, navbar__list: true } }, this.datalist.map(list => (h("li", { class: {
+                        navbar__item: true,
+                        "navbar__item--selected": list.active
+                    } },
+                    h("cc-button", { fill: "clear", href: list.url, target: "_blank" },
+                        h("cc-icon", { size: 24, name: list.icon }),
+                        h("span", { class: "navbar__item-text" }, list.label))))))))) : (h("div", null, "Cargando..."))));
     }
     static get is() { return "cc-navbar-web"; }
     static get originalStyleUrls() { return {

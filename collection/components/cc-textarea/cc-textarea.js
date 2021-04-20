@@ -1,6 +1,6 @@
 import { h, Component, Prop, Host, Watch, Event, Method, State } from "@stencil/core";
 import { UploadAdapter } from "./UploadAdapter";
-import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
+import ClassicEditor from "@cafeta/ckeditor5-custom-build";
 export class CcTextarea {
     constructor() {
         this.lengthCharacter = 0;

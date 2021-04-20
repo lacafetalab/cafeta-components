@@ -115,6 +115,16 @@ export namespace Components {
         "disabled": boolean;
         "iconOnly": boolean;
     }
+    interface CcProgressBar {
+        "alert"?: boolean;
+        "color": "primary" | "secondary";
+        "error"?: boolean;
+        "label": string;
+        "progress": number;
+        "success"?: boolean;
+        "tooltipText": string;
+        "type": "single" | "label" | "percentage" | "text";
+    }
     interface CcSingleSelectInput {
         "IconRotate"?: boolean;
         "autocomplete"?: boolean;
@@ -263,6 +273,12 @@ declare global {
         prototype: HTMLCcNavbarWebElement;
         new (): HTMLCcNavbarWebElement;
     };
+    interface HTMLCcProgressBarElement extends Components.CcProgressBar, HTMLStencilElement {
+    }
+    var HTMLCcProgressBarElement: {
+        prototype: HTMLCcProgressBarElement;
+        new (): HTMLCcProgressBarElement;
+    };
     interface HTMLCcSingleSelectInputElement extends Components.CcSingleSelectInput, HTMLStencilElement {
     }
     var HTMLCcSingleSelectInputElement: {
@@ -316,6 +332,7 @@ declare global {
         "cc-modal": HTMLCcModalElement;
         "cc-modal-controller": HTMLCcModalControllerElement;
         "cc-navbar-web": HTMLCcNavbarWebElement;
+        "cc-progress-bar": HTMLCcProgressBarElement;
         "cc-single-select-input": HTMLCcSingleSelectInputElement;
         "cc-switcher": HTMLCcSwitcherElement;
         "cc-tabs-tags": HTMLCcTabsTagsElement;
@@ -440,6 +457,16 @@ declare namespace LocalJSX {
         "onChangeChoice"?: (event: CustomEvent<any>) => void;
         "onClickProfileMenu"?: (event: CustomEvent<any>) => void;
     }
+    interface CcProgressBar {
+        "alert"?: boolean;
+        "color"?: "primary" | "secondary";
+        "error"?: boolean;
+        "label"?: string;
+        "progress"?: number;
+        "success"?: boolean;
+        "tooltipText"?: string;
+        "type"?: "single" | "label" | "percentage" | "text";
+    }
     interface CcSingleSelectInput {
         "IconRotate"?: boolean;
         "autocomplete"?: boolean;
@@ -540,6 +567,7 @@ declare namespace LocalJSX {
         "cc-modal": CcModal;
         "cc-modal-controller": CcModalController;
         "cc-navbar-web": CcNavbarWeb;
+        "cc-progress-bar": CcProgressBar;
         "cc-single-select-input": CcSingleSelectInput;
         "cc-switcher": CcSwitcher;
         "cc-tabs-tags": CcTabsTags;
@@ -563,6 +591,7 @@ declare module "@stencil/core" {
             "cc-modal": LocalJSX.CcModal & JSXBase.HTMLAttributes<HTMLCcModalElement>;
             "cc-modal-controller": LocalJSX.CcModalController & JSXBase.HTMLAttributes<HTMLCcModalControllerElement>;
             "cc-navbar-web": LocalJSX.CcNavbarWeb & JSXBase.HTMLAttributes<HTMLCcNavbarWebElement>;
+            "cc-progress-bar": LocalJSX.CcProgressBar & JSXBase.HTMLAttributes<HTMLCcProgressBarElement>;
             "cc-single-select-input": LocalJSX.CcSingleSelectInput & JSXBase.HTMLAttributes<HTMLCcSingleSelectInputElement>;
             "cc-switcher": LocalJSX.CcSwitcher & JSXBase.HTMLAttributes<HTMLCcSwitcherElement>;
             "cc-tabs-tags": LocalJSX.CcTabsTags & JSXBase.HTMLAttributes<HTMLCcTabsTagsElement>;

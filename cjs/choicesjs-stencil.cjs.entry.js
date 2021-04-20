@@ -2,7 +2,7 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const index = require('./index-87a60bbb.js');
+const index = require('./index-76fa16d8.js');
 
 /**
  * Filter out entries from an object.

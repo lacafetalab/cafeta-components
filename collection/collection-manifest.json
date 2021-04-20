@@ -10,6 +10,7 @@
     "./components/cc-modal/cc-modal.js",
     "./components/cc-modal-controller/cc-modal-controller.js",
     "./components/cc-navbar-web/cc-navbar-web.js",
+    "./components/cc-progress-bar/cc-progress-bar.js",
     "./components/cc-single-select-input/cc-single-select-input.js",
     "./components/cc-switcher/cc-switcher.js",
     "./components/cc-tabs-tags/cc-tabs-tags.js",
