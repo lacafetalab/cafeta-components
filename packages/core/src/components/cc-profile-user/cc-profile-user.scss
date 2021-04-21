@@ -2,15 +2,13 @@
     background-color:#b0c0ca;
 }
 .profileuser > *{
-    min-width: 300px;
+    min-width: 0px;
     min-height: 500px;
 }
 .border-b{
     min-height: 90px;
 }
-.ml-auto_{
-    margin-left: auto;
-}
+
 
 .profileuser > * > .flex {
     display: block;
@@ -21,14 +19,10 @@
     position: relative;
 }
 
-.pr-xxlg {
-    padding-right: 2.4rem;
-}
-
 .hySdZr {
     position: absolute;
     top: 68px;
-    right: 40px;
+    right: 0px;
 }
 
 .shadow {
@@ -37,11 +31,6 @@
 
 .overflow-hidden {
     overflow: hidden;
-}
-
-.flex-icon {
-    display: flex;
-    margin-top: 15px;
 }
 
 .rounded-sm {
@@ -70,3 +59,77 @@
     width: 100%;
     display: block;
 }
+
+.user__element{
+    display: flex;
+    height: 48px;
+}
+.user__element-label{
+    line-height: 48px;
+}
+.user__element-avatar{
+    width: 40px;
+    margin: 4px 13px 4px 16px;
+    height: 40px;
+}
+.user__element-icon{
+    color: #2a3247;
+    height: 24px;
+    display: table-cell;
+    vertical-align: middle;
+}
+.user__element-toggle{
+    display: table;
+    height: 48px;
+    outline : none;
+}
+
+
+.usermenu__toggle-menu{
+    position: absolute;
+    top: 68px;
+    right: 0px;
+    display: none;
+}
+
+.usermenu__toggle-user{
+    position: relative;
+    padding: 0px 0px 0px 15px;
+    outline : none;
+}
+
+.usermenu__toggle-user:focus{
+    outline : none;
+}
+
+
+.menu__element-label {
+    line-height: 40px;
+    display: block;
+    float: left;
+}
+
+.menu__element-link{
+    line-height: 40px;
+    display: block;
+    float: left;
+    width: 100%;
+    color: #4a4a4a;
+}
+.usermenu__toggle--active  .usermenu__toggle-menu{
+    display: block
+}
+
+.menu__element-icon{
+    display: block;
+    height: 40px;
+    padding: 4px 0px 4px;
+    float: left;
+}
+
+.usermenu__toggle-menu-container{
+    padding: 8px 0px;
+    display: block;
+    float: left;
+}
+

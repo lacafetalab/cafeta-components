@@ -5,7 +5,7 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { IMenuList } from "./components/cc-profile-user/interface";
+import { IMenuList, IUserData } from "./components/cc-profile-user/interface";
 import { TabOption, TabOptionWithTag } from "./utils/types/TabOption";
 import { ITrackerList } from "./components/cc-tracker/interface";
 export namespace Components {
@@ -117,9 +117,8 @@ export namespace Components {
         "iconOnly": boolean;
     }
     interface CcProfileUser {
-        "disabled": boolean;
-        "itemMenuMode": boolean;
         "menuList": Array<IMenuList>;
+        "userData": Array<IUserData>;
     }
     interface CcSingleSelectInput {
         "IconRotate"?: boolean;
@@ -452,9 +451,8 @@ declare namespace LocalJSX {
         "iconOnly"?: boolean;
     }
     interface CcProfileUser {
-        "disabled"?: boolean;
-        "itemMenuMode"?: boolean;
         "menuList"?: Array<IMenuList>;
+        "userData"?: Array<IUserData>;
     }
     interface CcSingleSelectInput {
         "IconRotate"?: boolean;
