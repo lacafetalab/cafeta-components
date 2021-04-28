@@ -1,4 +1,4 @@
-import { Component, h, Host, Prop, Element, State, Listen } from "@stencil/core";
+import { Component, h, Host, Prop, State, Listen } from "@stencil/core";
 
 @Component({
   tag: "cc-progress-bar",
@@ -18,8 +18,6 @@ export class CcProgressBar {
   @Prop() label: string = '';
   @Prop() tooltipText: string = '';
   @State() tooltipPosition: number = 0;
-
-  // @Element() el: HTMLElement;
 
   handleTooltipPosition() {
     if (!!this.tooltip && !!this.tooltip.parentElement) {
@@ -64,7 +62,7 @@ export class CcProgressBar {
   }
 
   @Listen('resize', { target: 'window' })
-  handleResize(ev) {
+  handleResize() {
     this.handleTooltipPosition();
   }
 
