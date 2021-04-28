@@ -47,6 +47,7 @@
 .progressbar__tooltip {
   transition: 0.3s ease all;
   background: var(--cc-progress-bar-default-background);
+  white-space: nowrap;
   position: absolute;
   padding-left: 0.8rem;
   padding-right: 0.8rem;

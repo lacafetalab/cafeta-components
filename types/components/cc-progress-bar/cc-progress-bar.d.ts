@@ -1,5 +1,5 @@
 export declare class CcProgressBar {
-    tooltipContainer: HTMLDivElement;
+    tooltip: HTMLDivElement;
     color: "primary" | "secondary";
     error?: boolean;
     success?: boolean;
@@ -9,9 +9,9 @@ export declare class CcProgressBar {
     label: string;
     tooltipText: string;
     tooltipPosition: number;
-    el: HTMLElement;
     handleTooltipPosition(): void;
     componentDidLoad(): void;
     componentShouldUpdate(newVal: any, oldVal: any, propName: string): void;
+    handleResize(): void;
     render(): any;
 }

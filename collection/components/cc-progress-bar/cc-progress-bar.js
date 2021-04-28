@@ -1,4 +1,4 @@
-import { Component, h, Host, Prop, Element, State } from "@stencil/core";
+import { Component, h, Host, Prop, State, Listen } from "@stencil/core";
 export class CcProgressBar {
     constructor() {
         this.color = "secondary";
@@ -12,14 +12,14 @@ export class CcProgressBar {
         this.tooltipPosition = 0;
     }
     handleTooltipPosition() {
-        if (!!this.tooltipContainer && !!this.tooltipContainer.parentElement) {
-            let proportion = (this.tooltipContainer.offsetWidth * 100) / this.tooltipContainer.parentElement.offsetWidth;
+        if (!!this.tooltip && !!this.tooltip.parentElement) {
+            let proportion = (this.tooltip.offsetWidth * 100.00) / this.tooltip.parentElement.offsetWidth;
             if (this.type === "percentage") {
                 if (this.progress < (proportion / 2)) {
                     this.tooltipPosition = 0;
                 }
-                else if (this.progress > 100 - (proportion / 2)) {
-                    this.tooltipPosition = 100 - proportion;
+                else if (this.progress > 100.00 - (proportion / 2)) {
+                    this.tooltipPosition = (100 - proportion);
                 }
                 else {
                     this.tooltipPosition = this.progress - (proportion / 2);
@@ -52,8 +52,11 @@ export class CcProgressBar {
             else if (newVal < 0) {
                 this.progress = 0;
             }
-            this.handleTooltipPosition();
         }
+        this.handleTooltipPosition();
+    }
+    handleResize() {
+        this.handleTooltipPosition();
     }
     render() {
         return (h(Host, { class: {
@@ -70,7 +73,7 @@ export class CcProgressBar {
                     "progressbar__tooltip__container": true
                 } },
                 h("div", { ref: el => {
-                        this.tooltipContainer = el;
+                        this.tooltip = el;
                     }, 
                     // style={{marginLeft:`${this.tooltipPosition}%`}} 
                     style: { left: `${this.tooltipPosition}%` }, class: {
@@ -240,8 +243,14 @@ export class CcProgressBar {
         }
     }; }
     static get states() { return {
-        "tooltipContainer": {},
+        "tooltip": {},
         "tooltipPosition": {}
     }; }
-    static get elementRef() { return "el"; }
+    static get listeners() { return [{
+            "name": "resize",
+            "method": "handleResize",
+            "target": "window",
+            "capture": false,
+            "passive": true
+        }]; }
 }
