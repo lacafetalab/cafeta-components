@@ -45,6 +45,7 @@
       &__tooltip {
         transition: .3s ease all;
         background: var(--cc-progress-bar-default-background);
+        white-space: nowrap;
         @apply absolute px-sm py-xsm text-neutral-04 inline-block rounded-sm text-small-01;
         &__container {
           position: relative;

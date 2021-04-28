@@ -1,4 +1,4 @@
-import { Component, h, Host, Prop, Element, State } from "@stencil/core";
+import { Component, h, Host, Prop, Element, State, Listen } from "@stencil/core";
 
 @Component({
   tag: "cc-progress-bar",
@@ -7,7 +7,7 @@ import { Component, h, Host, Prop, Element, State } from "@stencil/core";
 })
 
 export class CcProgressBar {
-  @State() tooltipContainer: HTMLDivElement;
+  @State() tooltip: HTMLDivElement;
 
   @Prop() color: "primary" | "secondary" = "secondary";
   @Prop() error?: boolean = false;
@@ -19,17 +19,16 @@ export class CcProgressBar {
   @Prop() tooltipText: string = '';
   @State() tooltipPosition: number = 0;
 
-  @Element() el: HTMLElement;
+  // @Element() el: HTMLElement;
 
   handleTooltipPosition() {
-    if (!!this.tooltipContainer && !!this.tooltipContainer.parentElement) {
-      let proportion = (this.tooltipContainer.offsetWidth*100)/this.tooltipContainer.parentElement.offsetWidth;
-      
+    if (!!this.tooltip && !!this.tooltip.parentElement) {
+      let proportion = (this.tooltip.offsetWidth*100.00)/this.tooltip.parentElement.offsetWidth;
       if (this.type==="percentage") {
         if (this.progress<(proportion/2)) {
           this.tooltipPosition = 0;
-        }else if (this.progress>100-(proportion/2)){
-          this.tooltipPosition = 100-proportion;
+        }else if (this.progress>100.00-(proportion/2)){
+          this.tooltipPosition = (100-proportion);
         }else{
           this.tooltipPosition = this.progress - (proportion/2);
         }
@@ -60,8 +59,13 @@ export class CcProgressBar {
       }else if (newVal<0){
         this.progress = 0;
       }
-      this.handleTooltipPosition();
     }
+    this.handleTooltipPosition();
+  }
+
+  @Listen('resize', { target: 'window' })
+  handleResize(ev) {
+    this.handleTooltipPosition();
   }
 
   render() {
@@ -85,12 +89,13 @@ export class CcProgressBar {
           </p>
         )}
         {(this.type==='percentage' || this.type==='text') && (
-          <div class={{
+          <div
+           class={{
             "progressbar__tooltip__container": true
           }}>
             <div
               ref={el => {
-                this.tooltipContainer = el as HTMLDivElement
+                this.tooltip = el as HTMLDivElement
               }}
               // style={{marginLeft:`${this.tooltipPosition}%`}} 
               style={{left: `${this.tooltipPosition}%`}}
