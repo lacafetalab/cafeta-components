@@ -3,10 +3,9 @@ import {
   h,
   Host,
   Prop,
-  Element,
-  State,
-  Event,
-  EventEmitter
+  //State,
+  //Event,
+  //EventEmitter
 } from "@stencil/core";
 import "choices.js/public/assets/scripts/choices.min.js";
 import "choicesjs-stencil";
@@ -18,14 +17,14 @@ import "choicesjs-stencil";
 })
 
 export class CcNavbarWeb {
-  @Prop() iconOnly: boolean = false;
-  @Prop() disabled: boolean = false;
-  @State() openProfileMenu: boolean = false;
-  @State() private datalist: MenuList[];
-  @Element() el: HTMLElement;
+  @Prop() dataList: Array<IMenuList>;
+  //@Prop() iconOnly: boolean = false;
+  //@Prop() disabled: boolean = false;
+  //@State() openProfileMenu: boolean = false;
+  //@State() private datalist: MenuList[];
 
-  @Event() changeChoice: EventEmitter;
-  @Event() clickProfileMenu: EventEmitter;
+  //@Event() changeChoice: EventEmitter;
+  //@Event() clickProfileMenu: EventEmitter;
 
 
   componentWillLoad() {
@@ -36,7 +35,8 @@ export class CcNavbarWeb {
   }
 
   private loadMenu(): void {
-    this.datalist =  [
+    /*
+    this.dataList =  [
       { url: "123", label: "Option 1", icon: "home", active: true},
       { url: "124", label: "Opción 2", icon: "calendar", active: false},
       { url: "125", label: "Opción 3", icon: "user", active: false},
@@ -44,7 +44,7 @@ export class CcNavbarWeb {
       { url: "127", label: "Opción 5", icon: "book", active: false},
       { url: "128", label: "Opción 6", icon: "dollar-sign", active: false},
       { url: "123", label: "Option 7", icon: "send", active: false},
-    ]
+    ]*/
   }
 
 
@@ -59,7 +59,7 @@ export class CcNavbarWeb {
 
     return (
       <Host>
-{this.datalist && this.datalist.length
+{this.dataList && this.dataList.length
     ?
         <div
           class='navbar'>
@@ -70,7 +70,7 @@ export class CcNavbarWeb {
           <ul
             class={{ 'navbar__list--vertical':true, navbar__list: true}}
           >
-          {this.datalist.map(list =>
+          {this.dataList.map(list =>
                 <li class={{ navbar__item: true,'navbar__item--selected': list.active}}>
                   <cc-button fill='clear' href={list.url} target="_blank" >
                   <cc-icon size={24}                   
@@ -91,7 +91,7 @@ export class CcNavbarWeb {
 }
 
 
-export interface MenuList{ 
+export interface IMenuList{ 
   url: string;
   label: string;
   icon: string;
