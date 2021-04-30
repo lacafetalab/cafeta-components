@@ -4,9 +4,7 @@ import {
   Host,
   Prop,
   Element,
-  State,
-  Event,
-  EventEmitter
+  State
 } from "@stencil/core";
 import "choices.js/public/assets/scripts/choices.min.js";
 import "choicesjs-stencil";
@@ -19,12 +17,9 @@ import "choicesjs-stencil";
 export class CcNavbarWeb {
   @Prop() iconOnly: boolean = false;
   @Prop() disabled: boolean = false;
-  @State() openProfileMenu: boolean = false;
   @State() private datalist: MenuList[];
   @Element() el: HTMLElement;
 
-  @Event() changeChoice: EventEmitter;
-  @Event() clickProfileMenu: EventEmitter;
 
   componentWillLoad() {}
 

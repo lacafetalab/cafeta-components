@@ -5,6 +5,7 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { IMenuList, IUserData } from "./components/cc-profile-user/interface";
 import { TabOption, TabOptionWithTag } from "./utils/types/TabOption";
 import { ITrackerList } from "./components/cc-tracker/interface";
 export namespace Components {
@@ -114,6 +115,10 @@ export namespace Components {
     interface CcNavbarWeb {
         "disabled": boolean;
         "iconOnly": boolean;
+    }
+    interface CcProfileUser {
+        "menuList": Array<IMenuList>;
+        "userData": Array<IUserData>;
     }
     interface CcProgressBar {
         "alert"?: boolean;
@@ -273,6 +278,12 @@ declare global {
         prototype: HTMLCcNavbarWebElement;
         new (): HTMLCcNavbarWebElement;
     };
+    interface HTMLCcProfileUserElement extends Components.CcProfileUser, HTMLStencilElement {
+    }
+    var HTMLCcProfileUserElement: {
+        prototype: HTMLCcProfileUserElement;
+        new (): HTMLCcProfileUserElement;
+    };
     interface HTMLCcProgressBarElement extends Components.CcProgressBar, HTMLStencilElement {
     }
     var HTMLCcProgressBarElement: {
@@ -332,6 +343,7 @@ declare global {
         "cc-modal": HTMLCcModalElement;
         "cc-modal-controller": HTMLCcModalControllerElement;
         "cc-navbar-web": HTMLCcNavbarWebElement;
+        "cc-profile-user": HTMLCcProfileUserElement;
         "cc-progress-bar": HTMLCcProgressBarElement;
         "cc-single-select-input": HTMLCcSingleSelectInputElement;
         "cc-switcher": HTMLCcSwitcherElement;
@@ -454,8 +466,10 @@ declare namespace LocalJSX {
     interface CcNavbarWeb {
         "disabled"?: boolean;
         "iconOnly"?: boolean;
-        "onChangeChoice"?: (event: CustomEvent<any>) => void;
-        "onClickProfileMenu"?: (event: CustomEvent<any>) => void;
+    }
+    interface CcProfileUser {
+        "menuList"?: Array<IMenuList>;
+        "userData"?: Array<IUserData>;
     }
     interface CcProgressBar {
         "alert"?: boolean;
@@ -567,6 +581,7 @@ declare namespace LocalJSX {
         "cc-modal": CcModal;
         "cc-modal-controller": CcModalController;
         "cc-navbar-web": CcNavbarWeb;
+        "cc-profile-user": CcProfileUser;
         "cc-progress-bar": CcProgressBar;
         "cc-single-select-input": CcSingleSelectInput;
         "cc-switcher": CcSwitcher;
@@ -591,6 +606,7 @@ declare module "@stencil/core" {
             "cc-modal": LocalJSX.CcModal & JSXBase.HTMLAttributes<HTMLCcModalElement>;
             "cc-modal-controller": LocalJSX.CcModalController & JSXBase.HTMLAttributes<HTMLCcModalControllerElement>;
             "cc-navbar-web": LocalJSX.CcNavbarWeb & JSXBase.HTMLAttributes<HTMLCcNavbarWebElement>;
+            "cc-profile-user": LocalJSX.CcProfileUser & JSXBase.HTMLAttributes<HTMLCcProfileUserElement>;
             "cc-progress-bar": LocalJSX.CcProgressBar & JSXBase.HTMLAttributes<HTMLCcProgressBarElement>;
             "cc-single-select-input": LocalJSX.CcSingleSelectInput & JSXBase.HTMLAttributes<HTMLCcSingleSelectInputElement>;
             "cc-switcher": LocalJSX.CcSwitcher & JSXBase.HTMLAttributes<HTMLCcSwitcherElement>;
