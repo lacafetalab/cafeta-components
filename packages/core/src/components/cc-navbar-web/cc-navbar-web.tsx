@@ -1,13 +1,13 @@
-import {
-  Component,
-  h,
-  Host,
-  Prop,
-  Element,
-  State
-} from "@stencil/core";
+import { Component, h, Host, Prop, Element } from "@stencil/core";
 import "choices.js/public/assets/scripts/choices.min.js";
 import "choicesjs-stencil";
+
+export interface IMenuList {
+  url: string;
+  label: string;
+  icon: string;
+  active: boolean;
+}
 
 @Component({
   tag: "cc-navbar-web",
@@ -17,9 +17,15 @@ import "choicesjs-stencil";
 export class CcNavbarWeb {
   @Prop() iconOnly: boolean = false;
   @Prop() disabled: boolean = false;
-  @State() private datalist: MenuList[];
   @Element() el: HTMLElement;
+  @Prop() dataList: Array<IMenuList>;
+  //@Prop() iconOnly: boolean = false;
+  //@Prop() disabled: boolean = false;
+  //@State() openProfileMenu: boolean = false;
+  //@State() private datalist: MenuList[];
 
+  //@Event() changeChoice: EventEmitter;
+  //@Event() clickProfileMenu: EventEmitter;
 
   componentWillLoad() {}
 
@@ -28,15 +34,16 @@ export class CcNavbarWeb {
   }
 
   private loadMenu(): void {
-    this.datalist = [
-      { url: "123", label: "Option 1", icon: "home", active: true },
-      { url: "124", label: "Opción 2", icon: "calendar", active: false },
-      { url: "125", label: "Opción 3", icon: "user", active: false },
-      { url: "126", label: "Opción 4", icon: "globe", active: false },
-      { url: "127", label: "Opción 5", icon: "book", active: false },
-      { url: "128", label: "Opción 6", icon: "dollar-sign", active: false },
-      { url: "123", label: "Option 7", icon: "send", active: false }
-    ];
+    /*
+    this.dataList =  [
+      { url: "123", label: "Option 1", icon: "home", active: true},
+      { url: "124", label: "Opción 2", icon: "calendar", active: false},
+      { url: "125", label: "Opción 3", icon: "user", active: false},
+      { url: "126", label: "Opción 4", icon: "globe", active: false},
+      { url: "127", label: "Opción 5", icon: "book", active: false},
+      { url: "128", label: "Opción 6", icon: "dollar-sign", active: false},
+      { url: "123", label: "Option 7", icon: "send", active: false},
+    ]*/
   }
 
   toggleProfileMenu = e => {
@@ -46,7 +53,7 @@ export class CcNavbarWeb {
   render() {
     return (
       <Host>
-        {this.datalist && this.datalist.length ? (
+        {this.dataList && this.dataList.length ? (
           <div class="navbar">
             <div>
               <cc-button class="navbar__toggle" href="#" target="_blank">
@@ -55,7 +62,7 @@ export class CcNavbarWeb {
               <ul
                 class={{ "navbar__list--vertical": true, navbar__list: true }}
               >
-                {this.datalist.map(list => (
+                {this.dataList.map(list => (
                   <li
                     class={{
                       navbar__item: true,
@@ -77,11 +84,4 @@ export class CcNavbarWeb {
       </Host>
     );
   }
-}
-
-export interface MenuList {
-  url: string;
-  label: string;
-  icon: string;
-  active: boolean;
 }

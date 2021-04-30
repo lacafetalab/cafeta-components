@@ -1,4 +1,4 @@
-# cc-dropdown
+# cc-navbar-web
 
 
 
@@ -7,10 +7,11 @@
 
 ## Properties
 
-| Property   | Attribute   | Description | Type      | Default |
-| ---------- | ----------- | ----------- | --------- | ------- |
-| `disabled` | `disabled`  |             | `boolean` | `false` |
-| `iconOnly` | `icon-only` |             | `boolean` | `false` |
+| Property   | Attribute   | Description | Type          | Default     |
+| ---------- | ----------- | ----------- | ------------- | ----------- |
+| `dataList` | --          |             | `IMenuList[]` | `undefined` |
+| `disabled` | `disabled`  |             | `boolean`     | `false`     |
+| `iconOnly` | `icon-only` |             | `boolean`     | `false`     |
 
 
 ## Dependencies

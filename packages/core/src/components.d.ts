@@ -5,7 +5,8 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { IMenuList, IUserData } from "./components/cc-profile-user/interface";
+import { IMenuList } from "./components/cc-navbar-web/cc-navbar-web";
+import { IMenuList as IMenuList1, IUserData } from "./components/cc-profile-user/interface";
 import { TabOption, TabOptionWithTag } from "./utils/types/TabOption";
 import { ITrackerList } from "./components/cc-tracker/interface";
 export namespace Components {
@@ -113,6 +114,7 @@ export namespace Components {
         "modalRef": HTMLElement;
     }
     interface CcNavbarWeb {
+        "dataList": Array<IMenuList>;
         "disabled": boolean;
         "iconOnly": boolean;
     }
@@ -464,6 +466,7 @@ declare namespace LocalJSX {
         "modalRef"?: HTMLElement;
     }
     interface CcNavbarWeb {
+        "dataList"?: Array<IMenuList>;
         "disabled"?: boolean;
         "iconOnly"?: boolean;
     }
