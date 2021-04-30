@@ -11,6 +11,8 @@ export class CcTooltip {
   @Prop() background?: string = "#2a3247";
   @Prop() color?: string = "#ffffff";
   @Prop() width?: string = "220px";
+  @Prop() size?: 'sm' | 'md' = 'md';
+  
   @Prop() positionElement: HTMLElement;
   @Prop() hideCloseButton?: boolean = true;
   @Prop() imagePath?: string = "";
@@ -20,15 +22,19 @@ export class CcTooltip {
     return (
       <Host data-testid="cc-tooltip">
         <div
-          class="tooltip"
+          class={{
+            tooltip: true,
+            "tooltip--sm": "sm" === this.size,
+            "tooltip--md": "md" === this.size,
+          }}
           style={{
             backgroundColor: this.background,
             color: this.color,
-            width: this.width
+            width: "md" === this.size ? this.width : 'auto'
           }}
         >
           <div class="tooltip__message">
-            {this.imagePath.length > 0 && (
+            {(this.imagePath.length > 0 &&  "md" === this.size) && (
               <img
                 class="tooltip__message-image"
                 src={this.imagePath}
@@ -37,7 +43,7 @@ export class CcTooltip {
             )}
             <span class="tooltip__message-text">{this.message}</span>
           </div>
-          {!this.hideCloseButton && (
+          {(!this.hideCloseButton &&  "md" === this.size) && (
             <span class="tooltip__close" style={{color: this.color}}>
               <cc-icon name="x-circle" size={16} />
             </span>

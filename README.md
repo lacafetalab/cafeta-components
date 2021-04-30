@@ -6,6 +6,8 @@
 
 > **Nota:** Recuerda tener configurado tu ssh para poder publicar al repo (cafeta-components) y estar logueado con npm login.
 
+lerna bootstrap
+
 Dentro del proyecto (cafeta-components)
 ```
 yarn build

@@ -1,7 +1,25 @@
 .tooltip {
-    @apply px-lg pt-md pb-lg rounded-sm grid;
-    grid-template-columns: 1fr 16px;
-    grid-column-gap: 8px;
+    @apply rounded-sm;
+    &--md {
+        @apply px-lg pt-md pb-lg grid;
+        grid-template-columns: 1fr 16px;
+        grid-column-gap: 8px;
+    }
+    &__message {
+        @apply flex items-start;
+    }
+    &__message-image {
+        max-width: 5.6rem;
+        @apply mr-md;
+    }
+    &__message-text {
+        @apply break-words;
+    }
+    &--sm {
+        @apply px-sm text-body inline-block;
+        height: 2rem;
+        line-height: 2rem;
+    }
     &__close {
         @apply cursor-pointer;
     }

@@ -16,6 +16,7 @@
 | `imagePath`       | `image-path`        |             | `string`                | `""`        |
 | `message`         | `message`           |             | `HTMLElement \| string` | `undefined` |
 | `positionElement` | --                  |             | `HTMLElement`           | `undefined` |
+| `size`            | `size`              |             | `"md" \| "sm"`          | `'md'`      |
 | `visible`         | `visible`           |             | `boolean`               | `false`     |
 | `width`           | `width`             |             | `string`                | `"220px"`   |
 

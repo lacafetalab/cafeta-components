@@ -188,6 +188,7 @@ export namespace Components {
         "imagePath"?: string;
         "message": HTMLElement | string;
         "positionElement": HTMLElement;
+        "size"?: 'sm' | 'md';
         "visible": boolean;
         "width"?: string;
     }
@@ -533,6 +534,7 @@ declare namespace LocalJSX {
         "imagePath"?: string;
         "message"?: HTMLElement | string;
         "positionElement"?: HTMLElement;
+        "size"?: 'sm' | 'md';
         "visible"?: boolean;
         "width"?: string;
     }

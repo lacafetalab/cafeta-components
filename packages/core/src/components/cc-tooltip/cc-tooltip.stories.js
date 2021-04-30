@@ -35,6 +35,14 @@ export const Tooltip = () => {
         visible: true,
     });
 
+    const tooltip2 = tooltipBuilder({
+        message: value1,
+        hideCloseButton: value2,
+        imagePath: value3,
+        visible: true,
+        size: 'sm'
+    });
+
     const wrap = document.createElement("div");
     wrap.innerHTML = `
   <div class="p-lg">
@@ -43,11 +51,13 @@ export const Tooltip = () => {
       <h2 class="text-subheading-02 mb-lg font-regular font-black">Tooltip Base</h1>
       <div class="flex items-end mb-lg">
         <div class="mt-lg flex flex-col align-middle w-full px-xxlg mx-xxlg" id="tooltip1"></div>
+        <div class="mt-lg flex flex-col align-middle w-full px-xxlg mx-xxlg" id="tooltip2"></div>
       </div>
     </section>
   </div>`;
 
     wrap.querySelector("#tooltip1").appendChild(tooltip1);
+    wrap.querySelector("#tooltip2").appendChild(tooltip2);
     return wrap
 
 };
