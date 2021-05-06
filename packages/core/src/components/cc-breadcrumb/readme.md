@@ -5,6 +5,6 @@
 
 ## Properties
 
-| Property      | Attribute     | Description | Type                        | Default       |
-| ------------- | ------------- | ----------- | --------------------------  | ------------- |
-| `color`       | `color`       |             | `"primary" \| "secondary"`  | `"primary"`
+| Property      | Attribute     | Description | Type                                     | Default       |
+| ------------- | ------------- | ----------- | ---------------------------------------  | ------------- |
+| `type`        | `type`        |             | `"Anatomy" \| "Skeleton"\| "States"`     | `"Anatomy"`   |
