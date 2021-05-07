@@ -5,9 +5,13 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { BreadType } from "./utils/types/BreadOption";
 import { TabOption, TabOptionWithTag } from "./utils/types/TabOption";
 import { ITrackerList } from "./components/cc-tracker/interface";
 export namespace Components {
+    interface CcBreadcrumb {
+        "options"?: BreadType[];
+    }
     interface CcButton {
         "color": "primary" | "secondary";
         "disabled": boolean;
@@ -213,6 +217,12 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLCcBreadcrumbElement extends Components.CcBreadcrumb, HTMLStencilElement {
+    }
+    var HTMLCcBreadcrumbElement: {
+        prototype: HTMLCcBreadcrumbElement;
+        new (): HTMLCcBreadcrumbElement;
+    };
     interface HTMLCcButtonElement extends Components.CcButton, HTMLStencilElement {
     }
     var HTMLCcButtonElement: {
@@ -322,6 +332,7 @@ declare global {
         new (): HTMLCcWrapperFieldElement;
     };
     interface HTMLElementTagNameMap {
+        "cc-breadcrumb": HTMLCcBreadcrumbElement;
         "cc-button": HTMLCcButtonElement;
         "cc-checkfield": HTMLCcCheckfieldElement;
         "cc-dropdown": HTMLCcDropdownElement;
@@ -343,6 +354,9 @@ declare global {
     }
 }
 declare namespace LocalJSX {
+    interface CcBreadcrumb {
+        "options"?: BreadType[];
+    }
     interface CcButton {
         "color"?: "primary" | "secondary";
         "disabled"?: boolean;
@@ -557,6 +571,7 @@ declare namespace LocalJSX {
         "loader"?: boolean;
     }
     interface IntrinsicElements {
+        "cc-breadcrumb": CcBreadcrumb;
         "cc-button": CcButton;
         "cc-checkfield": CcCheckfield;
         "cc-dropdown": CcDropdown;
@@ -581,6 +596,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "cc-breadcrumb": LocalJSX.CcBreadcrumb & JSXBase.HTMLAttributes<HTMLCcBreadcrumbElement>;
             "cc-button": LocalJSX.CcButton & JSXBase.HTMLAttributes<HTMLCcButtonElement>;
             "cc-checkfield": LocalJSX.CcCheckfield & JSXBase.HTMLAttributes<HTMLCcCheckfieldElement>;
             "cc-dropdown": LocalJSX.CcDropdown & JSXBase.HTMLAttributes<HTMLCcDropdownElement>;

@@ -15,15 +15,17 @@ export class CcBreadcrumb {
   }
 
   render() {
-    return(
+    return (
       <Host>
-        <div class={{
-          breadTags: true
-        }}>
+        <div
+          class={{
+            breadTags: true
+          }}
+        >
           <div class="breadTags__wrap">
             {this._options.map((option, index) => (
               <div key={`breadTagItem_${index}`}>
-                <a 
+                <a
                   href={option.href}
                   class={{
                     breadTags__a: true,
@@ -38,6 +40,6 @@ export class CcBreadcrumb {
           </div>
         </div>
       </Host>
-    )
+    );
   }
 }
