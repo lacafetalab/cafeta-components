@@ -1,0 +1,59 @@
+
+
+:host {
+    @apply block;
+    --cc-progress-bar-default-background: theme("colors.primary.default")
+    }
+
+:host(.progress-bar--success) {
+    --cc-progress-bar-default-background: theme("colors.success");
+    }
+    
+    :host(.progress-bar--error) {
+    --cc-progress-bar-default-background: theme("colors.error");
+    }
+    
+    :host(.progress-bar--alert) {
+    --cc-progress-bar-default-background: theme("colors.alert");
+    }
+      
+
+.progressbar{
+    @apply bg-01;
+    border-radius: 4px;
+    height: 6px;
+    width: 100%;
+    position: relative;
+    
+    &__content {
+        background: var(--cc-progress-bar-default-background);
+        border-radius: 4px;
+        height: 6px;
+        width: 0;
+        max-width: 100%;
+      }
+    
+      &__label {
+        @apply block text-small-01 text-disabled font-black;
+        padding-top: 6px;
+        padding-bottom: 6px;
+        &.completed{
+            @apply text-neutral-03;
+          }
+      }
+
+      &__tooltip {
+        transition: .3s ease all;
+        background: var(--cc-progress-bar-default-background);
+        @apply absolute px-sm py-xsm text-neutral-04 inline-block rounded-sm text-small-01;
+        &__container {
+          position: relative;
+          height: 24px;
+          margin-top: 6px;
+          margin-bottom: 6px;
+        }
+      }
+      
+
+}
+

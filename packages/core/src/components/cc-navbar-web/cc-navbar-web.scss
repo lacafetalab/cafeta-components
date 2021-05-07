@@ -1,0 +1,42 @@
+.navbar{
+   width: 8.8rem;
+   overflow: hidden;
+   &__toggle{
+    .button.sc-cc-button{
+        border-radius: 0;
+        width: 8.8rem;
+        height: 7.2rem;
+    }
+   }
+   &__list{
+    @apply bg-neutral-04;
+    width: 8.8rem;
+    &--vertical{
+        .button__text{
+            @apply flex flex-col items-center;
+        }
+    }
+   }
+   &__item-text{
+    @apply text-small-01;
+   }
+   &__item{
+    width: 8.8rem;
+    height: 7.2rem;
+    .button.sc-cc-button{
+        border-radius: 0;
+        width: 8.8rem;
+        height: 7.2rem;
+    }
+    a.button--clear {
+        @apply text-neutral-02;
+        width: 8.8rem;
+    }
+    &--selected {
+        a.button--clear {
+            @apply text-primary;
+        }
+    }
+   }
+
+}

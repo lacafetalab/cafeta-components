@@ -6,6 +6,7 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { TabOption, TabOptionWithTag } from "./utils/types/TabOption";
+import { ITrackerList } from "./components/cc-tracker/interface";
 export namespace Components {
     interface CcButton {
         "color": "primary" | "secondary";
@@ -82,6 +83,7 @@ export namespace Components {
         "bgField"?: string;
         "border"?: boolean;
         "color": "primary" | "secondary";
+        "defaultValue"?: string;
         "disabled"?: boolean;
         "error"?: boolean;
         "helperText"?: string;
@@ -108,6 +110,20 @@ export namespace Components {
     }
     interface CcModalController {
         "modalRef": HTMLElement;
+    }
+    interface CcNavbarWeb {
+        "disabled": boolean;
+        "iconOnly": boolean;
+    }
+    interface CcProgressBar {
+        "alert"?: boolean;
+        "color": "primary" | "secondary";
+        "error"?: boolean;
+        "label": string;
+        "progress": number;
+        "success"?: boolean;
+        "tooltipText": string;
+        "type": "single" | "label" | "percentage" | "text";
     }
     interface CcSingleSelectInput {
         "IconRotate"?: boolean;
@@ -173,6 +189,12 @@ export namespace Components {
         "toolbar"?: string[];
         "value"?: string;
         "withoutRadius"?: boolean;
+    }
+    interface CcTracker {
+        "readonly": boolean;
+        "showProgress": boolean;
+        "trackersList": Array<ITrackerList>;
+        "withoutLabel": boolean;
     }
     interface CcWrapperField {
         "IconRotate"?: boolean;
@@ -245,6 +267,18 @@ declare global {
         prototype: HTMLCcModalControllerElement;
         new (): HTMLCcModalControllerElement;
     };
+    interface HTMLCcNavbarWebElement extends Components.CcNavbarWeb, HTMLStencilElement {
+    }
+    var HTMLCcNavbarWebElement: {
+        prototype: HTMLCcNavbarWebElement;
+        new (): HTMLCcNavbarWebElement;
+    };
+    interface HTMLCcProgressBarElement extends Components.CcProgressBar, HTMLStencilElement {
+    }
+    var HTMLCcProgressBarElement: {
+        prototype: HTMLCcProgressBarElement;
+        new (): HTMLCcProgressBarElement;
+    };
     interface HTMLCcSingleSelectInputElement extends Components.CcSingleSelectInput, HTMLStencilElement {
     }
     var HTMLCcSingleSelectInputElement: {
@@ -275,6 +309,12 @@ declare global {
         prototype: HTMLCcTextareaElement;
         new (): HTMLCcTextareaElement;
     };
+    interface HTMLCcTrackerElement extends Components.CcTracker, HTMLStencilElement {
+    }
+    var HTMLCcTrackerElement: {
+        prototype: HTMLCcTrackerElement;
+        new (): HTMLCcTrackerElement;
+    };
     interface HTMLCcWrapperFieldElement extends Components.CcWrapperField, HTMLStencilElement {
     }
     var HTMLCcWrapperFieldElement: {
@@ -291,11 +331,14 @@ declare global {
         "cc-loader": HTMLCcLoaderElement;
         "cc-modal": HTMLCcModalElement;
         "cc-modal-controller": HTMLCcModalControllerElement;
+        "cc-navbar-web": HTMLCcNavbarWebElement;
+        "cc-progress-bar": HTMLCcProgressBarElement;
         "cc-single-select-input": HTMLCcSingleSelectInputElement;
         "cc-switcher": HTMLCcSwitcherElement;
         "cc-tabs-tags": HTMLCcTabsTagsElement;
         "cc-tabs-underline": HTMLCcTabsUnderlineElement;
         "cc-textarea": HTMLCcTextareaElement;
+        "cc-tracker": HTMLCcTrackerElement;
         "cc-wrapper-field": HTMLCcWrapperFieldElement;
     }
 }
@@ -378,6 +421,7 @@ declare namespace LocalJSX {
         "bgField"?: string;
         "border"?: boolean;
         "color"?: "primary" | "secondary";
+        "defaultValue"?: string;
         "disabled"?: boolean;
         "error"?: boolean;
         "helperText"?: string;
@@ -406,6 +450,22 @@ declare namespace LocalJSX {
     }
     interface CcModalController {
         "modalRef"?: HTMLElement;
+    }
+    interface CcNavbarWeb {
+        "disabled"?: boolean;
+        "iconOnly"?: boolean;
+        "onChangeChoice"?: (event: CustomEvent<any>) => void;
+        "onClickProfileMenu"?: (event: CustomEvent<any>) => void;
+    }
+    interface CcProgressBar {
+        "alert"?: boolean;
+        "color"?: "primary" | "secondary";
+        "error"?: boolean;
+        "label"?: string;
+        "progress"?: number;
+        "success"?: boolean;
+        "tooltipText"?: string;
+        "type"?: "single" | "label" | "percentage" | "text";
     }
     interface CcSingleSelectInput {
         "IconRotate"?: boolean;
@@ -474,6 +534,13 @@ declare namespace LocalJSX {
         "value"?: string;
         "withoutRadius"?: boolean;
     }
+    interface CcTracker {
+        "onChangeTracker"?: (event: CustomEvent<any>) => void;
+        "readonly"?: boolean;
+        "showProgress"?: boolean;
+        "trackersList"?: Array<ITrackerList>;
+        "withoutLabel"?: boolean;
+    }
     interface CcWrapperField {
         "IconRotate"?: boolean;
         "bgField"?: string;
@@ -499,11 +566,14 @@ declare namespace LocalJSX {
         "cc-loader": CcLoader;
         "cc-modal": CcModal;
         "cc-modal-controller": CcModalController;
+        "cc-navbar-web": CcNavbarWeb;
+        "cc-progress-bar": CcProgressBar;
         "cc-single-select-input": CcSingleSelectInput;
         "cc-switcher": CcSwitcher;
         "cc-tabs-tags": CcTabsTags;
         "cc-tabs-underline": CcTabsUnderline;
         "cc-textarea": CcTextarea;
+        "cc-tracker": CcTracker;
         "cc-wrapper-field": CcWrapperField;
     }
 }
@@ -520,11 +590,14 @@ declare module "@stencil/core" {
             "cc-loader": LocalJSX.CcLoader & JSXBase.HTMLAttributes<HTMLCcLoaderElement>;
             "cc-modal": LocalJSX.CcModal & JSXBase.HTMLAttributes<HTMLCcModalElement>;
             "cc-modal-controller": LocalJSX.CcModalController & JSXBase.HTMLAttributes<HTMLCcModalControllerElement>;
+            "cc-navbar-web": LocalJSX.CcNavbarWeb & JSXBase.HTMLAttributes<HTMLCcNavbarWebElement>;
+            "cc-progress-bar": LocalJSX.CcProgressBar & JSXBase.HTMLAttributes<HTMLCcProgressBarElement>;
             "cc-single-select-input": LocalJSX.CcSingleSelectInput & JSXBase.HTMLAttributes<HTMLCcSingleSelectInputElement>;
             "cc-switcher": LocalJSX.CcSwitcher & JSXBase.HTMLAttributes<HTMLCcSwitcherElement>;
             "cc-tabs-tags": LocalJSX.CcTabsTags & JSXBase.HTMLAttributes<HTMLCcTabsTagsElement>;
             "cc-tabs-underline": LocalJSX.CcTabsUnderline & JSXBase.HTMLAttributes<HTMLCcTabsUnderlineElement>;
             "cc-textarea": LocalJSX.CcTextarea & JSXBase.HTMLAttributes<HTMLCcTextareaElement>;
+            "cc-tracker": LocalJSX.CcTracker & JSXBase.HTMLAttributes<HTMLCcTrackerElement>;
             "cc-wrapper-field": LocalJSX.CcWrapperField & JSXBase.HTMLAttributes<HTMLCcWrapperFieldElement>;
         }
     }

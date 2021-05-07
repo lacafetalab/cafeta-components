@@ -5,6 +5,10 @@
 ## Publicación de un nuevo componente o de una nueva versión
 
 > **Nota:** Recuerda tener configurado tu ssh para poder publicar al repo (cafeta-components) y estar logueado con npm login.
+Cuando tengas un componente nuevo ejecutar lo siguiente en la raiz
+```
+lerna bootstrap 
+```
 
 Dentro del proyecto (cafeta-components)
 ```
