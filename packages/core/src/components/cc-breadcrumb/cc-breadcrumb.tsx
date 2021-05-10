@@ -20,11 +20,10 @@ export class CcBreadcrumb {
         <div
           class={{
             breadTags: true
-          }}
-        >
-          <div class="breadTags__wrap">
+          }}>
+          <div class="breadTags__wrap flex">
             {this._options.map((option, index) => (
-              <div key={`breadTagItem_${index}`}>
+              <div key={`breadTagItem_${index}`} class="pr-md">
                 <a
                   href={option.href}
                   class={{
@@ -35,6 +34,10 @@ export class CcBreadcrumb {
                 >
                   {option.text}
                 </a>
+                <cc-icon
+                  name="chevron-right"
+                  size={12}
+                />
               </div>
             ))}
           </div>

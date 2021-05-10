@@ -17,6 +17,7 @@
 
 ### Used by
 
+ - [cc-breadcrumb](../cc-breadcrumb)
  - [cc-button](../cc-button)
  - [cc-checkfield](../cc-checkfield)
  - [cc-dropdown](../cc-dropdown)
@@ -31,6 +32,7 @@
 ### Graph
 ```mermaid
 graph TD;
+  cc-breadcrumb --> cc-icon
   cc-button --> cc-icon
   cc-checkfield --> cc-icon
   cc-dropdown --> cc-icon

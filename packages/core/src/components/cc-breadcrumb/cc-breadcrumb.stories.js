@@ -23,9 +23,19 @@ export const BreadCrumb = () => {
       disabled: true,
       text: "contact",
     },
+    {
+      href: "/about",
+      active: true,
+      disabled: false,
+      text: 'About'
+    }
   ]
 
   wrap.innerHTML = `
+        <div class="p-xxlg">
+            <cc-breadcrumb></cc-breadcrumb>
+        </div>
+
         <div class="p-xxlg">
             <cc-breadcrumb></cc-breadcrumb>
         </div>
@@ -37,8 +47,6 @@ export const BreadCrumb = () => {
       console.log(e.detail);
     });
   });
-
-
 
   return wrap;
 
