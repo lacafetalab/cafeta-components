@@ -28,18 +28,20 @@ export const BreadCrumb = () => {
       active: true,
       disabled: false,
       text: 'About'
+    },
+    {
+      href: "/personas",
+      active: true,
+      disabled: false,
+      text: 'personas'
     }
   ]
 
   wrap.innerHTML = `
-        <div class="p-xxlg">
-            <cc-breadcrumb></cc-breadcrumb>
-        </div>
-
-        <div class="p-xxlg">
-            <cc-breadcrumb></cc-breadcrumb>
-        </div>
-    `;
+      <div class="p-xxlg">
+          <cc-breadcrumb></cc-breadcrumb>
+      </div>
+  `;
 
   wrap.querySelectorAll("cc-breadcrumb").forEach(el => {
     el.options = options;
@@ -49,65 +51,6 @@ export const BreadCrumb = () => {
   });
 
   return wrap;
-
-
-  // return `
-  //     <div class="p-lg">
-  //         <h1 class="heading-01">Breadcrumb</h1>
-  //         <section class="py-xlg color-primary font-black">
-  //             <h2 class="text-subheading-02 mb-lg font-regular">Anatomy</h1>
-  //             <div class="flex items-center flex-wrap">
-  //                 <a href="#" class="text-small-02 font-regular text-neutral-02">Opción 1</a>
-  //                 <cc-icon size="12" slot="adornment" name='chevron-right' class="px-sm"></cc-icon>
-  //                 <a href="#" class="text-small-02 font-regular text-neutral-02">Opción 2</a>
-  //                 <cc-icon size="12" slot="adornment" name='chevron-right' class="px-sm"></cc-icon>
-  //                 <a href="#" class="text-small-02 font-regular text-neutral-02">Opción 3</a>
-  //                 <cc-icon size="12" slot="adornment" name='chevron-right' class="px-sm"></cc-icon>
-  //                 <span class="text-small-02 font-black">Opción 4</span>
-  //             </div>
-  //         </section>
-
-  //         <section class="py-xlg color-primary font-black">
-  //             <h2 class="text-subheading-02 mb-lg font-regular">Skeleton</h1>
-  //             <div class="flex items-center flex-wrap">
-  //                 <a href="#" class="text-small-02 font-regular text-neutral-02">Opción 1</a>
-  //                 <cc-icon size="12" slot="adornment" name='chevron-right' class="px-sm"></cc-icon>
-  //                 <a href="#" class="text-small-02 font-regular text-neutral-02">Opción 2</a>
-  //                 <cc-icon size="12" slot="adornment" name='chevron-right' class="px-sm"></cc-icon>
-  //                 <a href="#" class="text-small-02 font-regular text-neutral-02">Opción 3</a>
-  //                 <cc-icon size="12" slot="adornment" name='chevron-right' class="px-sm"></cc-icon>
-  //                 <span class="text-small-02 font-black">Opción 4</span>
-  //             </div>
-  //         </section>
-
-  //         <section class="py-xlg color-primary font-black">
-  //             <h2 class="text-subheading-02 mb-lg font-regular">States</h1>
-  //             <div class="flex items-center flex-wrap">
-  //                 <a href="#" class="text-small-02 font-regular text-neutral-02">Opción 1</a>
-  //                 <cc-icon size="12" slot="adornment" name='chevron-right' class="px-sm"></cc-icon>
-  //                 <a href="#" class="text-small-02 font-regular text-neutral-02">Opción 2</a>
-  //                 <cc-icon size="12" slot="adornment" name='chevron-right' class="px-sm"></cc-icon>
-  //                 <a href="#" class="text-small-02 font-regular text-neutral-02">Opción 3</a>
-  //                 <cc-icon size="12" slot="adornment" name='chevron-right' class="px-sm"></cc-icon>
-  //                 <span class="text-small-02 font-black">Opción 4</span>
-  //             </div>
-  //         </section>
-
-  //         <section class="py-xlg color-primary font-black">
-  //             <h2 class="text-subheading-02 mb-lg font-regular">Other behaviors</h1>
-  //             <div class="flex items-center flex-wrap">
-  //                 <a href="#" class="text-small-02 font-regular text-neutral-02">Opción 1</a>
-  //                 <cc-icon size="12" slot="adornment" name='chevron-right' class="px-sm"></cc-icon>
-  //                 <a href="#" class="text-small-02 font-regular text-neutral-02">Opción 2</a>
-  //                 <cc-icon size="12" slot="adornment" name='chevron-right' class="px-sm"></cc-icon>
-  //                 <a href="#" class="text-small-02 font-regular text-neutral-02">Opción 3</a>
-  //                 <cc-icon size="12" slot="adornment" name='chevron-right' class="px-sm"></cc-icon>
-  //                 <span class="text-small-02 font-black">Opción 4</span>
-  //             </div>
-  //         </section>
-
-  //     </div>
-  // `
 }
 
 BreadCrumb.story = {
