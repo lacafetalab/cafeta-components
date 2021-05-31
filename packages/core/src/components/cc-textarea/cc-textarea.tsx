@@ -20,7 +20,8 @@ export class CcTextarea {
   private textAreaEl?: HTMLTextAreaElement;
   private editorInstance: any;
 
-  @State() lengthCharacter: Number = 0;
+  @State() lengthCharacter: number = 0;
+  @State() isModified: boolean = false;
   @Prop() color: "primary" | "secondary" = "primary";
   @Prop() label?: string;
   @Prop() error?: boolean = false;
@@ -32,7 +33,7 @@ export class CcTextarea {
   @Prop() value?: string;
   @Prop() iconName?: string;
   @Prop() helperText?: string;
-  @Prop() maxLength?: number;
+  @Prop() maxLength?: number = 0;
   @Prop() outlined: boolean = false;
   @Prop() autoGrow?: boolean = false;
   @Prop() withoutRadius?: boolean = false;
@@ -42,6 +43,7 @@ export class CcTextarea {
   @Prop() enableImage?: boolean;
   @Prop() imageService?: (file: any) => Promise<string>;
   @Prop() enableMediaEmbed?: boolean = false;
+  @Prop() isRequired?: boolean = false;
 
   @Method()
   async focusTextEditor() {
@@ -88,6 +90,7 @@ export class CcTextarea {
   }
 
   @Event() changeText: EventEmitter<string>;
+  @Event() totalCharacters: EventEmitter<number>;
 
   changeTextHandler(newText: string) {
     if (this.autoGrow) {
@@ -95,11 +98,25 @@ export class CcTextarea {
       this.textAreaEl.style.height = this.textAreaEl.scrollHeight + "px";
     }
 
-    if (this.counter) {
+    if (!this.rich) {
       this.lengthCharacter = newText.length;
     }
 
+    if (this.rich) {
+      this.lengthCharacter = this.clearHtmlOnText(newText);
+    }
+
+    this.isModified = true;
     this.changeText.emit(newText);
+    this.totalCharacters.emit(this.lengthCharacter);
+  }
+
+  clearHtmlOnText(value: string) {
+    const html: any = value || "";
+    const div = document.createElement("div");
+    div.innerHTML = html;
+    const text = div.textContent || div.innerText || "";
+    return text.length;
   }
 
   setRichTextEditorDefaults() {
@@ -213,7 +230,10 @@ export class CcTextarea {
           "textarea--primary": this.color === "primary",
           "textarea--secondary": this.color === "secondary",
           "textarea--success": this.success && !this.error && !this.disabled,
-          "textarea--error": this.error && !this.success && !this.disabled,
+          "textarea--error":
+            (this.error && !this.success && !this.disabled) ||
+            (this.counter && this.lengthCharacter > this.maxLength) ||
+            (this.isRequired && !this.lengthCharacter && this.isModified),
           "textarea--disabled": this.disabled,
           "textarea--bg-transparent": this.bgField === "transparent",
           "textarea--bg-white": this.bgField === "white"
@@ -248,7 +268,7 @@ export class CcTextarea {
               "textarea__field--bg-white": this.bgField === "white",
               "textarea__field--bg-transparent": this.bgField === "transparent"
             }}
-            maxLength={this.maxLength}
+            maxLength={!this.maxLength ? undefined : this.maxLength}
             name={this.name}
             value={this.value}
             onInput={e =>
@@ -273,6 +293,19 @@ export class CcTextarea {
                 {this.helperText}
               </span>
             )}
+            {this.lengthCharacter > this.maxLength && this.counter && (
+              <span class="textarea__helperText" onClick={this.focusEditor}>
+                Has excedido el número de caracteres.
+              </span>
+            )}
+            {this.isRequired && !this.lengthCharacter && this.isModified && (
+              <div class="textarea__helperText-required">
+                <cc-icon size={16} name="alert-triangle"></cc-icon>
+                <span class="textarea__helperText" onClick={this.focusEditor}>
+                  Es necesario completar esta información.
+                </span>
+              </div>
+            )}
           </div>
           <div>
             {this.counter && (
@@ -280,7 +313,7 @@ export class CcTextarea {
                 <span>{this.lengthCharacter}</span>
                 <span>/</span>
                 <span>
-                  {this.maxLength ? this.maxLength : "maxlength is missing"}
+                  {!!this.maxLength ? this.maxLength : "maxLength is missing"}
                 </span>
               </span>
             )}

@@ -20,8 +20,9 @@
 | `helperText`       | `helper-text`        |             | `string`                         | `undefined` |
 | `iconName`         | `icon-name`          |             | `string`                         | `undefined` |
 | `imageService`     | --                   |             | `(file: any) => Promise<string>` | `undefined` |
+| `isRequired`       | `is-required`        |             | `boolean`                        | `false`     |
 | `label`            | `label`              |             | `string`                         | `undefined` |
-| `maxLength`        | `max-length`         |             | `number`                         | `undefined` |
+| `maxLength`        | `max-length`         |             | `number`                         | `0`         |
 | `name`             | `name`               |             | `string`                         | `undefined` |
 | `outlined`         | `outlined`           |             | `boolean`                        | `false`     |
 | `placeholder`      | `placeholder`        |             | `string`                         | `undefined` |
@@ -34,9 +35,10 @@
 
 ## Events
 
-| Event        | Description | Type                  |
-| ------------ | ----------- | --------------------- |
-| `changeText` |             | `CustomEvent<string>` |
+| Event             | Description | Type                  |
+| ----------------- | ----------- | --------------------- |
+| `changeText`      |             | `CustomEvent<string>` |
+| `totalCharacters` |             | `CustomEvent<number>` |
 
 
 ## Methods

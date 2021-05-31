@@ -124,7 +124,13 @@
   }
 
   &__helperText {
-    @apply block text-small-01 mt-xsm text-error;
+    @apply block text-small-01;
+    &-required {
+      @apply flex items-center;
+      cc-icon {
+        margin-right: 1ch;
+      }
+    }
   }
 
   &__richTextSkeleton {
@@ -142,8 +148,7 @@
 
   &__wrapper {
     &-helper {
-      display: flex;
-      justify-content: space-between;
+      @apply flex justify-between text-error mt-xsm;
     }
   }
 
