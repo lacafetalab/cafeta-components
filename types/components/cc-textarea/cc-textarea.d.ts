@@ -3,7 +3,8 @@ export declare class CcTextarea {
     private richTextEl?;
     private textAreaEl?;
     private editorInstance;
-    lengthCharacter: Number;
+    lengthCharacter: number;
+    isModified: boolean;
     color: "primary" | "secondary";
     label?: string;
     error?: boolean;
@@ -25,6 +26,7 @@ export declare class CcTextarea {
     enableImage?: boolean;
     imageService?: (file: any) => Promise<string>;
     enableMediaEmbed?: boolean;
+    isRequired?: boolean;
     focusTextEditor(): Promise<void>;
     setDataRichEditor(data: string): Promise<void>;
     validateName(newDisabled: boolean): void;
@@ -32,7 +34,9 @@ export declare class CcTextarea {
     getAmountOfCharacters(): number;
     setValue(newValue: string): void;
     changeText: EventEmitter<string>;
+    totalCharacters: EventEmitter<number>;
     changeTextHandler(newText: string): void;
+    clearHtmlOnText(value: string): number;
     setRichTextEditorDefaults(): void;
     enableRichTextEditor(): Promise<any>;
     setAdapterUpload(editor: any): void;

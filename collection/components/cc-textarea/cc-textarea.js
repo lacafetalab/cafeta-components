@@ -4,17 +4,20 @@ import ClassicEditor from "@cafeta/ckeditor5-custom-build";
 export class CcTextarea {
     constructor() {
         this.lengthCharacter = 0;
+        this.isModified = false;
         this.color = "primary";
         this.error = false;
         this.success = false;
         this.disabled = false;
         this.rich = false;
+        this.maxLength = 0;
         this.outlined = false;
         this.autoGrow = false;
         this.withoutRadius = false;
         this.counter = false;
         this.bgField = "white";
         this.enableMediaEmbed = false;
+        this.isRequired = false;
         this.focusEditor = () => {
             if (this.rich) {
                 this.editorInstance.editing.view.focus();
@@ -67,10 +70,22 @@ export class CcTextarea {
             this.textAreaEl.style.height = "5px";
             this.textAreaEl.style.height = this.textAreaEl.scrollHeight + "px";
         }
-        if (this.counter) {
+        if (!this.rich) {
             this.lengthCharacter = newText.length;
         }
+        if (this.rich) {
+            this.lengthCharacter = this.clearHtmlOnText(newText);
+        }
+        this.isModified = true;
         this.changeText.emit(newText);
+        this.totalCharacters.emit(this.lengthCharacter);
+    }
+    clearHtmlOnText(value) {
+        const html = value || "";
+        const div = document.createElement("div");
+        div.innerHTML = html;
+        const text = div.textContent || div.innerText || "";
+        return text.length;
     }
     setRichTextEditorDefaults() {
         this.editorInstance.isReadOnly = this.disabled;
@@ -151,7 +166,9 @@ export class CcTextarea {
                 "textarea--primary": this.color === "primary",
                 "textarea--secondary": this.color === "secondary",
                 "textarea--success": this.success && !this.error && !this.disabled,
-                "textarea--error": this.error && !this.success && !this.disabled,
+                "textarea--error": (this.error && !this.success && !this.disabled) ||
+                    (this.counter && this.lengthCharacter > this.maxLength) ||
+                    (this.isRequired && !this.lengthCharacter && this.isModified),
                 "textarea--disabled": this.disabled,
                 "textarea--bg-transparent": this.bgField === "transparent",
                 "textarea--bg-white": this.bgField === "white"
@@ -165,18 +182,23 @@ export class CcTextarea {
                     "textarea__field--without-radius": this.withoutRadius,
                     "textarea__field--bg-white": this.bgField === "white",
                     "textarea__field--bg-transparent": this.bgField === "transparent"
-                }, maxLength: this.maxLength, name: this.name, value: this.value, onInput: e => this.changeTextHandler(e.target.value) })),
+                }, maxLength: !this.maxLength ? undefined : this.maxLength, name: this.name, value: this.value, onInput: e => this.changeTextHandler(e.target.value) })),
             !!this.iconName && !this.rich && (h("cc-icon", { class: {
                     textarea__icon: true,
                     "textarea__icon--primary": this.color === "primary",
                     "textarea__icon--secondary": this.color === "secondary"
                 }, name: this.iconName })),
             h("div", { class: "textarea__wrapper-helper" },
-                h("div", null, this.helperText && this.error && !this.success && !this.disabled && (h("span", { class: "textarea__helperText", onClick: this.focusEditor }, this.helperText))),
+                h("div", null,
+                    this.helperText && this.error && !this.success && !this.disabled && (h("span", { class: "textarea__helperText", onClick: this.focusEditor }, this.helperText)),
+                    this.lengthCharacter > this.maxLength && this.counter && (h("span", { class: "textarea__helperText", onClick: this.focusEditor }, "Has excedido el n\u00FAmero de caracteres.")),
+                    this.isRequired && !this.lengthCharacter && this.isModified && (h("div", { class: "textarea__helperText-required" },
+                        h("cc-icon", { size: 16, name: "alert-triangle" }),
+                        h("span", { class: "textarea__helperText", onClick: this.focusEditor }, "Es necesario completar esta informaci\u00F3n.")))),
                 h("div", null, this.counter && (h("span", { class: "textarea__counter" },
                     h("span", null, this.lengthCharacter),
                     h("span", null, "/"),
-                    h("span", null, this.maxLength ? this.maxLength : "maxlength is missing")))))));
+                    h("span", null, !!this.maxLength ? this.maxLength : "maxLength is missing")))))));
     }
     static get is() { return "cc-textarea"; }
     static get originalStyleUrls() { return {
@@ -393,7 +415,8 @@ export class CcTextarea {
                 "text": ""
             },
             "attribute": "max-length",
-            "reflect": false
+            "reflect": false,
+            "defaultValue": "0"
         },
         "outlined": {
             "type": "boolean",
@@ -553,10 +576,29 @@ export class CcTextarea {
             "attribute": "enable-media-embed",
             "reflect": false,
             "defaultValue": "false"
+        },
+        "isRequired": {
+            "type": "boolean",
+            "mutable": false,
+            "complexType": {
+                "original": "boolean",
+                "resolved": "boolean",
+                "references": {}
+            },
+            "required": false,
+            "optional": true,
+            "docs": {
+                "tags": [],
+                "text": ""
+            },
+            "attribute": "is-required",
+            "reflect": false,
+            "defaultValue": "false"
         }
     }; }
     static get states() { return {
-        "lengthCharacter": {}
+        "lengthCharacter": {},
+        "isModified": {}
     }; }
     static get events() { return [{
             "method": "changeText",
@@ -571,6 +613,21 @@ export class CcTextarea {
             "complexType": {
                 "original": "string",
                 "resolved": "string",
+                "references": {}
+            }
+        }, {
+            "method": "totalCharacters",
+            "name": "totalCharacters",
+            "bubbles": true,
+            "cancelable": true,
+            "composed": true,
+            "docs": {
+                "tags": [],
+                "text": ""
+            },
+            "complexType": {
+                "original": "number",
+                "resolved": "number",
                 "references": {}
             }
         }]; }

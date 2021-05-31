@@ -169,8 +169,15 @@
 .textarea__helperText {
   display: block;
   font-size: 1.1rem;
-  margin-top: 0.4rem;
-  color: var(--error);
+}
+
+.textarea__helperText-required {
+  display: flex;
+  align-items: center;
+}
+
+.textarea__helperText-required cc-icon {
+  margin-right: 1ch;
 }
 
 .textarea__richTextSkeleton {
@@ -201,6 +208,8 @@
 .textarea__wrapper-helper {
   display: flex;
   justify-content: space-between;
+  color: var(--error);
+  margin-top: 0.4rem;
 }
 
 .textarea--bg-transparent .ck.ck-editor__main > .ck-editor__editable {
