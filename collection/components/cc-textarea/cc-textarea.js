@@ -1,6 +1,6 @@
 import { h, Component, Prop, Host, Watch, Event, Method, State } from "@stencil/core";
 import { UploadAdapter } from "./UploadAdapter";
-import ClassicEditor from "@cafeta/ckeditor5-custom-build";
+// import ClassicEditor from "@cafeta/ckeditor5-custom-build";
 export class CcTextarea {
     constructor() {
         this.lengthCharacter = 0;
@@ -109,6 +109,7 @@ export class CcTextarea {
         ];
         if (!this.rich)
             return null;
+        const { default: ClassicEditor } = await import("@cafeta/ckeditor5-custom-build");
         const optionsEditor = {
             toolbar,
             placeholder: this.placeholder
