@@ -123,6 +123,9 @@
     line-height: 1.6rem;
     &--medium {
     }
+    &--disabled {
+      @apply text-disabled;
+    }
   }
   &__check {
     @apply cursor-pointer absolute text-neutral-04;

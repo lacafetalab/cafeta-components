@@ -60,7 +60,16 @@ export class CcCheckfield {
               />
             )}
           </div>
-          {this.label && <span class="checkfield__label">{this.label}</span>}
+          {this.label && (
+            <span
+              class={{
+                checkfield__label: true,
+                "checkfield__label--disabled": this.disabled
+              }}
+            >
+              {this.label}
+            </span>
+          )}
         </label>
       </Host>
     );
