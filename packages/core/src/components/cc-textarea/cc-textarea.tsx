@@ -10,7 +10,6 @@ import {
   State
 } from "@stencil/core";
 import { UploadAdapter } from "./UploadAdapter";
-import ClassicEditor from "@cafeta/ckeditor5-custom-build";
 @Component({
   tag: "cc-textarea",
   styleUrl: "cc-textarea.scss"
@@ -141,6 +140,10 @@ export class CcTextarea {
     ];
 
     if (!this.rich) return null;
+
+    const { default: ClassicEditor } = await import(
+      "@cafeta/ckeditor5-custom-build"
+    );
 
     const optionsEditor = {
       toolbar,
