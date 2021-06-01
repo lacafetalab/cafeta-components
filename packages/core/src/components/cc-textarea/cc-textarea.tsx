@@ -313,7 +313,12 @@ export class CcTextarea {
           <div>
             {this.counter && (
               <span class="textarea__counter">
-                <span>{this.lengthCharacter}</span>
+                <span>
+                  {!!this.maxLength && this.lengthCharacter > this.maxLength
+                    ? "-"
+                    : ""}
+                  {this.lengthCharacter}
+                </span>
                 <span>/</span>
                 <span>
                   {!!this.maxLength ? this.maxLength : "maxLength is missing"}
