@@ -31,7 +31,10 @@ export class CcCheckfield {
                             "checkfield__input--error": this.error
                         } }),
                     this.shape === "square" && (h("cc-icon", { name: "check", class: "checkfield__check", size: this.size === "medium" ? 12 : 10 }))),
-                this.label && h("span", { class: "checkfield__label" }, this.label))));
+                this.label && (h("span", { class: {
+                        checkfield__label: true,
+                        "checkfield__label--disabled": this.disabled
+                    } }, this.label)))));
     }
     static get is() { return "cc-checkfield"; }
     static get originalStyleUrls() { return {

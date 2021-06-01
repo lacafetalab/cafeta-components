@@ -1,6 +1,5 @@
 import { h, Component, Prop, Host, Watch, Event, Method, State } from "@stencil/core";
 import { UploadAdapter } from "./UploadAdapter";
-// import ClassicEditor from "@cafeta/ckeditor5-custom-build";
 export class CcTextarea {
     constructor() {
         this.lengthCharacter = 0;
@@ -197,7 +196,11 @@ export class CcTextarea {
                         h("cc-icon", { size: 16, name: "alert-triangle" }),
                         h("span", { class: "textarea__helperText", onClick: this.focusEditor }, "Es necesario completar esta informaci\u00F3n.")))),
                 h("div", null, this.counter && (h("span", { class: "textarea__counter" },
-                    h("span", null, this.lengthCharacter),
+                    h("span", null,
+                        !!this.maxLength && this.lengthCharacter > this.maxLength
+                            ? "-"
+                            : "",
+                        this.lengthCharacter),
                     h("span", null, "/"),
                     h("span", null, !!this.maxLength ? this.maxLength : "maxLength is missing")))))));
     }

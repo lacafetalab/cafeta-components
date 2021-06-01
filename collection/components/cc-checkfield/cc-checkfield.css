@@ -142,6 +142,10 @@
   line-height: 1.6rem;
 }
 
+.checkfield__label--disabled {
+  color: var(--disabled-text);
+}
+
 .checkfield__check {
   cursor: pointer;
   position: absolute;
