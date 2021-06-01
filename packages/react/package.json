@@ -4,7 +4,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "1.6.3",
+  "version": "1.6.4",
   "description": "React specific wrapper for cafeta-components",
   "repository": {
     "type": "git",
@@ -41,7 +41,7 @@
     "typescript": "~3.7.2"
   },
   "dependencies": {
-    "@cafeta/components": "^1.5.3"
+    "@cafeta/components": "^1.5.4"
   },
   "peerDependencies": {
     "react": "^16.7.0",
