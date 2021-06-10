@@ -139,7 +139,7 @@ const CcTextarea = class {
         ];
         if (!this.rich)
             return null;
-        const { default: ClassicEditor } = await import('./ckeditor-8b89bbd8.js').then(function (n) { return n.c; });
+        const { default: ClassicEditor } = await import('./ckeditor-d1244dc9.js').then(function (n) { return n.c; });
         const optionsEditor = {
             toolbar,
             placeholder: this.placeholder
@@ -183,9 +183,14 @@ const CcTextarea = class {
         this.enableRichTextEditor();
     }
     componentWillLoad() {
-        if (this.value) {
+        if (this.value && !this.rich) {
             this.lengthCharacter = this.value.length;
         }
+        if (this.value && this.rich) {
+            this.lengthCharacter = this.clearHtmlOnText(this.value);
+        }
+        this.changeText.emit(this.value);
+        this.totalCharacters.emit(this.lengthCharacter);
     }
     componentDidUnload() {
         this.disableRichTextEditor();

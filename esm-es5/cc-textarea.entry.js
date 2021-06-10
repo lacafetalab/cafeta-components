@@ -202,7 +202,7 @@ var CcTextarea = /** @class */ (function () {
                         ];
                         if (!this.rich)
                             return [2 /*return*/, null];
-                        return [4 /*yield*/, import('./ckeditor-8b89bbd8.js').then(function (n) { return n.c; })];
+                        return [4 /*yield*/, import('./ckeditor-d1244dc9.js').then(function (n) { return n.c; })];
                     case 1:
                         ClassicEditor = (_b.sent()).default;
                         optionsEditor = {
@@ -256,9 +256,14 @@ var CcTextarea = /** @class */ (function () {
         this.enableRichTextEditor();
     };
     class_1.prototype.componentWillLoad = function () {
-        if (this.value) {
+        if (this.value && !this.rich) {
             this.lengthCharacter = this.value.length;
         }
+        if (this.value && this.rich) {
+            this.lengthCharacter = this.clearHtmlOnText(this.value);
+        }
+        this.changeText.emit(this.value);
+        this.totalCharacters.emit(this.lengthCharacter);
     };
     class_1.prototype.componentDidUnload = function () {
         this.disableRichTextEditor();
