@@ -215,9 +215,16 @@ export class CcTextarea {
     this.enableRichTextEditor();
   }
   componentWillLoad() {
-    if (this.value) {
+    if (this.value && !this.rich) {
       this.lengthCharacter = this.value.length;
     }
+
+    if (this.value && this.rich) {
+      this.lengthCharacter = this.clearHtmlOnText(this.value);
+    }
+
+    this.changeText.emit(this.value);
+    this.totalCharacters.emit(this.lengthCharacter);
   }
 
   componentDidUnload() {
