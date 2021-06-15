@@ -8,11 +8,11 @@ module.exports = async ({ config }) => {
   config.entry.push(
     path.join(__dirname, "../dist/cafeta-components/cafeta-components.css")
   );
-  fs.readdirSync(path.join(__dirname, "../dist/collection/components")).map(
+  fs.readdirSync(path.join(__dirname, "../dist/cafeta-components")).map(
     file => {
       jsFilePath = path.join(
         __dirname,
-        `../dist/collection/components/${file}/${file}.js`
+        `../dist/cafeta-components/${file}/${file}.js`
       );
       try {
         if (fs.existsSync(jsFilePath)) {
@@ -24,7 +24,7 @@ module.exports = async ({ config }) => {
 
       cssFilePath = path.join(
         __dirname,
-        `../dist/collection/components/${file}/${file}.css`
+        `../dist/cafeta-components/${file}/${file}.css`
       );
       try {
         if (fs.existsSync(cssFilePath)) {
