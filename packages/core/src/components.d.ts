@@ -154,6 +154,9 @@ export namespace Components {
         "size"?: "sm" | "md";
         "value"?: string;
     }
+    interface CcTable {
+        "borderColor"?: "primary" | "secondary";
+    }
     interface CcTabsTags {
         "color"?: "primary" | "secondary";
         "options"?: TabOption[];
@@ -292,6 +295,12 @@ declare global {
         prototype: HTMLCcSwitcherElement;
         new (): HTMLCcSwitcherElement;
     };
+    interface HTMLCcTableElement extends Components.CcTable, HTMLStencilElement {
+    }
+    var HTMLCcTableElement: {
+        prototype: HTMLCcTableElement;
+        new (): HTMLCcTableElement;
+    };
     interface HTMLCcTabsTagsElement extends Components.CcTabsTags, HTMLStencilElement {
     }
     var HTMLCcTabsTagsElement: {
@@ -336,6 +345,7 @@ declare global {
         "cc-progress-bar": HTMLCcProgressBarElement;
         "cc-single-select-input": HTMLCcSingleSelectInputElement;
         "cc-switcher": HTMLCcSwitcherElement;
+        "cc-table": HTMLCcTableElement;
         "cc-tabs-tags": HTMLCcTabsTagsElement;
         "cc-tabs-underline": HTMLCcTabsUnderlineElement;
         "cc-textarea": HTMLCcTextareaElement;
@@ -498,6 +508,9 @@ declare namespace LocalJSX {
         "size"?: "sm" | "md";
         "value"?: string;
     }
+    interface CcTable {
+        "borderColor"?: "primary" | "secondary";
+    }
     interface CcTabsTags {
         "color"?: "primary" | "secondary";
         "onChangeOption"?: (event: CustomEvent<TabOption>) => void;
@@ -573,6 +586,7 @@ declare namespace LocalJSX {
         "cc-progress-bar": CcProgressBar;
         "cc-single-select-input": CcSingleSelectInput;
         "cc-switcher": CcSwitcher;
+        "cc-table": CcTable;
         "cc-tabs-tags": CcTabsTags;
         "cc-tabs-underline": CcTabsUnderline;
         "cc-textarea": CcTextarea;
@@ -597,6 +611,7 @@ declare module "@stencil/core" {
             "cc-progress-bar": LocalJSX.CcProgressBar & JSXBase.HTMLAttributes<HTMLCcProgressBarElement>;
             "cc-single-select-input": LocalJSX.CcSingleSelectInput & JSXBase.HTMLAttributes<HTMLCcSingleSelectInputElement>;
             "cc-switcher": LocalJSX.CcSwitcher & JSXBase.HTMLAttributes<HTMLCcSwitcherElement>;
+            "cc-table": LocalJSX.CcTable & JSXBase.HTMLAttributes<HTMLCcTableElement>;
             "cc-tabs-tags": LocalJSX.CcTabsTags & JSXBase.HTMLAttributes<HTMLCcTabsTagsElement>;
             "cc-tabs-underline": LocalJSX.CcTabsUnderline & JSXBase.HTMLAttributes<HTMLCcTabsUnderlineElement>;
             "cc-textarea": LocalJSX.CcTextarea & JSXBase.HTMLAttributes<HTMLCcTextareaElement>;
