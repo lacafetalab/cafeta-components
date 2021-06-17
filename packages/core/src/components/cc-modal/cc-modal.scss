@@ -32,7 +32,10 @@
 
   &__wrap {
     @apply overflow-auto outline-none;
-    padding: 4.8rem 0;
+    padding: 6rem 2.4rem;
+    @media (min-width: theme("screens.lg")) {
+      padding: 4.8rem 0;
+    }
 
     &--hidden {
       display: none;
