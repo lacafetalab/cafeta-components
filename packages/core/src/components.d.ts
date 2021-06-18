@@ -156,6 +156,13 @@ export namespace Components {
     }
     interface CcTable {
         "borderColor"?: "primary" | "secondary";
+        "codeTeacher": string;
+        "lastname": string;
+        "name": string;
+        "section": string;
+        "status": string;
+        "thumbnail"?: string;
+        "total": number;
     }
     interface CcTabsTags {
         "color"?: "primary" | "secondary";
@@ -510,6 +517,13 @@ declare namespace LocalJSX {
     }
     interface CcTable {
         "borderColor"?: "primary" | "secondary";
+        "codeTeacher"?: string;
+        "lastname"?: string;
+        "name"?: string;
+        "section"?: string;
+        "status"?: string;
+        "thumbnail"?: string;
+        "total"?: number;
     }
     interface CcTabsTags {
         "color"?: "primary" | "secondary";

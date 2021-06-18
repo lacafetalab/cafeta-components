@@ -24,6 +24,7 @@
  - [cc-input](../cc-input)
  - [cc-modal](../cc-modal)
  - [cc-navbar-web](../cc-navbar-web)
+ - [cc-table](../cc-table)
  - [cc-textarea](../cc-textarea)
  - [cc-tracker](../cc-tracker)
  - [cc-wrapper-field](../cc-wrapper-field)
@@ -38,6 +39,7 @@ graph TD;
   cc-input --> cc-icon
   cc-modal --> cc-icon
   cc-navbar-web --> cc-icon
+  cc-table --> cc-icon
   cc-textarea --> cc-icon
   cc-tracker --> cc-icon
   cc-wrapper-field --> cc-icon

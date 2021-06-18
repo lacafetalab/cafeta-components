@@ -1,21 +1,86 @@
-.tableTags--border--primary {
-  border-left: 8px solid red;
-}
-
-.tableTags--border--secundary {
-  border-left: 8px solid blue;
+.tableTags--border {
+  &__primary {
+    border-left: 8px solid #7fc8ff;
+  }
+  &__secondary {
+    border-left: 8px solid red;
+  }
 }
 
 .tableTags--boxcontent-top {
+  @apply grid;
   border-left-width: 8px;
   border-right-width: 10px;
   background-color: #ffffff;
-  padding: 3px 20px;
   border-radius: 5px;
   height: 80px;
+  grid-template-columns: 0.9fr 1.9fr 1.6fr 1.6fr 1.6fr 1fr 1.9fr 1.6fr;
+  grid-row-gap: 1rem;
+  box-shadow: 3px 5px 6px #00000038;
 }
 
 .tableTags--boxcontent-bottom {
-  background-color: #ebf1f5;
+  //background-color: #ebf1f5;
+  background-color: #abd1f6;
   padding: 10px;
+  transition: all 0.3s ease-in;
+  padding: 20px;
+}
+
+.arrow {
+  cursor: pointer;
+}
+
+.block {
+  display: block;
+}
+
+.none {
+  display: none;
+}
+
+.avatar {
+  @apply flex items-center justify-center;
+}
+
+.nameblock {
+  @apply flex flex-col justify-center;
+}
+
+.codeteacher {
+  @apply flex justify-center items-center;
+}
+
+.section {
+  @apply flex justify-center items-center;
+}
+
+.status {
+  @apply flex justify-center items-center;
+}
+
+.total {
+  @apply flex justify-center items-center;
+}
+
+.buttons {
+  @apply flex justify-center items-center;
+
+  span {
+    @apply flex items-center;
+
+    .icon-message {
+      margin-right: 2px;
+    }
+  }
+}
+
+.errores {
+  @apply flex justify-center items-center;
+  .arrow {
+    @apply flex items-center;
+    span {
+      margin-right: 5px;
+    }
+  }
 }
