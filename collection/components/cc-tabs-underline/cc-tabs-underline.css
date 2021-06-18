@@ -5,6 +5,14 @@
 .tabLine {
   display: flex;
   position: relative;
+  overflow: auto;
+}
+
+@media (min-width: 992px) {
+  .tabLine {
+    border-style: none;
+    padding-bottom: 0;
+  }
 }
 
 .tabLine__button {
@@ -19,13 +27,23 @@
   border: none;
   font-size: 100%;
   outline: 0;
-  margin-top: 1.2rem;
-  margin-bottom: 1.2rem;
-  margin-left: 2.4rem;
-  margin-right: 2.4rem;
+  padding-left: 1.6rem;
+  padding-right: 1.6rem;
   font-size: 1.4rem;
   font-weight: 900;
-  line-height: 2.4rem;
+  line-height: 1.43;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+@media (min-width: 992px) {
+  .tabLine__button {
+    padding-left: 2.4rem;
+    padding-right: 2.4rem;
+    padding-top: 1.2rem;
+    padding-bottom: 1.2rem;
+    line-height: 2.4rem;
+  }
 }
 
 .tabLine__button--sm {
@@ -40,6 +58,26 @@
 
 .tabLine__button--active {
   color: var(--primary);
+  position: relative;
+}
+
+.tabLine__button--active::before {
+  width: 50%;
+  position: absolute;
+  background-color: var(--primary);
+  bottom: 0;
+  left: 50%;
+  display: inline-block;
+  border-radius: 0.4rem;
+  content: "";
+  height: 0.3rem;
+  transform: translateX(-50%);
+}
+
+@media (min-width: 992px) {
+  .tabLine__button--active::before {
+    display: none;
+  }
 }
 
 .tabLine__button--active.tabLine__button--secondary {
@@ -49,6 +87,9 @@
 .tabLine__buttonWrapper {
   display: flex;
   align-items: center;
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
 }
 
 .tabLine__tag {
@@ -75,12 +116,19 @@
   background-color: var(--primary);
   bottom: 0;
   border-radius: 2.4rem;
+  display: none;
   transition: all 0.3s ease;
   height: 0.3rem;
 }
 
 .tabLine__underline--secondary {
   background-color: var(--secondary);
+}
+
+@media (min-width: 992px) {
+  .tabLine__underline {
+    display: block;
+  }
 }
 
 .tabLine--center {
