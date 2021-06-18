@@ -5,12 +5,21 @@
 }
 
 .tabLine {
-  @apply flex relative;
+  @apply flex relative overflow-auto;
+  @media (min-width: theme("screens.lg")) {
+    @apply border-none pb-none;
+  }
 
   &__button {
     @include reset-button;
-    @apply my-md mx-xxlg text-body font-black;
-    line-height: 2.4rem;
+    @apply px-lg text-body font-black;
+    line-height: 1.43;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    @media (min-width: theme("screens.lg")) {
+      @apply px-xxlg py-md;
+      line-height: 2.4rem;
+    }
 
     &--sm {
       @apply text-small-01;
@@ -22,7 +31,16 @@
     }
 
     &--active {
-      @apply text-primary;
+      @apply text-primary relative;
+      &::before {
+        @apply w-1/2 absolute bg-primary bottom-0 left-1/2 inline-block rounded-sm;
+        content: "";
+        height: 0.3rem;
+        transform: translateX(-50%);
+        @media (min-width: theme("screens.lg")) {
+          @apply hidden;
+        }
+      }
 
       &.tabLine__button--secondary {
         @apply text-secondary;
@@ -32,6 +50,7 @@
 
   &__buttonWrapper {
     @apply flex items-center;
+    min-width: fit-content;
   }
 
   &__tag {
@@ -46,11 +65,15 @@
   }
 
   &__underline {
-    @apply absolute bg-primary bottom-0 rounded-lg;
+    @apply absolute bg-primary bottom-0 rounded-lg hidden;
     transition: all 0.3s ease;
     height: 0.3rem;
+
     &--secondary {
       @apply bg-secondary;
+    }
+    @media (min-width: theme("screens.lg")) {
+      @apply block;
     }
   }
 
