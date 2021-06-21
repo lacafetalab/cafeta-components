@@ -845,10 +845,10 @@
     lodash "^4.17.19"
     to-fast-properties "^2.0.0"
 
-"@cafeta/ckeditor5-custom-build@^0.0.4":
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/@cafeta/ckeditor5-custom-build/-/ckeditor5-custom-build-0.0.4.tgz#f2435cdb626bdadad71d2c5f4289790c0c641f0b"
-  integrity sha512-m+YXxFmeEHCTsjvYj3jgq1vuSDhPLvZnk8zt1LpXmDu8El2q1CPNTBZARVTpqA+8zrUaOXrhSjGdedAd4pMxmQ==
+"@cafeta/ckeditor5-custom-build@^0.0.6":
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/@cafeta/ckeditor5-custom-build/-/ckeditor5-custom-build-0.0.6.tgz#83b61153b0e941fa5e3139ed40770f56abc77408"
+  integrity sha512-Sn+SK2/RdZyWPkKKy55n5VY4kPIExmxAeWhihIh2K4adkNc8Za/iXAOQ4WvasU2/EmCoA6Avi3eXz8a+spbFHg==
 
 "@cnakazawa/watch@^1.0.3":
   version "1.0.4"

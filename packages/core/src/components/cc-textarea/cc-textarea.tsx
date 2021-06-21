@@ -136,7 +136,9 @@ export class CcTextarea {
       "numberedList",
       "bulletedList",
       "Link",
-      "blockQuote"
+      "blockQuote",
+      "alignment",
+      "htmlEmbed"
     ];
 
     if (!this.rich) return null;
