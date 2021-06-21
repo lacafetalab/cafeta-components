@@ -143,7 +143,7 @@ const CcTextarea = class {
         ];
         if (!this.rich)
             return null;
-        const { default: ClassicEditor } = await Promise.resolve().then(function () { return require('./ckeditor-90583e38.js'); }).then(function (n) { return n.ckeditor; });
+        const { default: ClassicEditor } = await Promise.resolve().then(function () { return require('./ckeditor-084d2280.js'); }).then(function (n) { return n.ckeditor; });
         const optionsEditor = {
             toolbar,
             placeholder: this.placeholder

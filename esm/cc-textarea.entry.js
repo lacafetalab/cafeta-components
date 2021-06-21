@@ -139,7 +139,7 @@ const CcTextarea = class {
         ];
         if (!this.rich)
             return null;
-        const { default: ClassicEditor } = await import('./ckeditor-d1244dc9.js').then(function (n) { return n.c; });
+        const { default: ClassicEditor } = await import('./ckeditor-c4c5f2c9.js').then(function (n) { return n.c; });
         const optionsEditor = {
             toolbar,
             placeholder: this.placeholder

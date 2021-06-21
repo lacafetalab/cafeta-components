@@ -202,7 +202,7 @@ var CcTextarea = /** @class */ (function () {
                         ];
                         if (!this.rich)
                             return [2 /*return*/, null];
-                        return [4 /*yield*/, import('./ckeditor-d1244dc9.js').then(function (n) { return n.c; })];
+                        return [4 /*yield*/, import('./ckeditor-c4c5f2c9.js').then(function (n) { return n.c; })];
                     case 1:
                         ClassicEditor = (_b.sent()).default;
                         optionsEditor = {
